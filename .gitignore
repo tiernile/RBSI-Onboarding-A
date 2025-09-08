@@ -20,6 +20,7 @@ build/
 # IDE files
 .vscode/
 .cursor/
+!.cursor/rules/
 *.swp
 *.swo
 *~
