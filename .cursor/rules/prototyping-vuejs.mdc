@@ -1,0 +1,114 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+
+# Cursor Rules — RBSI Institutional Onboarding (Vue/Nuxt)
+
+You are building a high‑fidelity, code‑based prototype in Vue 3 with Nuxt 3. The goal is interaction fidelity, accessibility, and auditability, not production code. Keep logic schema‑first and UI‑agnostic so handover to KYCP (Vue) is smooth.
+
+## Tech Stack
+
+- Framework: Nuxt 3 (Vue 3, Composition API, `<script setup lang="ts">`).
+- Language: TypeScript, strict mode.
+- State: Prefer composables; Pinia if shared global state is needed.
+- Forms/Validation: Lightweight custom rules or `vee-validate` + `yup` if necessary.
+- Server/API: Nuxt Nitro server routes under `server/api/*`.
+- Parsing: `js-yaml` to read YAML schemas and manifest on the server.
+- Testing: Vitest + Vue Test Utils (unit), Playwright (e2e), axe for a11y.
+- Styling: CSS variables for tokens; Tailwind optional for velocity (if added).
+
+## Repository Conventions
+
+- App location: `apps/prototype` (Nuxt app).
+- Data: `data/schemas/` (canonical journey schemas + `manifest.yaml`), `data/generated/` (types/diffs), `data/mappings/` (ingest maps), `data/admin/` (dev‑only overrides).
+- Docs: `Documents/` is canonical (context, structure, PoC, sessions, README).
+- No PII in repo. Prototypes mirror KYCP constraints.
+
+## Architectural Principles
+
+- Schema‑first: screens render from `/data/schemas/<journey>/schema.yaml`. No hard‑coded labels/validation in components.
+- Component‑faithful: build KYCP‑like facsimiles under `components/kycp/*` with matching props/behaviours and accessible patterns.
+- Accessibility: target WCAG 2.2 AA; labels, fieldsets, error summary with anchors, focus management.
+- Auditability: maintain round‑trip mapping and diffs; include `meta.source_row_ref` in schema items.
+
+## Nuxt Structure & Patterns
+
+- Routing: file‑based under `pages/`.
+  - `pages/index.vue`: Mission Control (cards for journeys).
+  - `pages/preview/[journey].vue`: renders journey slice from schema.
+- Server:
+  - Auth: `server/api/auth/login.post.ts` verifies password hash and sets HTTP‑only cookie.
+  - Admin config: `server/api/admin/config.post.ts` writes `data/admin/config.json` in dev or returns env snippet for hosted.
+  - Manifest: load `data/schemas/manifest.yaml` server‑side, merge overrides.
+- Composables:
+  - `useManifest()`: returns effective manifest (merged with overrides).
+  - `useSchema(journeyKey)`: loads and normalises a journey schema.
+  - `useConditions()`: evaluates visibility/enablement expressions (`==`, `!=`, `includes`, `&&`, `||`).
+
+## Components & Forms
+
+- Use `<script setup lang="ts">` and Composition API.
+- Follow Vue `v-model` conventions: `modelValue` prop + `update:modelValue` emit. Expose `:id`, `:aria-describedby`, and error messages.
+- Inputs to provide: text, textarea, number, date, radio group, checkbox, select. Wrap each in a field component with label, hint, error.
+- Error handling: field‑level on blur, page‑level summary on submit linking to fields.
+
+## Mission Control (MVP)
+
+- Read from `data/schemas/manifest.yaml` with attributes: `key`, `name`, `version`, `variant`, `owner`, `display { group, order, visible, status }`.
+- Apply global overrides:
+  - Hosted: from env `MC_VISIBLE`, `MC_STATUS` via `runtimeConfig`.
+  - Dev: from `data/admin/config.json` if present.
+- Admin mode:
+  - `POST /api/auth/login` checks `runtimeConfig.adminPasswordHash` (bcrypt) and sets `admin=true` cookie (HTTP‑only, Secure, SameSite=Strict, short TTL).
+  - Admin can toggle show/hide, status, and variant. Persist to file (dev) or display env snippet for ops (hosted).
+
+## Env & Runtime Config (Nuxt)
+
+- Private server config in `nuxt.config.ts` `runtimeConfig`:
+  - `adminPasswordHash` (bcrypt hash of admin password).
+  - `mcVisible`, `mcStatus` (optional JSON/env strings for overrides).
+- Public config (exposed to client) must be under `runtimeConfig.public`. Do not expose secrets.
+
+## Commands (expected)
+
+- `pnpm dev` — run Nuxt dev server for `apps/prototype`.
+- `pnpm build && pnpm start` — build and start server.
+- Scripts (to be added as repo evolves): `ingest`, `scaffold`, `diff`, `typegen` under `/scripts`.
+
+## Testing & QA
+
+- Unit: Vitest for composables and components (render, props/emits, condition engine).
+- E2E: Playwright to traverse a slice; verify error summary links.
+- A11y: axe checks on key pages (can be via Playwright).
+
+## Security & Privacy
+
+- No PII in repo or telemetry. Only ephemeral, in‑memory interaction proxies during moderated tests.
+- Admin auth is password‑based with bcrypt hash stored server‑side; set HTTP‑only cookie. Add basic rate‑limiting/lockout.
+
+## Do / Don’t
+
+- Do: keep schemas the source of truth; keep logic in composables; mirror KYCP behaviours; write accessible markup.
+- Don’t: hard‑code copy/validation in UI; introduce third‑party telemetry; store plaintext passwords; leak secrets to client.
+
+## When Asked to Scaffold
+
+- Create `pages/index.vue` (Mission Control) and `pages/preview/[journey].vue` (schema‑driven renderer).
+- Add `components/kycp/*` input facsimiles and `components/nile/*` glue/layout.
+- Implement `server/api/auth/login.post.ts` and, if needed, `server/api/admin/config.post.ts`.
+- Add `composables/useManifest.ts`, `useSchema.ts`, and `useConditions.ts`.
+
+## Coding Style
+
+- TypeScript everywhere; define prop/emit types.
+- Prefer `computed` over `watch` for derived values.
+- Use stable keys in `v-for`.
+- Keep functions small and pure; move heavy logic out of SFCs into composables.
+
+## Notes
+
+- The prototype targets fidelity and clarity for handover. Optimise for speed of change and traceability, not micro‑optimisations.
+

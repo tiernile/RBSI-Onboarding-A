@@ -1,0 +1,9 @@
+---
+description: When we're updating CSS
+alwaysApply: false
+---
+### CSS and Styling
+**⚠️ NEVER define CSS variables in scoped styles!**
+- CSS custom properties (variables) MUST be defined in `app.vue` in non-scoped `<style>` blocks
+- Component-specific styles go in `<style scoped>` blocks in individual components
+- Vue's scoped styles transform selectors, so `:root` in scoped styles doesn't work globally
