@@ -1,0 +1,32 @@
+active:
+  - key: lux-limited-partnership-cdd
+    name: Luxembourg Limited Partnership – CDD
+    version: 0.3.0
+    variant: A
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 10
+      visible: true
+      status: beta
+  - key: non-uk-fund-cis-sdd
+    name: Non‑UK Fund (CIS) – SDD
+    version: 0.2.1
+    variant: A
+    owner: "@designer2"
+    display:
+      group: Funds
+      order: 20
+      visible: true
+      status: alpha
+  - key: non-lux-lp-demo
+    name: Non‑Lux Limited Partnership — Demo Slice
+    version: 0.1.0
+    variant: A
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 5
+      visible: true
+      status: alpha
+deprecated: []

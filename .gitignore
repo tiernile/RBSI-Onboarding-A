@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+**/node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Build outputs
+.nuxt/
+.output/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# IDE files
+.vscode/
+.cursor/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Runtime files
+.cache/
+.temp/
+.tmp/
+
+# Generated files that change frequently
+data/generated/
+*.temp.*
+
+# Private/sensitive files
+*.key
+*.pem
+*.p12
+*.p8
+*.mobileprovision
+
+# Excel temp files
+~$*.xlsx
+~$*.xls

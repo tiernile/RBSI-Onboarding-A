@@ -1,0 +1,180 @@
+key: non-lux-lp-demo
+name: Non‑Lux Limited Partnership — Demo Slice
+version: 0.1.0
+
+items:
+  - id: GENBankAccountJurisdiction
+    label: "In which jurisdiction would you like to open this account?"
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: bank_relationship
+    section: B2 - Bank Relationship
+    data_type: enum
+    control: select
+    options: ["Jersey", "Guernsey", "Isle of Man", "Gibraltar", "United Kingdom"]
+    mandatory: true
+    visibility:
+      all: []
+    validation:
+      regex: null
+      max_length: null
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:103|KEY:GENBankAccountJurisdiction"
+
+  - id: GENIndicativeAppetiteQuestions
+    label: Do you wish to answer some pre‑application questions to provide a high‑level indication of RBSI appetite to open the account?
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: pre_application
+    section: B1 - Pre‑Application Questions
+    data_type: enum
+    control: radio
+    options: [Yes, No]
+    mandatory: true
+    visibility:
+      all: [GENBankAccountJurisdiction != "United Kingdom"]
+    validation:
+      regex: null
+      max_length: null
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:3|KEY:GENIndicativeAppetiteQuestions"
+
+  - id: GENIndicativeAppetiteRiskadversedetailsother
+    label: Are you aware of any other high risk factor and/or adverse information in relation to the customer or its key principals and beneficial owners?
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: pre_application
+    section: B1 - Pre‑Application Questions
+    data_type: enum
+    control: radio
+    options: [Yes, No]
+    mandatory: true
+    visibility:
+      all: [GENIndicativeAppetiteQuestions == "Yes"]
+    validation:
+      regex: null
+      max_length: null
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:5|KEY:GENIndicativeAppetiteRiskadversedetailsother"
+
+  - id: GENIndicativeAppetiteHighriskadversedetails
+    label: "Please provide further details of the high risk factor(s) and/or adverse information:"
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: pre_application
+    section: B1 - Pre‑Application Questions
+    data_type: string
+    control: textarea
+    options: []
+    mandatory: true
+    visibility:
+      all: [GENIndicativeAppetiteRiskadversedetailsother == "Yes"]
+    validation:
+      regex: null
+      max_length: 2000
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:7|KEY:GENIndicativeAppetiteHighriskadversedetails"
+
+  - id: GENFundClosed
+    label: Has the fund had a final close?
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: purpose_of_entity
+    section: B11.1 - Purpose of Entity - Objectives
+    data_type: enum
+    control: radio
+    options: [Yes, No]
+    mandatory: true
+    visibility:
+      all: []
+    validation:
+      regex: null
+      max_length: null
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:30|KEY:GENFundClosed"
+
+  - id: GENFundSize
+    label: What is the fund size in the selected currency denomination?
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: purpose_of_entity
+    section: B11.1 - Purpose of Entity - Objectives
+    data_type: enum
+    control: select
+    options: ["< 50m", "50m - 250m", "250m - 500m", "500m - 750m", "750m - 1bn", "1bn - 2bn", "2bn - 3bn", "3bn - 5bn", "5bn - 10bn", "10bn +"]
+    mandatory: true
+    visibility:
+      all: [GENFundClosed == "Yes"]
+    validation:
+      regex: null
+      max_length: null
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:?|KEY:GENFundSize"
+
+  - id: GENFundSizeExtreme
+    label: As you have advised that the fund size is greater than 10 billion, please enter the exact fund size / targeted fund size
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: purpose_of_entity
+    section: B11.1 - Purpose of Entity - Objectives
+    data_type: string
+    control: text
+    options: []
+    mandatory: true
+    visibility:
+      all: [GENFundSize == "10bn +"]
+    validation:
+      regex: "^\\d+(\\.\\d+)?(bn|m)$"
+      max_length: 40
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:?|KEY:GENFundSizeExtreme"
+
+  - id: GENIndicativeAppetiteInvesthighrisk
+    label: Does or will the fund make investments in high risk countries or high risk activities?
+    help: null
+    entity_type: limited_partnership
+    jurisdiction: non_luxembourg
+    stage: purpose_of_entity
+    section: B11.1 - Purpose of Entity - Objectives
+    data_type: enum
+    control: radio
+    options: [Yes, No]
+    mandatory: true
+    visibility:
+      all: [GENIndicativeAppetiteQuestions == "Yes"]
+    validation:
+      regex: null
+      max_length: null
+    mappings:
+      crm_field: null
+      system_field: null
+    meta:
+      source_row_ref: "ROW:?|KEY:GENIndicativeAppetiteInvesthighrisk"

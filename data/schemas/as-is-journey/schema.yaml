@@ -1,0 +1,4255 @@
+key: as-is-journey
+name: As-Is Journey - Extracted from KYCP
+version: 0.1.0
+description: Schema extracted from existing KYCP HTML form for recreation
+metadata:
+  extracted_date: '2025-09-08T14:47:06.226251'
+  source_html: Project Stealth Code Questions (1).html
+  source_spreadsheet: 20250828_draft-master-spreadsheet.xlsx
+  total_fields: 158
+  extraction_method: automated
+items:
+- id: GENBankAccountJurisdiction
+  label: In which jurisdiction would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 1
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226322'
+- id: GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated
+  label: Which option best describes your application?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 3
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226332'
+- id: GENIndicativeAppetiteQuestions
+  label: Do you wish to answer some Pre-application questions to provide a high level
+    indication of RBSI appetite to open the account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 4
+    spreadsheet_ref: 2
+    match_score: 0.988
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226340'
+- id: GENIndicativeAppetite3rdPartyAdministrator
+  label: Does the entity, for which you’re looking to open an account, have a 3rd
+    party administrator?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 5
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226347'
+- id: GENIndicativeAppetiteFundAdminDomicile
+  label: Where is the 3rd party administrator domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 6
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226444'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 7
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226458'
+- id: GENIndicativeAppetiteCountryRegistration
+  label: In relation to the Incorporation of the entity requiring a bank account,
+    can you please specify the Country of registration/formation/Establishment?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 8
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226465'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 9
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226473'
+- id: GENIndicativeAppetiteFundMng
+  label: Is there a Fund Manager within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 10
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226522'
+- id: GENIndicativeAppetiteFundMngDom
+  label: Where is the Fund Manager domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 11
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226535'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 12
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226542'
+- id: GENIndicativeAppetiteOpeningInvestmentAdviser
+  label: Is there an Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 13
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226548'
+- id: GENIndicativeAppetiteOpeningInvestmentAdviserLocation
+  label: What is the location of the Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 14
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226554'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 15
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226559'
+- id: GENIndicativeAppetiteInvestmentsubsec
+  label: Type of Fund
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 16
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226564'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 18
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226569'
+- id: GENIndicativeAppetiteInvesthighrisk
+  label: Does or will the fund make investments in high risk countries or high risk
+    activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 19
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226574'
+- id: GENIndicativeAppetiteSWFInvestor
+  label: Are there any Sovereign Wealth Fund investors within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 20
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226579'
+- id: GENIndicativeAppetiteMembershipIFSWF
+  label: Please confirm membership of the International Forum of Sovereign Wealth
+    Funds (IFSWF) and their acceptance of the Santiago Principles for all Sovereign
+    Wealth Fund investors within the structure
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 21
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226584'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 23
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226590'
+- id: GENIndicativeAppetitePEPS
+  label: Are there any PEPs involved in the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 24
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226600'
+- id: GENIndicativeAppetitePepInvestors
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who
+    have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 25
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226605'
+- id: GENIndicativeAppetitePepdirectcontroller
+  label: Are there any Politically Exposed Persons (PEPs) involved in running/operating,
+    controlling or advising the fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 26
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226609'
+- id: GENIndicativeAppetitePeppositioninfluence
+  label: Are there any Politically Exposed Persons (PEPs) that are not an owner or
+    controller, who hold a position of significant influence including but not limited
+    to the provider of a loan?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 27
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226614'
+- id: GENIndicativeAppetitePepinvestpersrelationship
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one
+    of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship,
+    who individually may have less than 10% ownership, but together have an accumulative
+    ownership of 10% or more?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 28
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226620'
+- id: GENIndicativeAppetiteRiskadverse
+  label: Are there any Reputational, Environmental, Social and Ethical (ESE) or tax
+    risks associated with the application?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 29
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226626'
+- id: GENIndicativeAppetiteRBSIProductOptions
+  label: Products
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 31
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226630'
+- id: GENIndicativeAppetite3rdPartyAdministrator
+  label: Does the entity, for which you’re looking to open an account, have a 3rd
+    party administrator?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 32
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226635'
+- id: GENIndicativeAppetiteFundAdminDomicile
+  label: Where is the 3rd party administrator domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 33
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226641'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 34
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226646'
+- id: GENIndicativeAppetiteCountryRegistration
+  label: In relation to the Incorporation of the entity requiring a bank account,
+    can you please specify the Country of registration/formation/Establishment?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 35
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226650'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 36
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226654'
+- id: GENIndicativeAppetiteFundMng
+  label: Is there a Fund Manager within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 37
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226659'
+- id: GENIndicativeAppetiteFundMngDom
+  label: Where is the Fund Manager domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 38
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226668'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 39
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226672'
+- id: GENIndicativeAppetiteOpeningInvestmentAdviser
+  label: Is there an Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 40
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226676'
+- id: GENIndicativeAppetiteOpeningInvestmentAdviserLocation
+  label: What is the location of the Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 41
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226681'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 42
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226685'
+- id: GENIndicativeAppetiteInvestmentsubsec
+  label: Type of Fund
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 43
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226689'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 45
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226693'
+- id: GENIndicativeAppetiteInvesthighrisk
+  label: Does or will the fund make investments in high risk countries or high risk
+    activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 46
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226697'
+- id: GENIndicativeAppetiteSWFInvestor
+  label: Are there any Sovereign Wealth Fund investors within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 47
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226701'
+- id: GENIndicativeAppetiteMembershipIFSWF
+  label: Please confirm membership of the International Forum of Sovereign Wealth
+    Funds (IFSWF) and their acceptance of the Santiago Principles for all Sovereign
+    Wealth Fund investors within the structure
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 48
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226705'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 50
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226711'
+- id: GENIndicativeAppetitePEPS
+  label: Are there any PEPs involved in the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 51
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226715'
+- id: GENIndicativeAppetitePepInvestors
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who
+    have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 52
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226718'
+- id: GENIndicativeAppetitePepdirectcontroller
+  label: Are there any Politically Exposed Persons (PEPs) involved in running/operating,
+    controlling or advising the fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 53
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226723'
+- id: GENIndicativeAppetitePeppositioninfluence
+  label: Are there any Politically Exposed Persons (PEPs) that are not an owner or
+    controller, who hold a position of significant influence including but not limited
+    to the provider of a loan?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 54
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226727'
+- id: GENIndicativeAppetitePepinvestpersrelationship
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one
+    of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship,
+    who individually may have less than 10% ownership, but together have an accumulative
+    ownership of 10% or more?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 55
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226734'
+- id: GENIndicativeAppetiteRiskadverse
+  label: Are there any Reputational, Environmental, Social and Ethical (ESE) or tax
+    risks associated with the application?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 56
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226740'
+- id: GENIndicativeAppetiteRiskadversedetailsother
+  label: Are you aware of any other high risk factor and/or adverse information in
+    relation to the customer or its key principals and beneficial owners?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 58
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226744'
+- id: GENIndicativeAppetiteRiskadversedetailsother
+  label: Are you aware of any other high risk factor and/or adverse information in
+    relation to the customer or its key principals and beneficial owners?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 59
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226749'
+- id: GENIndicativeAppetiteRBSIProductOptions
+  label: Products
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 62
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226753'
+- id: GENBusinessType
+  label: 'Does the business involve:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 63
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226757'
+- id: GENWholesaleDepositorEntityType
+  label: 'Is the entity:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 64
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226770'
+- id: GENStructureType
+  label: Is the entity part of a consolidated group of companies or a fund structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 65
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226774'
+- id: GENConsolidated
+  label: 'Does the consolidated group / fund, as at the latest financial year consolidated
+    accounts satisfy two or more of the following: (1)  income of more than £5.6m?  (2)  total
+    assets (gross) on balance Sheet of more than £2.8m? (3) more than 50 employees?
+    (Please note, we will require evidence of this by way of financial accounts and/or
+    investor report as part of this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 67
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226778'
+- id: GENConsolidatedDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 68
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226788'
+- id: GENStandalone
+  label: 'Does the entity (on a standalone basis), as at the latest financial year
+    individual accounts have two or more of the following: (1)  income of more than
+    £5.6m?  (2)  total assets (gross) on balance Sheet of more than £2.8m? (3) more
+    than 50 employees? (Please note, we will require evidence of this by way of financial
+    accounts and/or investor report as part of this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 69
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226792'
+- id: GENConsolidatedDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 70
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226801'
+- id: GENHalfyearConsolidated
+  label: 'Within the next 6 months, does the consolidated group/fund  expect to have
+    two or more of the following: (1)  income of more than £5.6m?  (2)  total assets
+    (gross) on balance Sheet of more than £2.8m? (3) more than 50 employees? (Please
+    note, we will require evidence of this by way of financial accounts and/or investor
+    report as part of this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 71
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226805'
+- id: GENConsolidatedDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 72
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226814'
+- id: GENHalfyearStandalone
+  label: 'Within the next 6 months, does the entity (on a standalone basis), as at
+    the latest financial year individual accounts expect to have two or more of the
+    following: (1)  income of more than £5.6m?  (2)  total assets (gross) on balance
+    Sheet of more than £2.8m? (3) more than 50 employees? (Please note, we will require
+    evidence of this by way of financial accounts and/or investor report as part of
+    this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 73
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226821'
+- id: GENConsolidatedDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 74
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226830'
+- id: GENBankGroupOrFundType1
+  label: Does the consolidated group / fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 75
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226834'
+- id: GENStandaloneNetAssetsType
+  label: Does the entity (on a standalone basis), a) currently have net assets of
+    > £1.4m, (b) is expected to have net assets of > £1.4m within 6 months or (c)
+    have net assets of ≤ £1.4m? (Please note, we will require evidence of (a) by way
+    of financial accounts or investor report (or for (b) - within 6 months).)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 76
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226841'
+- id: GENConsolidatedGroupOrFundType
+  label: What type of consolidated group / fund are you?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 77
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226849'
+- id: GENConsolidatedFund6monthsAssestValueType
+  label: What type of consolidated group / fund are you (Given you expect to have
+    asset of more than £1.4 mil within 6months) ?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 78
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226854'
+- id: GENWholesaleDepositorType
+  label: What type of entity are you?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 80
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226862'
+- id: GENEntity6monthsAssestValueType
+  label: What type of entity are you? (Given you expect to have net assets of more
+    than £1.4m within 6 months)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 81
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226866'
+- id: GENBrandJer
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 89
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226872'
+- id: GENBrandJer
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 90
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226876'
+- id: GENBrandJer
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 91
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226880'
+- id: GENBrandJer
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 92
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226886'
+- id: GENBrandJer
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 93
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226891'
+- id: SPEintermediaryregulator
+  label: Name of intermediary's regulator
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 100
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226895'
+- id: SPEisregulated
+  label: Are you regulated?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 101
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.226899'
+- id: SPEdirectregulator
+  label: Name of your regulator
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 102
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227091'
+- id: GENDirectbearer
+  label: Are bearer shares in issue anywhere within the ownership structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 104
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227098'
+- id: GENDirectbearercontrol
+  label: Please confirm that the bearer shares are fully controlled by yourselves
+    and will not be moved or transferred during the life of this account with the
+    Bank?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 105
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227103'
+- id: SPEintermediarylicenseJER
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 107
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227108'
+- id: SPEintermediarylicenseJER
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 108
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227112'
+- id: SPEintermediarylicenseJER
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 109
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227116'
+- id: SPEintermediarylicenseJER
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 110
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227120'
+- id: SPEintermediarylicenseJER
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 111
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227124'
+- id: SPEintermediarylicenseJER
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 112
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227127'
+- id: GENMetFaceToFace
+  label: Have you (or an individual from your wider internal group) met the customer
+    for whom this account relates, face to face and in accordance with local regulation?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 114
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227131'
+- id: GEN3rdPartyMetFaceToFace
+  label: 'Has a 3rd party (external to your own group), met the customer face to face? '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 119
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227136'
+- id: GEN3rdPartyJurisdictionCountry
+  label: Jurisdiction/Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 125
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227140'
+- id: GENMetInAccordRegulation
+  label: Was the customer met in accordance with your local regulation?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 129
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227149'
+- id: GENIndicativeAppetiteInvestmentsubsec
+  label: Type of Fund
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 134
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227162'
+- id: GENCISstatus
+  label: Status
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 136
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227166'
+- id: GENcorplisted
+  label: Is this entity listed on a stock exchange?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 138
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227170'
+- id: GENcountryregistration
+  label: Country of registration/formation
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 140
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227174'
+- id: GENCountryRegisteredAndJurisdictionSame
+  label: Is the Country of registration/formation the same as the Jurisdiction in
+    which you are opening the account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 141
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227179'
+- id: GENRegion
+  label: Region
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 143
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227186'
+- id: GENentitytype
+  label: Entity Type
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 146
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227190'
+- id: GENTypeTrust
+  label: Type of Trust
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 147
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227194'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 152
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227197'
+- id: GENprincaddressdifferent
+  label: Is the principal or business address different to the registered address?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 154
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227201'
+- id: GENprinccountryOP
+  label: Principal Country of Operation
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 158
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227205'
+- id: GENmailaddressdifferent
+  label: Is the mailing address or agents’ address different to the registered address
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 160
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227209'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 164
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227214'
+- id: GENfundarrearslegalinsolvent
+  label: Please confirm if the customer structure has tax arrears or legal proceeding
+    outstanding or has ever been insolvent, bankrupt or had any court proceedings
+    for debt?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 166
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227219'
+- id: GENIndicativeAppetiteSWFInvestor
+  label: Are there any Sovereign Wealth Fund investors within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 168
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227224'
+- id: GENMembershipIFSWF
+  label: Please confirm membership of the International Forum of Sovereign Wealth
+    Funds (IFSWF) and their acceptance of the Santiago Principles
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 169
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227228'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 171
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227232'
+- id: GENlimitedpartnershipstructure
+  label: Limited Partnership structure
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 172
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227236'
+- id: GENIndicativeAppetiteOpeningInvestmentAdviser
+  label: Is there an Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 174
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227240'
+- id: GENIndicativeAppetiteOpeningInvestmentAdviserLocation
+  label: What is the location of the Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 175
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227245'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 176
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227249'
+- id: GENIndicativeAppetiteFundMng
+  label: Is there a Fund Manager within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 177
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227254'
+- id: GENIndicativeAppetiteFundMngDom
+  label: Where is the Fund Manager domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 179
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227258'
+- id: GENFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 180
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227262'
+- id: GENSecretary
+  label: Is there a Secretary within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 181
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227266'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 184
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227270'
+- id: GENincorpUSA
+  label: Is the entity/organisation incorporated/organised in the USA?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 188
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227274'
+- id: GENffi
+  label: Is the entity/organisation a Financial Foreign Institution (FFI)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 189
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227280'
+- id: GENgiinreason
+  label: 'If you cannot provide a GIIN, please detail the reason below:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 192
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227285'
+- id: GENgiireasonappliedfor
+  label: When will you have the details of GIIN, so that you can come back to us with
+    this information?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 193
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227289'
+- id: GENOtherFFITaxStatus
+  label: Tax Status
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 194
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227293'
+- id: GENgiinreason
+  label: 'If you cannot provide a GIIN, please detail the reason below:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 197
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227297'
+- id: GENgiireasonappliedfor
+  label: When will you have the details of GIIN, so that you can come back to us with
+    this information?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 198
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227301'
+- id: GENnonffi
+  label: Is the entity/organisation a Non Financial Foreign Entity (NFFE)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 199
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227305'
+- id: GENfiorinvestment
+  label: Is the entity/organisation a Financial Institution (FI) or Investment Entity?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 203
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227310'
+- id: GENnfe
+  label: Is the entity/organisation a Non Financial Entity (NFE)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 204
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227315'
+- id: GENfatcacrscompdetailsdoc
+  label: Do you have tax advice in support of the FATCA/CRS status selections made
+    above?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 207
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227319'
+- id: GENFundCurrency
+  label: What is the currency denomination of the fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 214
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227324'
+- id: GENFundClosed
+  label: Has the fund had a final close?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 215
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227328'
+- id: GENFundSize
+  label: What is the fund size in the selected currency denomination?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 216
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227333'
+- id: GENFundTargetedSize
+  label: What is the targeted fund size in the selected currency denomination?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 217
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227337'
+- id: GENFundInvestmentPeriod
+  label: What is the investment period?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 220
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227341'
+- id: GENFundInvestmentSize
+  label: What is the anticipated average size of each investment asset?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 221
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227345'
+- id: GENFundAssetsNum
+  label: What is the indication of the number of assets to be held?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 222
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227349'
+- id: GENindustrysector
+  label: Industry description incl SIC code
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 224
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227353'
+- id: GENManagedCountry
+  label: Please state in which country the fund is managed/controlled
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 226
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227357'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 228
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227362'
+- id: GENIFundnvestorCountry
+  label: Please state the main countries where the fund’s investors will be/are based
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 229
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227365'
+- id: GENInvestorType
+  label: Type of investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 231
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227370'
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 234
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227375'
+- id: GENIndicativeAppetiteRiskadverse
+  label: Are there any Reputational, Environmental, Social and Ethical (ESE) or tax
+    risks associated with the application?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 240
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227378'
+- id: GENIndicativeAppetitePepInvestors
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who
+    have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 242
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227383'
+- id: GENIndicativeAppetitePepinvestpersrelationship
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one
+    of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship,
+    who individually may have less than 10% ownership, but together have an accumulative
+    ownership of 10% or more?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 244
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227387'
+- id: GENIndicativeAppetitePepdirectcontroller
+  label: 'Are there any Politically Exposed Persons (PEPs) involved in running/operating,
+    controlling or advising the fund? '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 246
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227392'
+- id: GENpeppositioninfluence
+  label: Are there any Politially Exposed Persons (PEPs) that are not an owner or
+    controller, who hold a position of significant influence including but not limited
+    to the provider of a loan?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 248
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227396'
+- id: GENIndicativeAppetiteInvesthighrisk
+  label: Does or will the fund make investments in high risk countries or high risk
+    activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 250
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227403'
+- id: GEN50percinvesthighrisk
+  label: Is the investment strategy of the Fund to retain more than 50% of its investments
+    in high risk activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 251
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227407'
+- id: GENDirectbearer
+  label: Are bearer shares in issue anywhere within the ownership structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 253
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227412'
+- id: GENbearercontrol
+  label: 'Please confirm that the bearer shares are fully controlled by the intermediary
+    and
+
+    will not be moved or transferred during the life of this account with the Bank?'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 254
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227416'
+- id: GENinvestorhighrisk
+  label: Are any of the fund’s investors with a holding of 25% or greater from a high-risk
+    country?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 256
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227421'
+- id: GENubohighriskcountry
+  label: Do any of the investors or Ultimate Beneficial Owners (UBOs) individually
+    or as one of a number of investors or UBOs that have a direct link to high risk
+    countries individually or together have an accumulative ownership or control of
+    more than 50%?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 258
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227426'
+- id: GENcustomerarrears
+  label: Please confirm if the entity has tax arrears?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 260
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227431'
+- id: GENCustomerLegal
+  label: Please confirm if the entity has legal proceedings outstanding?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 262
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227435'
+- id: GENCustomerInsolvent
+  label: Please confirm if the entity has ever been insolvent, bankrupt or had any
+    court proceedings for debt?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 264
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227440'
+- id: GENcorrespondentbanking
+  label: Are you involved in correspondent banking?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 266
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227444'
+- id: GENAccountType
+  label: Please specify the type of account you require.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 270
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227448'
+- id: GENintermediarymandate
+  label: Do you require your standard intermediary signatory list to apply to this
+    account, i.e. no other signatories are to be appointed?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 274
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227452'
+- id: GENViewOnly
+  label: View only
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: various
+  stage: onboarding
+  section: General
+  data_type: enum
+  control: select
+  options: []
+  mandatory: true
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    html_index: 279
+    spreadsheet_ref: 2
+    match_score: 1.0
+    match_confidence: HIGH
+    source: as-is-extraction
+    extracted_date: '2025-09-08T14:47:06.227457'

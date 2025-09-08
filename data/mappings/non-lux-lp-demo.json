@@ -1,0 +1,60 @@
+{
+  "sheet": "LP Proposal",
+  "filters": {
+    "PROGRAMME": "Account is for - a Fund (CIS) - Non Luxembourg",
+    "ENTITY": "Limited Partnership"
+  },
+  "columns": {
+    "id": "KEYNAME",
+    "label": "FIELD NAME",
+    "data_type": "DATA TYPE",
+    "field_type": "FIELD TYPE",
+    "lookup_type": "LOOKUP",
+    "mandatory": "MANDATORY",
+    "visibility": "VISIBILITY CONDITION/GROUP NAME",
+    "stage": "PAUL Section Suggestion",
+    "regex": "REGEX",
+    "crm_field": "CRM Mapping Info",
+    "ref": "REF"
+  },
+  "normalization": {
+    "data_type": {
+      "Lookup": "enum",
+      "Free Text": "string",
+      "Number": "number",
+      "Date": "date"
+    },
+    "operators": {
+      "=": "==",
+      "<>": "!="
+    },
+    "strip_prefixes": ["If "]
+  },
+  "lookups_sheet": "Lookup Values",
+  "lookups": {
+    "Yes/No": ["Yes", "No"],
+    "Fund Size": [
+      "< 50m",
+      "50m - 250m",
+      "250m - 500m",
+      "500m - 750m",
+      "750m - 1bn",
+      "1bn - 2bn",
+      "2bn - 3bn",
+      "3bn - 5bn",
+      "5bn - 10bn",
+      "10bn +"
+    ],
+    "Bank Account Jurisdiction": [
+      "Jersey",
+      "Guernsey",
+      "Isle of Man",
+      "Gibraltar",
+      "United Kingdom"
+    ]
+  },
+  "defaults": {
+    "entity_type": "limited_partnership",
+    "jurisdiction": "non_luxembourg"
+  }
+}
