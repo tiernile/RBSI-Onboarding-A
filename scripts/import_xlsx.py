@@ -52,12 +52,13 @@ def load_lookups_from_sheet(xlsx_path: Path, sheet: str) -> dict:
         return lookups
     # Try tall format with columns like LOOKUP, LOOKUP VALUE
     cols = {norm_key(c): c for c in df.columns}
-    lk = cols.get("lookup")
-    lv = cols.get("lookupvalue") or cols.get("value") or cols.get("lookup_value")
+    # Accept multiple naming variants for lookup type and value columns
+    lk = cols.get("lookup") or cols.get("lookuptype") or cols.get("lookup_type") or cols.get("type")
+    lv = cols.get("lookupvalue") or cols.get("lookup_value") or cols.get("value") or cols.get("option") or cols.get("options")
     if lk and lv:
         for _, row in df.iterrows():
-            t = str(row.get(lk)) if pd.notna(row.get(lk)) else None
-            v = str(row.get(lv)) if pd.notna(row.get(lv)) else None
+            t = str(row.get(lk)).strip() if pd.notna(row.get(lk)) else None
+            v = str(row.get(lv)).strip() if pd.notna(row.get(lv)) else None
             if not t or not v:
                 continue
             lookups.setdefault(t, []).append(v)
@@ -81,13 +82,15 @@ def sanitize_id(raw: str) -> str:
     return s or ""
 
 
-def infer_control(data_type: str, label: str, options: list) -> str:
+def infer_control(data_type: str, label: str, options: list, *, force_select: bool=False) -> str:
     dt = (data_type or "").lower()
     lab = (label or "").lower()
+    if force_select:
+        return "select"
     if options:
         # radio for small sets or Yes/No, else select
-        if len(options) <= 3 or set(map(str.lower, options)) == {"yes", "no"}:
-            return "radio"
+        # Adjusted: prefer dropdowns for enum sets; radio only when explicitly not lookup.
+        return "select"
         return "select"
     if dt in ("number", "decimal", "integer"):
         return "number"
@@ -197,6 +200,11 @@ def main():
         lookups_from_sheet = load_lookups_from_sheet(xlsx_path, lk_sheet)
         lookups.update(lookups_from_sheet)
 
+    # Build normalized lookup index for resilient matching
+    lookups_norm = {}
+    for k, vals in lookups.items():
+        lookups_norm[norm_key(k)] = vals
+
     cols = mapping.get("columns") or {}
     norm = mapping.get("normalization") or {}
     type_map = (norm.get("data_type") or {})
@@ -220,6 +228,7 @@ def main():
     regex_col = col("regex") or col("validation")
     crm_col = col("crm_field")
     ref_col = col("ref")
+    help_col = col("help")
 
     # Prepare outputs
     journey_key = args.journey_key or (Path(args.out).parts[-2] if args.out else None) or mapping_path.stem
@@ -256,6 +265,9 @@ def main():
             summary["missing_id"] += 1
             fid = f"field_{len(items)+1}"
             used_fallback_id = True
+        # Ensure label present (fallback to id)
+        if not label or not str(label).strip():
+            label = fid
 
         # Data type normalisation
         raw_dtype = str(row.get(dtype_col)) if dtype_col and pd.notna(row.get(dtype_col)) else ""
@@ -280,14 +292,21 @@ def main():
         lookup_key = str(row.get(lookup_col)).strip() if lookup_col and pd.notna(row.get(lookup_col)) else ""
         options = []
         lookup_source = None
-        if lookup_key and lookup_key in lookups:
-            options = [str(v) for v in lookups[lookup_key]]
-            lookup_source = f"lookups:{lookup_key}"
-        elif dtype in ("enum",):
-            # Smart default: Yes/No for booleans disguised as enums
-            options = ["Yes", "No"]
-            lookup_source = "default:yes_no"
-            summary["lookup_defaults_used"] += 1
+        if lookup_key:
+            lk_norm = norm_key(lookup_key)
+            if lk_norm in lookups_norm:
+                options = [str(v) for v in lookups_norm[lk_norm]]
+                lookup_source = f"lookups:{lookup_key}"
+            elif lk_norm in {norm_key('Yes/No'), 'yesno', 'yes_no'}:
+                options = ["Yes", "No"]
+                lookup_source = "default:yes_no"
+                summary["lookup_defaults_used"] += 1
+            else:
+                # Missing lookup definition → fall back to text input and note
+                options = []
+                lookup_source = "missing"
+                summary.setdefault("missing_lookups", 0)
+                summary["missing_lookups"] += 1
 
         # Mandatory
         mandatory_val = row.get(mandatory_col) if mandatory_col else False
@@ -313,7 +332,11 @@ def main():
             regex = None
 
         # Control inference
-        control = infer_control(dtype, label, options)
+        force_sel = bool(lookup_key and options)
+        control = infer_control(dtype, label, options, force_select=force_sel)
+        # If enum but no options resolved, prefer text control to avoid invalid select
+        if (dtype == 'enum' and not options) and control == 'select':
+            control = 'text'
 
         # Section/Stage
         section = str(row.get(section_col)) if section_col and pd.notna(row.get(section_col)) else None
@@ -328,10 +351,14 @@ def main():
         if ref or fid:
             src_ref = f"ROW:{ref or '?'}|KEY:{fid}"
 
+        help_text = None
+        if help_col and pd.notna(row.get(help_col)):
+            help_text = str(row.get(help_col))
+
         item = {
             "id": fid,
             "label": label,
-            "help": None,
+            "help": help_text,
             "entity_type": (mapping.get("defaults", {}).get("entity_type") or "limited_partnership"),
             "jurisdiction": (mapping.get("defaults", {}).get("jurisdiction") or "non_luxembourg"),
             "stage": stage or "onboarding",

@@ -59,3 +59,10 @@ related_files: [
 - Artifacts:
   - Schema: `data/schemas/non-lux-lp-demo/schema.yaml`
   - Reports: `data/generated/importer-cli/non-lux-lp-demo/{summary.json, decisions.json}`
+
+## New Spreadsheet Import – Zelda Mapping (2025-09-09)
+- File: `data/incoming/20250909_Zelda_Mapping.xlsx`
+- Mapping JSON created: `data/mappings/zelda.json` (header_row=0; columns: KEYNAME → id, NEW COPY → label, HINT TEXT → help, Lookup → lookup_type, FIELD TYPE → field_type, Suggested order → section, Live order → stage)
+- Import run: schema at `data/schemas/zelda/schema.yaml` (296 items), reports at `data/generated/importer-cli/zelda/`
+- Manifest updated: added journey `zelda` (visible in Mission Control)
+- Notes: 3 rows lacked IDs and were assigned sanitized/fallback IDs; no visibility rules present in source; Yes/No options applied from lookup column.

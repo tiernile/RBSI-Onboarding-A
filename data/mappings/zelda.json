@@ -1,0 +1,36 @@
+{
+  "sheet": "Sheet1",
+  "header_row": 0,
+  "filters": {},
+  "columns": {
+    "id": "KEYNAME",
+    "label": "LIVE COPY (copy as it existing in the journey today)",
+    "help": "HINT TEXT",
+    "lookup_type": "Lookup",
+    "field_type": "FIELD TYPE",
+    "section": "Suggested order (the sections Paul has suggested)",
+    "stage": "Live order",
+    "ref": "KEYNAME"
+  },
+  "normalization": {
+    "data_type": {
+      "Lookup": "enum",
+      "Free Text": "string",
+      "Number": "number",
+      "Date": "date"
+    },
+    "operators": {
+      "=": "==",
+      "<>": "!="
+    },
+    "strip_prefixes": ["If "]
+  },
+  "lookups": {
+    "Yes/No": ["Yes", "No"]
+  },
+  "defaults": {
+    "entity_type": "limited_partnership",
+    "jurisdiction": "non_luxembourg"
+  },
+  "ordering": "section"
+}

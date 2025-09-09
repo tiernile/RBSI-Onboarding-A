@@ -1,0 +1,6453 @@
+key: zelda
+name: Zelda
+version: 0.1.0
+items:
+- id: GENIndicativeAppetiteIntro
+  label: GENIndicativeAppetiteIntro
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: onboarding
+  section: General
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteIntro|KEY:GENIndicativeAppetiteIntro
+- id: GENIndicativeAppetiteQuestionsHint
+  label: GENIndicativeAppetiteQuestionsHint
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: onboarding
+  section: General
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteQuestionsHint|KEY:GENIndicativeAppetiteQuestionsHint
+- id: GENBankAccountJurisdictionHelper
+  label: GENBankAccountJurisdictionHelper
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: onboarding
+  section: General
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBankAccountJurisdictionHelper|KEY:GENBankAccountJurisdictionHelper
+- id: GENAboutBusinessSectionTitle
+  label: GENAboutBusinessSectionTitle
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: onboarding
+  section: General
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAboutBusinessSectionTitle|KEY:GENAboutBusinessSectionTitle
+- id: GENAboutBusinessHelper
+  label: GENAboutBusinessHelper
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: onboarding
+  section: General
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAboutBusinessHelper|KEY:GENAboutBusinessHelper
+- id: GENIndicativeAppetiteQuestions
+  label: Do you wish to answer some pre-application Questions to provide a high level
+    indication of RBSI appetite to open the account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 1 - B1
+  section: B1 - Pre-App Qs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteQuestions|KEY:GENIndicativeAppetiteQuestions
+- id: GENBankAccountJurisdiction
+  label: In which jurisdiction would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 3 - B2
+  section: B2 - Bank Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBankAccountJurisdiction|KEY:GENBankAccountJurisdiction
+- id: GENBrandJer
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 5 - B2
+  section: B2 - Bank Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBrandJer|KEY:GENBrandJer
+- id: GENBrandGuer
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 5 - B2
+  section: B2 - Bank Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBrandGuer|KEY:GENBrandGuer
+- id: GENBrandGIB
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 5 - B2
+  section: B2 - Bank Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBrandGIB|KEY:GENBrandGIB
+- id: GENBrandIOM
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 5 - B2
+  section: B2 - Bank Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBrandIOM|KEY:GENBrandIOM
+- id: GENBrandUK
+  label: Under which brand would you like to open this account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 5 - B2
+  section: B2 - Bank Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBrandUK|KEY:GENBrandUK
+- id: GENBusinessType
+  label: 'Does the business involve:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 7 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBusinessType|KEY:GENBusinessType
+- id: GENStructureType
+  label: Is the entity part of a consolidated group of companies or a fund structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 9 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENStructureType|KEY:GENStructureType
+- id: GENConsolidatedDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 12 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENConsolidatedDetails|KEY:GENConsolidatedDetails
+- id: GENStandalone
+  label: 'Does the entity (on a standalone basis), as at the latest financial year
+    individual accounts have two or more of the following: (1)  income of more than
+    £5.6m?  (2)  total assets (gross) on balance Sheet of more than £2.8m? (3) more
+    than 50 employees? (Please note, we will require evidence of this by way of financial
+    accounts and/or investor report as part of this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 13 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENStandalone|KEY:GENStandalone
+- id: GENHalfyearConsolidated
+  label: 'Within the next 6 months, does the consolidated group/fund  expect to have
+    two or more of the following: (1)  income of more than £5.6m?  (2)  total assets
+    (gross) on balance Sheet of more than £2.8m? (3) more than 50 employees? (Please
+    note, we will require evidence of this by way of financial accounts and/or investor
+    report as part of this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 15 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENHalfyearConsolidated|KEY:GENHalfyearConsolidated
+- id: GENHalfyearConsolidatedDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 16 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENHalfyearConsolidatedDetails|KEY:GENHalfyearConsolidatedDetails
+- id: GENHalfyearStandaloneDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 18 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENHalfyearStandaloneDetails|KEY:GENHalfyearStandaloneDetails
+- id: GENBankGroupOrFundType1
+  label: Does the consolidated group / fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 19 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENBankGroupOrFundType1|KEY:GENBankGroupOrFundType1
+- id: GENConsolidatedGroupOrFundType
+  label: What type of consolidated group / fund are you?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 21 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENConsolidatedGroupOrFundType|KEY:GENConsolidatedGroupOrFundType
+- id: GENConsolidatedFund6monthsAssestValueType
+  label: What type of consolidated group / fund are you (Given you expect to have
+    asset of more than £1.4 mil within 6months) ?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 22 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENConsolidatedFund6monthsAssestValueType|KEY:GENConsolidatedFund6monthsAssestValueType
+- id: GENWholesaleDepositorType
+  label: What type of entity are you?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 24 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENWholesaleDepositorType|KEY:GENWholesaleDepositorType
+- id: GENEntity6monthsAssestValueType
+  label: What type of entity are you? (Given you expect to have net assets of more
+    than £1.4m within 6 months)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 25 - B3
+  section: B3 - Wholesale Depositor
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENEntity6monthsAssestValueType|KEY:GENEntity6monthsAssestValueType
+- id: GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated
+  label: Which option best describes your application?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 28 - B4
+  section: B4 - Introduction of Applicant
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated|KEY:GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated
+- id: GENIndicativeAppetite3rdPartyAdministrator
+  label: Does the entity, for which you’re looking to open an account, have a 3rd
+    party administrator?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 29 - B4
+  section: B4 - Introduction of Applicant
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetite3rdPartyAdministrator|KEY:GENIndicativeAppetite3rdPartyAdministrator
+- id: GENUKIndicativeAppetite3rdPartyAdministrator
+  label: Does the entity, for which you’re looking to open an account, have a 3rd
+    party administrator?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 30 - B4
+  section: B4 - Introduction of Applicant
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetite3rdPartyAdministrator|KEY:GENUKIndicativeAppetite3rdPartyAdministrator
+- id: GENIndicativeAppetiteFundAdminDomicile
+  label: Where is the 3rd party administrator domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 31 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteFundAdminDomicile|KEY:GENIndicativeAppetiteFundAdminDomicile
+- id: GENIndicativeAppetiteFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 33 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteFundAdminDomicileUSA|KEY:GENIndicativeAppetiteFundAdminDomicileUSA
+- id: GENUKIndicativeAppetiteFundAdminDomicile
+  label: Where is the 3rd party administrator domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 32 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteFundAdminDomicile|KEY:GENUKIndicativeAppetiteFundAdminDomicile
+- id: GENUKIndicativeAppetiteFundAdminDomicileUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 34 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteFundAdminDomicileUSA|KEY:GENUKIndicativeAppetiteFundAdminDomicileUSA
+- id: GENFundAdminContactName
+  label: Contact Name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 39 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundAdminContactName|KEY:GENFundAdminContactName
+- id: GENFundAdminNum
+  label: Contact Telephone Number
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 40 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundAdminNum|KEY:GENFundAdminNum
+- id: GENFundAdminEmail
+  label: Email address
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 43 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundAdminEmail|KEY:GENFundAdminEmail
+- id: SPEIntroducingName
+  label: Please confirm full name of the introducer you are using for this application.
+    [Are you a third party introducer, or are you direct?]
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 35 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEIntroducingName|KEY:SPEIntroducingName
+- id: SPEintermediaryregulator
+  label: Name of intermediary's regulator
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 36 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEintermediaryregulator|KEY:SPEintermediaryregulator
+- id: SPEintermediarylicenseJER
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 37 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEintermediarylicenseJER|KEY:SPEintermediarylicenseJER
+- id: SPEintermediarylicenseGUE
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 37 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEintermediarylicenseGUE|KEY:SPEintermediarylicenseGUE
+- id: SPEintermediarylicenseIOM
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 37 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEintermediarylicenseIOM|KEY:SPEintermediarylicenseIOM
+- id: SPEintermediarylicenseGIB
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 37 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEintermediarylicenseGIB|KEY:SPEintermediarylicenseGIB
+- id: SPEintermediarylicenseUK
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 37 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEintermediarylicenseUK|KEY:SPEintermediarylicenseUK
+- id: SPEintermediarylicenseLUX
+  label: Type of License the introduction is being made
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 37 - B4.1
+  section: B4.1 - Introduction of Applicant - Introducer / Contact Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEintermediarylicenseLUX|KEY:SPEintermediarylicenseLUX
+- id: GENMetFaceToFace
+  label: Have you (or an individual from your wider internal group) met the customer
+    for whom this account relates, face to face and in accordance with local regulation?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 46 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENMetFaceToFace|KEY:GENMetFaceToFace
+- id: GENGroupIndividualName
+  label: Name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 48 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENGroupIndividualName|KEY:GENGroupIndividualName
+- id: GENGroupIndividualPosition
+  label: Position held
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 49 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENGroupIndividualPosition|KEY:GENGroupIndividualPosition
+- id: GENGroupIndividualMeetingDate
+  label: Date of meeting
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 50 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENGroupIndividualMeetingDate|KEY:GENGroupIndividualMeetingDate
+- id: GEN3rdPartyMetFaceToFace
+  label: 'Has a 3rd party (external to your own group), met the customer face to face? '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 51 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN3rdPartyMetFaceToFace|KEY:GEN3rdPartyMetFaceToFace
+- id: GENIntroductionChainLayers
+  label: Please specify the number of layers in the chain of introduction between
+    your relationship with this customer and the 3rd party that has met the customer
+    face to face to undertake Due Diligence certification.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 53 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIntroductionChainLayers|KEY:GENIntroductionChainLayers
+- id: GEN3rdPartyEntityName
+  label: Entity Name if applicable
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 56 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN3rdPartyEntityName|KEY:GEN3rdPartyEntityName
+- id: GEN3rdPartyJurisdictionCountry
+  label: Jurisdiction/Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 57 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN3rdPartyJurisdictionCountry|KEY:GEN3rdPartyJurisdictionCountry
+- id: GEN3rdPartyIndividualName
+  label: Individual Name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 58 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN3rdPartyIndividualName|KEY:GEN3rdPartyIndividualName
+- id: GEN3rdPartyPosition
+  label: Position
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 59 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN3rdPartyPosition|KEY:GEN3rdPartyPosition
+- id: GEN3rdPartyDateMeetingHeld
+  label: Date meeting held
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 60 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN3rdPartyDateMeetingHeld|KEY:GEN3rdPartyDateMeetingHeld
+- id: GENMetInAccordRegulation
+  label: Was the customer met in accordance with your local regulation?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 61 - B4.2
+  section: B4.2 - Introduction of Applicant - Delivery Channel
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENMetInAccordRegulation|KEY:GENMetInAccordRegulation
+- id: GENIndicativeAppetiteCountryRegistration
+  label: In relation to the Incorporation of the entity requiring a bank account,
+    can you please specify the Country of registration/formation/Establishment?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 65 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteCountryRegistration|KEY:GENIndicativeAppetiteCountryRegistration
+- id: GENIndicativeAppetiteCountryregistrationUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 71 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteCountryregistrationUSA|KEY:GENIndicativeAppetiteCountryregistrationUSA
+- id: SPEdirectregulatorother
+  label: 'Other regulator - please provide details:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 77 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEdirectregulatorother|KEY:SPEdirectregulatorother
+- id: GENname
+  label: Name of fund (CIS) entity (in full)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 64 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENname|KEY:GENname
+- id: GENcountryregistration
+  label: Country of registration/formation
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 67 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENcountryregistration|KEY:GENcountryregistration
+- id: GENCountryRegisteredAndJurisdictionSame
+  label: Is the Country of registration/formation the same as the Jurisdiction in
+    which you are opening the account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 68 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCountryRegisteredAndJurisdictionSame|KEY:GENCountryRegisteredAndJurisdictionSame
+- id: GENCountryRegistrationJurisdictionMismatchRationale
+  label: 'The country of Registration/Formation selected does not match the jurisdiction
+    where you are applying for an account to be opened. Please provide rationale justifying
+    why an account is required in this jurisdiction:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 69 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCountryRegistrationJurisdictionMismatchRationale|KEY:GENCountryRegistrationJurisdictionMismatchRationale
+- id: GENRegion
+  label: Region
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 70 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENRegion|KEY:GENRegion
+- id: GENformationdate
+  label: 'Formation/registration date '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 74 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENformationdate|KEY:GENformationdate
+- id: GENregnumber
+  label: Registration number
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 76 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENregnumber|KEY:GENregnumber
+- id: GENdatetrading
+  label: Date started trading (if different to registration / formation)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 75 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENdatetrading|KEY:GENdatetrading
+- id: GENregaddress1
+  label: Registered address line 1
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 79 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENregaddress1|KEY:GENregaddress1
+- id: GENregaddress2
+  label: Registered address line 2
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 80 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENregaddress2|KEY:GENregaddress2
+- id: GENregaddress3
+  label: Registered address line 3
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 81 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENregaddress3|KEY:GENregaddress3
+- id: GENregcountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 83 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENregcountry|KEY:GENregcountry
+- id: GENregpostcode
+  label: Postcode
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 84 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENregpostcode|KEY:GENregpostcode
+- id: GENprincaddressdifferent
+  label: Is the principal or business address different to the registered address?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 85 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENprincaddressdifferent|KEY:GENprincaddressdifferent
+- id: GENprincaddress1
+  label: Principal business address or trading address line 1
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 86 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENprincaddress1|KEY:GENprincaddress1
+- id: GENprincaddress2
+  label: Principal business address or trading address line 2
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 87 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENprincaddress2|KEY:GENprincaddress2
+- id: GENprincaddress3
+  label: Principal business address or trading address line 3
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 88 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENprincaddress3|KEY:GENprincaddress3
+- id: GENprinccountryOP
+  label: Principal Country of Operation
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 90 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENprinccountryOP|KEY:GENprinccountryOP
+- id: GENprincpostcode
+  label: Postcode
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 91 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENprincpostcode|KEY:GENprincpostcode
+- id: GENmailaddressdifferent
+  label: Is the mailing address or agents’ address different to the registered address
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 92 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENmailaddressdifferent|KEY:GENmailaddressdifferent
+- id: GENmailaddress1
+  label: Mailing address line 1
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 93 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENmailaddress1|KEY:GENmailaddress1
+- id: GENmailaddress2
+  label: Mailing address line 2
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 94 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENmailaddress2|KEY:GENmailaddress2
+- id: GENmailaddress3
+  label: Mailing address line 3
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 95 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENmailaddress3|KEY:GENmailaddress3
+- id: GENmailcountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 97 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENmailcountry|KEY:GENmailcountry
+- id: GENmailpostcode
+  label: Postcode
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 98 - B5
+  section: B5 - Applicant Details
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENmailpostcode|KEY:GENmailpostcode
+- id: GENIndicativeAppetiteRiskadverse
+  label: 'Are there any Reputational, Environmental, Social and Ethical (ESE) or tax
+    risks associated with the application? '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 108 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteRiskadverse|KEY:GENIndicativeAppetiteRiskadverse
+- id: GENUKIndicativeAppetiteRiskadverse
+  label: 'Are there any Reputational, Environmental, Social and Ethical (ESE) or tax
+    risks associated with the application? '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 108 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteRiskadverse|KEY:GENUKIndicativeAppetiteRiskadverse
+- id: GENUKIndicativeAppetiteRiskadversedetails
+  label: Please provide details of any Reputational, Environmental, Social and Ethical
+    (ESE) or tax risks associated with the application
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 108 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteRiskadversedetails|KEY:GENUKIndicativeAppetiteRiskadversedetails
+- id: GENfundarrearslegalinsolvent
+  label: Please confirm if the customer structure has tax arrears or legal proceeding
+    outstanding or has ever been insolvent, bankrupt or had any court proceedings
+    for debt?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 106 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENfundarrearslegalinsolvent|KEY:GENfundarrearslegalinsolvent
+- id: GENfunddetailtaxarrears
+  label: Details of tax arrears, legal proceedings, insolvency, bankruptcy and/or
+    court proceedings for debt
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 107 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENfunddetailtaxarrears|KEY:GENfunddetailtaxarrears
+- id: GENriskadverse
+  label: Are there any Reputational, Environmental, Social and Ethical (ESE) or tax
+    risks associated with the application?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 108 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENriskadverse|KEY:GENriskadverse
+- id: GENCustomerLegal
+  label: Please confirm if the entity has legal proceedings outstanding?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 106 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCustomerLegal|KEY:GENCustomerLegal
+- id: GENCustomerDetailLegal
+  label: Details of legal proceedings
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 107 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCustomerDetailLegal|KEY:GENCustomerDetailLegal
+- id: GENCustomerInsolvent
+  label: Please confirm if the entity has ever been insolvent, bankrupt or had any
+    court proceedings for debt?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 106 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCustomerInsolvent|KEY:GENCustomerInsolvent
+- id: GENCustomerDetailInsolvent
+  label: Details of insolvency, bankruptcy and/ or court proceedings for debt
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 107 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCustomerDetailInsolvent|KEY:GENCustomerDetailInsolvent
+- id: GENcorrespondentbanking
+  label: Are you involved in correspondent banking?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 109 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENcorrespondentbanking|KEY:GENcorrespondentbanking
+- id: GENcorrespondentbankingdetails
+  label: Please provide details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 109 - B5.1
+  section: B5.1 - Applicant Details - Good Standing Declarations
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENcorrespondentbankingdetails|KEY:GENcorrespondentbankingdetails
+- id: GENtaxcomplex
+  label: Tax residency
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 112 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENtaxcomplex|KEY:GENtaxcomplex
+- id: GENtaxcountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 113 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENtaxcountry|KEY:GENtaxcountry
+- id: GENknowtin
+  label: Do you know the Tax identification number?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 114 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENknowtin|KEY:GENknowtin
+- id: GENtin
+  label: Provide Tax identification number or an equivalent
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 115 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENtin|KEY:GENtin
+- id: GENtaxnotapplicable
+  label: "Please advise why you are unable to provide the Tax Identification Number?\t"
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 116 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENtaxnotapplicable|KEY:GENtaxnotapplicable
+- id: GENincorpUSA
+  label: Is the entity/organisation incorporated/organised in the USA?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 120 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENincorpUSA|KEY:GENincorpUSA
+- id: GENffi
+  label: Is the entity/organisation a Financial Foreign Institution (FFI)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 121 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENffi|KEY:GENffi
+- id: GENgiin
+  label: GIIN (Global Intermediary Identification No.) if applicable
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 122 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENgiin|KEY:GENgiin
+- id: GENffisponsorname
+  label: Name of Sponsoring Entity (if applicable)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 123 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENffisponsorname|KEY:GENffisponsorname
+- id: GENgiinreason
+  label: 'If you cannot provide a GIIN, please detail the reason below:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 124 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENgiinreason|KEY:GENgiinreason
+- id: GENgiireasonappliedfor
+  label: When will you have the details of GIIN, so that you can come back to us with
+    this information?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 125 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENgiireasonappliedfor|KEY:GENgiireasonappliedfor
+- id: GENOtherFFITaxStatus
+  label: Tax Status
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 126 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENOtherFFITaxStatus|KEY:GENOtherFFITaxStatus
+- id: GENothergiin
+  label: GIIN (Global Intermediary Identification No.) if applicable
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 127 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENothergiin|KEY:GENothergiin
+- id: GENffiothersponsorname
+  label: Name of Sponsoring Entity (if applicable)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 128 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENffiothersponsorname|KEY:GENffiothersponsorname
+- id: GENothergiinreason
+  label: 'If you cannot provide a GIIN, please detail the reason below:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 129 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENothergiinreason|KEY:GENothergiinreason
+- id: GENothergiinreasonappliedfor
+  label: "When will you have the details of GIIN, so that you can come back to us\
+    \ with this information?\t"
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 130 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENothergiinreasonappliedfor|KEY:GENothergiinreasonappliedfor
+- id: GENnonffi
+  label: Is the entity/organisation a Non Financial Foreign Entity (NFFE)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 131 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENnonffi|KEY:GENnonffi
+- id: GENothernffestatus
+  label: Please provide detail of the entity’s applicable status.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 132 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENothernffestatus|KEY:GENothernffestatus
+- id: GENfiorinvestment
+  label: Is the entity/organisation a Financial Institution (FI) or Investment Entity?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 135 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENfiorinvestment|KEY:GENfiorinvestment
+- id: GENnfe
+  label: Is the entity/organisation a Non Financial Entity (NFE)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 136 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENnfe|KEY:GENnfe
+- id: GENfatcacrscompdetailsdoc
+  label: Do you have tax advice in support of the FATCA/CRS status selections made
+    above?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 139 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENfatcacrscompdetailsdoc|KEY:GENfatcacrscompdetailsdoc
+- id: GENfatcacrscompdetails
+  label: Please explain/provide a rationale as to how the entity meets the criteria
+    of the FATCA/CRS status selected above.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 141 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENfatcacrscompdetails|KEY:GENfatcacrscompdetails
+- id: GENcustomerarrears
+  label: Please confirm if the entity has tax arrears?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 110 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENcustomerarrears|KEY:GENcustomerarrears
+- id: GENcustomerdetailtaxarrears
+  label: Details of tax arrears
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 111 - B6
+  section: B6 - Tax Classification
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENcustomerdetailtaxarrears|KEY:GENcustomerdetailtaxarrears
+- id: GENIndicativeAppetiteFundMng
+  label: Is there a Fund Manager within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 145 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteFundMng|KEY:GENIndicativeAppetiteFundMng
+- id: GENIndicativeAppetiteFundMngDom
+  label: Where is the Fund Manager domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 147 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteFundMngDom|KEY:GENIndicativeAppetiteFundMngDom
+- id: GENIndicativeAppetiteFundMngDomUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 148 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteFundMngDomUSA|KEY:GENIndicativeAppetiteFundMngDomUSA
+- id: GENIndicativeAppetiteOpeningInvestmentAdviser
+  label: Is there an Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 149 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteOpeningInvestmentAdviser|KEY:GENIndicativeAppetiteOpeningInvestmentAdviser
+- id: GENIndicativeAppetiteOpeningInvestmentAdviserLocation
+  label: What is the location of the Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 150 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteOpeningInvestmentAdviserLocation|KEY:GENIndicativeAppetiteOpeningInvestmentAdviserLocation
+- id: GENIndicativeAppetiteOpeningInvestmentAdviserLocationUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 151 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteOpeningInvestmentAdviserLocationUSA|KEY:GENIndicativeAppetiteOpeningInvestmentAdviserLocationUSA
+- id: GENUKIndicativeAppetiteFundMng
+  label: Is there a Fund Manager within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 145 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteFundMng|KEY:GENUKIndicativeAppetiteFundMng
+- id: GENUKIndicativeAppetiteFundMngDom
+  label: Where is the Fund Manager domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 147 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteFundMngDom|KEY:GENUKIndicativeAppetiteFundMngDom
+- id: GENUKIndicativeAppetiteFundMngDomUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 148 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteFundMngDomUSA|KEY:GENUKIndicativeAppetiteFundMngDomUSA
+- id: GENUKIndicativeAppetiteOpeningInvestmentAdviser
+  label: Is there an Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 149 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteOpeningInvestmentAdviser|KEY:GENUKIndicativeAppetiteOpeningInvestmentAdviser
+- id: GENUKIndicativeAppetiteOpeningInvestmentAdviserLocation
+  label: What is the location of the Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 150 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteOpeningInvestmentAdviserLocation|KEY:GENUKIndicativeAppetiteOpeningInvestmentAdviserLocation
+- id: GENUKIndicativeAppetiteOpeningInvestmentAdviserLocationUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 151 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteOpeningInvestmentAdviserLocationUSA|KEY:GENUKIndicativeAppetiteOpeningInvestmentAdviserLocationUSA
+- id: GENlimitedpartnershipstructure
+  label: Limited Partnership structure
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 152 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENlimitedpartnershipstructure|KEY:GENlimitedpartnershipstructure
+- id: GENOpeningInvestmentAdviser
+  label: Is there an Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 149 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENOpeningInvestmentAdviser|KEY:GENOpeningInvestmentAdviser
+- id: GENOpeningInvestmentAdviserLocation
+  label: What is the location of the Investment Adviser?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 150 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENOpeningInvestmentAdviserLocation|KEY:GENOpeningInvestmentAdviserLocation
+- id: GENOpeningInvestmentAdviserLocationUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 151 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENOpeningInvestmentAdviserLocationUSA|KEY:GENOpeningInvestmentAdviserLocationUSA
+- id: GENFundMngr
+  label: Is there a Fund Manager within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 145 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundMngr|KEY:GENFundMngr
+- id: GENFundMngDom
+  label: Where is the Fund Manager domiciled?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 147 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundMngDom|KEY:GENFundMngDom
+- id: GENFundMngDomUSA
+  label: Is it Delaware or Non-Delaware?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 148 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundMngDomUSA|KEY:GENFundMngDomUSA
+- id: GENSecretary
+  label: Is there a Secretary within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 143 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSecretary|KEY:GENSecretary
+- id: GENSecretaryName
+  label: Please enter the full name of the Secretary
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 144 - B7
+  section: B7 - Controlling Parties
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSecretaryName|KEY:GENSecretaryName
+- id: GENIndicativeAppetitePEPS
+  label: 'Are there any PEPs involved in the structure? '
+  help: 'Why we ask:      We''re required by law to identify connections to Politically Exposed Persons
+    (PEPs) to prevent money laundering.'
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 153 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetitePEPS|KEY:GENIndicativeAppetitePEPS
+- id: GENIndicativeAppetitePepInvestors
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who
+    have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 155 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetitePepInvestors|KEY:GENIndicativeAppetitePepInvestors
+- id: GENIndicativeAppetitePepdirectcontroller
+  label: Are there any Politically Exposed Persons (PEPs) involved in running/operating,
+    controlling or advising the fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 157 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetitePepdirectcontroller|KEY:GENIndicativeAppetitePepdirectcontroller
+- id: GENIndicativeAppetitePeppositioninfluence
+  label: Are there any Politically Exposed Persons (PEPs) that are not an owner or
+    controller, who hold a position of significant influence including but not limited
+    to the provider of a loan?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 158 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetitePeppositioninfluence|KEY:GENIndicativeAppetitePeppositioninfluence
+- id: GENIndicativeAppetitePepinvestpersrelationship
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one
+    of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship,
+    who individually may have less than 10% ownership, but together have an accumulative
+    ownership of 10% or more?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 156 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetitePepinvestpersrelationship|KEY:GENIndicativeAppetitePepinvestpersrelationship
+- id: GENUKIndicativeAppetitePEPS
+  label: 'Are there any PEPs involved in the structure? '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 153 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetitePEPS|KEY:GENUKIndicativeAppetitePEPS
+- id: GENUKIndicativeAppetitePepInvestors
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who
+    have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 155 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetitePepInvestors|KEY:GENUKIndicativeAppetitePepInvestors
+- id: GENUKIndicativeAppetitePepdirectcontroller
+  label: Are there any Politically Exposed Persons (PEPs) involved in running/operating,
+    controlling or advising the fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 157 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetitePepdirectcontroller|KEY:GENUKIndicativeAppetitePepdirectcontroller
+- id: GENUKIndicativeAppetitePeppositioninfluence
+  label: Are there any Politically Exposed Persons (PEPs) that are not an owner or
+    controller, who hold a position of significant influence including but not limited
+    to the provider of a loan?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 158 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetitePeppositioninfluence|KEY:GENUKIndicativeAppetitePeppositioninfluence
+- id: GENUKIndicativeAppetitePepinvestpersrelationship
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one
+    of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship,
+    who individually may have less than 10% ownership, but together have an accumulative
+    ownership of 10% or more?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 156 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetitePepinvestpersrelationship|KEY:GENUKIndicativeAppetitePepinvestpersrelationship
+- id: GENpepinvestors
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who
+    have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 155 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENpepinvestors|KEY:GENpepinvestors
+- id: GENdetailPEPconnection
+  label: Please provide further details of the Politically Exposed Persons (PEP) connection.
+    You may have to complete a PEP Relationship Proforma. This can be obtained from
+    your Relationship Director.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 154 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENdetailPEPconnection|KEY:GENdetailPEPconnection
+- id: GENpepinvestpersrelationship
+  label: Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one
+    of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship,
+    who individually may have less than 10% ownership, but together have an accumulative
+    ownership of 10% or more?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 156 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENpepinvestpersrelationship|KEY:GENpepinvestpersrelationship
+- id: GENdetailPEPriskfactor
+  label: Please provide details of the risk factor identified above
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 159 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENdetailPEPriskfactor|KEY:GENdetailPEPriskfactor
+- id: GENpepdirectorcontroller
+  label: Are there any Politically Exposed Persons (PEPs) involved in running/operating,
+    controlling or advising the fund?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 157 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENpepdirectorcontroller|KEY:GENpepdirectorcontroller
+- id: GENdetailPEPdirectorcontroller
+  label: Please provide further details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 159 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENdetailPEPdirectorcontroller|KEY:GENdetailPEPdirectorcontroller
+- id: GENpeppositioninfluence
+  label: Are there any Politially Exposed Persons (PEPs) that are not an owner or
+    controller, who hold a position of significant influence including but not limited
+    to the provider of a loan?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 158 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENpeppositioninfluence|KEY:GENpeppositioninfluence
+- id: GENdetailPEPpositioninfluence
+  label: Please provide further details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 159 - B8
+  section: B8 - PEPs
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENdetailPEPpositioninfluence|KEY:GENdetailPEPpositioninfluence
+- id: GENDirectbearer
+  label: Are bearer shares in issue anywhere within the ownership structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 160 - B9.1
+  section: B9.1 - Ownership - Bearer Shares
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENDirectbearer|KEY:GENDirectbearer
+- id: GENDirectbearercontrol
+  label: 'Please confirm that the bearer shares are fully controlled by yourselves
+    and will not be moved or transferred during the life of this account with the
+    Bank?  '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 161 - B9.1
+  section: B9.1 - Ownership - Bearer Shares
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENDirectbearercontrol|KEY:GENDirectbearercontrol
+- id: GENDirectbearercontroldetails
+  label: Please provide further details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 162 - B9.1
+  section: B9.1 - Ownership - Bearer Shares
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENDirectbearercontroldetails|KEY:GENDirectbearercontroldetails
+- id: GENbearer
+  label: Are bearer shares in issue anywhere within the ownership structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 160 - B9.1
+  section: B9.1 - Ownership - Bearer Shares
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENbearer|KEY:GENbearer
+- id: GENbearercontrol
+  label: 'Please confirm that the bearer shares are fully controlled by the intermediary
+    and
+
+    will not be moved or transferred during the life of this account with the Bank?'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 161 - B9.1
+  section: B9.1 - Ownership - Bearer Shares
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENbearercontrol|KEY:GENbearercontrol
+- id: GENbearercontroldetails
+  label: Please provide further details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 162 - B9.1
+  section: B9.1 - Ownership - Bearer Shares
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENbearercontroldetails|KEY:GENbearercontroldetails
+- id: GENIFundnvestorCountry
+  label: Please state the main countries where the fund’s investors will be/are based
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 168 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIFundnvestorCountry|KEY:GENIFundnvestorCountry
+- id: GENInvestorCountryComplex
+  label: Please provide details of the typical investors the fund is targeted at,
+    e.g. institutional, private client, retail etc and where the investors are likely
+    to be based. Please also include the percentage of each type of investor, e.g.
+    50% institutional, 50% private client.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 164 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestorCountryComplex|KEY:GENInvestorCountryComplex
+- id: GENInvestorType
+  label: Type of investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 165 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestorType|KEY:GENInvestorType
+- id: GENInvestorTypeOther
+  label: Type of investor - Other
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 166 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestorTypeOther|KEY:GENInvestorTypeOther
+- id: GENInvestorCountry
+  label: Where are they based
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 168 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestorCountry|KEY:GENInvestorCountry
+- id: GENInvestorTypePerc
+  label: '% investor type'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 167 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestorTypePerc|KEY:GENInvestorTypePerc
+- id: GENinvestorhighrisk
+  label: Are any of the fund’s investors with a holding of 25% or greater from a high-risk
+    country?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 169 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENinvestorhighrisk|KEY:GENinvestorhighrisk
+- id: GENdetailinvestorhighrisk
+  label: Please provide further details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 170 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENdetailinvestorhighrisk|KEY:GENdetailinvestorhighrisk
+- id: GENubohighriskcountry
+  label: Do any of the investors or Ultimate Beneficial Owners (UBOs) individually
+    or as one of a number of investors or UBOs that have a direct link to high risk
+    countries individually or together have an accumulative ownership or control of
+    more than 50%?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 171 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENubohighriskcountry|KEY:GENubohighriskcountry
+- id: GENdetailUBOhighriskcountry
+  label: Please provide further details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 172 - B9.2
+  section: B9.2 - Ownership - Investor Profile
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENdetailUBOhighriskcountry|KEY:GENdetailUBOhighriskcountry
+- id: GENIndicativeAppetiteSWFInvestor
+  label: Are there any Sovereign Wealth Fund investors within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 174 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteSWFInvestor|KEY:GENIndicativeAppetiteSWFInvestor
+- id: GENIndicativeAppetiteMembershipIFSWF
+  label: Please confirm membership of the International Forum of Sovereign Wealth
+    Funds (IFSWF) and their acceptance of the Santiago Principles for all Sovereign
+    Wealth Fund investors within the structure
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 176 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteMembershipIFSWF|KEY:GENIndicativeAppetiteMembershipIFSWF
+- id: Sovereign_Wealth_Fund_Investor
+  label: Sovereign Wealth Fund Investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 173 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: 'ROW: |KEY:Sovereign_Wealth_Fund_Investor'
+- id: GENindicativeAppetiteSWFinvestorcomplex
+  label: Sovereign Wealth Fund Investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 175 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENindicativeAppetiteSWFinvestorcomplex|KEY:GENindicativeAppetiteSWFinvestorcomplex
+- id: GENindicativeAppetiteSWFinvestorname
+  label: Full name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 177 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENindicativeAppetiteSWFinvestorname|KEY:GENindicativeAppetiteSWFinvestorname
+- id: GENindicativeAppetiteSWFInvestorcountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 178 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENindicativeAppetiteSWFInvestorcountry|KEY:GENindicativeAppetiteSWFInvestorcountry
+- id: GENindicativeAppetiteSWFinvestorownership
+  label: Percentage ownership (of the customer)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 179 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENindicativeAppetiteSWFinvestorownership|KEY:GENindicativeAppetiteSWFinvestorownership
+- id: GENUKIndicativeAppetiteSWFInvestor
+  label: Are there any Sovereign Wealth Fund investors within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 174 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteSWFInvestor|KEY:GENUKIndicativeAppetiteSWFInvestor
+- id: GENUKIndicativeAppetiteMembershipIFSWF
+  label: Please confirm membership of the International Forum of Sovereign Wealth
+    Funds (IFSWF) and their acceptance of the Santiago Principles for all Sovereign
+    Wealth Fund investors within the structure
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 176 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteMembershipIFSWF|KEY:GENUKIndicativeAppetiteMembershipIFSWF
+- id: Sovereign_Wealth_Fund_Investor
+  label: Sovereign Wealth Fund Investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 173 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: 'ROW: |KEY:Sovereign_Wealth_Fund_Investor'
+- id: GENUKIndicativeAppetiteSWFinvestorcomplex
+  label: Sovereign Wealth Fund Investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 175 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteSWFinvestorcomplex|KEY:GENUKIndicativeAppetiteSWFinvestorcomplex
+- id: GENUKIndicativeAppetiteSWFinvestorname
+  label: Full name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 177 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteSWFinvestorname|KEY:GENUKIndicativeAppetiteSWFinvestorname
+- id: GENUKIndicativeAppetiteSWFInvestorcountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 178 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteSWFInvestorcountry|KEY:GENUKIndicativeAppetiteSWFInvestorcountry
+- id: GENUKIndicativeAppetiteSWFinvestorownership
+  label: Percentage ownership (of the customer)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 179 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteSWFinvestorownership|KEY:GENUKIndicativeAppetiteSWFinvestorownership
+- id: GENSWFInvestor
+  label: Are there any Sovereign Wealth Fund investors within the structure?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 174 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSWFInvestor|KEY:GENSWFInvestor
+- id: GENMembershipIFSWF
+  label: Please confirm membership of the International Forum of Sovereign Wealth
+    Funds (IFSWF) and their acceptance of the Santiago Principles
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 176 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENMembershipIFSWF|KEY:GENMembershipIFSWF
+- id: Sovereign_Wealth_Fund_Investor
+  label: Sovereign Wealth Fund Investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 173 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: 'ROW: |KEY:Sovereign_Wealth_Fund_Investor'
+- id: GENSWFinvestorcomplex
+  label: Sovereign Wealth Fund Investor
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 175 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSWFinvestorcomplex|KEY:GENSWFinvestorcomplex
+- id: GENSWFinvestorname
+  label: Full name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 177 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSWFinvestorname|KEY:GENSWFinvestorname
+- id: GENSWFinvestorcountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 178 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSWFinvestorcountry|KEY:GENSWFinvestorcountry
+- id: GENSWFinvestorownership
+  label: Percentage ownership (of the customer)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 179 - B9.3
+  section: B9.3 - Ownership - SWFs
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSWFinvestorownership|KEY:GENSWFinvestorownership
+- id: GENIndicativeAppetiteRiskadversedetails
+  label: Please provide details of any other risk factor and/or adverse information
+    you are aware of in relation to the customer or its key principals and beneficial
+    owners.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 180 - B10
+  section: B10 - Key Principal Risk Factors
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteRiskadversedetails|KEY:GENIndicativeAppetiteRiskadversedetails
+- id: GENIndicativeAppetiteRiskadversedetailsother
+  label: Are you aware of any other high risk factor and/or adverse information in
+    relation to the customer or its key principals and beneficial owners?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 180 - B10
+  section: B10 - Key Principal Risk Factors
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteRiskadversedetailsother|KEY:GENIndicativeAppetiteRiskadversedetailsother
+- id: GENUKIndicativeAppetiteRiskadversedetailsother
+  label: Are you aware of any other high risk factor and/or adverse information in
+    relation to the customer or its key principals and beneficial owners?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 180 - B10
+  section: B10 - Key Principal Risk Factors
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteRiskadversedetailsother|KEY:GENUKIndicativeAppetiteRiskadversedetailsother
+- id: GENIndicativeAppetiteHighriskadversedetails
+  label: 'Please provide further details of the high risk factor(s) and/or adverse
+    information:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 181 - B10
+  section: B10 - Key Principal Risk Factors
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteHighriskadversedetails|KEY:GENIndicativeAppetiteHighriskadversedetails
+- id: GENUKIndicativeAppetiteHighriskadversedetails
+  label: 'Please provide further details of the high risk factor(s) and/or adverse
+    information:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 181 - B10
+  section: B10 - Key Principal Risk Factors
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteHighriskadversedetails|KEY:GENUKIndicativeAppetiteHighriskadversedetails
+- id: GENriskadversedetails
+  label: Please provide details of any other risk factor and/or adverse information
+    you are aware of in relation to the customer or its key principals and beneficial
+    owners.
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 181 - B10
+  section: B10 - Key Principal Risk Factors
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENriskadversedetails|KEY:GENriskadversedetails
+- id: GENIndicativeAppetiteInvestmentsubsec
+  label: Type of Fund
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 184 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteInvestmentsubsec|KEY:GENIndicativeAppetiteInvestmentsubsec
+- id: GENIndicativeAppetiteInvestmentsubsecOther
+  label: 'Other Type of Fund - please provide details:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 185 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteInvestmentsubsecOther|KEY:GENIndicativeAppetiteInvestmentsubsecOther
+- id: GENUKIndicativeAppetiteInvestmentsubsec
+  label: Type of Fund
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 184 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteInvestmentsubsec|KEY:GENUKIndicativeAppetiteInvestmentsubsec
+- id: GENUKIndicativeAppetiteInvestmentsubsecOther
+  label: 'Other Type of Fund - please provide details:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 185 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteInvestmentsubsecOther|KEY:GENUKIndicativeAppetiteInvestmentsubsecOther
+- id: SPEisregulated
+  label: Are you regulated?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 186 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEisregulated|KEY:SPEisregulated
+- id: SPEdirectregulator
+  label: Name of your regulator
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 187 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:SPEdirectregulator|KEY:SPEdirectregulator
+- id: GENinvestmentsubsec
+  label: Type of Fund
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 184 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENinvestmentsubsec|KEY:GENinvestmentsubsec
+- id: GENinvestmentsubsecOther
+  label: Please provide further details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 185 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENinvestmentsubsecOther|KEY:GENinvestmentsubsecOther
+- id: GENCISstatus
+  label: Status
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 186 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCISstatus|KEY:GENCISstatus
+- id: GENregulator
+  label: Who is the Regulator
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 188 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENregulator|KEY:GENregulator
+- id: GENcorplisted
+  label: Is this entity listed on a stock exchange?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 186 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENcorplisted|KEY:GENcorplisted
+- id: GENlistedmarket
+  label: Please confirm which market the entity is listed on
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 189 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENlistedmarket|KEY:GENlistedmarket
+- id: GENentitytype
+  label: Entity Type
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 183 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENentitytype|KEY:GENentitytype
+- id: GENTypeTrust
+  label: Type of Trust
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 183 - B11
+  section: B11 - Purpose of Entity
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENTypeTrust|KEY:GENTypeTrust
+- id: GENIndicativeAppetiteInvesthighrisk
+  label: Does or will the fund make investments in high risk countries or high risk
+    activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 192 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteInvesthighrisk|KEY:GENIndicativeAppetiteInvesthighrisk
+- id: GENUKIndicativeAppetiteInvesthighrisk
+  label: Does or will the fund make investments in high risk countries or high risk
+    activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 192 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteInvesthighrisk|KEY:GENUKIndicativeAppetiteInvesthighrisk
+- id: GENFundDescription
+  label: Please provide a detailed description of the investment activities of the
+    fund, including the type of investments and detail of the asset classes and sectors
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 191 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundDescription|KEY:GENFundDescription
+- id: GENFundCurrency
+  label: 'What is the currency denomination of the fund? '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 196 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundCurrency|KEY:GENFundCurrency
+- id: GENFundClosed
+  label: Has the fund had a final close?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 195 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundClosed|KEY:GENFundClosed
+- id: GENFundSize
+  label: What is the fund size in the selected currency denomination?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 197 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundSize|KEY:GENFundSize
+- id: GENFundTargetedSize
+  label: What is the targeted fund size in the selected currency denomination?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 198 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundTargetedSize|KEY:GENFundTargetedSize
+- id: GENFundSizeExtreme
+  label: As you have advised that the fund size is greater than 10 billion, please
+    enter the exact fund size/ targeted fund size
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 199 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundSizeExtreme|KEY:GENFundSizeExtreme
+- id: GENFundTargetedSizeExtreme
+  label: As you have advised that the fund size is greater than 10 billion, please
+    enter the exact fund size/ targeted fund size
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 200 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundTargetedSizeExtreme|KEY:GENFundTargetedSizeExtreme
+- id: GENFundInvestmentPeriod
+  label: What is the investment period?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 201 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundInvestmentPeriod|KEY:GENFundInvestmentPeriod
+- id: GENFundInvestmentSize
+  label: What is the anticipated average size of each investment asset?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 202 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundInvestmentSize|KEY:GENFundInvestmentSize
+- id: GENFundAssetsNum
+  label: What is the indication of the number of assets to be held?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 203 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFundAssetsNum|KEY:GENFundAssetsNum
+- id: GENFuturePlans
+  label: Is there a known or planned diversification of the business activity over
+    the next 12 months?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 204 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENFuturePlans|KEY:GENFuturePlans
+- id: GENindustrysector
+  label: Industry description incl SIC code
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 205 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENindustrysector|KEY:GENindustrysector
+- id: GENinvesthighrisk
+  label: Does or will the fund make investments in high risk countries or high risk
+    activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 192 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENinvesthighrisk|KEY:GENinvesthighrisk
+- id: GEN50percinvesthighrisk
+  label: Is the investment strategy of the Fund to retain more than 50% of its investments
+    in high risk activities?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 193 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN50percinvesthighrisk|KEY:GEN50percinvesthighrisk
+- id: GEN50PercInvestDetails
+  label: Please provide details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 194 - B11.1
+  section: B11.1 - Purpose of Entity - Objectives
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GEN50PercInvestDetails|KEY:GEN50PercInvestDetails
+- id: GENIndicativeAppetiteInvestmentCountryComplex
+  label: Please state the main countries in which the fund will make/has made investments
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 208 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteInvestmentCountryComplex|KEY:GENIndicativeAppetiteInvestmentCountryComplex
+- id: GENIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 208 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteInvestmentCountry|KEY:GENIndicativeAppetiteInvestmentCountry
+- id: GENIndicativeAppetiteInvestmentCountrypercentage
+  label: Estimated % of investment
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 210 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteInvestmentCountrypercentage|KEY:GENIndicativeAppetiteInvestmentCountrypercentage
+- id: GENUKIndicativeAppetiteInvestmentCountryComplex
+  label: Please state the main countries in which the fund will make/has made investments
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 208 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteInvestmentCountryComplex|KEY:GENUKIndicativeAppetiteInvestmentCountryComplex
+- id: GENUKIndicativeAppetiteInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 208 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteInvestmentCountry|KEY:GENUKIndicativeAppetiteInvestmentCountry
+- id: GENUKIndicativeAppetiteInvestmentCountrypercentage
+  label: Estimated % of investment
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 210 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteInvestmentCountrypercentage|KEY:GENUKIndicativeAppetiteInvestmentCountrypercentage
+- id: GENManagedCountry
+  label: Please state in which country the fund is managed/controlled
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 207 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENManagedCountry|KEY:GENManagedCountry
+- id: GENInvestmentCountryNum
+  label: Please state the estimated number of main countries in which the fund will
+    make/has made investments
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 208 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestmentCountryNum|KEY:GENInvestmentCountryNum
+- id: GENInvestmentCountryComplex
+  label: Please state the main countries in which the fund will make/has made investments
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 208 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestmentCountryComplex|KEY:GENInvestmentCountryComplex
+- id: GENInvestmentCountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 208 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestmentCountry|KEY:GENInvestmentCountry
+- id: GENInvestmentCountrypercentage
+  label: Estimated % of investment
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 210 - B11.2
+  section: B11.2 - Purpose of Entity - Countries
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENInvestmentCountrypercentage|KEY:GENInvestmentCountrypercentage
+- id: GENSOFcomplex
+  label: Source of Funds
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 212 - B11.3
+  section: B11.3 - Purpose of Entity - Cashflow
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSOFcomplex|KEY:GENSOFcomplex
+- id: GENSOFbank
+  label: Bank
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 213 - B11.3
+  section: B11.3 - Purpose of Entity - Cashflow
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSOFbank|KEY:GENSOFbank
+- id: GENSOFcountry
+  label: Country
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 214 - B11.3
+  section: B11.3 - Purpose of Entity - Cashflow
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENSOFcountry|KEY:GENSOFcountry
+- id: GENcurrency
+  label: 'Currency '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 215 - B11.3
+  section: B11.3 - Purpose of Entity - Cashflow
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENcurrency|KEY:GENcurrency
+- id: GENamount
+  label: Amount Expected
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 216 - B11.3
+  section: B11.3 - Purpose of Entity - Cashflow
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENamount|KEY:GENamount
+- id: GENremittername
+  label: Remitter name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 217 - B11.3
+  section: B11.3 - Purpose of Entity - Cashflow
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENremittername|KEY:GENremittername
+- id: GENfundsgenerated
+  label: Please provide details of how these funds were generated
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 218 - B11.3
+  section: B11.3 - Purpose of Entity - Cashflow
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENfundsgenerated|KEY:GENfundsgenerated
+- id: GENaccnamenum
+  label: Please provide details of associated existing relationships (where appropriate
+    provide a signed and dated structure/organisation chart including account names
+    and numbers, showing the fund group structure and the jurisdictions of the entities
+    if necessary,  and the ultimate controlling party or parties). If we bank any
+    part of the fund structure please provide details
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 221 - B11.4
+  section: B11.4 - Purpose of Entity - Associated Bank Relationships
+  data_type: string
+  control: textarea
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENaccnamenum|KEY:GENaccnamenum
+- id: GENAccComplex
+  label: Business Account
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 223 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccComplex|KEY:GENAccComplex
+- id: GENAccountType
+  label: 'Please specify the type of account you require. '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 224 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccountType|KEY:GENAccountType
+- id: GENAccDesignation
+  label: This account will be in the name of your business. Please confirm if you
+    require an additional designation or reference e.g. Office account, Collections
+    account, Rental account?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 225 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccDesignation|KEY:GENAccDesignation
+- id: GENAccName
+  label: 'Please indicate preferred account name (subject to Bank approval):'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 226 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccName|KEY:GENAccName
+- id: GENAccStatFreq
+  label: 'Statements will be set on an annual default frequency. Should you require
+    these more frequently, please indicate here:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 227 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccStatFreq|KEY:GENAccStatFreq
+- id: GENAccPaperFreq
+  label: Paper statement frequency
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 228 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccPaperFreq|KEY:GENAccPaperFreq
+- id: GENAccStatDate
+  label: What is your preferred statement date?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 229 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccStatDate|KEY:GENAccStatDate
+- id: GENAccHYStat
+  label: What are your preferred statement months?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 230 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccHYStat|KEY:GENAccHYStat
+- id: GENAccQuartStat
+  label: What are your preferred statement months?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 231 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccQuartStat|KEY:GENAccQuartStat
+- id: GENAccBMStat
+  label: What are your preferred statement months?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 232 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccBMStat|KEY:GENAccBMStat
+- id: GENCapitalAndInterestSplit
+  label: Both Capital and Interest accounts required?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 233 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENCapitalAndInterestSplit|KEY:GENCapitalAndInterestSplit
+- id: GENintermediarymandate
+  label: Do you require your standard intermediary signatory list to apply to this
+    account, i.e. no other signatories are to be appointed?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 234 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENintermediarymandate|KEY:GENintermediarymandate
+- id: GENAuditorName
+  label: Auditor Name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 242 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAuditorName|KEY:GENAuditorName
+- id: GENeQnumber
+  label: Please confirm how many eQ connections this entity should be linked to. Please
+    fill number
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 236 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENeQnumber|KEY:GENeQnumber
+- id: GENeQcomplex
+  label: eQ Customer Number
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 237 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENeQcomplex|KEY:GENeQcomplex
+- id: GENeQcustomernum
+  label: eQ Customer Number
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 238 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENeQcustomernum|KEY:GENeQcustomernum
+- id: GENeqcustomername
+  label: eQ Customer Name
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 239 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENeqcustomername|KEY:GENeqcustomername
+- id: GENViewOnly
+  label: View only
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 240 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENViewOnly|KEY:GENViewOnly
+- id: GENeqOperate
+  label: Operate
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 241 - B12
+  section: B12 - Your Requirements
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENeqOperate|KEY:GENeqOperate
+- id: GENIndicativeAppetiteRBSIProductOptionsComplex
+  label: RBSI is a relationship focussed bank and as such our appetite to open bank
+    accounts is higher where we provide other bank products. Please highlight below
+    what RBSI products you currently benefit from or would like to consider in the
+    future?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 263 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteRBSIProductOptionsComplex|KEY:GENIndicativeAppetiteRBSIProductOptionsComplex
+- id: GENIndicativeAppetiteRBSIProductOptions
+  label: Products
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 264 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteRBSIProductOptions|KEY:GENIndicativeAppetiteRBSIProductOptions
+- id: GENIndicativeAppetiteRBSIProductOptionsOther
+  label: 'Other Product - please specify:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 265 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENIndicativeAppetiteRBSIProductOptionsOther|KEY:GENIndicativeAppetiteRBSIProductOptionsOther
+- id: GENUKIndicativeAppetiteRBSIProductOptionsComplex
+  label: RBSI is a relationship focussed bank and as such our appetite to open bank
+    accounts is higher where we provide other bank products. Please highlight below
+    what RBSI products you currently benefit from or would like to consider in the
+    future?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 266 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteRBSIProductOptionsComplex|KEY:GENUKIndicativeAppetiteRBSIProductOptionsComplex
+- id: GENUKIndicativeAppetiteRBSIProductOptions
+  label: Products
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 267 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteRBSIProductOptions|KEY:GENUKIndicativeAppetiteRBSIProductOptions
+- id: GENUKIndicativeAppetiteRBSIProductOptionsOther
+  label: 'Other Product - please specify:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 268 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENUKIndicativeAppetiteRBSIProductOptionsOther|KEY:GENUKIndicativeAppetiteRBSIProductOptionsOther
+- id: GENAccPurpose
+  label: 'Please advise what the account is to be used for. '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 243 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccPurpose|KEY:GENAccPurpose
+- id: GENAccTurnoverCurrency
+  label: Currency
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 246 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTurnoverCurrency|KEY:GENAccTurnoverCurrency
+- id: GENAccTurnoverApproxAmount
+  label: "Approx. value of turnover\t"
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 247 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTurnoverApprox.Amount|KEY:GENAccTurnoverApproxAmount
+- id: GENAccTransCreditValue
+  label: 'Anticipated credits to the account '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 250 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransCreditValue|KEY:GENAccTransCreditValue
+- id: GENAccTransCreditMonth
+  label: 'Anticipated number of transactions per month/ quarter/ annum (E.g. 10-20
+    per Annum) '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 251 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransCreditMonth|KEY:GENAccTransCreditMonth
+- id: GENAccTransCreditRemitter
+  label: Anticipated remitter names
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 252 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransCreditRemitter|KEY:GENAccTransCreditRemitter
+- id: GENAccTransCreditrepresentation
+  label: What will anticipated payments represent
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 253 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransCreditrepresentation|KEY:GENAccTransCreditrepresentation
+- id: GENAccTransDebitValue
+  label: Anticipated debits from the account
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 256 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransDebitValue|KEY:GENAccTransDebitValue
+- id: GENAccTransDebitMonth
+  label: 'Anticipated number of transactions per month/ quarter/ annum (E.g. 10-20
+    per Annum) '
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 257 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransDebitMonth|KEY:GENAccTransDebitMonth
+- id: GENAccTransDebitBeneficiary
+  label: Who will the anticipated payments be made to?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 258 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransDebitBeneficiary|KEY:GENAccTransDebitBeneficiary
+- id: GENAccTransDebitrepresentation
+  label: What will the anticipated payments represent
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 259 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccTransDebitrepresentation|KEY:GENAccTransDebitrepresentation
+- id: GENAccCashActivity
+  label: Is any of the anticipated account activity listed above expected to involve
+    cash transactions (whether deposits or withdrawals) ?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 260 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: radio
+  options:
+  - 'Yes'
+  - 'No'
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccCashActivity|KEY:GENAccCashActivity
+- id: GENAccCashActivityDetail
+  label: Please provide as much information as possible regarding these cash transactions(e.g.
+    frequency, value, location,etc.)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 261 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccCashActivityDetail|KEY:GENAccCashActivityDetail
+- id: GENAccCashActivityPercentage
+  label: Percentage of turnover as cash?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 262 - B13
+  section: B13 - Use of Product
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENAccCashActivityPercentage|KEY:GENAccCashActivityPercentage
+- id: KEYNAME
+  label: FIELD NAME
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: PAUL Question Order
+  section: PAUL Section Suggestion
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:KEYNAME|KEY:KEYNAME
+- id: GENWholesaleDepositorEntityType
+  label: 'Is the entity:'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 8 - B3
+  section: S2 - Applicant Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENWholesaleDepositorEntityType|KEY:GENWholesaleDepositorEntityType
+- id: GENConsolidated
+  label: 'Does the consolidated group / fund, as at the latest financial year consolidated
+    accounts satisfy two or more of the following: (1)  income of more than £5.6m?  (2)  total
+    assets (gross) on balance Sheet of more than £2.8m? (3) more than 50 employees?
+    (Please note, we will require evidence of this by way of financial accounts and/or
+    investor report as part of this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 11 - B3
+  section: S2 - Applicant Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENConsolidated|KEY:GENConsolidated
+- id: GENStandaloneDetails
+  label: Which of the above are satisfied?
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 14 - B3
+  section: S2 - Applicant Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENStandaloneDetails|KEY:GENStandaloneDetails
+- id: GENHalfyearStandalone
+  label: 'Within the next 6 months, does the entity (on a standalone basis), as at
+    the latest financial year individual accounts expect to have two or more of the
+    following: (1)  income of more than £5.6m?  (2)  total assets (gross) on balance
+    Sheet of more than £2.8m? (3) more than 50 employees? (Please note, we will require
+    evidence of this by way of financial accounts and/or investor report as part of
+    this application.)'
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 17 - B3
+  section: S2 - Applicant Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENHalfyearStandalone|KEY:GENHalfyearStandalone
+- id: GENStandaloneNetAssetsType
+  label: Does the entity (on a standalone basis), a) currently have net assets of
+    > £1.4m, (b) is expected to have net assets of > £1.4m within 6 months or (c)
+    have net assets of ≤ £1.4m? (Please note, we will require evidence of (a) by way
+    of financial accounts or investor report (or for (b) - within 6 months).)
+  help: null
+  entity_type: limited_partnership
+  jurisdiction: non_luxembourg
+  stage: 20 - B3
+  section: S2 - Applicant Relationship
+  data_type: string
+  control: text
+  options: []
+  mandatory: false
+  visibility:
+    all: []
+  validation:
+    regex: null
+    max_length: null
+  mappings:
+    crm_field: null
+    system_field: null
+  meta:
+    source_row_ref: ROW:GENStandaloneNetAssetsType|KEY:GENStandaloneNetAssetsType

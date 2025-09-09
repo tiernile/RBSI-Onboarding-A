@@ -12,9 +12,7 @@
     "lookup_type": "LOOKUP",
     "mandatory": "MANDATORY",
     "visibility": "VISIBILITY CONDITION/GROUP NAME",
-    "stage": "PAUL Section Suggestion",
     "regex": "REGEX",
-    "crm_field": "CRM Mapping Info",
     "ref": "REF"
   },
   "normalization": {

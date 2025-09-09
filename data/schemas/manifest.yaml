@@ -7,7 +7,7 @@ active:
     display:
       group: Funds
       order: 10
-      visible: true
+      visible: false
       status: beta
   - key: non-uk-fund-cis-sdd
     name: Non‑UK Fund (CIS) – SDD
@@ -17,7 +17,7 @@ active:
     display:
       group: Funds
       order: 20
-      visible: true
+      visible: false
       status: alpha
   - key: non-lux-lp-demo
     name: Non‑Lux Limited Partnership — Demo Slice
@@ -27,6 +27,16 @@ active:
     display:
       group: Funds
       order: 5
+      visible: false
+      status: alpha
+  - key: zelda
+    name: Zelda – Prototype Mapping
+    version: 0.1.0
+    variant: A
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 30
       visible: true
       status: alpha
 deprecated: []

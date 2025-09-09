@@ -106,7 +106,8 @@ export function validateSchema(schema: unknown): {
     return { valid: true, data: validated }
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map(e => {
+      const issues = (error as any).errors || (error as any).issues || []
+      const errors = issues.map((e: any) => {
         const path = e.path.join('.')
         return `${path}: ${e.message}`
       })
@@ -147,7 +148,8 @@ export function validateSchemaItem(item: unknown): {
     return { valid: true, data: validated }
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const errors = error.errors.map(e => {
+      const issues = (error as any).errors || (error as any).issues || []
+      const errors = issues.map((e: any) => {
         const path = e.path.join('.')
         return `${path}: ${e.message}`
       })
@@ -170,7 +172,8 @@ export function safeParse<T>(
     return { success: true, data: result.data }
   }
   
-  const errors = result.error.errors.map(e => {
+  const issues = (result as any).error?.errors || (result as any).error?.issues || []
+  const errors = issues.map((e: any) => {
     const path = e.path.join('.')
     return path ? `${path}: ${e.message}` : e.message
   })
