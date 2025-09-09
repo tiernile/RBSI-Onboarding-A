@@ -18,7 +18,35 @@ This guide explains how the team updates the prototype with new/changed question
 
 Tip: See `data/mappings/non-lux-lp-demo.json` as a starter.
 
-## 3) Draft or Update the Schema
+## 3) Map Columns (Wizard) or Run Importer
+
+- For new sheet formats, use the interactive wizard to create a mapping JSON:
+
+```
+python scripts/mapping_wizard.py \
+  --input data/incoming/YYYYMMDD_client.xlsx \
+  --journey <journey>
+```
+
+- Or run the Importer CLI directly to convert an XLSX + mapping JSON into a schema with audit reports:
+
+```
+python scripts/import_xlsx.py \
+  --mapping data/mappings/<journey>.json \
+  --input data/incoming/YYYYMMDD_client.xlsx \
+  --sheet "LP Proposal" \
+  --lookups-sheet "Lookup Values" \
+  --out data/schemas/<journey>/schema.yaml \
+  --journey-key <journey>
+```
+
+Outputs:
+- Schema: `data/schemas/<journey>/schema.yaml`
+- Reports: `data/generated/importer-cli/<journey>/{summary.json, decisions.json}`
+
+If needed, you can still edit the schema by hand after import.
+
+## 4) Draft or Update the Schema
 
 - Add or edit `data/schemas/<journey-key>/schema.yaml`.
 - Keep it human‑readable: quote labels with `:` and any values with spaces.
@@ -27,27 +55,27 @@ Tip: See `data/mappings/non-lux-lp-demo.json` as a starter.
 
 Tip: See `data/schemas/non-lux-lp-demo/schema.yaml` for examples.
 
-## 4) Register the Journey
+## 5) Register the Journey
 
 - Add an entry in `data/schemas/manifest.yaml` with:
   - `key`, `name`, `version`, `variant`, `owner` (quoted), and `display { group, order, visible, status }`.
 - This makes it appear on Mission Control.
 
-## 5) Run & Review
+## 6) Run & Review
 
 - From `apps/prototype`:
   - Dev: `pnpm install && pnpm dev` (use `.env.development` or `.env`).
   - Build/Start: `pnpm build && pnpm start` (use `.env`).
 - Open the journey from Mission Control and review the screens.
 
-## 6) Generate the Audit Trail
+## 7) Generate the Audit Trail
 
 - As admin on Mission Control, use the links on the card:
   - View Diff → creates/opens `/data/generated/diffs/<journey>/<timestamp>.html`.
   - Export CSV → creates/downloads `/data/generated/exports/<journey>/<timestamp>.csv`.
 - Include these links in PRs and playbacks.
 
-## 7) Keep the Docs Updated
+## 8) Keep the Docs Updated
 
 - Record material decisions as ADRs in `Documents/01 Areas/poc-workflow/`.
 - Update the session context log with progress and next actions.
@@ -61,4 +89,3 @@ Tip: See `data/schemas/non-lux-lp-demo/schema.yaml` for examples.
 - Admin login not working:
   - Use `.env.development` (dev) or `.env` (start) with `NUXT_ADMIN_PASSWORD_PLAIN`.
   - For hosting, switch to `NUXT_ADMIN_PASSWORD_HASH` (bcrypt) and remove the plain fallback.
-

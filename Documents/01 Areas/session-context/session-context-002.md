@@ -1,192 +1,137 @@
 ---
 session_id: 002
-date: 2025-09-02
+date: 2025-09-08
 facilitator: Tiernan (Nile)
 participants: [Tiernan (Nile), Assistant]
-related_journeys: [non-lux-lp-demo]
+related_journeys: [as-is-journey]
 related_files: [
-  "Documents/01 Areas/mission-control-design.md",
-  "Documents/01 Areas/design-system/PRD.md",
-  "Documents/01 Areas/design-system/ADR-0001-component-architecture.md",
-  "apps/prototype/pages/showcase.vue",
-  "apps/prototype/components/kycp/base/*",
-  "apps/prototype/pages/preview/[journey].vue"
+  "Documents/01 Areas/as-is-analysis/",
+  "data/schemas/as-is-journey/schema.yaml",
+  "Documents/01 Areas/As-is/Project Stealth Code Questions (1).html",
+  "data/incoming/20250828_draft-master-spreadsheet.xlsx"
 ]
 ---
 
 # Session Summary
 
-- Goal: Improve Mission Control design, create KYCP-faithful component library, and integrate components into preview pages.
-- Outcome: Mission Control redesigned with flat, professional aesthetic; complete KYCP component library built; component showcase created; ready to integrate into preview pages.
+- Goal: Analyze the as-is KYCP form implementation and create an auditable process to recreate the current journey with KYCP-faithful components
+- Outcome: Complete extraction, mapping, and schema generation for 158 form fields with full audit trail and component specifications
 
 ## Changes Made
 
-### Mission Control Improvements
-- File: apps/prototype/app.vue – Fixed CSS variable scoping issue by moving variables to global scope
-- File: apps/prototype/pages/index.vue – Redesigned with flat, clean aesthetic:
-  - Light gray background (#FAFBFC) with white cards
-  - Bold status pills (alpha=red, beta=amber, live=green)
-  - Black filled primary buttons
-  - Professional typography and spacing
-  - Added "Components" link to header
-- File: Documents/01 Areas/mission-control-design.md – Created design guide documenting the flat, journey-agnostic design
+### New Files Created
 
-### KYCP Component System
-- Created design-system documentation area with PRD, ADR, and README
-- Built custom Vue 3 components matching KYCP style:
-  - KycpInput – Text input with all states
-  - KycpSelect – Dropdown with custom arrow
-  - KycpRadio – Radio button groups
-  - KycpFieldWrapper – Label, help, and error container
-  - KycpFieldGroup – Gray header container (matches reference image)
-  - KycpTag – Removable chip/pill components
-- File: apps/prototype/assets/kycp-design.css – Design system tokens and variables
-- File: apps/prototype/pages/showcase.vue – Interactive component showcase with code examples
+**Analysis Documentation**
+- File: Documents/01 Areas/as-is-analysis/README.md – Overview of as-is analysis process
+- File: Documents/01 Areas/as-is-analysis/field-inventory.md – Complete list of 158 extracted HTML fields
+- File: Documents/01 Areas/as-is-analysis/field-mapping.md – Bidirectional mapping between HTML and spreadsheet
+- File: Documents/01 Areas/as-is-analysis/component-analysis.md – KYCP component specifications for faithful recreation
+- File: Documents/01 Areas/as-is-analysis/schema-generation-report.md – Summary of generated schema
+- File: Documents/01 Areas/as-is-analysis/audit-trail.md – Complete transformation documentation with traceability
 
-### Key Design Decisions
-- **Custom components over libraries** – Built from scratch for exact KYCP match
-- **Flat design philosophy** – No shadows or gradients, clean borders
-- **Separation of concerns** – Mission Control design != Form UI design
-- **TypeScript support** – All components have typed props
-- **Accessibility first** – ARIA attributes, keyboard navigation
+**Data Files**
+- File: data/schemas/as-is-journey/schema.yaml – Complete schema with 158 field definitions
+- File: data/generated/as-is-audit/extracted-fields.json – Raw HTML field extraction data
+- File: data/generated/as-is-audit/field-mappings.json – Field mapping with confidence scores
+
+**Scripts**
+- File: scripts/extract-html-fields.py – HTML parsing and field extraction
+- File: scripts/map-spreadsheet-to-html.py – Fuzzy matching between HTML and spreadsheet
+- File: scripts/generate-as-is-schema.py – Schema generation with full metadata
+
+## Key Findings
+
+- **Coverage**: Current HTML form implements 158 of 697 spreadsheet questions (23% coverage)
+- **Components**: 5 KYCP component types identified: dropdown (67), text_input (45), textarea (28), complex_field (12), radio (6)
+- **Mapping Quality**: 100% of HTML fields successfully mapped; 90% with high confidence (>90% match score)
+- **Mandatory Fields**: 87 of 158 fields marked as mandatory in HTML
 
 ## Decisions
 
-- Build custom components rather than use PrimeVue/Vuetify/etc for exact KYCP match
-- Keep Mission Control design journey-agnostic and unbranded
-- Use CSS custom properties for theming consistency
-- Create storybook-style showcase for component documentation
-- Components use Vue 3 Composition API with TypeScript
+- Use fuzzy string matching with 70% threshold for field mapping – provides good balance of accuracy and coverage
+- Preserve HTML question text as primary label (user-facing) with spreadsheet KEYNAME as ID
+- Default to "Yes/No" options for boolean questions when lookup values unavailable
+- Include full metadata in schema for complete audit trail
+- Create Python scripts for repeatability and future updates
 
-## CSS Scoping Issue Resolved
+## Technical Specifications
 
-**Problem**: CSS variables defined in `<style scoped>` don't work globally in Vue
-**Solution**: Moved all CSS variables to app.vue in non-scoped style block
-**Learning**: Document this in CLAUDE.md to prevent future issues
+### KYCP Components Identified
+1. **v-select dropdown** – Searchable dropdown with typeahead, "None Selected" default
+2. **Text input** – Standard and decimal variants with validation
+3. **Textarea** – 6 rows default, max length validation
+4. **Complex field** – Container for grouped/repeatable field sets
+5. **Toggle switch** – Checkbox rendered as switch for hide/show functionality
+
+### Component Patterns
+- Bootstrap CSS classes (form-control, col-12, mb-2)
+- Custom classes (dropdownSelect, fieldContainer, effisComplex)
+- Visibility conditions via style="display: none"
+- Mandatory indicator via asterisk in label
+- Warning icon capability for validation errors
 
 ## Open Questions
 
-- Component animations and transitions – how much is needed?
-- Date picker component – build custom or use headless library?
-- Multi-select with tags – complexity vs timeline
-- Form progress indicator design
-- Accessibility testing tools beyond axe
+- Lookup values structure – Spreadsheet "Lookup Values" sheet appears empty or different format – owner: Tiernan
+- Section mapping – HTML doesn't clearly indicate section boundaries – owner: Assistant
+- Visibility conditions – Complex JavaScript logic needs extraction and parsing – owner: Assistant
+- Validation rules – Regex patterns and business rules need documentation – owner: Tiernan
+- Component behaviors – Exact KYCP component props and events need confirmation – owner: FinOpz
 
 ## Plan and Status
 
-### Completed Today
-- [x] Mission Control redesign with flat aesthetic
-- [x] Fix CSS variable scoping issues
-- [x] Create design-system documentation (PRD, ADR)
-- [x] Build KYCP base components (Input, Select, Radio, FieldGroup, Tag)
-- [x] Create component showcase page
-- [x] Link showcase from Mission Control
-- [x] Document design decisions
+- [x] Create as-is analysis directory structure
+- [x] Extract and document all HTML form fields
+- [x] Analyze spreadsheet and create field mapping
+- [x] Build KYCP component specifications
+- [x] Generate as-is schema with full metadata
+- [x] Create audit and comparison reports
+- [ ] Build KYCP-faithful Vue components
+- [ ] Create as-is journey page using components
+- [ ] Validate recreation against original HTML
+- [ ] Client review and sign-off
 
-### Next Actions
-- [ ] Integrate KYCP components into preview/[journey].vue
-- [ ] Update ErrorSummary component with KYCP styling
-- [ ] Create KycpTextarea component
-- [ ] Test components with non-lux-lp-demo journey
-- [ ] Accessibility review of all components
-- [ ] Create KycpCheckbox component
-- [ ] Update POC workflow status
+## Next Actions
 
-## Component Specifications
-
-### Colors
-- Primary: #0066CC
-- Gray header: #808080
-- Border: #D0D0D0
-- Error: #D32F2F
-
-### Spacing
-- Base grid: 8px
-- Input padding: 8px 12px
-- Field margin: 16px
-
-### Typography
-- Base: 14px
-- Small: 13px
-- Labels: 13px, font-weight 500
+- Build KYCP-faithful Vue components based on specifications – owner: Assistant – due: Week 2
+- Create as-is journey page using new components and schema – owner: Assistant – due: Week 2
+- Extract and parse JavaScript visibility conditions – owner: Assistant – due: Week 2
+- Obtain lookup values mapping from client – owner: Tiernan – due: When available
+- Review mapping results with client team – owner: Tiernan – due: Next client meeting
 
 ## Risks / Mitigations
 
-- Component complexity growing – keep focused on MVP needs
-- Accessibility compliance – test early and often
-- Browser compatibility – test in Chrome, Firefox, Safari, Edge
-- Performance with many fields – consider virtualization if needed
+- Component behavior mismatch – mitigation: Document all assumptions, create component showcase for validation
+- Missing lookup values – mitigation: Use sensible defaults, flag for client review
+- Complex visibility logic – mitigation: Start with simple conditions, enhance iteratively
+- Schema completeness – mitigation: Include source references for every field, maintain audit trail
 
-## Artifacts and Links
+## Artefacts and Links
 
-### New Files Created
-- Documents/01 Areas/mission-control-design.md
-- Documents/01 Areas/design-system/PRD.md
-- Documents/01 Areas/design-system/ADR-0001-component-architecture.md
-- Documents/01 Areas/design-system/README.md
-- apps/prototype/assets/kycp-design.css
-- apps/prototype/components/kycp/base/KycpInput.vue
-- apps/prototype/components/kycp/base/KycpSelect.vue
-- apps/prototype/components/kycp/base/KycpRadio.vue
-- apps/prototype/components/kycp/base/KycpFieldWrapper.vue
-- apps/prototype/components/kycp/base/KycpFieldGroup.vue
-- apps/prototype/components/kycp/base/KycpTag.vue
-- apps/prototype/pages/showcase.vue
-- apps/prototype/CLAUDE.md
+### Source Files
+- Documents/01 Areas/As-is/Project Stealth Code Questions (1).html
+- data/incoming/20250828_draft-master-spreadsheet.xlsx
 
-### Modified Files
-- apps/prototype/app.vue
-- apps/prototype/pages/index.vue
+### Generated Outputs
+- data/schemas/as-is-journey/schema.yaml
+- data/generated/as-is-audit/field-mappings.json
+- data/generated/as-is-audit/extracted-fields.json
 
-## Final Session Status
+### Documentation
+- Documents/01 Areas/as-is-analysis/README.md
+- Documents/01 Areas/as-is-analysis/component-analysis.md
+- Documents/01 Areas/as-is-analysis/audit-trail.md
 
-### Issues Resolved
-- **CSS Variable Scoping**: Fixed by moving variables to app.vue global scope
-- **Dynamic Components**: Replaced with v-if/v-else-if for reliability
-- **Select Rendering**: Now working with explicit component references
-- **Route Confusion**: Mission Control properly on homepage
-
-### Working Features
-- Mission Control at localhost:3000/
-- Component showcase at /showcase
-- Preview pages with KYCP styling at /preview/non-lux-lp-demo
-- All KYCP components rendering correctly
-- Admin authentication with bcrypt
-- Diff and export functionality
-
-### Known Issues for Next Session
-- Component hot reload sometimes requires manual refresh
-- Error summary needs better anchoring
-- Mobile responsiveness needs testing
-- Some accessibility improvements pending
-
-## Handover Notes
-
-### Critical Files
-- **HANDOVER.md** - Comprehensive project state and instructions
-- **CLAUDE.md** - AI assistant specific gotchas
-- **kycp-design.css** - Design system tokens
-- **preview/[journey].vue** - Lines 45-81 have v-if component logic
-
-### Environment Setup
-```bash
-cd apps/prototype
-pnpm install
-pnpm dev
-# Visit http://localhost:3000
-```
-
-### Key Learning
-- Vue 3 dynamic components work differently than Vue 2
-- CSS variables in scoped styles don't work globally
-- Nuxt uses .env not .env.local
-- Always use v-if for component switching in this project
+### Scripts
+- scripts/extract-html-fields.py
+- scripts/map-spreadsheet-to-html.py
+- scripts/generate-as-is-schema.py
 
 ## Notes
 
-- Component showcase accessible at /showcase
-- All components support v-model for two-way binding
-- Design system uses CSS custom properties for easy theming
-- No external UI library dependencies
-- Preview pages fully integrated with KYCP components
-- Comprehensive handover document created at Documents/01 Areas/HANDOVER.md
+- Extraction process is fully automated and repeatable
+- All transformations documented with source references
+- Schema includes metadata for complete traceability
+- Ready for component implementation phase
+- Session focused on establishing auditable process for client explainability
+- Python dependencies installed: beautifulsoup4, pyyaml, pandas (already present)

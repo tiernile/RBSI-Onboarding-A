@@ -36,9 +36,11 @@ export default defineEventHandler(async (event: H3Event) => {
   // success → reset attempts
   attempts.delete(ip)
 
-  // Simple session cookie for admin
+  // Simple session cookie for admin with production security
+  const isProduction = process.env.NODE_ENV === 'production'
   setCookie(event, 'admin', 'true', {
     httpOnly: true,
+    secure: isProduction, // Require HTTPS in production
     sameSite: 'strict',
     path: '/',
     maxAge: 60 * 60 // 1 hour

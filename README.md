@@ -1,0 +1,29 @@
+# Nile RBSI Onboarding – Prototyping Repo
+
+This repository turns client spreadsheets into clickable onboarding journeys using a schema‑driven Nuxt (Vue 3) prototype. It is not production code, but it is structured, auditable, and fast to iterate.
+
+## Start Here
+- System Overview (plain English): `Documents/01 Areas/guide/System-Overview.md`
+- Area Workflow (PRD/ADR/Plan/Session): `Documents/01 Areas/guide/Area-Workflow.md`
+- QuickStart (for demoing): `Documents/01 Areas/guide/QuickStart.md`
+- Operations (how to update journeys): `Documents/01 Areas/guide/Operations.md`
+- Contributor guide: `AGENTS.md`
+
+## Run the Prototype
+- App: `apps/prototype/`
+  - Dev: `pnpm install && pnpm dev`
+  - Build/Start: `pnpm build && pnpm start`
+- Data lives under `data/` (schemas, mappings, generated reports).
+
+## Spreadsheet → Schema → UI
+- Drop XLSX into `data/incoming/`.
+- Use mapping JSON in `data/mappings/` to normalise columns/types.
+- Generate/maintain `data/schemas/<journey>/schema.yaml` with `meta.source_row_ref` for traceability.
+- Mission Control reads `data/schemas/manifest.yaml`; `/preview/<journey>` renders the UI.
+- Admin can open Diff/Export for review artifacts under `data/generated/`.
+
+## Current Areas
+- PoC Workflow: `Documents/01 Areas/poc-workflow/`
+- Importer CLI (in progress): `Documents/01 Areas/importer-cli/`
+
+Questions or issues: see the guide docs above or ask the Nile team.

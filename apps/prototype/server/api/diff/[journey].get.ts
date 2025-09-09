@@ -1,7 +1,8 @@
-import { H3Event, setHeader } from 'h3'
+import { H3Event, setHeader, getRouterParams, sendError, createError } from 'h3'
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import YAML from 'yaml'
+import { validateJourneySlug } from '~/server/utils/validation'
 
 function esc(s: string) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -10,6 +11,14 @@ function esc(s: string) {
 export default defineEventHandler(async (event: H3Event) => {
   const { journey } = getRouterParams(event)
   const config = useRuntimeConfig(event)
+  
+  // Validate journey parameter to prevent path traversal
+  if (!validateJourneySlug(journey)) {
+    return sendError(event, createError({ 
+      statusCode: 400, 
+      statusMessage: 'Invalid journey identifier' 
+    }))
+  }
   const dataDir = config.dataDir
   const schemaPath = join(dataDir, 'schemas', journey, 'schema.yaml')
   const raw = await readFile(schemaPath, 'utf8')
