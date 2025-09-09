@@ -1,7 +1,7 @@
 import { H3Event, setHeader, getRouterParams, sendError, createError } from 'h3'
-import { readFile, mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import YAML from 'yaml'
+import { loadYamlFromData } from '~/server/utils/data'
 import { validateJourneySlug, escapeCSVCell } from '~/server/utils/validation'
 
 export default defineEventHandler(async (event: H3Event) => {
@@ -16,9 +16,7 @@ export default defineEventHandler(async (event: H3Event) => {
     }))
   }
   const dataDir = config.dataDir
-  const schemaPath = join(dataDir, 'schemas', journey, 'schema.yaml')
-  const raw = await readFile(schemaPath, 'utf8')
-  const schema = YAML.parse(raw) as any
+  const schema = await loadYamlFromData<any>(event, `schemas/${journey}/schema.yaml`)
 
   const header = ['REF','KEYNAME','FIELD NAME','DATA TYPE','CONTROL','OPTIONS','MANDATORY','VISIBILITY','SECTION','STAGE']
   const lines = [header.map(h => escapeCSVCell(h)).join(',')]
@@ -43,13 +41,15 @@ export default defineEventHandler(async (event: H3Event) => {
 
   const csv = lines.join('\n')
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
-  const outDir = join(dataDir, 'generated', 'exports', String(journey))
-  await mkdir(outDir, { recursive: true })
-  const outPath = join(outDir, `${timestamp}.csv`)
-  await writeFile(outPath, csv, 'utf8')
+  // Attempt to write; ignore errors on serverless (read-only FS)
+  try {
+    const outDir = join(String(dataDir || ''), 'generated', 'exports', String(journey))
+    await mkdir(outDir, { recursive: true })
+    const outPath = join(outDir, `${timestamp}.csv`)
+    await writeFile(outPath, csv, 'utf8')
+  } catch {}
 
   setHeader(event, 'Content-Type', 'text/csv; charset=utf-8')
   setHeader(event, 'Content-Disposition', `attachment; filename="${journey}-${timestamp}.csv"`)
   return csv
 })
-

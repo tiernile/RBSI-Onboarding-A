@@ -1,6 +1,4 @@
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
-import YAML from 'yaml'
+import { loadYamlFromData } from '~/server/utils/data'
 import { H3Event, sendError, getCookie, createError } from 'h3'
 
 type Journey = {
@@ -17,9 +15,7 @@ type Manifest = { active: Journey[]; deprecated?: Journey[] }
 export default defineEventHandler(async (event: H3Event) => {
   const config = useRuntimeConfig(event)
   try {
-    const manifestPath = join(config.dataDir, 'schemas', 'manifest.yaml')
-    const raw = await readFile(manifestPath, 'utf8')
-    const manifest = YAML.parse(raw) as Manifest
+    const manifest = await loadYamlFromData<Manifest>(event, 'schemas/manifest.yaml')
 
     const visibleEnv = (config.mcVisible || '').split(',').map(s => s.trim()).filter(Boolean)
     let statusEnv: Record<string, string> = {}

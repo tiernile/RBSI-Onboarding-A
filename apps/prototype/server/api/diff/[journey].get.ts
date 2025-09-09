@@ -1,7 +1,7 @@
 import { H3Event, setHeader, getRouterParams, sendError, createError } from 'h3'
-import { readFile, mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import YAML from 'yaml'
+import { loadYamlFromData } from '~/server/utils/data'
 import { validateJourneySlug } from '~/server/utils/validation'
 
 function esc(s: string) {
@@ -20,9 +20,7 @@ export default defineEventHandler(async (event: H3Event) => {
     }))
   }
   const dataDir = config.dataDir
-  const schemaPath = join(dataDir, 'schemas', journey, 'schema.yaml')
-  const raw = await readFile(schemaPath, 'utf8')
-  const schema = YAML.parse(raw) as any
+  const schema = await loadYamlFromData<any>(event, `schemas/${journey}/schema.yaml`)
 
   const rows = (schema.items || []).map((it: any) => {
     const vis = (it.visibility?.all || []).join(' && ')
@@ -84,9 +82,10 @@ export default defineEventHandler(async (event: H3Event) => {
   <p class="muted">Note: PoC report lists schema details mapped to source row refs; spreadsheet round-trip diffing will be added.</p>
   </body></html>`
 
-  const outPath = join(outDir, `${timestamp}.html`)
-  await writeFile(outPath, html, 'utf8')
+  try {
+    const outPath = join(outDir, `${timestamp}.html`)
+    await writeFile(outPath, html, 'utf8')
+  } catch {}
   setHeader(event, 'Content-Type', 'text/html; charset=utf-8')
   return html
 })
-

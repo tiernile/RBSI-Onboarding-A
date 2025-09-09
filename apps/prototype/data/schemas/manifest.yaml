@@ -27,7 +27,7 @@ active:
     display:
       group: Funds
       order: 5
-      visible: false
+      visible: true
       status: alpha
   - key: zelda
     name: Zelda – Prototype Mapping
@@ -37,6 +37,6 @@ active:
     display:
       group: Funds
       order: 30
-      visible: true
+      visible: false
       status: alpha
 deprecated: []

@@ -1,7 +1,5 @@
 import { H3Event, getRouterParams, sendError, createError } from 'h3'
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
-import YAML from 'yaml'
+import { loadYamlFromData } from '~/server/utils/data'
 import { validateJourneySlug } from '~/server/utils/validation'
 
 export default defineEventHandler(async (event: H3Event) => {
@@ -17,9 +15,7 @@ export default defineEventHandler(async (event: H3Event) => {
   }
   
   try {
-    const p = join(config.dataDir, 'schemas', journey, 'schema.yaml')
-    const raw = await readFile(p, 'utf8')
-    const parsed = YAML.parse(raw)
+    const parsed = await loadYamlFromData(event, `schemas/${journey}/schema.yaml`)
     
     // Validate schema structure
     const { validateSchema } = await import('~/server/utils/schema-validator')
