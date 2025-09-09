@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-09-09T12:55:15.624917",
+  "journey": "non-lux-lp-demo",
+  "sheet": "LP Proposal",
+  "header_row_used": 1,
+  "rows_total": 791,
+  "rows_after_filters": 788,
+  "items_written": 788,
+  "missing_id": 0,
+  "lookup_defaults_used": 0,
+  "conditions_transformed": 377,
+  "notes": [
+    "Invalid regex for GENFundAdminEmail; removed",
+    "Invalid regex for GENemail; removed"
+  ],
+  "missing_lookups": 5
+}

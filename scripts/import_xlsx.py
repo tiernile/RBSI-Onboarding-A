@@ -26,6 +26,14 @@ import sys
 import pandas as pd
 import yaml
 
+# Resolve base data directory (supports both monorepo and app-local layouts)
+def resolve_base_data_dir() -> Path:
+    app_local = Path('apps/prototype/data')
+    monorepo = Path('data')
+    if app_local.exists():
+        return app_local
+    return monorepo
+
 
 def norm_key(s: str) -> str:
     return re.sub(r"[^a-z0-9]", "", s.strip().lower())
@@ -139,6 +147,7 @@ def main():
     ap.add_argument("--journey-key", help="Journey key (default: from --out or mapping file name)")
     args = ap.parse_args()
 
+    base_data = resolve_base_data_dir()
     mapping_path = Path(args.mapping)
     xlsx_path = Path(args.input)
     if not mapping_path.exists():
@@ -232,10 +241,10 @@ def main():
 
     # Prepare outputs
     journey_key = args.journey_key or (Path(args.out).parts[-2] if args.out else None) or mapping_path.stem
-    out_path = Path(args.out) if args.out else Path(f"data/schemas/{journey_key}/schema.yaml")
+    out_path = Path(args.out) if args.out else (base_data / f"schemas/{journey_key}/schema.yaml")
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
-    gen_dir = Path(f"data/generated/importer-cli/{journey_key}")
+    gen_dir = base_data / f"generated/importer-cli/{journey_key}"
     gen_dir.mkdir(parents=True, exist_ok=True)
     summary = {
         "timestamp": datetime.now().isoformat(),

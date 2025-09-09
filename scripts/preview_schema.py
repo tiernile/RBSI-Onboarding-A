@@ -11,9 +11,15 @@ from pathlib import Path
 import yaml
 from collections import Counter
 
+def resolve_base_data_dir() -> Path:
+    app_local = Path('apps/prototype/data')
+    monorepo = Path('data')
+    return app_local if app_local.exists() else monorepo
+
 
 def load_schema(journey: str):
-    p = Path(f"data/schemas/{journey}/schema.yaml")
+    base = resolve_base_data_dir()
+    p = base / f"schemas/{journey}/schema.yaml"
     if not p.exists():
         raise SystemExit(f"Schema not found: {p}")
     with p.open("r", encoding="utf-8") as f:
@@ -51,4 +57,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

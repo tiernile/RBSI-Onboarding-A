@@ -1,0 +1,2657 @@
+[
+  {
+    "id": "GENIndicativeAppetiteIntro",
+    "label": "GENIndicativeAppetiteIntro",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteQuestions",
+    "label": "Do you wish to answer some pre-application Questions to provide a high level indication of RBSI appetite to open the account?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteQuestionsHint",
+    "label": "GENIndicativeAppetiteQuestionsHint",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBankAccountJurisdictionHelper",
+    "label": "GENBankAccountJurisdictionHelper",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBankAccountJurisdiction",
+    "label": "In which jurisdiction would you like to open this account?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBrandJer",
+    "label": "Under which brand would you like to open this account?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBrandGuer",
+    "label": "Under which brand would you like to open this account?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBrandGIB",
+    "label": "Under which brand would you like to open this account?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBrandIOM",
+    "label": "Under which brand would you like to open this account?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBrandUK",
+    "label": "Under which brand would you like to open this account?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAboutBusinessSectionTitle",
+    "label": "GENAboutBusinessSectionTitle",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAboutBusinessHelper",
+    "label": "GENAboutBusinessHelper",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBusinessType",
+    "label": "Does the business involve:",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENStructureType",
+    "label": "Is the entity part of a consolidated group of companies or a fund structure?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENConsolidatedDetails",
+    "label": "Which of the above are satisfied?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENStandalone",
+    "label": "Does the entity (on a standalone basis), as at the latest financial year individual accounts have two or more of the following: (1)  income of more than \u00a35.6m?  (2)  total assets (gross) on balance Sheet of more than \u00a32.8m? (3) more than 50 employees? (Please note, we will require evidence of this by way of financial accounts and/or investor report as part of this application.)",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENHalfyearConsolidated",
+    "label": "Within the next 6 months, does the consolidated group/fund  expect to have two or more of the following: (1)  income of more than \u00a35.6m?  (2)  total assets (gross) on balance Sheet of more than \u00a32.8m? (3) more than 50 employees? (Please note, we will require evidence of this by way of financial accounts and/or investor report as part of this application.)",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENHalfyearConsolidatedDetails",
+    "label": "Which of the above are satisfied?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENHalfyearStandaloneDetails",
+    "label": "Which of the above are satisfied?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENBankGroupOrFundType1",
+    "label": "Does the consolidated group / fund?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENConsolidatedGroupOrFundType",
+    "label": "What type of consolidated group / fund are you?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENConsolidatedFund6monthsAssestValueType",
+    "label": "What type of consolidated group / fund are you (Given you expect to have asset of more than \u00a31.4 mil within 6months) ?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENWholesaleDepositorType",
+    "label": "What type of entity are you?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENEntity6monthsAssestValueType",
+    "label": "What type of entity are you? (Given you expect to have net assets of more than \u00a31.4m within 6 months)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated",
+    "label": "Which option best describes your application?",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetite3rdPartyAdministrator",
+    "label": "Does the entity, for which you\u2019re looking to open an account, have a 3rd party administrator?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetite3rdPartyAdministrator",
+    "label": "Does the entity, for which you\u2019re looking to open an account, have a 3rd party administrator?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteFundAdminDomicile",
+    "label": "Where is the 3rd party administrator domiciled?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteFundAdminDomicileUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteFundAdminDomicile",
+    "label": "Where is the 3rd party administrator domiciled?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteFundAdminDomicileUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundAdminContactName",
+    "label": "Contact Name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundAdminNum",
+    "label": "Contact Telephone Number",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundAdminEmail",
+    "label": "Email address",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEIntroducingName",
+    "label": "Please confirm full name of the introducer you are using for this application. [Are you a third party introducer, or are you direct?]",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEintermediaryregulator",
+    "label": "Name of intermediary's regulator",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEintermediarylicenseJER",
+    "label": "Type of License the introduction is being made",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEintermediarylicenseGUE",
+    "label": "Type of License the introduction is being made",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEintermediarylicenseIOM",
+    "label": "Type of License the introduction is being made",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEintermediarylicenseGIB",
+    "label": "Type of License the introduction is being made",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEintermediarylicenseUK",
+    "label": "Type of License the introduction is being made",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEintermediarylicenseLUX",
+    "label": "Type of License the introduction is being made",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENMetFaceToFace",
+    "label": "Have you (or an individual from your wider internal group) met the customer for whom this account relates, face to face and in accordance with local regulation?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENGroupIndividualName",
+    "label": "Name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENGroupIndividualPosition",
+    "label": "Position held",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENGroupIndividualMeetingDate",
+    "label": "Date of meeting",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN3rdPartyMetFaceToFace",
+    "label": "Has a 3rd party (external to your own group), met the customer face to face? ",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIntroductionChainLayers",
+    "label": "Please specify the number of layers in the chain of introduction between your relationship with this customer and the 3rd party that has met the customer face to face to undertake Due Diligence certification.",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN3rdPartyEntityName",
+    "label": "Entity Name if applicable",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN3rdPartyJurisdictionCountry",
+    "label": "Jurisdiction/Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN3rdPartyIndividualName",
+    "label": "Individual Name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN3rdPartyPosition",
+    "label": "Position",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN3rdPartyDateMeetingHeld",
+    "label": "Date meeting held",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENMetInAccordRegulation",
+    "label": "Was the customer met in accordance with your local regulation?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteCountryRegistration",
+    "label": "In relation to the Incorporation of the entity requiring a bank account, can you please specify the Country of registration/formation/Establishment?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteCountryregistrationUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEdirectregulatorother",
+    "label": "Other regulator - please provide details:",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENname",
+    "label": "Name of fund (CIS) entity (in full)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENcountryregistration",
+    "label": "Country of registration/formation",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCountryRegisteredAndJurisdictionSame",
+    "label": "Is the Country of registration/formation the same as the Jurisdiction in which you are opening the account?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCountryRegistrationJurisdictionMismatchRationale",
+    "label": "The country of Registration/Formation selected does not match the jurisdiction where you are applying for an account to be opened. Please provide rationale justifying why an account is required in this jurisdiction:",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENRegion",
+    "label": "Region",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENformationdate",
+    "label": "Formation/registration date ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENregnumber",
+    "label": "Registration number",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENdatetrading",
+    "label": "Date started trading (if different to registration / formation)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENregaddress1",
+    "label": "Registered address line 1",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENregaddress2",
+    "label": "Registered address line 2",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENregaddress3",
+    "label": "Registered address line 3",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENregcountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENregpostcode",
+    "label": "Postcode",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENprincaddressdifferent",
+    "label": "Is the principal or business address different to the registered address?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENprincaddress1",
+    "label": "Principal business address or trading address line 1",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENprincaddress2",
+    "label": "Principal business address or trading address line 2",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENprincaddress3",
+    "label": "Principal business address or trading address line 3",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENprinccountryOP",
+    "label": "Principal Country of Operation",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENprincpostcode",
+    "label": "Postcode",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENmailaddressdifferent",
+    "label": "Is the mailing address or agents\u2019 address different to the registered address",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENmailaddress1",
+    "label": "Mailing address line 1",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENmailaddress2",
+    "label": "Mailing address line 2",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENmailaddress3",
+    "label": "Mailing address line 3",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENmailcountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENmailpostcode",
+    "label": "Postcode",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteRiskadverse",
+    "label": "Are there any Reputational, Environmental, Social and Ethical (ESE) or tax risks associated with the application? ",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteRiskadverse",
+    "label": "Are there any Reputational, Environmental, Social and Ethical (ESE) or tax risks associated with the application? ",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteRiskadversedetails",
+    "label": "Please provide details of any Reputational, Environmental, Social and Ethical (ESE) or tax risks associated with the application",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENfundarrearslegalinsolvent",
+    "label": "Please confirm if the customer structure has tax arrears or legal proceeding outstanding or has ever been insolvent, bankrupt or had any court proceedings for debt?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENfunddetailtaxarrears",
+    "label": "Details of tax arrears, legal proceedings, insolvency, bankruptcy and/or court proceedings for debt",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENriskadverse",
+    "label": "Are there any Reputational, Environmental, Social and Ethical (ESE) or tax risks associated with the application?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCustomerLegal",
+    "label": "Please confirm if the entity has legal proceedings outstanding?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCustomerDetailLegal",
+    "label": "Details of legal proceedings",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCustomerInsolvent",
+    "label": "Please confirm if the entity has ever been insolvent, bankrupt or had any court proceedings for debt?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCustomerDetailInsolvent",
+    "label": "Details of insolvency, bankruptcy and/ or court proceedings for debt",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENcorrespondentbanking",
+    "label": "Are you involved in correspondent banking?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENcorrespondentbankingdetails",
+    "label": "Please provide details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENtaxcomplex",
+    "label": "Tax residency",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENtaxcountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENknowtin",
+    "label": "Do you know the Tax identification number?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENtin",
+    "label": "Provide Tax identification number or an equivalent",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENtaxnotapplicable",
+    "label": "Please advise why you are unable to provide the Tax Identification Number?\t",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENincorpUSA",
+    "label": "Is the entity/organisation incorporated/organised in the USA?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENffi",
+    "label": "Is the entity/organisation a Financial Foreign Institution (FFI)?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENgiin",
+    "label": "GIIN (Global Intermediary Identification No.) if applicable",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENffisponsorname",
+    "label": "Name of Sponsoring Entity (if applicable)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENgiinreason",
+    "label": "If you cannot provide a GIIN, please detail the reason below:",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENgiireasonappliedfor",
+    "label": "When will you have the details of GIIN, so that you can come back to us with this information?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENOtherFFITaxStatus",
+    "label": "Tax Status",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENothergiin",
+    "label": "GIIN (Global Intermediary Identification No.) if applicable",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENffiothersponsorname",
+    "label": "Name of Sponsoring Entity (if applicable)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENothergiinreason",
+    "label": "If you cannot provide a GIIN, please detail the reason below:",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENothergiinreasonappliedfor",
+    "label": "When will you have the details of GIIN, so that you can come back to us with this information?\t",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENnonffi",
+    "label": "Is the entity/organisation a Non Financial Foreign Entity (NFFE)?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENothernffestatus",
+    "label": "Please provide detail of the entity\u2019s applicable status.",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENfiorinvestment",
+    "label": "Is the entity/organisation a Financial Institution (FI) or Investment Entity?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENnfe",
+    "label": "Is the entity/organisation a Non Financial Entity (NFE)?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENfatcacrscompdetailsdoc",
+    "label": "Do you have tax advice in support of the FATCA/CRS status selections made above?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENfatcacrscompdetails",
+    "label": "Please explain/provide a rationale as to how the entity meets the criteria of the FATCA/CRS status selected above.",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENcustomerarrears",
+    "label": "Please confirm if the entity has tax arrears?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENcustomerdetailtaxarrears",
+    "label": "Details of tax arrears",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteFundMng",
+    "label": "Is there a Fund Manager within the structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteFundMngDom",
+    "label": "Where is the Fund Manager domiciled?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteFundMngDomUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteOpeningInvestmentAdviser",
+    "label": "Is there an Investment Adviser?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteOpeningInvestmentAdviserLocation",
+    "label": "What is the location of the Investment Adviser?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteOpeningInvestmentAdviserLocationUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteFundMng",
+    "label": "Is there a Fund Manager within the structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteFundMngDom",
+    "label": "Where is the Fund Manager domiciled?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteFundMngDomUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteOpeningInvestmentAdviser",
+    "label": "Is there an Investment Adviser?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteOpeningInvestmentAdviserLocation",
+    "label": "What is the location of the Investment Adviser?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteOpeningInvestmentAdviserLocationUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENlimitedpartnershipstructure",
+    "label": "Limited Partnership structure",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENOpeningInvestmentAdviser",
+    "label": "Is there an Investment Adviser?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENOpeningInvestmentAdviserLocation",
+    "label": "What is the location of the Investment Adviser?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENOpeningInvestmentAdviserLocationUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundMngr",
+    "label": "Is there a Fund Manager within the structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundMngDom",
+    "label": "Where is the Fund Manager domiciled?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundMngDomUSA",
+    "label": "Is it Delaware or Non-Delaware?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSecretary",
+    "label": "Is there a Secretary within the structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSecretaryName",
+    "label": "Please enter the full name of the Secretary",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetitePEPS",
+    "label": "Are there any PEPs involved in the structure? ",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetitePepInvestors",
+    "label": "Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetitePepdirectcontroller",
+    "label": "Are there any Politically Exposed Persons (PEPs) involved in running/operating, controlling or advising the fund?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetitePeppositioninfluence",
+    "label": "Are there any Politically Exposed Persons (PEPs) that are not an owner or controller, who hold a position of significant influence including but not limited to the provider of a loan?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetitePepinvestpersrelationship",
+    "label": "Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship, who individually may have less than 10% ownership, but together have an accumulative ownership of 10% or more?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetitePEPS",
+    "label": "Are there any PEPs involved in the structure? ",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetitePepInvestors",
+    "label": "Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetitePepdirectcontroller",
+    "label": "Are there any Politically Exposed Persons (PEPs) involved in running/operating, controlling or advising the fund?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetitePeppositioninfluence",
+    "label": "Are there any Politically Exposed Persons (PEPs) that are not an owner or controller, who hold a position of significant influence including but not limited to the provider of a loan?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetitePepinvestpersrelationship",
+    "label": "Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship, who individually may have less than 10% ownership, but together have an accumulative ownership of 10% or more?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENpepinvestors",
+    "label": "Are any of the fund's investors or Ultimate Beneficial Owners (UBOs), who have a holding of 10% or more in the fund, Politically Exposed Persons (PEP)?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENdetailPEPconnection",
+    "label": "Please provide further details of the Politically Exposed Persons (PEP) connection. You may have to complete a PEP Relationship Proforma. This can be obtained from your Relationship Director.",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENpepinvestpersrelationship",
+    "label": "Are any of the fund's investors or Ultimate Beneficial Owners (UBOs) one of a group of Politically Exposed Persons (PEPs) sharing a close personal relationship, who individually may have less than 10% ownership, but together have an accumulative ownership of 10% or more?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENdetailPEPriskfactor",
+    "label": "Please provide details of the risk factor identified above",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENpepdirectorcontroller",
+    "label": "Are there any Politically Exposed Persons (PEPs) involved in running/operating, controlling or advising the fund?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENdetailPEPdirectorcontroller",
+    "label": "Please provide further details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENpeppositioninfluence",
+    "label": "Are there any Politially Exposed Persons (PEPs) that are not an owner or controller, who hold a position of significant influence including but not limited to the provider of a loan?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENdetailPEPpositioninfluence",
+    "label": "Please provide further details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENDirectbearer",
+    "label": "Are bearer shares in issue anywhere within the ownership structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENDirectbearercontrol",
+    "label": "Please confirm that the bearer shares are fully controlled by yourselves and will not be moved or transferred during the life of this account with the Bank?  ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENDirectbearercontroldetails",
+    "label": "Please provide further details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENbearer",
+    "label": "Are bearer shares in issue anywhere within the ownership structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENbearercontrol",
+    "label": "Please confirm that the bearer shares are fully controlled by the intermediary and\nwill not be moved or transferred during the life of this account with the Bank?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENbearercontroldetails",
+    "label": "Please provide further details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIFundnvestorCountry",
+    "label": "Please state the main countries where the fund\u2019s investors will be/are based",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestorCountryComplex",
+    "label": "Please provide details of the typical investors the fund is targeted at, e.g. institutional, private client, retail etc and where the investors are likely to be based. Please also include the percentage of each type of investor, e.g. 50% institutional, 50% private client.",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestorType",
+    "label": "Type of investor",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestorTypeOther",
+    "label": "Type of investor - Other",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestorCountry",
+    "label": "Where are they based",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestorTypePerc",
+    "label": "% investor type",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENinvestorhighrisk",
+    "label": "Are any of the fund\u2019s investors with a holding of 25% or greater from a high-risk country?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENdetailinvestorhighrisk",
+    "label": "Please provide further details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENubohighriskcountry",
+    "label": "Do any of the investors or Ultimate Beneficial Owners (UBOs) individually or as one of a number of investors or UBOs that have a direct link to high risk countries individually or together have an accumulative ownership or control of more than 50%?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENdetailUBOhighriskcountry",
+    "label": "Please provide further details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteSWFInvestor",
+    "label": "Are there any Sovereign Wealth Fund investors within the structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteMembershipIFSWF",
+    "label": "Please confirm membership of the International Forum of Sovereign Wealth Funds (IFSWF) and their acceptance of the Santiago Principles for all Sovereign Wealth Fund investors within the structure",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "Sovereign_Wealth_Fund_Investor",
+    "label": "Sovereign Wealth Fund Investor",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENindicativeAppetiteSWFinvestorcomplex",
+    "label": "Sovereign Wealth Fund Investor",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENindicativeAppetiteSWFinvestorname",
+    "label": "Full name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENindicativeAppetiteSWFInvestorcountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENindicativeAppetiteSWFinvestorownership",
+    "label": "Percentage ownership (of the customer)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteSWFInvestor",
+    "label": "Are there any Sovereign Wealth Fund investors within the structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteMembershipIFSWF",
+    "label": "Please confirm membership of the International Forum of Sovereign Wealth Funds (IFSWF) and their acceptance of the Santiago Principles for all Sovereign Wealth Fund investors within the structure",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "Sovereign_Wealth_Fund_Investor",
+    "label": "Sovereign Wealth Fund Investor",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteSWFinvestorcomplex",
+    "label": "Sovereign Wealth Fund Investor",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteSWFinvestorname",
+    "label": "Full name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteSWFInvestorcountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteSWFinvestorownership",
+    "label": "Percentage ownership (of the customer)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSWFInvestor",
+    "label": "Are there any Sovereign Wealth Fund investors within the structure?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENMembershipIFSWF",
+    "label": "Please confirm membership of the International Forum of Sovereign Wealth Funds (IFSWF) and their acceptance of the Santiago Principles",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "Sovereign_Wealth_Fund_Investor",
+    "label": "Sovereign Wealth Fund Investor",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSWFinvestorcomplex",
+    "label": "Sovereign Wealth Fund Investor",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSWFinvestorname",
+    "label": "Full name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSWFinvestorcountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSWFinvestorownership",
+    "label": "Percentage ownership (of the customer)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteRiskadversedetails",
+    "label": "Please provide details of any other risk factor and/or adverse information you are aware of in relation to the customer or its key principals and beneficial owners.",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteRiskadversedetailsother",
+    "label": "Are you aware of any other high risk factor and/or adverse information in relation to the customer or its key principals and beneficial owners?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteRiskadversedetailsother",
+    "label": "Are you aware of any other high risk factor and/or adverse information in relation to the customer or its key principals and beneficial owners?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteHighriskadversedetails",
+    "label": "Please provide further details of the high risk factor(s) and/or adverse information:",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteHighriskadversedetails",
+    "label": "Please provide further details of the high risk factor(s) and/or adverse information:",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENriskadversedetails",
+    "label": "Please provide details of any other risk factor and/or adverse information you are aware of in relation to the customer or its key principals and beneficial owners.",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteInvestmentsubsec",
+    "label": "Type of Fund",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteInvestmentsubsecOther",
+    "label": "Other Type of Fund - please provide details:",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteInvestmentsubsec",
+    "label": "Type of Fund",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteInvestmentsubsecOther",
+    "label": "Other Type of Fund - please provide details:",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEisregulated",
+    "label": "Are you regulated?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "SPEdirectregulator",
+    "label": "Name of your regulator",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENinvestmentsubsec",
+    "label": "Type of Fund",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENinvestmentsubsecOther",
+    "label": "Please provide further details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCISstatus",
+    "label": "Status",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENregulator",
+    "label": "Who is the Regulator",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENcorplisted",
+    "label": "Is this entity listed on a stock exchange?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENlistedmarket",
+    "label": "Please confirm which market the entity is listed on",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENentitytype",
+    "label": "Entity Type",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENTypeTrust",
+    "label": "Type of Trust",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteInvesthighrisk",
+    "label": "Does or will the fund make investments in high risk countries or high risk activities?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteInvesthighrisk",
+    "label": "Does or will the fund make investments in high risk countries or high risk activities?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundDescription",
+    "label": "Please provide a detailed description of the investment activities of the fund, including the type of investments and detail of the asset classes and sectors",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundCurrency",
+    "label": "What is the currency denomination of the fund? ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundClosed",
+    "label": "Has the fund had a final close?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundSize",
+    "label": "What is the fund size in the selected currency denomination?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundTargetedSize",
+    "label": "What is the targeted fund size in the selected currency denomination?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundSizeExtreme",
+    "label": "As you have advised that the fund size is greater than 10 billion, please enter the exact fund size/ targeted fund size",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundTargetedSizeExtreme",
+    "label": "As you have advised that the fund size is greater than 10 billion, please enter the exact fund size/ targeted fund size",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundInvestmentPeriod",
+    "label": "What is the investment period?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundInvestmentSize",
+    "label": "What is the anticipated average size of each investment asset?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFundAssetsNum",
+    "label": "What is the indication of the number of assets to be held?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENFuturePlans",
+    "label": "Is there a known or planned diversification of the business activity over the next 12 months?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENindustrysector",
+    "label": "Industry description incl SIC code",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENinvesthighrisk",
+    "label": "Does or will the fund make investments in high risk countries or high risk activities?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN50percinvesthighrisk",
+    "label": "Is the investment strategy of the Fund to retain more than 50% of its investments in high risk activities?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GEN50PercInvestDetails",
+    "label": "Please provide details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteInvestmentCountryComplex",
+    "label": "Please state the main countries in which the fund will make/has made investments",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteInvestmentCountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteInvestmentCountrypercentage",
+    "label": "Estimated % of investment",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteInvestmentCountryComplex",
+    "label": "Please state the main countries in which the fund will make/has made investments",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteInvestmentCountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteInvestmentCountrypercentage",
+    "label": "Estimated % of investment",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENManagedCountry",
+    "label": "Please state in which country the fund is managed/controlled",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestmentCountryNum",
+    "label": "Please state the estimated number of main countries in which the fund will make/has made investments",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestmentCountryComplex",
+    "label": "Please state the main countries in which the fund will make/has made investments",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestmentCountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENInvestmentCountrypercentage",
+    "label": "Estimated % of investment",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSOFcomplex",
+    "label": "Source of Funds",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSOFbank",
+    "label": "Bank",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENSOFcountry",
+    "label": "Country",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENcurrency",
+    "label": "Currency ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENamount",
+    "label": "Amount Expected",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENremittername",
+    "label": "Remitter name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENfundsgenerated",
+    "label": "Please provide details of how these funds were generated",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENaccnamenum",
+    "label": "Please provide details of associated existing relationships (where appropriate provide a signed and dated structure/organisation chart including account names and numbers, showing the fund group structure and the jurisdictions of the entities if necessary,  and the ultimate controlling party or parties). If we bank any part of the fund structure please provide details",
+    "control_inferred": "textarea",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccComplex",
+    "label": "Business Account",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccountType",
+    "label": "Please specify the type of account you require. ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccDesignation",
+    "label": "This account will be in the name of your business. Please confirm if you require an additional designation or reference e.g. Office account, Collections account, Rental account?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccName",
+    "label": "Please indicate preferred account name (subject to Bank approval):",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccStatFreq",
+    "label": "Statements will be set on an annual default frequency. Should you require these more frequently, please indicate here:",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccPaperFreq",
+    "label": "Paper statement frequency",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccStatDate",
+    "label": "What is your preferred statement date?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccHYStat",
+    "label": "What are your preferred statement months?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccQuartStat",
+    "label": "What are your preferred statement months?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccBMStat",
+    "label": "What are your preferred statement months?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENCapitalAndInterestSplit",
+    "label": "Both Capital and Interest accounts required?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENintermediarymandate",
+    "label": "Do you require your standard intermediary signatory list to apply to this account, i.e. no other signatories are to be appointed?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAuditorName",
+    "label": "Auditor Name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENeQnumber",
+    "label": "Please confirm how many eQ connections this entity should be linked to. Please fill number",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENeQcomplex",
+    "label": "eQ Customer Number",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENeQcustomernum",
+    "label": "eQ Customer Number",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENeqcustomername",
+    "label": "eQ Customer Name",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENViewOnly",
+    "label": "View only",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENeqOperate",
+    "label": "Operate",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteRBSIProductOptionsComplex",
+    "label": "RBSI is a relationship focussed bank and as such our appetite to open bank accounts is higher where we provide other bank products. Please highlight below what RBSI products you currently benefit from or would like to consider in the future?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteRBSIProductOptions",
+    "label": "Products",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENIndicativeAppetiteRBSIProductOptionsOther",
+    "label": "Other Product - please specify:",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteRBSIProductOptionsComplex",
+    "label": "RBSI is a relationship focussed bank and as such our appetite to open bank accounts is higher where we provide other bank products. Please highlight below what RBSI products you currently benefit from or would like to consider in the future?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteRBSIProductOptions",
+    "label": "Products",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENUKIndicativeAppetiteRBSIProductOptionsOther",
+    "label": "Other Product - please specify:",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccPurpose",
+    "label": "Please advise what the account is to be used for. ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTurnoverCurrency",
+    "label": "Currency",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTurnoverApproxAmount",
+    "label": "Approx. value of turnover\t",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransCreditValue",
+    "label": "Anticipated credits to the account ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransCreditMonth",
+    "label": "Anticipated number of transactions per month/ quarter/ annum (E.g. 10-20 per Annum) ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransCreditRemitter",
+    "label": "Anticipated remitter names",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransCreditrepresentation",
+    "label": "What will anticipated payments represent",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransDebitValue",
+    "label": "Anticipated debits from the account",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransDebitMonth",
+    "label": "Anticipated number of transactions per month/ quarter/ annum (E.g. 10-20 per Annum) ",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransDebitBeneficiary",
+    "label": "Who will the anticipated payments be made to?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccTransDebitrepresentation",
+    "label": "What will the anticipated payments represent",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccCashActivity",
+    "label": "Is any of the anticipated account activity listed above expected to involve cash transactions (whether deposits or withdrawals) ?",
+    "control_inferred": "radio",
+    "lookup_source": "lookups:Yes/No",
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccCashActivityDetail",
+    "label": "Please provide as much information as possible regarding these cash transactions(e.g. frequency, value, location,etc.)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENAccCashActivityPercentage",
+    "label": "Percentage of turnover as cash?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "KEYNAME",
+    "label": "FIELD NAME",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENWholesaleDepositorEntityType",
+    "label": "Is the entity:",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENConsolidated",
+    "label": "Does the consolidated group / fund, as at the latest financial year consolidated accounts satisfy two or more of the following: (1)  income of more than \u00a35.6m?  (2)  total assets (gross) on balance Sheet of more than \u00a32.8m? (3) more than 50 employees? (Please note, we will require evidence of this by way of financial accounts and/or investor report as part of this application.)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENStandaloneDetails",
+    "label": "Which of the above are satisfied?",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENHalfyearStandalone",
+    "label": "Within the next 6 months, does the entity (on a standalone basis), as at the latest financial year individual accounts expect to have two or more of the following: (1)  income of more than \u00a35.6m?  (2)  total assets (gross) on balance Sheet of more than \u00a32.8m? (3) more than 50 employees? (Please note, we will require evidence of this by way of financial accounts and/or investor report as part of this application.)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  },
+  {
+    "id": "GENStandaloneNetAssetsType",
+    "label": "Does the entity (on a standalone basis), a) currently have net assets of > \u00a31.4m, (b) is expected to have net assets of > \u00a31.4m within 6 months or (c) have net assets of \u2264 \u00a31.4m? (Please note, we will require evidence of (a) by way of financial accounts or investor report (or for (b) - within 6 months).)",
+    "control_inferred": "text",
+    "lookup_source": null,
+    "visibility_original": null,
+    "visibility_expr": null,
+    "used_fallback_id": false
+  }
+]

@@ -3,9 +3,9 @@
 ## Project Structure & Module Organization
 
 - `apps/prototype/`: Nuxt 3 app (pages, components, composables, server API).
-- `data/`: source data used by the app.
+- `apps/prototype/data/`: source data used by the app (bundled for deploy).
   - `schemas/`: YAML schemas (e.g., `manifest.yaml`, `<journey>/schema.yaml`).
-  - `mappings/`, `generated/`: mappings and exported artifacts.
+  - `mappings/`, `generated/`, `incoming/`: mappings, generated reports, input files.
 - `Documents/`: product/architecture notes and ADRs.
 
 ## Build, Test, and Development Commands
@@ -18,7 +18,7 @@ From `apps/prototype/`:
 - `pnpm start`: start built server.
 - `pnpm hash "YourPassword"`: print bcrypt hash for admin login.
 
-Env setup: copy `.env.example` to `.env.development`; set `NUXT_ADMIN_PASSWORD_HASH` and (if needed) `NUXT_DATA_DIR` to the absolute path of this repo’s `data/`.
+Env setup: copy `.env.example` to `.env.development`; set `NUXT_ADMIN_PASSWORD_HASH`. In deploys, the app auto-detects `apps/prototype/data/`; override with `NUXT_DATA_DIR` only if you host data elsewhere.
 
 ## Coding Style & Naming Conventions
 

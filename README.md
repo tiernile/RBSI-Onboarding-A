@@ -13,14 +13,14 @@ This repository turns client spreadsheets into clickable onboarding journeys usi
 - App: `apps/prototype/`
   - Dev: `pnpm install && pnpm dev`
   - Build/Start: `pnpm build && pnpm start`
-- Data lives under `data/` (schemas, mappings, generated reports).
+- Data lives under `apps/prototype/data/` (schemas, mappings, generated reports).
 
 ## Spreadsheet → Schema → UI
-- Drop XLSX into `data/incoming/`.
-- Use mapping JSON in `data/mappings/` to normalise columns/types.
-- Generate/maintain `data/schemas/<journey>/schema.yaml` with `meta.source_row_ref` for traceability.
-- Mission Control reads `data/schemas/manifest.yaml`; `/preview/<journey>` renders the UI.
-- Admin can open Diff/Export for review artifacts under `data/generated/`.
+- Drop XLSX into `apps/prototype/data/incoming/`.
+- Use mapping JSON in `apps/prototype/data/mappings/` to normalise columns/types.
+- Generate/maintain `apps/prototype/data/schemas/<journey>/schema.yaml` with `meta.source_row_ref` for traceability.
+- Mission Control reads `apps/prototype/data/schemas/manifest.yaml`; `/preview/<journey>` renders the UI.
+- Admin can open Diff/Export for review artifacts under `apps/prototype/data/generated/`.
 
 ## Current Areas
 - PoC Workflow: `Documents/01 Areas/poc-workflow/`

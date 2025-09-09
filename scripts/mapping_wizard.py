@@ -180,7 +180,8 @@ def main():
     }
 
     # Save mapping
-    out = Path(f'data/mappings/{args.journey}.json')
+    base = Path('apps/prototype/data') if Path('apps/prototype/data').exists() else Path('data')
+    out = base / f'mappings/{args.journey}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(mapping, indent=2))
     print(f"\nSaved mapping to {out}")
@@ -188,12 +189,13 @@ def main():
     # Optionally run importer
     if input("Run importer now? (Y/n): ").strip().lower() != 'n':
         from subprocess import run
+        base = Path('apps/prototype/data') if Path('apps/prototype/data').exists() else Path('data')
         cmd = [
             'python', 'scripts/import_xlsx.py',
             '--mapping', str(out),
             '--input', str(xlsx),
             '--sheet', sheet,
-            '--out', f'data/schemas/{args.journey}/schema.yaml',
+            '--out', str(base / f'schemas/{args.journey}/schema.yaml'),
             '--journey-key', args.journey
         ]
         if lookups_sheet:
@@ -204,4 +206,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

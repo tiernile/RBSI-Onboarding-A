@@ -1,0 +1,121 @@
+<!doctype html>
+  <html><head><meta charset="utf-8" />
+  <title>Diff – non-lux-lp-demo – 2025-08-29T09-15-04-210Z</title>
+  <style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto; margin:20px}
+  h1{margin:0 0 12px 0}
+  table{border-collapse:collapse; width:100%}
+  th,td{border:1px solid #ddd; padding:6px 8px; vertical-align:top}
+  th{background:#f7f7f7}
+  code{background:#f0f0f0; padding:1px 4px; border-radius:4px}
+  .muted{color:#666}
+  </style></head><body>
+  <h1>Schema Report – Non‑Lux Limited Partnership — Demo Slice</h1>
+  <p class="muted">Generated: 2025-08-29T09-15-04-210Z</p>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Label</th><th>Control</th><th>Data type</th><th>Options</th><th>Mandatory</th><th>Visibility</th><th>Section</th><th>Stage</th><th>Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>GENBankAccountJurisdiction</code></td>
+        <td>In which jurisdiction would you like to open this account?</td>
+        <td>select</td>
+        <td>enum</td>
+        <td>Jersey, Guernsey, Isle of Man, Gibraltar, United Kingdom</td>
+        <td>Yes</td>
+        <td></td>
+        <td>B2 - Bank Relationship</td>
+        <td>bank_relationship</td>
+        <td>ROW:103|KEY:GENBankAccountJurisdiction</td>
+      </tr>
+<tr>
+        <td><code>GENIndicativeAppetiteQuestions</code></td>
+        <td>Do you wish to answer some pre‑application questions to provide a high‑level indication of RBSI appetite to open the account?</td>
+        <td>radio</td>
+        <td>enum</td>
+        <td>Yes, No</td>
+        <td>Yes</td>
+        <td>GENBankAccountJurisdiction != "United Kingdom"</td>
+        <td>B1 - Pre‑Application Questions</td>
+        <td>pre_application</td>
+        <td>ROW:3|KEY:GENIndicativeAppetiteQuestions</td>
+      </tr>
+<tr>
+        <td><code>GENIndicativeAppetiteRiskadversedetailsother</code></td>
+        <td>Are you aware of any other high risk factor and/or adverse information in relation to the customer or its key principals and beneficial owners?</td>
+        <td>radio</td>
+        <td>enum</td>
+        <td>Yes, No</td>
+        <td>Yes</td>
+        <td>GENIndicativeAppetiteQuestions == "Yes"</td>
+        <td>B1 - Pre‑Application Questions</td>
+        <td>pre_application</td>
+        <td>ROW:5|KEY:GENIndicativeAppetiteRiskadversedetailsother</td>
+      </tr>
+<tr>
+        <td><code>GENIndicativeAppetiteHighriskadversedetails</code></td>
+        <td>Please provide further details of the high risk factor(s) and/or adverse information:</td>
+        <td>textarea</td>
+        <td>string</td>
+        <td></td>
+        <td>Yes</td>
+        <td>GENIndicativeAppetiteRiskadversedetailsother == "Yes"</td>
+        <td>B1 - Pre‑Application Questions</td>
+        <td>pre_application</td>
+        <td>ROW:7|KEY:GENIndicativeAppetiteHighriskadversedetails</td>
+      </tr>
+<tr>
+        <td><code>GENFundClosed</code></td>
+        <td>Has the fund had a final close?</td>
+        <td>radio</td>
+        <td>enum</td>
+        <td>Yes, No</td>
+        <td>Yes</td>
+        <td></td>
+        <td>B11.1 - Purpose of Entity - Objectives</td>
+        <td>purpose_of_entity</td>
+        <td>ROW:30|KEY:GENFundClosed</td>
+      </tr>
+<tr>
+        <td><code>GENFundSize</code></td>
+        <td>What is the fund size in the selected currency denomination?</td>
+        <td>select</td>
+        <td>enum</td>
+        <td>&lt; 50m, 50m - 250m, 250m - 500m, 500m - 750m, 750m - 1bn, 1bn - 2bn, 2bn - 3bn, 3bn - 5bn, 5bn - 10bn, 10bn +</td>
+        <td>Yes</td>
+        <td>GENFundClosed == "Yes"</td>
+        <td>B11.1 - Purpose of Entity - Objectives</td>
+        <td>purpose_of_entity</td>
+        <td>ROW:?|KEY:GENFundSize</td>
+      </tr>
+<tr>
+        <td><code>GENFundSizeExtreme</code></td>
+        <td>As you have advised that the fund size is greater than 10 billion, please enter the exact fund size / targeted fund size</td>
+        <td>text</td>
+        <td>string</td>
+        <td></td>
+        <td>Yes</td>
+        <td>GENFundSize == "10bn +"</td>
+        <td>B11.1 - Purpose of Entity - Objectives</td>
+        <td>purpose_of_entity</td>
+        <td>ROW:?|KEY:GENFundSizeExtreme</td>
+      </tr>
+<tr>
+        <td><code>GENIndicativeAppetiteInvesthighrisk</code></td>
+        <td>Does or will the fund make investments in high risk countries or high risk activities?</td>
+        <td>radio</td>
+        <td>enum</td>
+        <td>Yes, No</td>
+        <td>Yes</td>
+        <td>GENIndicativeAppetiteQuestions == "Yes"</td>
+        <td>B11.1 - Purpose of Entity - Objectives</td>
+        <td>purpose_of_entity</td>
+        <td>ROW:?|KEY:GENIndicativeAppetiteInvesthighrisk</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="muted">Note: PoC report lists schema details mapped to source row refs; spreadsheet round-trip diffing will be added.</p>
+  </body></html>
