@@ -256,6 +256,11 @@
         </div>
       </div>
     </div>
+    
+    <!-- Floating Tools: Explain visibility toggle -->
+    <div class="floating-tools">
+      <label><input type="checkbox" v-model="debugExplain" /> Explain visibility</label>
+    </div>
   </div>
 </template>
 
@@ -667,5 +672,29 @@ h1 {
   gap: 16px;
   padding-top: 24px;
   border-top: 1px solid #e1e4e8;
+}
+
+/* Floating tools */
+.floating-tools {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 999px;
+  padding: 8px 12px;
+  box-shadow: 0 8px 24px rgba(140,149,159,0.2);
+  font-size: 13px;
+  color: #57606a;
+  z-index: 1000;
+}
+
+@media (max-width: 640px) {
+  .floating-tools {
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
 }
 </style>
