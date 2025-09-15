@@ -27,7 +27,7 @@
         
         <!-- All Sections on a single page -->
         <div v-for="section in sections" :key="section" class="form-section">
-          <KycpDivider :title="section" />
+          <KycpDivider v-if="section !== 'General'" :title="section" />
           
           <div v-for="field in fieldsBySection(section)" :key="field.key" class="field-container">
             <!-- Statement fields -->
@@ -319,10 +319,14 @@ function groupSection(g: any): string {
   return firstChild?._section || 'General'
 }
 function groupsForSection(section: string) {
-  return (groups.value || []).filter((g: any) => groupSection(g) === section)
+  return (groups.value || [])
+    .filter((g: any) => groupSection(g) === section)
+    .filter((g: any) => groupChildFields(g).length > 0)
 }
 function groupChildFields(g: any) {
-  return (g.children || []).map((k: string) => fieldMap.value[k]).filter(Boolean)
+  return (g.children || [])
+    .map((k: string) => fieldMap.value[k])
+    .filter((f: any) => !!f && !f.internal && !f.internal_only)
 }
 function evaluateVisibilityForModel(field: any, model: Record<string, any>) {
   if (!field.visibility || field.visibility.length === 0) return true

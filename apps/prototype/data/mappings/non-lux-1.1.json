@@ -34,7 +34,7 @@
       "=": "==",
       "<>": "!="
     },
-    "yes_values": ["Y", "Yes", "YES"],
+    "yes_values": ["Y", "Yes", "YES", "a", "A"],
     "decimal_hint_patterns": ["0.0", ".0", "decimal"]
   },
   "lookups_sheet": "Lookup Values",
@@ -130,10 +130,16 @@
     "jurisdiction": "non_luxembourg",
     "entity_type": "limited_partnership"
   },
+  "label_overrides": {
+    "GENIndicativeAppetiteQuestions": "Do you wish to answer some Pre-Application Questions to provide a high level indication of RBSI appetite to open the account?"
+  },
   "exclude": {
     "action_contains": ["(internal)"],
     "label_contains": ["internal analysis"]
   },
+  "internal_label_contains": [
+    "obt to complete"
+  ],
   "sections_by_label": {
     "account jurisdiction": "Start a new application",
     "in which jurisdiction would you like to open this account?": "Start a new application",

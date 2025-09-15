@@ -137,6 +137,9 @@ def parse_visibility(expr: str, op_map: dict[str,str]):
     e = expr.replace('\n', ' ')
     for k, v in op_map.items():
         e = e.replace(k, v)
+    # Normalize textual boolean connectors
+    e = re.sub(r'\bAND\b', '&&', e, flags=re.IGNORECASE)
+    e = re.sub(r'\bOR\b', '||', e, flags=re.IGNORECASE)
     parts = [p.strip() for p in e.split('&&') if p.strip()]
     conditions = []
     for p in parts:
@@ -307,6 +310,8 @@ def main():
     fallback = {k: [{'value': v, 'label': v} for v in vals] for k, vals in (mapping.get('fallback_lookups') or {}).items()}
 
     cols = mapping['columns']
+    label_overrides = mapping.get('label_overrides') or {}
+    internal_label_contains = [s.lower() for s in (mapping.get('internal_label_contains') or [])]
     yes_vals = mapping['normalization']['yes_values']
     op_map = mapping['normalization']['operators']
     sec_map = {k.lower(): v for k,v in mapping.get('sections_by_label', {}).items()}
@@ -328,6 +333,8 @@ def main():
     for r in filtered:
         idv = (r.get(cols['id']) or '').strip()
         label = (r.get(cols['label']) or '').strip()
+        if idv in label_overrides:
+            label = label_overrides[idv]
         # Exclusions: internal/system/action/label patterns
         action = (r.get(cols['action']) or '').lower()
         internal = (r.get(cols['internal']) or '').strip()
@@ -392,6 +399,9 @@ def main():
             '_section': mapping['defaults']['section'],
             '_stage': (r.get(cols['stage']) or '').strip()
         }
+        # Mark internal by label keywords (e.g., OBT TO COMPLETE)
+        if any(tok in label.lower() for tok in internal_label_contains):
+            field['internal'] = True
         if style == 'field':
             field['type'] = ky_type
             field['validation'] = {}

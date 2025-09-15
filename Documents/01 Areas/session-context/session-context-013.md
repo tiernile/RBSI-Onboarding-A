@@ -62,6 +62,7 @@ Goal: Create an AS-IS KYCP-format schema from the 20250911 master Non-Lux LP wor
   - Misaligned lookup rescue: if LOOKUP is blank but DATA TYPE equals a known lookup type (present in Lookup Values or fallbacks), treat as lookup and load options; if still no items, add fallback option "Lookup items not provided".
   - Non-input detection expanded: Title/Divider in either DATA TYPE or FIELD TYPE → `style: divider`; Statement/Note/Information in either → `style: statement`.
   - Non-input rows with blank KEYNAME included by synthesising stable keys (e.g., `title_<slug>`); duplicate checking moved after synthesis.
+  - Internal marking by label: rows with `FIELD NAME` containing "OBT TO COMPLETE" are marked `internal: true` (hidden from the user experience but retained in schema for audit).
 - Mapping updates (`non-lux-1.1.json`):
   - Added fallbacks for: Yes/No, Bank Account Jurisdiction, Fund Size, Country, "Application Options- Funds/ FRE", jurisdiction-specific brands (Brands Jersey/Guernsey/Gibraltar/Isle of Man/United Kingdom), Currencycrm (GBP/USD/EUR/CHF/JPY), Industry description incl SIC code (starter list), and Risk Score (Low/Medium/High).
   - Added section mapping based on client-provided groupings; default `_section` remains "General" where no match.
@@ -80,6 +81,7 @@ Goal: Create an AS-IS KYCP-format schema from the 20250911 master Non-Lux LP wor
 - "Under which brand would you like to open this account?" now shows jurisdiction-specific brand choices when visible.
 - "Intermediary Details" (Title) now respects conditionality (visibility set to match 3rd party administrator path).
 - "Does the business involve:" (GENBusinessType) correctly renders as a dropdown from Lookup Values (Undertake Business), not a free text input.
+ - Fields labelled with "OBT TO COMPLETE" no longer render in the UI (marked internal), but remain in the schema artifacts.
 
 ### Complex groups wiring (preview)
 
