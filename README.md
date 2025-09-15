@@ -7,6 +7,9 @@ This repository turns client spreadsheets into clickable onboarding journeys usi
 - Area Workflow (PRD/ADR/Plan/Session): `Documents/01 Areas/guide/Area-Workflow.md`
 - QuickStart (for demoing): `Documents/01 Areas/guide/QuickStart.md`
 - Operations (how to update journeys): `Documents/01 Areas/guide/Operations.md`
+- Spreadsheet to Prototype Workflow: `Documents/01 Areas/guide/Spreadsheet-to-Prototype-Workflow.md`
+- Deployments (Vercel): `Documents/01 Areas/guide/Deployments.md`
+- Tone of Voice Guidelines: `Documents/01 Areas/tone-of-voice/README.md`
 - Contributor guide: `AGENTS.md`
 
 ## Run the Prototype

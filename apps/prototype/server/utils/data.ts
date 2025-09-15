@@ -32,3 +32,26 @@ export async function loadYamlFromData<T = any>(event: H3Event, relativePath: st
   }
 }
 
+/**
+ * Load a JSON file from the data directory with a fallback to Nitro server assets.
+ */
+export async function loadJsonFromData<T = any>(event: H3Event, relativePath: string): Promise<T> {
+  const config = useRuntimeConfig(event)
+  const rel = relativePath.replace(/^\/+/, '')
+  const fsPath = join(String(config.dataDir || ''), rel)
+  try {
+    const raw = await readFile(fsPath, 'utf8')
+    return JSON.parse(raw) as T
+  } catch (err) {
+    try {
+      const storage = useStorage()
+      const key = `assets:data/${rel}`
+      const raw = await storage.getItem<string | Buffer>(key)
+      if (raw !== null && raw !== undefined) {
+        const text = typeof raw === 'string' ? raw : String(raw)
+        return JSON.parse(text) as T
+      }
+    } catch {}
+    throw err
+  }
+}

@@ -1,243 +1,129 @@
-# RBSI Onboarding Prototype - Comprehensive Handover Document
+# RBSI Onboarding Prototype — Handover
 
-**Date**: 2025-09-02  
-**Session**: 002  
-**Status**: POC functional with KYCP component library
+Date: 2025-01-11  
+Status: Complete prototype system with KYCP components, tone analysis, and full workflow documentation
 
-## 🎯 Project Overview
+## Overview
 
-### What We're Building
-A high-fidelity prototype for RBSI's institutional onboarding journeys that:
-- Demonstrates form flows with exact KYCP component styling
-- Validates the schema-first approach (spreadsheet → YAML → UI)
-- Provides audit trail with diff/export capabilities
-- Serves as reference implementation for FinOpz handover
+Purpose: Move from spreadsheets to clickable, schema‑driven journeys rapidly, with an audit trail suitable for client review. This is not production software and does not store personal data.
 
-### Current State
-- ✅ Mission Control dashboard operational
-- ✅ KYCP component library built and documented
-- ✅ Component showcase with interactive demos
-- ✅ Preview pages rendering with professional styling
-- ✅ Schema-driven forms working with conditions
-- ⚠️ Select dropdown rendering issue (fixed with v-if approach)
+Current state
+- Mission Control lists journeys; both standard and KYCP versions available.
+- KYCP component library with exact visual parity to platform (Sessions 009-011).
+- Components: String, FreeText, Integer, Decimal, Date, Lookup (no radio buttons).
+- Two importers: standard and KYCP-aligned for different schema formats.
+- Tone of voice analyzer with CSV reports for human review.
+- Robust visibility engine (AND/OR, parentheses, includes, numeric compares).
+- Complete workflow documented from spreadsheet to deployed prototype.
+- Health endpoint `/api/health` confirms data availability.
 
-## 🏗️ Architecture
+## Architecture & Structure (key paths)
 
-### Tech Stack
+App (Nuxt 3): `apps/prototype/`
+- Pages: `pages/index.vue` (Mission Control), `pages/preview/[journey].vue`, `pages/about.vue`
+- Components: `components/kycp/base/*` (inputs), `components/nile/*` (layout)
+- Composables: `useManifest.ts`, `useSchema.ts`, `useConditions.ts`, `useValidation.ts`
+- Server: `server/api/*` (manifest, schema, diff, export, auth, health)
+- Server utils: `server/utils/data.ts` (data loader), `server/utils/schema-validator.ts`
+- Design tokens: `assets/kycp-design.css`
+
+Data (bundled with app): `apps/prototype/data/`
+- Schemas: `schemas/manifest.yaml`, `schemas/<journey>/schema.yaml`
+- Mappings: `mappings/*.json`
+- Incoming: `incoming/*.xlsx`
+- Generated: `generated/importer-cli/<journey>/*`, `generated/exports/*`, `generated/diffs/*`
+
+Docs: `Documents/01 Areas/guide/`
+- System-Overview.md, Operations.md, Visibility-Rules.md, Deployments.md, Area-Workflow.md
+
+Scripts (root):
+- `scripts/import_xlsx.py` (Standard importer)
+- `scripts/import_xlsx_kycp.py` (KYCP-aligned importer)
+- `scripts/analyze_tone.py` (Tone of voice analyzer)
+- `scripts/mapping_wizard.py` (interactive mapping)
+- `scripts/preview_schema.py` (schema summary)
+
+## Data & Import Pipeline
+
+Inputs
+- XLSX in `apps/prototype/data/incoming/`
+- Mapping JSON in `apps/prototype/data/mappings/` (declares columns, normalization, ordering)
+
+Command (example)
 ```
-Frontend:    Vue 3 + Nuxt 3
-Styling:     Custom CSS with design tokens
-Data:        YAML schemas
-Auth:        Bcrypt hashed admin password
-Deployment:  Static generation (planned)
-```
-
-### Directory Structure
-```
-/apps/prototype/
-├── pages/
-│   ├── index.vue           # Mission Control dashboard
-│   ├── showcase.vue        # Component library showcase
-│   ├── about.vue          # About page
-│   └── preview/
-│       └── [journey].vue   # Dynamic journey preview
-├── components/
-│   ├── kycp/
-│   │   └── base/          # KYCP-faithful components
-│   │       ├── KycpInput.vue
-│   │       ├── KycpSelect.vue
-│   │       ├── KycpRadio.vue
-│   │       ├── KycpTextarea.vue
-│   │       ├── KycpFieldWrapper.vue
-│   │       ├── KycpFieldGroup.vue
-│   │       └── KycpTag.vue
-│   └── nile/              # Utility components
-├── composables/
-│   ├── useManifest.ts     # Journey manifest loader
-│   ├── useSchema.ts       # Schema loader
-│   ├── useConditions.ts   # Conditional logic engine
-│   └── useValidation.ts   # Form validation
-├── server/
-│   └── api/
-│       ├── manifest.get.ts
-│       ├── schema/[journey].get.ts
-│       ├── diff/[journey].get.ts
-│       ├── export/[journey].get.ts
-│       └── auth/login.post.ts
-└── assets/
-    └── kycp-design.css    # Design system tokens
-
-/data/
-├── schemas/
-│   ├── manifest.yaml      # Journey registry
-│   └── non-lux-lp-demo/
-│       └── schema.yaml    # Demo journey schema
-└── generated/             # Diff/export outputs
-
-/Documents/01 Areas/
-├── project-context.md     # Why and what
-├── project-structure.md   # How we work
-├── mission-control-design.md
-├── design-system/         # Component documentation
-├── poc-workflow/          # POC plans and status
-├── session-context/       # Progress tracking
-└── HANDOVER.md           # This file
+python scripts/import_xlsx.py \
+  --mapping apps/prototype/data/mappings/non-lux-lp-demo.json \
+  --input apps/prototype/data/incoming/20250828_draft-master-spreadsheet.xlsx \
+  --sheet "LP Proposal" \
+  --lookups-sheet "Lookup Values" \
+  --journey-key non-lux-lp-demo
 ```
 
-## 🎨 Design Systems
+Outputs
+- Schema: `apps/prototype/data/schemas/<journey>/schema.yaml`
+- Reports: `apps/prototype/data/generated/importer-cli/<journey>/{summary.json, decisions.json}`
 
-### Two Distinct Design Languages
+Defaults & rules
+- Lookup = dropdown (select), including Yes/No when provided by lookup.
+- Mandatory normalization accepts A/a/Required/Mandatory + Y/Yes/True/1.
+- Visibility expressions normalized (AND/OR, operators, quoting RHS).
+- If lookup type missing, control falls back to text (no invalid select).
 
-#### 1. Mission Control (Admin Dashboard)
-- **Style**: Flat, clean, journey-agnostic
-- **Colors**: Light gray background (#FAFBFC), white cards
-- **No branding**: Intentionally neutral
-- **Status pills**: Bold colors (red/amber/green)
-- **Location**: `/apps/prototype/pages/index.vue`
+## Deployment (Vercel)
 
-#### 2. KYCP Forms (Journey Pages)
-- **Style**: Matches KYCP exactly
-- **Gray headers**: #808080 background with white text
-- **Clean inputs**: 1px border (#D0D0D0), 4px radius
-- **Professional**: Enterprise-appropriate
-- **Location**: `/apps/prototype/components/kycp/`
+Settings
+- Framework: Nuxt.js; Root Directory: `apps/prototype`; leave Output Directory blank.
 
-### Design Tokens (CSS Variables)
-```css
-/* In app.vue - GLOBAL scope */
---kycp-primary: #0066CC;
---kycp-gray-500: #808080;  /* Header backgrounds */
---kycp-input-border: #D0D0D0;
---kycp-error: #D32F2F;
-/* ... see kycp-design.css for full list */
+Data
+- Bundled in `apps/prototype/data/`; no `NUXT_DATA_DIR` needed.
+
+Env vars
+- `NUXT_ADMIN_PASSWORD_HASH` (bcrypt from `pnpm hash "YourPassword"`).
+- Optional: `MC_VISIBLE=non-lux-lp-demo`.
+
+Health & checks
+- `/api/health` → `{ dataDir, manifestExists, journeyCount }`.
+- `/api/manifest` includes `non-lux-lp-demo` in active.
+- Admin login shows the Admin badge; Diff/Export stream artifacts (writes may be skipped on serverless).
+
+## Admin & Security
+
+- Password-only admin with HTTP‑only cookie.
+- Zod schema validation on server.
+- CSV export escaping (formula injection safe).
+- Slug validation on journey params (path traversal safe).
+
+## Known Constraints
+
+- Vercel FS is read‑only: Diff/Export write attempts are best‑effort; responses still stream back CSV/HTML.
+- About page provides a stable overview; session-context files track detailed progress.
+
+## Next Steps
+
+- Serverless flag to skip disk writes for Diff/Export.
+- pnpm convenience scripts for importer/wizard.
+- Minimal tests for visibility grammar and importer normalization.
+- Optional: CSRF on POST `/api/auth/login`.
+
+## Quick Start
+
+Local
 ```
-
-## 🚨 Critical Issues & Solutions
-
-### 1. CSS Variable Scoping
-**Problem**: CSS variables in `<style scoped>` don't work globally in Vue  
-**Solution**: Move all CSS variables to `app.vue` in non-scoped block  
-**File**: `/apps/prototype/app.vue`
-
-### 2. Dynamic Component Registration
-**Problem**: `<component :is="componentName">` failed with string names  
-**Solution**: Use explicit `v-if/v-else-if` for each component type  
-**File**: `/apps/prototype/pages/preview/[journey].vue` lines 45-81
-
-### 3. Environment Variables
-**Location**: `/apps/prototype/.env`  
-**Required**: `NUXT_ADMIN_PASSWORD_HASH`  
-**Generate**: `pnpm hash "YourPassword"`  
-**Note**: Don't use `.env.local` - Nuxt doesn't read it
-
-## 📍 Current URLs & Routes
-
-```
-http://localhost:3000/              # Mission Control
-http://localhost:3000/showcase      # Component showcase
-http://localhost:3000/about         # About page
-http://localhost:3000/preview/non-lux-lp-demo  # Demo journey
-
-# API Endpoints
-/api/manifest                       # Journey list
-/api/schema/non-lux-lp-demo        # Journey schema
-/api/diff/non-lux-lp-demo          # Generate diff
-/api/export/non-lux-lp-demo        # Export CSV
-/api/auth/login                     # Admin login
-```
-
-## 🔧 Common Tasks
-
-### Start Development Server
-```bash
 cd apps/prototype
+pnpm install
 pnpm dev
-# Visit http://localhost:3000
+# http://localhost:3000
 ```
 
-### Add New Component
-1. Create in `/components/kycp/base/`
-2. Follow existing patterns (v-model support, TypeScript props)
-3. Add to showcase page
-4. Update preview page v-if conditions
+Deploy (Vercel)
+- Set `NUXT_ADMIN_PASSWORD_HASH`, deploy from `apps/prototype` (Nuxt preset).
+- Verify `/api/health` and `/api/manifest`.
 
-### Add New Journey
-1. Create schema in `/data/schemas/[journey-key]/schema.yaml`
-2. Add entry to `/data/schemas/manifest.yaml`
-3. Preview at `/preview/[journey-key]`
+## References
 
-### Update Styling
-1. Global variables: `/apps/prototype/app.vue`
-2. Design tokens: `/apps/prototype/assets/kycp-design.css`
-3. Component styles: In component `<style scoped>` blocks
-
-## 📋 POC Status
-
-### Completed ✅
-- [x] Schema-first pipeline working
-- [x] KYCP component library (8 components)
-- [x] Component showcase with code examples
-- [x] Mission Control with admin auth
-- [x] Preview pages with proper styling
-- [x] Conditional logic engine
-- [x] Diff/export functionality
-- [x] Design system documentation
-
-### In Progress 🚧
-- [ ] Additional KYCP components (date, checkbox)
-- [ ] Comprehensive accessibility testing
-- [ ] Error summary improvements
-- [ ] Performance optimization
-
-### Not Started ⏳
-- [ ] Production deployment
-- [ ] Visual regression testing
-- [ ] Multi-journey testing
-- [ ] FinOpz handover package
-
-## 🐛 Known Issues
-
-### 1. Select Component Rendering
-**Issue**: Select dropdown may not show options  
-**Fix**: Using v-if approach instead of dynamic components  
-**Status**: Fixed in latest version
-
-### 2. Route Confusion
-**Issue**: Sometimes shows preview page on homepage  
-**Fix**: Clear browser cache, restart dev server  
-**Prevention**: Always use NuxtLink for navigation
-
-### 3. Component Import Errors
-**Issue**: "Cannot find module" errors  
-**Fix**: Ensure proper import paths with `~/` prefix  
-**Example**: `import KycpInput from '~/components/kycp/base/KycpInput.vue'`
-
-## 🎯 Next Session Priorities
-
-1. **Complete remaining KYCP components**
-   - KycpCheckbox
-   - KycpDatePicker
-   - KycpMultiSelect
-
-2. **Accessibility improvements**
-   - Error summary anchoring
-   - Focus management
-   - ARIA live regions
-
-3. **Testing & validation**
-   - Cross-browser testing
-   - Mobile responsiveness
-   - Journey flow testing
-
-4. **Documentation**
-   - API documentation
-   - Deployment guide
-   - FinOpz integration guide
-
-## 📚 Key Documentation Files
-
-1. **Project Context**: `/Documents/01 Areas/project-context.md`
-   - Why the project exists
+- Guides: `Documents/01 Areas/guide/*`
+- Sessions: `Documents/01 Areas/session-context/session-context-00*.md`
+- This handover will be updated at the end of each working session.
    - Success metrics (80% RFT)
    - Stakeholder requirements
 
@@ -259,6 +145,15 @@ pnpm dev
 5. **Session Contexts**: `/Documents/01 Areas/session-context/`
    - session-context-001.md: Initial setup
    - session-context-002.md: Component library creation
+   - session-context-003.md: Importer CLI scaffolding and analysis
+   - session-context-004.md: Importer/visibility hardening; deploy path
+   - session-context-005.md: Data bundling; admin/health; visibility
+   - session-context-006.md: Internal-only flags; provenance on cards
+   - session-context-007.md: KYCP component fidelity phase
+   - session-context-008.md: Strict KYCP parity achieved
+   - session-context-009.md: Visual matching to KYCP platform
+   - session-context-010.md: Process new spreadsheet with both importers
+   - session-context-011.md: Complete workflow with tone analysis
 
 ## 🔑 Key Decisions Made
 
@@ -321,4 +216,4 @@ cat ../../../Documents/01\ Areas/HANDOVER.md
 
 **Remember**: This is a prototype for demonstration and testing. It's not production code, but it should feel production-ready to users testing it.
 
-**Last Updated**: 2025-09-02 by Assistant in Session 002
+**Last Updated**: 2025-01-11 by Assistant in Session 009

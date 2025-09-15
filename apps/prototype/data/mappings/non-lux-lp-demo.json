@@ -13,7 +13,8 @@
     "mandatory": "MANDATORY",
     "visibility": "VISIBILITY CONDITION/GROUP NAME",
     "regex": "REGEX",
-    "ref": "REF"
+    "ref": "REF",
+    "action": "Action"
   },
   "normalization": {
     "data_type": {

@@ -41,7 +41,9 @@ const props = withDefaults(defineProps<Props>(), {
   readonly: false,
   required: false,
   error: false,
-  rows: 4
+  rows: 4,
+  // KYCP platform limit for freeText
+  maxlength: 8192
 })
 
 const emit = defineEmits<{

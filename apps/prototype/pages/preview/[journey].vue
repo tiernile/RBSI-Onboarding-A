@@ -62,14 +62,6 @@
                 :error="!!errors[item.id]"
                 :aria-describedby="errors[item.id] ? `${item.id}-error` : undefined"
               />
-              <KycpRadio
-                v-else-if="item.control === 'radio'"
-                v-model="answers[item.id]"
-                :options="item.options || []"
-                :name="`radio-${item.id}`"
-                :required="item.mandatory"
-                :aria-describedby="errors[item.id] ? `${item.id}-error` : undefined"
-              />
               <KycpTextarea
                 v-else-if="item.control === 'textarea'"
                 :id="item.id"
@@ -115,7 +107,6 @@
 import { computed, reactive, ref } from 'vue'
 import KycpInput from '~/components/kycp/base/KycpInput.vue'
 import KycpSelect from '~/components/kycp/base/KycpSelect.vue'
-import KycpRadio from '~/components/kycp/base/KycpRadio.vue'
 import KycpTextarea from '~/components/kycp/base/KycpTextarea.vue'
 import KycpFieldWrapper from '~/components/kycp/base/KycpFieldWrapper.vue'
 import KycpFieldGroup from '~/components/kycp/base/KycpFieldGroup.vue'
@@ -135,12 +126,19 @@ const journeyName = computed(() => schema.value?.name || '')
 const journeyVersion = computed(() => schema.value?.version || '0.1.0')
 
 const answers = reactive<Record<string, any>>({})
-const visibleItems = computed(() => {
+// Items not marked as internal_only
+const publicItems = computed(() => {
   const items = (schema.value?.items || []) as any[]
+  return items.filter(it => !it.internal_only)
+})
+// Visible, public items
+const visibleItems = computed(() => {
+  const items = publicItems.value
   return items.filter(it => isVisible(it.visibility, answers))
 })
 
-const { errors, validate } = useValidation((schema.value?.items || []) as any, answers)
+// Validate only public items
+const { errors, validate } = useValidation(publicItems.value as any, answers)
 
 function onSubmit() {
   if (validate()) {
@@ -155,7 +153,7 @@ function onSubmit() {
 
 // Simple grouping by section (first occurrence order)
 const groups = computed(() => {
-  const items = (schema.value?.items || []) as any[]
+  const items = (publicItems.value || []) as any[]
   const seen = new Set<string>()
   const order: string[] = []
   for (const it of items) {
@@ -173,7 +171,7 @@ function go(i: number) { step.value = i }
 function back() { if (step.value>0) step.value-- }
 function next() {
   // validate current group only
-  const allItems = (schema.value?.items || []) as any[]
+  const allItems = (publicItems.value || []) as any[]
   const current = allItems.filter(it => (it.section || 'General') === currentGroup.value)
   const { errors: errs, validate } = useValidation(current as any, answers)
   const ok = validate()

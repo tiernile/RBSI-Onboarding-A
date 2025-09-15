@@ -1,19 +1,20 @@
 /* KYCP Design System - Form Components */
 
 :root {
-  /* KYCP Colors */
-  --kycp-primary: #0066CC;
-  --kycp-primary-hover: #0052A3;
-  --kycp-gray-900: #1A1A1A;
-  --kycp-gray-800: #333333;
-  --kycp-gray-700: #4D4D4D;
-  --kycp-gray-600: #666666;
-  --kycp-gray-500: #808080;
-  --kycp-gray-400: #999999;
-  --kycp-gray-300: #B3B3B3;
-  --kycp-gray-200: #CCCCCC;
-  --kycp-gray-100: #E6E6E6;
-  --kycp-gray-50: #F5F5F5;
+  /* KYCP Colors - Based on screenshots */
+  --kycp-primary: #0179C8;
+  --kycp-primary-hover: #0066B3;
+  --kycp-primary-light: #E3F2FD;
+  --kycp-gray-900: #333333;
+  --kycp-gray-800: #4A4A4A;
+  --kycp-gray-700: #666666;
+  --kycp-gray-600: #757575;
+  --kycp-gray-500: #999999;
+  --kycp-gray-400: #BDBDBD;
+  --kycp-gray-300: #DDDDDD;
+  --kycp-gray-200: #EEEEEE;
+  --kycp-gray-100: #F5F5F5;
+  --kycp-gray-50: #FAFAFA;
   --kycp-white: #FFFFFF;
   
   /* Semantic Colors */
@@ -21,15 +22,18 @@
   --kycp-error-bg: #FFEBEE;
   --kycp-success: #388E3C;
   --kycp-success-bg: #E8F5E9;
+  --kycp-required: #D32F2F;
   
   /* Form Specific */
-  --kycp-input-border: #D0D0D0;
+  --kycp-input-border: #CCCCCC;
   --kycp-input-border-hover: #999999;
-  --kycp-input-border-focus: var(--kycp-primary);
+  --kycp-input-border-focus: #0179C8;
   --kycp-input-bg: var(--kycp-white);
-  --kycp-input-disabled-bg: var(--kycp-gray-50);
-  --kycp-label-color: var(--kycp-gray-700);
-  --kycp-placeholder-color: var(--kycp-gray-400);
+  --kycp-input-disabled-bg: #F5F5F5;
+  --kycp-label-color: #666666;
+  --kycp-placeholder-color: #999999;
+  --kycp-section-bg: #FAFAFA;
+  --kycp-section-border: #E0E0E0;
   
   /* Spacing */
   --kycp-spacing-xs: 4px;

@@ -18,7 +18,7 @@ From `apps/prototype/`:
 - `pnpm start`: start built server.
 - `pnpm hash "YourPassword"`: print bcrypt hash for admin login.
 
-Env setup: copy `.env.example` to `.env.development`; set `NUXT_ADMIN_PASSWORD_HASH`. In deploys, the app auto-detects `apps/prototype/data/`; override with `NUXT_DATA_DIR` only if you host data elsewhere.
+Env setup: copy `.env.example` to `.env.development`; set `NUXT_ADMIN_PASSWORD_HASH`. In Vercel, data is bundled under `apps/prototype/data/` and auto-detected; set `NUXT_DATA_DIR` only if hosting data elsewhere.
 
 ## Coding Style & Naming Conventions
 

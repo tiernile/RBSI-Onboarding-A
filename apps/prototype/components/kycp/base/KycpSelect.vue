@@ -64,9 +64,15 @@ const internalValue = computed({
 const normalizedOptions = computed(() => {
   return props.options.map(opt => {
     if (typeof opt === 'string') {
+      // For string options, use the string as both code and label
       return { label: opt, value: opt }
     }
-    return opt
+    // Ensure we have value (code) and label
+    return {
+      value: opt.value || opt.code || '', // Support both 'value' and 'code' properties
+      label: opt.label || opt.value || '',
+      disabled: opt.disabled
+    }
   })
 })
 </script>
@@ -74,46 +80,48 @@ const normalizedOptions = computed(() => {
 <style scoped>
 .kycp-select {
   width: 100%;
-  padding: var(--kycp-spacing-sm) var(--kycp-spacing-2xl) var(--kycp-spacing-sm) var(--kycp-spacing-md);
-  font-family: var(--kycp-font-family);
-  font-size: var(--kycp-font-size-base);
-  color: var(--kycp-gray-900);
-  background-color: var(--kycp-input-bg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
-  background-position: right var(--kycp-spacing-sm) center;
+  padding: 8px 32px 8px 10px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #111827;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%236b7280' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+  background-position: right 10px center;
   background-repeat: no-repeat;
-  background-size: 20px;
-  border: 1px solid var(--kycp-input-border);
-  border-radius: var(--kycp-radius-base);
+  background-size: 10px 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all var(--kycp-transition-fast);
+  transition: all 0.15s ease;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
 .kycp-select:hover:not(:disabled) {
-  border-color: var(--kycp-input-border-hover);
+  border-color: #9ca3af;
 }
 
 .kycp-select:focus {
   outline: none;
-  border-color: var(--kycp-input-border-focus);
-  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .kycp-select--error {
-  border-color: var(--kycp-error);
+  border-color: #ef4444;
 }
 
 .kycp-select--error:focus {
-  border-color: var(--kycp-error);
-  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.1);
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 .kycp-select:disabled,
 .kycp-select--disabled {
-  background-color: var(--kycp-input-disabled-bg);
-  color: var(--kycp-gray-400);
+  background-color: #f9fafb;
+  color: #9ca3af;
   cursor: not-allowed;
 }
 </style>

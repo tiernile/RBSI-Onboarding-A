@@ -44,7 +44,7 @@ logs/
 .tmp/
 
 # Generated files that change frequently
-data/generated/
+**/data/generated/
 *.temp.*
 
 # Private/sensitive files

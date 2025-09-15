@@ -3,7 +3,7 @@
     <header class="header">
       <h1>Mission Control</h1>
       <div class="actions">
-        <NuxtLink class="link" to="/showcase">Components</NuxtLink>
+        <NuxtLink class="link" to="/kycp-components">Components</NuxtLink>
         <NuxtLink class="link" to="/about">About</NuxtLink>
         <button v-if="!isAdmin" @click="showLogin=true">Admin</button>
         <span v-else class="badge">Admin</span>
@@ -16,11 +16,12 @@
       <div v-for="j in cards" :key="j.key" class="card">
         <h2>{{ j.name }}</h2>
         <p class="muted">{{ j.key }} · v{{ j.version }} · Variant {{ j.variant || 'A' }}</p>
+        <p v-if="j.source?.file" class="muted source">Source: {{ j.source.file }}<span v-if="j.source.sheet"> — {{ j.source.sheet }}</span></p>
         <div class="pills">
           <span class="pill" :class="`status-${j.display?.status || 'alpha'}`">{{ j.display?.status || 'alpha' }}</span>
           <span class="pill status-hidden" v-if="!j.display?.visible">hidden</span>
         </div>
-        <NuxtLink class="btn" :to="`/preview/${j.key}`">Open</NuxtLink>
+        <NuxtLink class="btn" :to="j.variant === 'KYCP' ? `/preview-kycp/${j.key}` : `/preview/${j.key}`">Open</NuxtLink>
         <div v-if="isAdmin" class="admin-actions">
           <a :href="`/api/diff/${j.key}`" target="_blank" rel="noopener" class="link">View Diff</a>
           <a :href="`/api/export/${j.key}`" class="link">Export CSV</a>

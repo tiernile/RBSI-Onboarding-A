@@ -235,6 +235,16 @@ def main():
     section_col = col("section")
     stage_col = col("stage")
     regex_col = col("regex") or col("validation")
+    # Internal-only column (optional). Accept mapping keys "internal" or "internal_only"; fallback to common header names
+    internal_col = col("internal") or col("internal_only")
+    if not internal_col:
+        for cand in ("INTERNAL ONLY", "INTERNAL", "INTERNAL USE ONLY"):
+            resolved = header_map.get(norm_key(cand))
+            if resolved:
+                internal_col = resolved
+                break
+    # Action column (optional). If contains the word "internal" anywhere, mark as internal_only
+    action_col = col("action") or header_map.get(norm_key("Action"))
     crm_col = col("crm_field")
     ref_col = col("ref")
     help_col = col("help")
@@ -250,6 +260,7 @@ def main():
         "timestamp": datetime.now().isoformat(),
         "journey": journey_key,
         "sheet": sheet,
+        "input_file": xlsx_path.name,
         "header_row_used": header_used,
         "rows_total": int(df.shape[0]),
         "rows_after_filters": int(filtered_df.shape[0]),
@@ -364,6 +375,19 @@ def main():
         if help_col and pd.notna(row.get(help_col)):
             help_text = str(row.get(help_col))
 
+        # Internal-only flag (do not surface in UI)
+        internal_only = False
+        # Direct internal flags column
+        if internal_col and pd.notna(row.get(internal_col)):
+            val = str(row.get(internal_col))
+            # Treat explicit truthy or any occurrence of the word "internal" as internal-only
+            internal_only = as_bool(val) or (bool(re.search(r"\binternal\b", val, flags=re.IGNORECASE)))
+        # Heuristic from Action column
+        if not internal_only and action_col and pd.notna(row.get(action_col)):
+            act = str(row.get(action_col))
+            if re.search(r"\binternal\b", act, flags=re.IGNORECASE):
+                internal_only = True
+
         item = {
             "id": fid,
             "label": label,
@@ -379,7 +403,8 @@ def main():
             "visibility": {"all": [vis_expr]} if vis_expr else {"all": []},
             "validation": {"regex": regex, "max_length": None},
             "mappings": {"crm_field": crm_field, "system_field": None},
-            "meta": {"source_row_ref": src_ref}
+            "meta": {"source_row_ref": src_ref},
+            "internal_only": bool(internal_only)
         }
         items.append(item)
 
@@ -390,7 +415,8 @@ def main():
             "lookup_source": lookup_source,
             "visibility_original": vis_raw.strip() if vis_raw else None,
             "visibility_expr": vis_expr or None,
-            "used_fallback_id": used_fallback_id
+            "used_fallback_id": used_fallback_id,
+            "internal_only": bool(internal_only)
         })
 
     # Optional ordering: sheet (default), section, stage_section

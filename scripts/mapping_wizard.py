@@ -29,7 +29,10 @@ SYNONYMS = {
   'section': ['SECTION','GROUP','PAGE'],
   'regex': ['REGEX','VALIDATION','PATTERN'],
   'crm_field': ['CRM Mapping Info','CRM','SYSTEM FIELD'],
-  'ref': ['REF','ROW','ROW REF','ROW NUMBER']
+  'ref': ['REF','ROW','ROW REF','ROW NUMBER'],
+  'internal_only': ['INTERNAL ONLY','INTERNAL','INTERNAL USE ONLY']
+  ,
+  'action': ['ACTION','NOTES','COMMENT','INSTRUCTIONS']
 }
 
 

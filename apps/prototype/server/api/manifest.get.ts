@@ -1,4 +1,4 @@
-import { loadYamlFromData } from '~/server/utils/data'
+import { loadYamlFromData, loadJsonFromData } from '~/server/utils/data'
 import { H3Event, sendError, getCookie, createError } from 'h3'
 
 type Journey = {
@@ -24,7 +24,7 @@ export default defineEventHandler(async (event: H3Event) => {
     const adminCookie = getCookie(event, 'admin')
     const isAdmin = adminCookie === 'true'
 
-    const active = (manifest.active || []).map(j => {
+    const active = await Promise.all((manifest.active || []).map(async j => {
       const display = { ...(j.display || {}) }
       if (visibleEnv.length) {
         display.visible = visibleEnv.includes(j.key)
@@ -32,8 +32,16 @@ export default defineEventHandler(async (event: H3Event) => {
       if (statusEnv[j.key]) {
         display.status = statusEnv[j.key]
       }
-      return { ...j, display }
-    })
+      // Attempt to load importer summary for provenance (spreadsheet filename & sheet)
+      let source: { file?: string; sheet?: string } | undefined
+      try {
+        const summary = await loadJsonFromData<any>(event, `generated/importer-cli/${j.key}/summary.json`)
+        if (summary) {
+          source = { file: summary.input_file, sheet: summary.sheet }
+        }
+      } catch {}
+      return { ...j, display, source }
+    }))
 
     // Sort by group then order
     active.sort((a, b) => {

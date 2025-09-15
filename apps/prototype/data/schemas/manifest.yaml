@@ -29,6 +29,26 @@ active:
       order: 5
       visible: true
       status: alpha
+  - key: non-lux-lp-demo-kycp
+    name: Non‑Lux LP — KYCP Components
+    version: 0.2.0
+    variant: KYCP
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 6
+      visible: true
+      status: beta
+  - key: non-lux-1-1
+    name: Non‑Lux LP — v1.1 (AS‑IS)
+    version: 0.1.0
+    variant: KYCP
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 7
+      visible: true
+      status: alpha
   - key: zelda
     name: Zelda – Prototype Mapping
     version: 0.1.0

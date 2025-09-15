@@ -73,6 +73,7 @@ const SchemaItemSchema = z.object({
   control: ControlTypes,
   options: z.array(z.string()).optional().default([]),
   mandatory: z.boolean().default(false),
+  internal_only: z.boolean().optional().default(false),
   visibility: VisibilitySchema.default({ all: [] }),
   validation: ValidationSchema.optional().default({}),
   mappings: MappingsSchema.optional().default({}),
