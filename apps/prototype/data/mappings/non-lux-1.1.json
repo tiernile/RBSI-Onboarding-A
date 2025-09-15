@@ -28,7 +28,8 @@
       "Lookup": "lookup",
       "Free Text": "freeText",
       "Number": "number",
-      "Date": "date"
+      "Date": "date",
+      "Complex": "complex"
     },
     "operators": {
       "=": "==",

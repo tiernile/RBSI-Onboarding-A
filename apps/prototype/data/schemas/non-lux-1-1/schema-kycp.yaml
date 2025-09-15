@@ -634,9 +634,12 @@ fields:
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteInvestmentCountryComplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENIndicativeAppetiteInvestmentCountry
+      - GENIndicativeAppetiteInvestmentCountrypercentage
   -
     key: GENIndicativeAppetiteInvestmentCountry
     label: Country
@@ -832,9 +835,13 @@ fields:
     scriptId: "ROW:2.0|KEY:GENindicativeAppetiteSWFinvestorcomplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENindicativeAppetiteSWFinvestorname
+      - GENindicativeAppetiteSWFInvestorcountry
+      - GENindicativeAppetiteSWFinvestorownership
   -
     key: GENindicativeAppetiteSWFinvestorname
     label: Full name
@@ -1150,9 +1157,12 @@ fields:
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteRBSIProductOptionsComplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
 
+    children:
+      - GENIndicativeAppetiteRBSIProductOptions
+      - GENIndicativeAppetiteRBSIProductOptionsOther
   -
     key: GENIndicativeAppetiteRBSIProductOptions
     label: Products
@@ -1444,6 +1454,10 @@ fields:
             sourceKey: GENBankAccountJurisdiction
             operator: eq
             value: United Kingdom
+          -
+            sourceKey: GENIndicativeAppetiteQuestions
+            operator: eq
+            value: == Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteFundMng"
     _section: General
     _stage: 
@@ -1750,9 +1764,12 @@ fields:
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteInvestmentCountryComplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENUKIndicativeAppetiteInvestmentCountry
+      - GENUKIndicativeAppetiteInvestmentCountrypercentage
   -
     key: GENUKIndicativeAppetiteInvestmentCountry
     label: Country
@@ -1948,9 +1965,13 @@ fields:
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteSWFinvestorcomplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENUKIndicativeAppetiteSWFinvestorname
+      - GENUKIndicativeAppetiteSWFInvestorcountry
+      - GENUKIndicativeAppetiteSWFinvestorownership
   -
     key: GENUKIndicativeAppetiteSWFinvestorname
     label: Full name
@@ -2371,9 +2392,12 @@ fields:
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteRBSIProductOptionsComplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
 
+    children:
+      - GENUKIndicativeAppetiteRBSIProductOptions
+      - GENUKIndicativeAppetiteRBSIProductOptionsOther
   -
     key: GENUKIndicativeAppetiteRBSIProductOptions
     label: Products
@@ -5009,9 +5033,17 @@ fields:
     scriptId: "ROW:2.0|KEY:GENPrevRegAddressesComplex"
     _section: Details of the new customer account
     _stage: 
-    type: string
+    type: complex
     validation:
 
+    children:
+      - GENPrevRegAddress1
+      - GENPrevRegAddress2
+      - GENPrevRegAddress3
+      - GENPrevRegAddressCountry
+      - GENPrevRegAddressPostcode
+      - GENPrevRegAddressStartDate
+      - GENPrevRegAddressEndDate
   -
     key: GENPrevRegAddress1
     label: Previous registered address line 1
@@ -5648,9 +5680,13 @@ fields:
     scriptId: "ROW:2.0|KEY:GENSWFinvestorcomplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENSWFinvestorname
+      - GENSWFinvestorcountry
+      - GENSWFinvestorownership
   -
     key: GENSWFinvestorname
     label: Full name
@@ -6347,9 +6383,14 @@ fields:
     scriptId: "ROW:2.0|KEY:GENtaxcomplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENtaxcountry
+      - GENknowtin
+      - GENtin
+      - GENtaxnotapplicable
   -
     key: GENtaxcountry
     label: Country
@@ -7515,9 +7556,12 @@ fields:
     scriptId: "ROW:2.0|KEY:GENInvestmentCountryComplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENInvestmentCountry
+      - GENInvestmentCountrypercentage
   -
     key: GENInvestmentCountry
     label: Country
@@ -7611,9 +7655,14 @@ fields:
     scriptId: "ROW:2.0|KEY:GENInvestorCountryComplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENInvestorType
+      - GENInvestorTypeOther
+      - GENInvestorCountry
+      - GENInvestorTypePerc
   -
     key: GENInvestorType
     label: Type of investor
@@ -7753,10 +7802,16 @@ fields:
     scriptId: "ROW:2.0|KEY:GENSOFcomplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
     description: Please provide details of the source of funds to be introduced into the account(s).
+    children:
+      - GENSOFbank
+      - GENSOFcountry
+      - GENcurrency
+      - GENamount
+      - GENremittername
   -
     key: GENSOFbank
     label: Bank
@@ -9101,9 +9156,34 @@ fields:
     scriptId: "ROW:2.0|KEY:GENAccComplex"
     _section: General
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
+    children:
+      - GENAccountType
+      - GENAccDesignation
+      - GENAccName
+      - GENAccPurpose
+      - GENAccTurnoverCurrency
+      - GENAccTurnoverApprox.Amount
+      - GENAccTransCreditValue
+      - GENAccTransCreditMonth
+      - GENAccTransCreditRemitter
+      - GENAccTransCreditrepresentation
+      - GENAccTransDebitValue
+      - GENAccTransDebitMonth
+      - GENAccTransDebitBeneficiary
+      - GENAccTransDebitrepresentation
+      - GENAccCashActivity
+      - GENAccCashActivityDetail
+      - GENAccCashActivityPercentage
+      - GENAccStatFreq
+      - GENAccPaperFreq
+      - GENAccStatDate
+      - GENAccHYStat
+      - GENAccQuartStat
+      - GENAccBMStat
+      - GENCapitalAndInterestSplit
   -
     key: GENAccountType
     label: Please specify the type of account you require.
@@ -9951,10 +10031,15 @@ fields:
     scriptId: "ROW:2.0|KEY:GENeQcomplex"
     _section: EQ Electronic banking
     _stage: 
-    type: string
+    type: complex
     validation:
       required: true
     description: "Payments, Foreign, Exchange & Money Market Deposits"
+    children:
+      - GENeQcustomernum
+      - GENeqcustomername
+      - GENViewOnly
+      - GENeqOperate
   -
     key: GENeQcustomernum
     label: eQ Customer Number

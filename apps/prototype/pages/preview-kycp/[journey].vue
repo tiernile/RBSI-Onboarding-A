@@ -158,8 +158,8 @@
 
           <!-- Complex Groups (repeaters) for this section -->
           <div v-for="grp in groupsForSection(section)" :key="grp.key" class="group-container">
-            <KycpDivider :title="grp.key" />
-            <KycpRepeater v-model="formData[grp.key]" :item-label="grp.key" :title-field="grp.titleField">
+            <KycpDivider :title="grp.label || grp.key" />
+            <KycpRepeater v-model="formData[grp.key]" :item-label="grp.label || grp.key" :title-field="grp.titleField">
               <template #item="{ item }">
                 <div style="font-size: 13px; color: var(--kycp-gray-700);">
                   {{ grp.titleField && item[grp.titleField] ? item[grp.titleField] : 'Row' }}
@@ -311,15 +311,27 @@ const allFields = computed(() => {
 })
 
 // Groups metadata and helpers
-const groups = computed(() => (schema.value?.groups || []) as any[])
+// Prefer explicit complex fields in schema over legacy groups metadata
+const complexFields = computed(() => allFields.value.filter((f: any) => f.type === 'complex'))
+const groups = computed(() => {
+  if (complexFields.value.length) {
+    return complexFields.value.map((cf: any) => ({
+      key: cf.key,
+      children: cf.children || [],
+      titleField: cf.titleField || null,
+      label: cf.label || cf.key
+    }))
+  }
+  return (schema.value?.groups || []) as any[]
+})
 const fieldMap = computed(() => {
   const m: Record<string, any> = {}
   for (const f of allFields.value) m[f.key] = f
   return m
 })
 const groupedChildKeys = computed(() => new Set((groups.value || []).flatMap((g: any) => g.children || [])))
-// Exclude grouped children from main listing
-const displayFields = computed(() => allFields.value.filter((f: any) => !groupedChildKeys.value.has(f.key)))
+// Exclude grouped children and complex parent fields from main listing
+const displayFields = computed(() => allFields.value.filter((f: any) => !groupedChildKeys.value.has(f.key) && f.type !== 'complex'))
 
 // Visibility evaluation
 function evaluateVisibility(field: any): boolean {
@@ -374,6 +386,11 @@ function groupSection(g: any): string {
 function groupsForSection(section: string) {
   return (groups.value || [])
     .filter((g: any) => groupSection(g) === section)
+    // If complex parent field exists, respect its visibility
+    .filter((g: any) => {
+      const parent = fieldMap.value[g.key]
+      return !parent || parent.type !== 'complex' || evaluateVisibility(parent)
+    })
     .filter((g: any) => groupChildFields(g).length > 0)
 }
 function groupChildFields(g: any) {

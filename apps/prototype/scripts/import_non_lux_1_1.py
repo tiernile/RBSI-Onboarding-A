@@ -175,6 +175,8 @@ def parse_visibility(expr: str, op_map: dict[str,str]):
 def decide_type(row, mapping):
     dt_raw = (row.get(mapping['columns']['data_type']) or '').strip()
     dt = mapping['normalization']['data_type'].get(dt_raw, dt_raw).lower()
+    if dt == 'complex':
+        return 'complex'
     if dt == 'lookup':
         return 'lookup'
     if dt == 'freetext' or dt == 'freeText'.lower():
@@ -470,6 +472,36 @@ def main():
             g['children'].append(idv)
 
         included.append(field)
+
+    # Add explicit complex group parent fields (type: complex) so consumers can rely on schema fields
+    included_keys = {f['key'] for f in included}
+    for g in groups.values():
+        if g['key'] in included_keys:
+            # a sheet row may already define this group; ensure it has children/titleField
+            for f in included:
+                if f['key'] == g['key']:
+                    f['type'] = 'complex'
+                    f['children'] = g['children']
+                    if g.get('titleField'):
+                        f['titleField'] = g['titleField']
+                    break
+            continue
+        # infer section from first child
+        first_child = next((f for f in included if f['key'] in g['children']), None)
+        section = first_child.get('_section') if first_child else mapping['defaults']['section']
+        included.append({
+            'key': g['key'],
+            'label': g['key'],
+            'style': 'field',
+            'entity': mapping['defaults']['entity'],
+            'visibility': [],
+            'scriptId': f"GROUP:{g['key']}",
+            '_section': section,
+            '_stage': '',
+            'type': 'complex',
+            'children': g['children'],
+            **({'titleField': g['titleField']} if g.get('titleField') else {})
+        })
 
     # Assemble KYCP schema
     schema = {
