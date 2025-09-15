@@ -25,6 +25,7 @@
         <div v-if="isAdmin" class="admin-actions">
           <a :href="`/api/diff/${j.key}`" target="_blank" rel="noopener" class="link">View Diff</a>
           <a :href="`/api/export/${j.key}`" class="link">Export CSV</a>
+          <a :href="`/api/conditions-report/${j.key}?format=html`" target="_blank" rel="noopener" class="link">Conditions Report</a>
         </div>
       </div>
     </div>

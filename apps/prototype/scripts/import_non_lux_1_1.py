@@ -311,6 +311,7 @@ def main():
 
     cols = mapping['columns']
     label_overrides = mapping.get('label_overrides') or {}
+    vis_overrides = mapping.get('visibility_overrides') or {}
     internal_label_contains = [s.lower() for s in (mapping.get('internal_label_contains') or [])]
     yes_vals = mapping['normalization']['yes_values']
     op_map = mapping['normalization']['operators']
@@ -447,6 +448,18 @@ def main():
                 if k in lab_key:
                     field['_section'] = v
                     break
+
+        # Apply visibility overrides from mapping (append AND conditions)
+        if idv in vis_overrides:
+            extra_exprs = vis_overrides[idv]
+            for expr in extra_exprs:
+                extra_rules = parse_visibility(expr, op_map)
+                if extra_rules:
+                    # merge conditions into first rule as AND
+                    if field.get('visibility'):
+                        field['visibility'][0]['conditions'].extend(extra_rules[0]['conditions'])
+                    else:
+                        field['visibility'] = extra_rules
 
         # complex group marking
         cx = (r.get(cols['complex']) or '').strip()

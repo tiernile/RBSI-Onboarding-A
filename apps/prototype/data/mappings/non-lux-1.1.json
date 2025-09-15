@@ -133,6 +133,11 @@
   "label_overrides": {
     "GENIndicativeAppetiteQuestions": "Do you wish to answer some Pre-Application Questions to provide a high level indication of RBSI appetite to open the account?"
   },
+  "visibility_overrides": {
+    "GENUKIndicativeAppetiteFundMng": [
+      "GENIndicativeAppetiteQuestions == Yes"
+    ]
+  },
   "exclude": {
     "action_contains": ["(internal)"],
     "label_contains": ["internal analysis"]

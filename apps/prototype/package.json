@@ -6,7 +6,8 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "start": "nuxt start",
-    "hash": "node scripts/hash.mjs"
+    "hash": "node scripts/hash.mjs",
+    "scenarios": "node scripts/scenarios.mjs non-lux-1-1"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

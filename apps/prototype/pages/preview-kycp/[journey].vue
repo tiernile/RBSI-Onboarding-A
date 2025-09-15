@@ -15,6 +15,10 @@
     
     <div v-else-if="!loading" class="preview-content">
       <div class="form-container">
+        <!-- Tools -->
+        <div class="tools">
+          <label><input type="checkbox" v-model="debugExplain" /> Explain visibility</label>
+        </div>
         <!-- Error Summary -->
         <div v-if="Object.keys(errors).length > 0" class="error-summary">
           <h3>Please correct the following errors:</h3>
@@ -133,6 +137,23 @@
                 :error="!!errors[field.key]"
               />
             </KycpFieldWrapper>
+
+            <!-- Debug: explain visibility for the field -->
+            <div v-if="debugExplain" class="debug-explain">
+              <template v-if="(field.visibility && field.visibility.length)">
+                <div class="debug-title">Visibility rules:</div>
+                <ul>
+                  <li v-for="(cond, idx) in conditionsForField(field)" :key="idx">
+                    <span :class="{'pass': cond.pass, 'fail': !cond.pass}">•</span>
+                    {{ cond.sourceKey }} {{ cond.operator }} {{ cond.value }}
+                    <span class="muted">(current: {{ cond.current }})</span>
+                  </li>
+                </ul>
+              </template>
+              <template v-else>
+                <div class="muted">No visibility rules</div>
+              </template>
+            </div>
           </div>
 
           <!-- Complex Groups (repeaters) for this section -->
@@ -197,6 +218,23 @@
                         v-model="item[child.key]"
                       />
                     </KycpFieldWrapper>
+
+                    <!-- Debug: explain visibility for group child field -->
+                    <div v-if="debugExplain" class="debug-explain">
+                      <template v-if="(child.visibility && child.visibility.length)">
+                        <div class="debug-title">Visibility rules:</div>
+                        <ul>
+                          <li v-for="(cond, idx) in conditionsForField(child, item)" :key="idx">
+                            <span :class="{'pass': cond.pass, 'fail': !cond.pass}">•</span>
+                            {{ cond.sourceKey }} {{ cond.operator }} {{ cond.value }}
+                            <span class="muted">(current: {{ cond.current }})</span>
+                          </li>
+                        </ul>
+                      </template>
+                      <template v-else>
+                        <div class="muted">No visibility rules</div>
+                      </template>
+                    </div>
                   </div>
                   <div style="display: flex; gap: 12px; justify-content: flex-end;">
                     <KycpButton variant="secondary" label="Cancel" @trigger="cancel" />
@@ -222,7 +260,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, reactive } from 'vue'
+import { ref, computed, reactive, onMounted } from 'vue'
 import KycpInput from '~/components/kycp/base/KycpInput.vue'
 import KycpTextarea from '~/components/kycp/base/KycpTextarea.vue'
 import KycpSelect from '~/components/kycp/base/KycpSelect.vue'
@@ -251,6 +289,14 @@ const journeyVersion = computed(() => schema.value?.version || '1.0.0')
 // Form data
 const formData = reactive<Record<string, any>>({})
 const errors = reactive<Record<string, string>>({})
+const debugExplain = ref(false)
+onMounted(() => {
+  const q: any = route.query || {}
+  if (q && (q.debug !== undefined || q.explain !== undefined)) {
+    const v = (q.debug ?? q.explain ?? '').toString().toLowerCase()
+    debugExplain.value = v === '1' || v === 'true' || v === '' // presence enables
+  }
+})
 
 // Fields processing
 const allFields = computed(() => {
@@ -283,11 +329,12 @@ function evaluateVisibility(field: any): boolean {
       const allPass = conditions.every((cond: any) => {
         const sourceValue = formData[cond.sourceKey]
         const targetValue = cond.value
-        
+        const sv = typeof sourceValue === 'string' ? sourceValue.toLowerCase() : sourceValue
+        const tv = typeof targetValue === 'string' ? targetValue.toLowerCase() : targetValue
         if (cond.operator === 'eq' || cond.operator === '==') {
-          return sourceValue == targetValue
+          return sv == tv
         } else if (cond.operator === 'neq' || cond.operator === '!=') {
-          return sourceValue != targetValue
+          return sv != tv
         }
         return true
       })
@@ -297,11 +344,12 @@ function evaluateVisibility(field: any): boolean {
       const anyPass = conditions.some((cond: any) => {
         const sourceValue = formData[cond.sourceKey]
         const targetValue = cond.value
-        
+        const sv = typeof sourceValue === 'string' ? sourceValue.toLowerCase() : sourceValue
+        const tv = typeof targetValue === 'string' ? targetValue.toLowerCase() : targetValue
         if (cond.operator === 'eq' || cond.operator === '==') {
-          return sourceValue == targetValue
+          return sv == tv
         } else if (cond.operator === 'neq' || cond.operator === '!=') {
-          return sourceValue != targetValue
+          return sv != tv
         }
         return false
       })
@@ -336,13 +384,35 @@ function evaluateVisibilityForModel(field: any, model: Record<string, any>) {
     const test = (cond: any) => {
       const sourceValue = (cond.sourceKey in model) ? model[cond.sourceKey] : formData[cond.sourceKey]
       const targetValue = cond.value
-      if (cond.operator === 'eq' || cond.operator === '==') return sourceValue == targetValue
-      if (cond.operator === 'neq' || cond.operator === '!=') return sourceValue != targetValue
+      const sv = typeof sourceValue === 'string' ? sourceValue.toLowerCase() : sourceValue
+      const tv = typeof targetValue === 'string' ? targetValue.toLowerCase() : targetValue
+      if (cond.operator === 'eq' || cond.operator === '==') return sv == tv
+      if (cond.operator === 'neq' || cond.operator === '!=') return sv != tv
       return true
     }
     if (allMatch) { if (!conditions.every(test)) return false } else { if (!conditions.some(test)) return false }
   }
   return true
+}
+
+// Build a per-condition explanation for a field (optionally within a row model)
+function conditionsForField(field: any, model?: Record<string, any>) {
+  const out: Array<{ sourceKey: string; operator: string; value: any; current: any; pass: boolean }> = []
+  if (!field.visibility || field.visibility.length === 0) return out
+  const get = (key: string) => (model && (key in model)) ? model[key] : formData[key]
+  for (const rule of field.visibility) {
+    for (const cond of (rule.conditions || [])) {
+      const svRaw = get(cond.sourceKey)
+      const tvRaw = cond.value
+      const sv = typeof svRaw === 'string' ? svRaw.toLowerCase() : svRaw
+      const tv = typeof tvRaw === 'string' ? tvRaw.toLowerCase() : tvRaw
+      let pass = true
+      if (cond.operator === 'eq' || cond.operator === '==') pass = sv == tv
+      else if (cond.operator === 'neq' || cond.operator === '!=') pass = sv != tv
+      out.push({ sourceKey: cond.sourceKey, operator: cond.operator, value: cond.value, current: svRaw ?? '(unset)', pass })
+    }
+  }
+  return out
 }
 
 // Sections (order of first appearance); used as dividers only
@@ -535,6 +605,27 @@ h1 {
   border-radius: 8px;
   padding: 32px;
 }
+
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #57606a;
+}
+
+.debug-explain {
+  margin: 6px 0 16px 0;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+}
+.debug-explain .debug-title { font-weight: 600; font-size: 12px; margin-bottom: 6px; }
+.debug-explain .muted { color: #6b7280; font-size: 12px; }
+.debug-explain .pass { color: #16a34a; margin-right: 6px; }
+.debug-explain .fail { color: #dc2626; margin-right: 6px; }
 
 .error-summary {
   margin-bottom: 24px;

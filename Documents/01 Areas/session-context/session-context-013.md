@@ -60,6 +60,8 @@ Goal: Create an AS-IS KYCP-format schema from the 20250911 master Non-Lux LP wor
   - Robust Yes/No detection (handles variants like "Yes/ No", "Yes-No", spaces/hyphens).
   - LP Proposal table alignment fixed: rows built using Excel cell references (column letters) to keep values aligned when cells are empty.
   - Misaligned lookup rescue: if LOOKUP is blank but DATA TYPE equals a known lookup type (present in Lookup Values or fallbacks), treat as lookup and load options; if still no items, add fallback option "Lookup items not provided".
+  - INTERNAL/SYSTEM policy: treat INTERNAL='a'|'Y' and SYSTEM='a'|'Y' as yes → exclude rows from user schema (no render). Retain provenance via reports.
+  - Case‑insensitive equals in preview for stability; prefer fixing source and removing mapping overrides long‑term.
   - Non-input detection expanded: Title/Divider in either DATA TYPE or FIELD TYPE → `style: divider`; Statement/Note/Information in either → `style: statement`.
   - Non-input rows with blank KEYNAME included by synthesising stable keys (e.g., `title_<slug>`); duplicate checking moved after synthesis.
   - Internal marking by label: rows with `FIELD NAME` containing "OBT TO COMPLETE" are marked `internal: true` (hidden from the user experience but retained in schema for audit).
@@ -92,9 +94,31 @@ Goal: Create an AS-IS KYCP-format schema from the 20250911 master Non-Lux LP wor
 
 ### Import run summary (latest)
 
-- Included: 690 items
-- Excluded: 98 items (`action internal`: 96; `missing id/label`: 2)
+- Included: 357 items
+- Excluded: 431 items (`INTERNAL=Y`: 215; `SYSTEM=Y`: 118; `action internal`: 96; `missing id/label`: 2)
 - Unresolved lookups: 1 (GENStatutoryProvision) — add to Lookup Values or provide fallback to resolve.
+
+### New Area — Refining Workflow
+
+- PRD: `Documents/01 Areas/refining-workflow/PRD.md`
+- ADR: `Documents/01 Areas/refining-workflow/ADR-0001-conditionality-and-ingestion.md`
+- Implementation Plan: `Documents/01 Areas/refining-workflow/Implementation-Plan.md`
+
+### Explain-Why Toggle
+
+- Added to preview: checkbox reveals per-field visibility breakdown with controller, operator, expected value, current value, and pass/fail.
+- Works inside group repeaters (row model values used first, then global form state).
+
+### Conditions Report API
+
+- Endpoint: `/api/conditions-report/:journey` (JSON) and `?format=html` (quick HTML table).
+- Lints: unresolved keys, option mismatches (with basic aliasing), suspicious numeric values; dependency cycles reported.
+
+### Decisions Locked
+
+- All INTERNAL rows removed from user‑facing schema (and preview).
+- Value matching: case‑insensitive equals in runtime; prefer fixing source labels/options/conditions and removing overrides.
+- Proceed to add linter + conditions report API; then scenario tests in CI.
 
 ### Current Decisions (reconfirmed)
 
