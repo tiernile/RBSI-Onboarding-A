@@ -1,0 +1,285 @@
+{
+  "sheet": "LP Proposal",
+  "header_row": 2,
+  "filters": {
+    "PROGRAMME": "Account is for - a Fund (CIS) - Non Luxembourg",
+    "ENTITY": "Limited Partnership"
+  },
+  "columns": {
+    "id": "KEYNAME",
+    "label": "FIELD NAME",
+    "help": "DESCRIPTION",
+    "data_type": "DATA TYPE",
+    "lookup_type": "LOOKUP",
+    "field_type": "FIELD TYPE",
+    "mandatory": "MANDATORY",
+    "visibility": "VISIBILITY CONDITION/GROUP NAME",
+    "regex": "REGEX",
+    "ref": "REF",
+    "action": "Action",
+    "internal": "INTERNAL",
+    "system": "SYSTEM",
+    "field_length": "FIELD LENGTH",
+    "complex": "COMPLEX",
+    "complex_identifier": "COMPLEX IDENTIFIER",
+    "stage": "STAGE",
+    "_comment": "--- NEW v2.1 COLUMNS ---",
+    "nile_suggested_field_name": "Nile Suggested Field Name",
+    "nile_suggested_description": "Nile Suggested Description",
+    "nile_suggested_section": "Nile Suggested Section",
+    "live_question_order": "Live Question Order",
+    "paul_question_order": "PAUL Question Order",
+    "paul_section_suggestion": "PAUL Section Suggestion"
+  },
+  "normalization": {
+    "data_type": {
+      "Lookup": "lookup",
+      "Free Text": "freeText",
+      "Number": "number",
+      "Date": "date",
+      "Complex": "complex"
+    },
+    "operators": {
+      "=": "==",
+      "<>": "!="
+    },
+    "yes_values": ["Y", "Yes", "YES", "a", "A"],
+    "decimal_hint_patterns": ["0.0", ".0", "decimal"]
+  },
+  "lookups_sheet": "Lookup Values",
+  "lookups_columns": {
+    "type": "LOOKUP TYPE",
+    "value": "LOOKUP VALUE"
+  },
+  "value_aliases": {
+    "united states": ["usa", "u.s.", "us", "united states of america", "united states (usa)", "united states of america (usa)", "u.s.a."],
+    "united kingdom": ["uk", "u.k.", "great britain", "gb", "united kingdom (uk)"],
+    "delaware": ["usa - delaware"],
+    "non-delaware": ["usa - non-delaware", "non delaware"]
+  },
+  "fallback_lookups": {
+    "Yes/No": ["Yes", "No"],
+    "Bank Account Jurisdiction": [
+      "Jersey",
+      "Guernsey",
+      "Isle of Man",
+      "Gibraltar",
+      "United Kingdom"
+    ],
+    "Fund Size": [
+      "< 50m",
+      "50m - 250m",
+      "250m - 500m",
+      "500m - 750m",
+      "750m - 1bn",
+      "1bn - 2bn",
+      "2bn - 3bn",
+      "3bn - 5bn",
+      "5bn - 10bn",
+      "10bn +"
+    ],
+    "Application Options- Funds/ FRE": [
+      "You are a 3rd party administrator applying for an account on behalf of your customer. (Intermediary/Introducer)",
+      "You are applying for an account as a direct customer to the bank."
+    ],
+    "Country": [
+      "United Kingdom",
+      "United States",
+      "Jersey",
+      "Guernsey",
+      "Isle of Man",
+      "Gibraltar",
+      "France",
+      "Germany",
+      "Luxembourg",
+      "Ireland"
+    ],
+    "Brands Jersey": [
+      "NatWest International",
+      "Coutts Crown Dependencies"
+    ],
+    "Brands Guernsey": [
+      "NatWest International",
+      "Coutts Crown Dependencies"
+    ],
+    "Brands Isle of Man": [
+      "Isle of Man Bank",
+      "NatWest International"
+    ],
+    "Brands Gibraltar": [
+      "NatWest International"
+    ],
+    "Brands United Kingdom": [
+      "NatWest"
+    ],
+    "Currencycrm": [
+      "GBP",
+      "USD",
+      "EUR",
+      "CHF",
+      "JPY"
+    ],
+    "Yes/ No": [
+      "Yes",
+      "No"
+    ],
+    "Industry description incl SIC code": [
+      "Agriculture",
+      "Manufacturing",
+      "Financial Services",
+      "Technology",
+      "Healthcare",
+      "Real Estate",
+      "Other"
+    ],
+    "Risk Score": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "Is it Delaware or Non-Delaware?": [
+      "Delaware",
+      "Non-Delaware"
+    ]
+  },
+  "defaults": {
+    "entity": "entity",
+    "section": "General",
+    "jurisdiction": "non_luxembourg",
+    "entity_type": "limited_partnership"
+  },
+  "label_overrides": {
+    "GENIndicativeAppetiteQuestions": "Do you wish to answer some Pre-Application Questions to provide a high level indication of RBSI appetite to open the account?"
+  },
+  "visibility_overrides": {
+    "GENUKIndicativeAppetiteFundMng": [
+      "GENIndicativeAppetiteQuestions == Yes"
+    ]
+  },
+  "exclude": {
+    "action_contains": ["(internal)"],
+    "label_contains": ["internal analysis"]
+  },
+  "internal_label_contains": [
+    "obt to complete"
+  ],
+  "_comment_sections": "Enhanced section mapping for v2.1 with Nile and PAUL suggestions",
+  "sections_by_label": {
+    "account jurisdiction": "Start a new application",
+    "in which jurisdiction would you like to open this account?": "Start a new application",
+    "where would you like to bank?": "Start a new application",
+    "applicant role": "Start a new application",
+    "how are you applying?": "Start a new application",
+    "applicant contact name": "Start a new application",
+    "applicant phone number": "Start a new application",
+    "applicant email address": "Start a new application",
+
+    "pre-application opt-in": "Business Appetite (Eligibility)",
+    "where administrator domiciled": "Business Appetite (Eligibility)",
+    "customer associated with pep?": "Business Appetite (Eligibility)",
+    "ese risks?": "Business Appetite (Eligibility)",
+    "is the entity a money service business?": "Business Appetite (Eligibility)",
+    "will the entity invest in crypto assets?": "Business Appetite (Eligibility)",
+    "tax risks associated with the application?": "Business Appetite (Eligibility)",
+    "country of registration / formation": "Business Appetite (Eligibility)",
+    "additional products": "Business Appetite (Eligibility)",
+
+    "choose brand for account": "Choose Brand",
+
+    "intermediary contact name": "Intermediary details",
+    "intermediary contact number": "Intermediary details",
+    "intermediary email": "Intermediary details",
+    "full name of intermediary": "Intermediary details",
+    "name of intermediary's regulator": "Intermediary details",
+    "regulator licence type": "Intermediary details",
+    "have you met the customer": "Intermediary details",
+    "name of individual who met customer": "Intermediary details",
+    "position held": "Intermediary details",
+    "date of meeting": "Intermediary details",
+
+    "name of fund (cis) entity": "Details of the new customer account",
+    "type of fund": "Details of the new customer account",
+    "status": "Details of the new customer account",
+    "is this entity listed on a stock exchange?": "Details of the new customer account",
+    "company formation/ registration date": "Details of the new customer account",
+    "registration number": "Details of the new customer account",
+    "entity type": "Details of the new customer account",
+    "date started trading": "Details of the new customer account",
+    "registered address": "Details of the new customer account",
+
+    "country*": "Tax Residency",
+    "tax id number known?": "Tax Residency",
+    "tax id number or equivalent": "Tax Residency",
+
+    "fatca tax status": "Tax Status Classification",
+    "crs tax status": "Tax Status Classification",
+
+    "investment activities": "Business activity",
+    "fund currency denomination": "Business activity",
+    "has the fund had a final close?": "Business activity",
+    "what is the investment period?": "Business activity",
+    "average investment size?": "Business activity",
+    "indicative number of assets held?": "Business activity",
+    "any planned diversification of business?": "Business activity",
+    "industry description": "Business activity",
+
+    "ese risks": "Risk profile",
+    "tax risks": "Risk profile",
+    "is the entity a money service business?": "Risk profile",
+    "will the entity invest in crypto assets?": "Risk profile",
+    "customer been associated with a pep?": "Risk profile",
+    "is the customer connected with a high-risk jurisdiction?": "Risk profile",
+
+    "account type": "Banking requirements",
+    "account short name / id": "Banking requirements",
+    "account purpose": "Banking requirements",
+    "currency": "Banking requirements",
+    "annual turnover": "Banking requirements",
+    "anticipated account credits": "Banking requirements",
+    "quarterly / annual transaction volume": "Banking requirements",
+    "remitter names": "Banking requirements",
+    "anticipated payments": "Banking requirements",
+    "anticipated liabilities": "Banking requirements",
+    "anticipated transactions": "Banking requirements",
+    "transaction beneficiaries": "Banking requirements",
+    "cash elements to transaction?": "Banking requirements",
+    "statement frequency": "Banking requirements",
+    "multiple account type selection": "Banking requirements",
+
+    "product guidance - cheque payment requirement": "Cheque book and paying-in book",
+
+    "do you require your standard intermediary signatory list to apply to this account?": "Signing authority",
+    "confirm auditor name": "Signing authority",
+    "do standard intermediary signing arrangements apply?": "Signing authority",
+
+    "number of eq connections": "EQ Electronic banking",
+    "eq customer number": "EQ Electronic banking",
+    "eq customer name": "EQ Electronic banking",
+    "view only": "EQ Electronic banking",
+    "operate": "EQ Electronic banking"
+  },
+  "_v2_1_features": {
+    "copy_mapping": {
+      "enabled": true,
+      "track_changes": true,
+      "source_columns": ["label", "help"],
+      "target_columns": ["nile_suggested_field_name", "nile_suggested_description"],
+      "change_metadata": {
+        "source": "Nile team suggestions",
+        "timestamp": "2025-09-16",
+        "purpose": "Enhanced user experience and clarity"
+      }
+    },
+    "accordion_grouping": {
+      "enabled": true,
+      "primary_source": "nile_suggested_section",
+      "fallback_source": "paul_section_suggestion",
+      "preserve_visibility": true
+    },
+    "reordering": {
+      "enabled": true,
+      "primary_source": "paul_question_order",
+      "fallback_source": "live_question_order"
+    }
+  }
+}

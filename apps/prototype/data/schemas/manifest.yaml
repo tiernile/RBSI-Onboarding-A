@@ -49,6 +49,36 @@ active:
       order: 7
       visible: true
       status: alpha
+  - key: non-lux-lp-2-0
+    name: Non‑Lux LP — v2.0 (Future Draft)
+    version: 0.2.0
+    variant: KYCP
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 8
+      visible: true
+      status: draft
+  - key: non-lux-lp-2-1
+    name: Non‑Lux LP — v2.1 (Nile Enhanced)
+    version: 0.1.0
+    variant: KYCP
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 9
+      visible: true
+      status: beta
+  - key: non-lux-lp-2-2
+    name: Non‑Lux LP — v2.2 (Paul Structure)
+    version: 0.1.0
+    variant: KYCP
+    owner: "@tiernan"
+    display:
+      group: Funds
+      order: 10
+      visible: true
+      status: beta
   - key: zelda
     name: Zelda – Prototype Mapping
     version: 0.1.0

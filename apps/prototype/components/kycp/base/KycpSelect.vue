@@ -13,7 +13,7 @@
     }"
     @change="$emit('change', $event)"
   >
-    <option v-if="placeholder" value="" disabled>{{ placeholder }}</option>
+    <option v-if="placeholder" value="" disabled :selected="internalValue === ''">{{ placeholder }}</option>
     <option
       v-for="option in normalizedOptions"
       :key="option.value"
