@@ -274,7 +274,7 @@
           <div style="margin-top: 20px; padding: 12px; background: #f9fafb; border-radius: 4px;">
             <p style="font-size: 13px; color: #6b7280;">
               <strong>Props:</strong><br>
-              • sections: Array of section objects with title, description, badge<br>
+              • sections: Array of section objects with title and optional description<br>
               • multiple: Allow multiple sections open (default: true)<br>
               • expandFirst: Expand first section on load (default: false)<br>
               • expandAll: Expand all sections on load (default: false)
@@ -282,22 +282,6 @@
           </div>
         </div>
 
-        <div class="example">
-          <h3>Accordion with Badges</h3>
-          <KycpAccordion 
-            :sections="badgedSections"
-            :multiple="false"
-          >
-            <template v-for="(section, index) in badgedSections" :key="index" #[`section-${index}`]>
-              <div style="padding: 12px; background: #f9fafb; border-radius: 3px;">
-                <p>Content for {{ section.title }}</p>
-                <p style="color: #6b7280; font-size: 13px;">
-                  This accordion only allows one section open at a time (multiple=false).
-                </p>
-              </div>
-            </template>
-          </KycpAccordion>
-        </div>
       </section>
 
       <!-- Complex Groups -->
@@ -560,24 +544,6 @@ const accordionSections = [
   },
   { 
     title: 'Ian divider test hide and show'
-  }
-]
-
-const badgedSections = [
-  { 
-    title: 'Section 1',
-    badge: '3',
-    description: 'This section has 3 items'
-  },
-  { 
-    title: 'Section 2',
-    badge: '5',
-    description: 'This section has 5 items'
-  },
-  { 
-    title: 'Section 3',
-    badge: 'New',
-    description: 'This section has new content'
   }
 ]
 

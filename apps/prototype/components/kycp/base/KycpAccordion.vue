@@ -32,7 +32,6 @@
           </svg>
         </span>
         <span class="kycp-accordion__title">{{ section.title }}</span>
-        <span v-if="section.badge" class="kycp-accordion__badge">{{ section.badge }}</span>
       </button>
 
       <!-- Section Content -->
@@ -68,7 +67,6 @@ interface AccordionSection {
   id?: string
   title: string
   description?: string
-  badge?: string | number
   expanded?: boolean
 }
 
@@ -233,16 +231,6 @@ defineExpose({
 .kycp-accordion__title {
   flex: 1;
   margin-right: 12px;
-}
-
-.kycp-accordion__badge {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--kycp-white, #ffffff);
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  white-space: nowrap;
 }
 
 .kycp-accordion__content {

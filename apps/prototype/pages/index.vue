@@ -7,6 +7,7 @@
         <NuxtLink class="link" to="/about">About</NuxtLink>
         <button v-if="!isAdmin" @click="showLogin=true">Admin</button>
         <span v-else class="badge">Admin</span>
+        <button @click="handleLogout" class="logout-btn">Logout</button>
       </div>
     </header>
 
@@ -57,6 +58,9 @@ const showLogin = ref(false)
 const password = ref('')
 const loginError = ref('')
 
+// Use auth composable for logout
+const { logout } = useAuth()
+
 async function login() {
   loginError.value = ''
   try {
@@ -70,6 +74,11 @@ async function login() {
   } catch (e: any) {
     loginError.value = e?.data?.message || e?.message || 'Login error'
   }
+}
+
+// Handle logout
+const handleLogout = () => {
+  logout()
 }
 </script>
 
@@ -145,6 +154,23 @@ async function login() {
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+.logout-btn {
+  background: #ef4444 !important;
+  color: white !important;
+  padding: 6px 16px !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  border: none;
+}
+
+.logout-btn:hover {
+  background: #dc2626 !important;
+  text-decoration: none !important;
 }
 
 /* Grid Layout */
