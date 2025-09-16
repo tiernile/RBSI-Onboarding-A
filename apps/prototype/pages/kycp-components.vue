@@ -9,6 +9,7 @@
     <nav class="library-nav">
       <a href="#field-components" class="nav-link">Field Components</a>
       <a href="#non-input" class="nav-link">Non-Input Components</a>
+      <a href="#accordion" class="nav-link">Accordion</a>
       <a href="#complex" class="nav-link">Complex Groups</a>
       <a href="#limits" class="nav-link">Platform Limits</a>
       <a href="#visibility" class="nav-link">Visibility & Rights</a>
@@ -210,6 +211,95 @@
         </div>
       </section>
 
+      <!-- Accordion (NEW) -->
+      <section id="accordion" class="component-section">
+        <h2>Accordion (Collapsible Sections)</h2>
+        <p class="section-description">
+          Expandable/collapsible sections for organizing related questions. 
+          Matches KYCP's section grouping with blue headers and chevron indicators.
+        </p>
+        
+        <div class="example">
+          <h3>Basic Accordion</h3>
+          <KycpAccordion 
+            :sections="accordionSections"
+            :expand-first="true"
+            @section-toggle="onAccordionToggle"
+          >
+            <template #section-0>
+              <KycpFieldWrapper label="Address Line 1" :required="true">
+                <KycpInput v-model="examples.address1" placeholder="Enter street address" />
+              </KycpFieldWrapper>
+              <KycpFieldWrapper label="Address Line 2">
+                <KycpInput v-model="examples.address2" placeholder="Apartment, suite, etc." />
+              </KycpFieldWrapper>
+              <KycpFieldWrapper label="City" :required="true">
+                <KycpInput v-model="examples.city" placeholder="Enter city" />
+              </KycpFieldWrapper>
+            </template>
+            
+            <template #section-1>
+              <KycpFieldWrapper label="Contact Name" :required="true">
+                <KycpInput v-model="examples.contactName" placeholder="Full name" />
+              </KycpFieldWrapper>
+              <KycpFieldWrapper label="Email" :required="true">
+                <KycpInput v-model="examples.email" type="email" placeholder="email@example.com" />
+              </KycpFieldWrapper>
+              <KycpFieldWrapper label="Phone">
+                <KycpInput v-model="examples.phone" type="tel" placeholder="+1 234 567 8900" />
+              </KycpFieldWrapper>
+            </template>
+            
+            <template #section-2>
+              <KycpDivider title="Test divider" />
+              <KycpStatement text="This section demonstrates how dividers and statements can be used within accordion sections." />
+              <KycpFieldWrapper label="Test Field">
+                <KycpInput v-model="examples.testField" placeholder="Enter test value" />
+              </KycpFieldWrapper>
+            </template>
+            
+            <template #section-3>
+              <KycpDivider title="Ian divider test hide and show" />
+              <KycpStatement text="This section can contain any combination of KYCP components." />
+              <KycpFieldWrapper label="Another Field">
+                <KycpSelect 
+                  v-model="examples.selectField" 
+                  :options="['Option A', 'Option B', 'Option C']"
+                  placeholder="Select an option"
+                />
+              </KycpFieldWrapper>
+            </template>
+          </KycpAccordion>
+          
+          <div style="margin-top: 20px; padding: 12px; background: #f9fafb; border-radius: 4px;">
+            <p style="font-size: 13px; color: #6b7280;">
+              <strong>Props:</strong><br>
+              • sections: Array of section objects with title, description, badge<br>
+              • multiple: Allow multiple sections open (default: true)<br>
+              • expandFirst: Expand first section on load (default: false)<br>
+              • expandAll: Expand all sections on load (default: false)
+            </p>
+          </div>
+        </div>
+
+        <div class="example">
+          <h3>Accordion with Badges</h3>
+          <KycpAccordion 
+            :sections="badgedSections"
+            :multiple="false"
+          >
+            <template v-for="(section, index) in badgedSections" :key="index" #[`section-${index}`]>
+              <div style="padding: 12px; background: #f9fafb; border-radius: 3px;">
+                <p>Content for {{ section.title }}</p>
+                <p style="color: #6b7280; font-size: 13px;">
+                  This accordion only allows one section open at a time (multiple=false).
+                </p>
+              </div>
+            </template>
+          </KycpAccordion>
+        </div>
+      </section>
+
       <!-- Complex Groups -->
       <section id="complex" class="component-section">
         <h2>Complex Groups (Repeaters)</h2>
@@ -390,6 +480,7 @@ import KycpDivider from '~/components/kycp/base/KycpDivider.vue'
 import KycpRepeater from '~/components/kycp/base/KycpRepeater.vue'
 import KycpModal from '~/components/kycp/base/KycpModal.vue'
 import KycpButton from '~/components/kycp/base/KycpButton.vue'
+import KycpAccordion from '~/components/kycp/base/KycpAccordion.vue'
 
 // Example data
 const showModal = ref(false)
@@ -404,7 +495,16 @@ const examples = ref({
   lookup: '',
   documents: [],
   fundName: '',
-  fundType: ''
+  fundType: '',
+  // Accordion examples
+  address1: '',
+  address2: '',
+  city: '',
+  contactName: '',
+  email: '',
+  phone: '',
+  testField: '',
+  selectField: ''
 })
 
 // Fund type description matching screenshot
@@ -441,6 +541,50 @@ const docTypeOptions = [
   { value: 'DRVL', label: 'Driver License' },
   { value: 'IDCD', label: 'ID Card' }
 ]
+
+// Accordion sections matching the image
+const accordionSections = [
+  { 
+    title: 'Registered Address',
+    description: 'Primary registered address of the entity'
+  },
+  { 
+    title: 'Contact Details',
+    description: 'Primary contact information'
+  },
+  { 
+    title: 'test Divider'
+  },
+  { 
+    title: 'Test divider'
+  },
+  { 
+    title: 'Ian divider test hide and show'
+  }
+]
+
+const badgedSections = [
+  { 
+    title: 'Section 1',
+    badge: '3',
+    description: 'This section has 3 items'
+  },
+  { 
+    title: 'Section 2',
+    badge: '5',
+    description: 'This section has 5 items'
+  },
+  { 
+    title: 'Section 3',
+    badge: 'New',
+    description: 'This section has new content'
+  }
+]
+
+// Accordion event handler
+const onAccordionToggle = (index: number, expanded: boolean) => {
+  console.log(`Section ${index} is now ${expanded ? 'expanded' : 'collapsed'}`)
+}
 
 // Handlers
 const enforceDecimalScale = (e: Event) => {

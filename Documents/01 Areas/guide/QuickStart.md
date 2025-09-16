@@ -17,7 +17,10 @@ For anyone testing the prototype (no technical steps needed).
 
 4) (Optional) Admin Controls
 - Click “Admin” on the landing page and enter the password provided by the team.
-- You’ll see extra links: View Diff (a simple report) and Export CSV for each journey.
+- You’ll see extra links for each journey:
+  - View Diff (a simple report)
+  - Export CSV
+  - Conditions Report (flags conditionality issues)
 
 5) Share Feedback
 - Note any confusing wording, missing help, or steps that felt too long.
@@ -27,4 +30,4 @@ For anyone testing the prototype (no technical steps needed).
 - Avoid entering real personal information; this is a prototype.
 - Screens may adapt (hide/show) based on your earlier answers.
 - Alpha means early; expect changes and rough edges.
-
+- To understand why fields appear or hide, use the Explain visibility checkbox in the KYCP preview, or add `?explain=1` to the URL.

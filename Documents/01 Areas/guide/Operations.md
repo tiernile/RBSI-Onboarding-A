@@ -18,33 +18,18 @@ This guide explains how the team updates the prototype with new/changed question
 
 Tip: See `data/mappings/non-lux-lp-demo.json` as a starter.
 
-## 3) Map Columns (Wizard) or Run Importer
+## 3) Run Importer (KYCP)
 
-- For new sheet formats, use the interactive wizard to create a mapping JSON:
-
-```
-python scripts/mapping_wizard.py \
-  --input data/incoming/YYYYMMDD_client.xlsx \
-  --journey <journey>
-```
-
-- Or run the Importer CLI directly to convert an XLSX + mapping JSON into a schema with audit reports:
+For Non‑Lux v1.1:
 
 ```
-python scripts/import_xlsx.py \
-  --mapping data/mappings/<journey>.json \
-  --input data/incoming/YYYYMMDD_client.xlsx \
-  --sheet "LP Proposal" \
-  --lookups-sheet "Lookup Values" \
-  --out data/schemas/<journey>/schema.yaml \
-  --journey-key <journey>
+cd apps/prototype
+python3 scripts/import_non_lux_1_1.py
 ```
 
 Outputs:
-- Schema: `data/schemas/<journey>/schema.yaml`
-- Reports: `data/generated/importer-cli/<journey>/{summary.json, decisions.json}`
-
-If needed, you can still edit the schema by hand after import.
+- Schema: `apps/prototype/data/schemas/non-lux-1-1/schema-kycp.yaml`
+- Console: include/exclude summary and unresolved lookups
 
 ## 4) Draft or Update the Schema
 
@@ -68,11 +53,12 @@ Tip: See `data/schemas/non-lux-lp-demo/schema.yaml` for examples.
   - Build/Start: `pnpm build && pnpm start` (use `.env`).
 - Open the journey from Mission Control and review the screens.
 
-## 7) Generate the Audit Trail
+## 7) Generate the Audit Trail & Reports
 
 - As admin on Mission Control, use the links on the card:
   - View Diff → creates/opens `/data/generated/diffs/<journey>/<timestamp>.html`.
   - Export CSV → creates/downloads `/data/generated/exports/<journey>/<timestamp>.csv`.
+  - Conditions Report → opens `/api/conditions-report/<journey>?format=html` with lints for conditionality.
 - Include these links in PRs and playbacks.
 
 ## 8) Keep the Docs Updated
@@ -89,3 +75,8 @@ Tip: See `data/schemas/non-lux-lp-demo/schema.yaml` for examples.
 - Admin login not working:
   - Use `.env.development` (dev) or `.env` (start) with `NUXT_ADMIN_PASSWORD_PLAIN`.
   - For hosting, switch to `NUXT_ADMIN_PASSWORD_HASH` (bcrypt) and remove the plain fallback.
+
+## Extras
+
+- Explain visibility: use the checkbox in KYCP preview or append `?explain=1` to the URL.
+- Scenario checks: from `apps/prototype`, run `pnpm scenarios` to assert critical visibility paths.

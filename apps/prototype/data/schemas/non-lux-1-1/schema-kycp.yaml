@@ -205,7 +205,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteFundAdminDomicile
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteFundAdminDomicileUSA"
     _section: General
     _stage: 
@@ -234,7 +234,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteCountryRegistration"
     _section: General
     _stage: 
@@ -287,7 +287,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteCountryRegistration
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteCountryregistrationUSA"
     _section: General
     _stage: 
@@ -316,7 +316,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteFundMng"
     _section: General
     _stage: 
@@ -345,7 +345,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteFundMng
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteFundMngDom"
     _section: General
     _stage: 
@@ -398,7 +398,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteFundMngDom
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteFundMngDomUSA"
     _section: General
     _stage: 
@@ -427,7 +427,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteOpeningInvestmentAdviser"
     _section: General
     _stage: 
@@ -456,7 +456,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteOpeningInvestmentAdviser
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteOpeningInvestmentAdviserLocation"
     _section: General
     _stage: 
@@ -509,7 +509,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteOpeningInvestmentAdviserLocation
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteOpeningInvestmentAdviserLocationUSA"
     _section: General
     _stage: 
@@ -538,7 +538,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteInvestmentsubsec"
     _section: Details of the new customer account
     _stage: 
@@ -630,7 +630,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteInvestmentCountryComplex"
     _section: General
     _stage: 
@@ -655,7 +655,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteInvestmentCountry"
     _section: General
     _stage: 
@@ -724,7 +724,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteInvesthighrisk"
     _section: General
     _stage: 
@@ -754,7 +754,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteSWFInvestor"
     _section: General
     _stage: 
@@ -957,7 +957,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetitePEPS"
     _section: General
     _stage: 
@@ -986,7 +986,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetitePepInvestors"
     _section: General
     _stage: 
@@ -1015,7 +1015,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetitePepdirectcontroller"
     _section: General
     _stage: 
@@ -1044,7 +1044,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetitePeppositioninfluence"
     _section: General
     _stage: 
@@ -1073,7 +1073,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetitePepinvestpersrelationship"
     _section: General
     _stage: 
@@ -1102,7 +1102,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteRiskadverse"
     _section: Business Appetite (Eligibility)
     _stage: 
@@ -1153,7 +1153,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteRBSIProductOptionsComplex"
     _section: General
     _stage: 
@@ -1178,7 +1178,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteRBSIProductOptions"
     _section: General
     _stage: 
@@ -1229,7 +1229,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteRBSIProductOptionsOther"
     _section: General
     _stage: 
@@ -1342,7 +1342,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteFundAdminDomicile
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteFundAdminDomicileUSA"
     _section: General
     _stage: 
@@ -1424,7 +1424,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteCountryRegistration
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteCountryregistrationUSA"
     _section: General
     _stage: 
@@ -1457,7 +1457,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: == Yes
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteFundMng"
     _section: General
     _stage: 
@@ -1486,7 +1486,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteFundMng
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteFundMngDom"
     _section: General
     _stage: 
@@ -1539,7 +1539,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteFundMngDom
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteFundMngDomUSA"
     _section: General
     _stage: 
@@ -1597,7 +1597,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteOpeningInvestmentAdviser
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteOpeningInvestmentAdviserLocation"
     _section: General
     _stage: 
@@ -1650,7 +1650,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteOpeningInvestmentAdviserLocation
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteOpeningInvestmentAdviserLocationUSA"
     _section: General
     _stage: 
@@ -2116,7 +2116,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetitePepInvestors"
     _section: General
     _stage: 
@@ -2145,7 +2145,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetitePepdirectcontroller"
     _section: General
     _stage: 
@@ -2174,7 +2174,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetitePeppositioninfluence"
     _section: General
     _stage: 
@@ -2203,7 +2203,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetitePEPS
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetitePepinvestpersrelationship"
     _section: General
     _stage: 
@@ -2262,7 +2262,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteRiskadverse
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteRiskadversedetails"
     _section: Risk profile
     _stage: 
@@ -2285,7 +2285,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteQuestions
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteRiskadversedetailsother"
     _section: General
     _stage: 
@@ -2344,7 +2344,7 @@ fields:
           -
             sourceKey: GENIndicativeAppetiteRiskadversedetailsother
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENIndicativeAppetiteHighriskadversedetails"
     _section: General
     _stage: 
@@ -2366,7 +2366,7 @@ fields:
           -
             sourceKey: GENUKIndicativeAppetiteRiskadversedetailsother
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENUKIndicativeAppetiteHighriskadversedetails"
     _section: General
     _stage: 
@@ -2519,7 +2519,37 @@ fields:
           -
             sourceKey: GENBusinessType
             operator: eq
-            value: "b) taking deposits || other repayable funds from the public || to grant credits for its own account. || C) neither"
+            value: b) taking deposits
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENBusinessType
+            operator: eq
+            value: other repayable funds from the public
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENBusinessType
+            operator: eq
+            value: to grant credits for its own account.
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENBusinessType
+            operator: eq
+            value: C) neither
     scriptId: "ROW:2.0|KEY:GENWholesaleDepositorEntityType"
     _section: General
     _stage: 
@@ -2595,7 +2625,7 @@ fields:
           -
             sourceKey: GENWholesaleDepositorEntityType
             operator: eq
-            value: "(e) an unincorporated association with net assets of ≤ £1.4 million (|| its equivalent in any other currency at the relevant time)"
+            value: (e) an unincorporated association with net assets of ≤ £1.4 million (or its equivalent in any other currency at the relevant time)
     scriptId: "ROW:2.0|KEY:statement_seek-rd-guidance-as-we-may-not-be-able-to-open-t"
     _section: General
     _stage: 
@@ -2615,6 +2645,16 @@ fields:
             sourceKey: GENStructureType
             operator: eq
             value: "(a) Yes, more than 80%"
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENStructureType
+            operator: eq
+            value: "equal to 100% owned"
     scriptId: "ROW:2.0|KEY:GENConsolidated"
     _section: General
     _stage: 
@@ -2665,7 +2705,17 @@ fields:
           -
             sourceKey: GENStructureType
             operator: eq
-            value: "(b) Yes, less than 80% ||  (c) No."
+            value: "(b) Yes, less than 80%"
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENStructureType
+            operator: eq
+            value: (c) No.
     scriptId: "ROW:2.0|KEY:GENStandalone"
     _section: General
     _stage: 
@@ -2972,7 +3022,17 @@ fields:
           -
             sourceKey: GENBankGroupOrFundType1
             operator: eq
-            value: "(c) have net assets of less than || equal to £1.4m?"
+            value: (c) have net assets of less than
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENBankGroupOrFundType1
+            operator: eq
+            value: equal to £1.4m?
     scriptId: "ROW:2.0|KEY:statement_seek-rd-guidance-as-we-may-not-be-able-to-open-t"
     _section: General
     _stage: 
@@ -3073,7 +3133,17 @@ fields:
           -
             sourceKey: GENStandaloneNetAssetsType
             operator: eq
-            value: "(c) have net assets of less than || equal to £1.4m?"
+            value: (c) have net assets of less than
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENStandaloneNetAssetsType
+            operator: eq
+            value: equal to £1.4m?
     scriptId: "ROW:2.0|KEY:statement_seek-rd-guidance-as-we-may-not-be-able-to-open-t"
     _section: General
     _stage: 
@@ -3575,7 +3645,7 @@ fields:
           -
             sourceKey: GENDirectbearer
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENDirectbearercontrol"
     _section: General
     _stage: 
@@ -3604,7 +3674,7 @@ fields:
           -
             sourceKey: GENDirectbearercontrol
             operator: eq
-            value: NO
+            value: No
     scriptId: "ROW:2.0|KEY:GENDirectbearercontroldetails"
     _section: General
     _stage: 
@@ -4467,7 +4537,17 @@ fields:
           -
             sourceKey: GENcountryregistration
             operator: eq
-            value: "United Kingdom (UK) || United States of America (USA)"
+            value: United Kingdom
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENcountryregistration
+            operator: eq
+            value: United States
     scriptId: "ROW:2.0|KEY:GENRegion"
     _section: General
     _stage: 
@@ -4831,7 +4911,17 @@ fields:
           -
             sourceKey: GENEntityType
             operator: eq
-            value: "Trusts - Specific Transactions (SPVs) || Trusts - Standard/ Private/ Other Pension Schemes"
+            value: Trusts - Specific Transactions (SPVs)
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENEntityType
+            operator: eq
+            value: Trusts - Standard/ Private/ Other Pension Schemes
     scriptId: "ROW:2.0|KEY:GENTypeTrust"
     _section: General
     _stage: 
@@ -5273,7 +5363,7 @@ fields:
           -
             sourceKey: GENprincaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENprincaddress1"
     _section: General
     _stage: 
@@ -5295,7 +5385,7 @@ fields:
           -
             sourceKey: GENprincaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENprincaddress2"
     _section: General
     _stage: 
@@ -5317,7 +5407,7 @@ fields:
           -
             sourceKey: GENprincaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENprincaddress3"
     _section: General
     _stage: 
@@ -5383,7 +5473,7 @@ fields:
           -
             sourceKey: GENprincaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENprincpostcode"
     _section: General
     _stage: 
@@ -5425,7 +5515,7 @@ fields:
           -
             sourceKey: GENmailaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENmailaddress1"
     _section: General
     _stage: 
@@ -5447,7 +5537,7 @@ fields:
           -
             sourceKey: GENmailaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENmailaddress2"
     _section: General
     _stage: 
@@ -5469,7 +5559,7 @@ fields:
           -
             sourceKey: GENmailaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENmailaddress3"
     _section: General
     _stage: 
@@ -5491,7 +5581,7 @@ fields:
           -
             sourceKey: GENmailaddressdifferent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENmailcountry"
     _section: General
     _stage: 
@@ -5586,7 +5676,7 @@ fields:
           -
             sourceKey: GENfundarrearslegalinsolvent
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENfunddetailtaxarrears"
     _section: General
     _stage: 
@@ -5920,7 +6010,7 @@ fields:
           -
             sourceKey: GENOpeningInvestmentAdviserLocation
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENOpeningInvestmentAdviserLocationUSA"
     _section: General
     _stage: 
@@ -6041,7 +6131,7 @@ fields:
           -
             sourceKey: GENFundMngDom
             operator: eq
-            value: USA
+            value: United States
     scriptId: "ROW:2.0|KEY:GENFundMngDomUSA"
     _section: General
     _stage: 
@@ -6204,7 +6294,37 @@ fields:
           -
             sourceKey: GENentitytype
             operator: eq
-            value: "Public Authority / Sector Body || Sovereign Wealth Fund || Trusts- Pension Scheme (EBTs only) || Trusts- Pension Scheme (excl. EBTs)"
+            value: Public Authority / Sector Body
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENentitytype
+            operator: eq
+            value: Sovereign Wealth Fund
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENentitytype
+            operator: eq
+            value: Trusts- Pension Scheme (EBTs only)
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENentitytype
+            operator: eq
+            value: Trusts- Pension Scheme (excl. EBTs)
     scriptId: "ROW:2.0|KEY:GENCountryHomeAuthority"
     _section: General
     _stage: 
@@ -6257,7 +6377,37 @@ fields:
           -
             sourceKey: GENentitytype
             operator: eq
-            value: "Foundation || Trusts- Pension Scheme (excl. EBTs) || Trusts- Specific transactions (SPVs) || Trusts- Standard/ Private/ Other Pension Schemes"
+            value: Foundation
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENentitytype
+            operator: eq
+            value: Trusts- Pension Scheme (excl. EBTs)
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENentitytype
+            operator: eq
+            value: Trusts- Specific transactions (SPVs)
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENentitytype
+            operator: eq
+            value: Trusts- Standard/ Private/ Other Pension Schemes
     scriptId: "ROW:2.0|KEY:GENHaveClassBeneficiaries"
     _section: General
     _stage: 
@@ -6356,7 +6506,7 @@ fields:
           -
             sourceKey: GENVatRegistered
             operator: eq
-            value: Yes
+            value: YES
     scriptId: "ROW:2.0|KEY:GENVatNumber"
     _section: General
     _stage: 
@@ -6571,7 +6721,7 @@ fields:
           -
             sourceKey: GENincorpUSA
             operator: eq
-            value: NO
+            value: No
     scriptId: "ROW:2.0|KEY:GENffi"
     _section: General
     _stage: 
@@ -6609,7 +6759,27 @@ fields:
           -
             sourceKey: GENffi
             operator: eq
-            value: "Reporting FFI || Sponsored FFI || Trustee Documented Trust"
+            value: Reporting FFI
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENffi
+            operator: eq
+            value: Sponsored FFI
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENffi
+            operator: eq
+            value: Trustee Documented Trust
     scriptId: "ROW:2.0|KEY:GENgiin"
     _section: General
     _stage: 
@@ -6632,7 +6802,27 @@ fields:
           -
             sourceKey: GENffi
             operator: eq
-            value: "Reporting FFI || Sponsored FFI || Trustee Documented Trust"
+            value: Reporting FFI
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENffi
+            operator: eq
+            value: Sponsored FFI
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENffi
+            operator: eq
+            value: Trustee Documented Trust
     scriptId: "ROW:2.0|KEY:GENffisponsorname"
     _section: General
     _stage: 
@@ -6654,7 +6844,27 @@ fields:
           -
             sourceKey: GENffi
             operator: eq
-            value: "Reporting FFI || Sponsored FFI || Trustee Documented Trust"
+            value: Reporting FFI
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENffi
+            operator: eq
+            value: Sponsored FFI
+      -
+        entity: entity
+        targetKeys:
+
+        allConditionsMustMatch: true
+        conditions:
+          -
+            sourceKey: GENffi
+            operator: eq
+            value: Trustee Documented Trust
     scriptId: "ROW:2.0|KEY:GENgiinreason"
     _section: General
     _stage: 
@@ -6683,7 +6893,7 @@ fields:
           -
             sourceKey: GENgiinreason
             operator: eq
-            value: Applied for
+            value: Applied For
     scriptId: "ROW:2.0|KEY:GENgiireasonappliedfor"
     _section: General
     _stage: 
@@ -6818,7 +7028,7 @@ fields:
           -
             sourceKey: GENothergiinreason
             operator: eq
-            value: Applied for
+            value: Applied For
     scriptId: "ROW:2.0|KEY:GENothergiinreasonappliedfor"
     _section: General
     _stage: 
@@ -6850,7 +7060,7 @@ fields:
           -
             sourceKey: GENffi
             operator: eq
-            value: NO
+            value: No
     scriptId: "ROW:2.0|KEY:GENnonffi"
     _section: General
     _stage: 
@@ -8585,7 +8795,7 @@ fields:
           -
             sourceKey: GENpepinvestors
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENdetailPEPconnection"
     _section: General
     _stage: 
@@ -8627,7 +8837,7 @@ fields:
           -
             sourceKey: GENpepinvestpersrelationship
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENdetailPEPriskfactor"
     _section: General
     _stage: 
@@ -8669,7 +8879,7 @@ fields:
           -
             sourceKey: GENpepdirectorcontroller
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENdetailPEPdirectorcontroller"
     _section: General
     _stage: 
@@ -8711,7 +8921,7 @@ fields:
           -
             sourceKey: GENpeppositioninfluence
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENdetailPEPpositioninfluence"
     _section: General
     _stage: 
@@ -8754,7 +8964,7 @@ fields:
           -
             sourceKey: GENinvesthighrisk
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GEN50percinvesthighrisk"
     _section: General
     _stage: 
@@ -8784,7 +8994,7 @@ fields:
           -
             sourceKey: GEN50percinvesthighrisk
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GEN50PercInvestDetails"
     _section: General
     _stage: 
@@ -8837,7 +9047,7 @@ fields:
           -
             sourceKey: GENbearer
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENbearercontrol"
     _section: General
     _stage: 
@@ -8866,7 +9076,7 @@ fields:
           -
             sourceKey: GENbearercontrol
             operator: eq
-            value: NO
+            value: No
     scriptId: "ROW:2.0|KEY:GENbearercontroldetails"
     _section: General
     _stage: 
@@ -8909,7 +9119,7 @@ fields:
           -
             sourceKey: GENinvestorhighrisk
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENdetailinvestorhighrisk"
     _section: General
     _stage: 
@@ -8951,7 +9161,7 @@ fields:
           -
             sourceKey: GENubohighriskcountry
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENdetailUBOhighriskcountry"
     _section: General
     _stage: 
@@ -8993,7 +9203,7 @@ fields:
           -
             sourceKey: GENcustomerarrears
             operator: eq
-            value: YES
+            value: Yes
     scriptId: "ROW:2.0|KEY:GENcustomerdetailtaxarrears"
     _section: General
     _stage: 

@@ -72,37 +72,18 @@ This guide provides step-by-step instructions for converting a client spreadshee
    ```
    Save as: `apps/prototype/data/mappings/your-journey-key.json`
 
-### Step 3: Run the Importers
+### Step 3: Run the Importer (KYCP)
 
-1. **Run the standard importer** (for legacy format):
-   ```bash
-   cd /path/to/RBSI-onboarding
-   
-   python3 scripts/import_xlsx.py \
-     --mapping apps/prototype/data/mappings/your-journey-key.json \
-     --input apps/prototype/data/incoming/YYYYMMDD_your_spreadsheet.xlsx \
-     --sheet "Sheet Name" \
-     --lookups-sheet "Lookup Values" \
-     --journey-key your-journey-key
-   ```
+For Non‑Lux v1.1, run the built‑in KYCP importer:
 
-2. **Run the KYCP-aligned importer** (for KYCP components):
-   ```bash
-   python3 scripts/import_xlsx_kycp.py \
-     --mapping apps/prototype/data/mappings/your-journey-key.json \
-     --input apps/prototype/data/incoming/YYYYMMDD_your_spreadsheet.xlsx \
-     --sheet "Sheet Name" \
-     --lookups-sheet "Lookup Values" \
-     --journey-key your-journey-key-kycp
-   ```
+```bash
+cd apps/prototype
+python3 scripts/import_non_lux_1_1.py
+```
 
-3. **Verify the output**:
-   - Schema files created in:
-     - `apps/prototype/data/schemas/your-journey-key/schema.yaml`
-     - `apps/prototype/data/schemas/your-journey-key-kycp/schema-kycp.yaml`
-   - Reports generated in:
-     - `apps/prototype/data/generated/importer-cli/your-journey-key/`
-     - `apps/prototype/data/generated/importer-cli/your-journey-key-kycp/`
+Output:
+- Schema: `apps/prototype/data/schemas/non-lux-1-1/schema-kycp.yaml`
+- Console summary with include/exclude counts and unresolved lookups
 
 ### Step 4: Add Journey to Manifest
 
@@ -156,10 +137,10 @@ This guide provides step-by-step instructions for converting a client spreadshee
 
 3. **Test the journey**:
    - Click "Open" on your KYCP journey
-   - It will route to `/preview-kycp/your-journey-key-kycp`
-   - Verify fields render correctly with KYCP components
-   - Test navigation between sections
+   - It routes to `/preview-kycp/non-lux-1-1`
+   - Verify KYCP components render correctly
    - Check visibility conditions work
+   - Use Explain visibility (checkbox or `?explain=1`) to debug rules
 
 ### Step 6: Validate Components and Styling
 
@@ -182,28 +163,20 @@ This guide provides step-by-step instructions for converting a client spreadshee
    - Statements are plain text without borders/backgrounds
    - Field descriptions support HTML and bullet lists
 
-### Step 7: Review Import Reports
+### Step 7: Quality Checks
 
-1. **Check summary report**:
-   ```bash
-   cat apps/prototype/data/generated/importer-cli/your-journey-key-kycp/summary-kycp.json
-   ```
-   
-   Look for:
-   - Total fields created
-   - Internal fields detected
-   - Fields with visibility rules
-   - Any errors or warnings
+1) Conditions Report (Admin)
+- From Mission Control (Admin), click “Conditions Report” on the journey card, or visit:
+  - `/api/conditions-report/non-lux-1-1?format=html` (HTML table)
+  - `/api/conditions-report/non-lux-1-1` (JSON)
+- Flags unresolved keys, option mismatches (with aliasing), parse issues, and cycles.
 
-2. **Review decisions log**:
-   ```bash
-   cat apps/prototype/data/generated/importer-cli/your-journey-key-kycp/decisions.json
-   ```
-   
-   Check for:
-   - Missing lookups
-   - Invalid regex patterns
-   - Normalization decisions
+2) Scenario Checks (CLI)
+- From `apps/prototype`, run:
+  ```bash
+  pnpm scenarios
+  ```
+- Asserts key visibility paths (UK/non‑UK, USA forks) stay correct.
 
 ### Step 8: Document the Update
 
@@ -267,16 +240,16 @@ This guide provides step-by-step instructions for converting a client spreadshee
 ## Advanced Features
 
 ### Visibility Rules
-- Simple: `fieldKey == "value"`
-- Complex: `fieldA == "Yes" && (fieldB != "No" || fieldC == "Maybe")`
-- The system handles AND/OR logic and parentheses
+- Grammar: equality only (`==`, `!=`) with AND/OR logic (no parentheses).
+- OR is modeled as multiple rules; AND as multiple conditions in one rule.
+- Case‑insensitive comparisons; values are canonicalized to controller options using a mapping `value_aliases` (e.g., `USA` → `United States`).
 
 ### Internal Fields
 - Detected by "Action" column containing "internal"
 - Or by dedicated internal column in mapping
 - These fields are hidden from client view automatically
 
-### Status Rights
+### Internal Fields
 - Per-status visibility: invisible/read/write
 - Global defaults with per-field overrides
 - Buttons respect read-only states
@@ -289,17 +262,22 @@ This guide provides step-by-step instructions for converting a client spreadshee
 4. **Preserve source references** - Keep ROW:XXX references for traceability
 5. **Validate before deploy** - Run `pnpm build` to catch errors
 
+### Complex Groups (Repeaters)
+- Parent row has `DATA TYPE = Complex` → becomes a `type: complex` container in schema.
+- Child rows reference the parent via the `COMPLEX` column (value = parent KEYNAME).
+- UI renders a KycpRepeater; rows are stored as array items under the parent key.
+
 ## Quick Reference Commands
 
 ```bash
-# Import standard format
-python3 scripts/import_xlsx.py --mapping [mapping] --input [xlsx] --sheet [sheet] --lookups-sheet [lookups] --journey-key [key]
-
-# Import KYCP format
-python3 scripts/import_xlsx_kycp.py --mapping [mapping] --input [xlsx] --sheet [sheet] --lookups-sheet [lookups] --journey-key [key]-kycp
+# Import Non‑Lux v1.1 (KYCP)
+cd apps/prototype && python3 scripts/import_non_lux_1_1.py
 
 # Start dev server
 cd apps/prototype && pnpm dev
+
+# Run scenario checks
+cd apps/prototype && pnpm scenarios
 
 # Build for production
 cd apps/prototype && pnpm build

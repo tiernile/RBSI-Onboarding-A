@@ -64,6 +64,8 @@ function runScenarios(journey) {
   scenarios.push(() => {
     const model = { GENBankAccountJurisdiction: 'United Kingdom' }
     const preApp = evalVisibility(field('GENIndicativeAppetiteQuestions'), model)
+    // For UK path, Fund Manager question requires Pre-App = Yes per visibility overrides
+    model.GENIndicativeAppetiteQuestions = 'Yes'
     const ukFM = evalVisibility(field('GENUKIndicativeAppetiteFundMng'), model)
     const ukFMDom_before = evalVisibility(field('GENUKIndicativeAppetiteFundMngDom'), model)
     // Now set Fund Manager = Yes
@@ -71,7 +73,7 @@ function runScenarios(journey) {
     const ukFMDom_after = evalVisibility(field('GENUKIndicativeAppetiteFundMngDom'), model)
 
     assertEqual(preApp, false, 'UK: Pre-Application question should be hidden')
-    assertEqual(ukFM, true, 'UK: Fund Manager question should be visible')
+    assertEqual(ukFM, true, 'UK: Fund Manager question should be visible when Pre-App = Yes')
     assertEqual(ukFMDom_before, false, 'UK: Fund Manager domicile hidden until FM = Yes')
     assertEqual(ukFMDom_after, true, 'UK: Fund Manager domicile visible when FM = Yes')
   })
@@ -83,6 +85,13 @@ function runScenarios(journey) {
     const ukFM = evalVisibility(field('GENUKIndicativeAppetiteFundMng'), model)
     assertEqual(preApp, true, 'Non-UK: Pre-Application question should be visible')
     assertEqual(ukFM, false, 'Non-UK: Fund Manager (UK only) should be hidden')
+  })
+
+  // Scenario C: Investment Adviser USA fork
+  scenarios.push(() => {
+    const model = { GENOpeningInvestmentAdviser: 'Yes', GENOpeningInvestmentAdviserLocation: 'United States' }
+    const usaFork = evalVisibility(field('GENOpeningInvestmentAdviserLocationUSA'), model)
+    assertEqual(usaFork, true, 'Adviser USA fork should be visible when location is United States')
   })
 
   // Execute
@@ -100,4 +109,3 @@ main().catch((e) => {
   console.error('[scenarios] failed:', e.message || e)
   process.exit(1)
 })
-

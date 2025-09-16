@@ -15,6 +15,7 @@ This guide explains what the prototype is, how to use it, and what the screens a
 - See how questions appear or hide based on previous answers.
 - (If you’re an admin) choose which journeys are visible on the landing page.
 - Generate a simple report that shows the questions and where they came from.
+- As admin, open a Conditions Report that surfaces conditionality issues.
 
 ## How To Use It
 
@@ -31,7 +32,7 @@ This guide explains what the prototype is, how to use it, and what the screens a
 - Click “Admin” on Mission Control and enter the password to see extra controls.
 - As an admin, you can:
   - Show/hide journeys on the landing page (the team uses this to manage what testers see).
-  - View a “Diff” report (a simple table of questions and rules) and export a CSV.
+  - View a “Diff” report (a simple table of questions and rules), export a CSV, and open the Conditions Report.
 
 ## What The Labels Mean
 
@@ -46,6 +47,12 @@ This guide explains what the prototype is, how to use it, and what the screens a
 - We can generate:
   - Diff (HTML): a human‑readable table of fields, rules, and references.
   - Export (CSV): a simple file you can review or share.
+  - Conditions Report: a lint of conditionality issues; available from each journey card (Admin).
+
+## Tips for Reviewing Visibility
+
+- Use the Explain visibility toggle at the top of the KYCP preview, or append `?explain=1` to the URL.
+- The report `GET /api/conditions-report/:journey?format=html` highlights unresolved keys, option mismatches, and parse errors.
 
 ## Privacy & Security
 
@@ -62,4 +69,3 @@ This guide explains what the prototype is, how to use it, and what the screens a
 
 - Product/design lead: Tiernan (Nile) for flow and content questions.
 - Prototype support: the Nile team maintaining the repo.
-

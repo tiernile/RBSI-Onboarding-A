@@ -19,9 +19,12 @@ This prototype ships its data with the app for reliable serverless deploys. Foll
 ## Health & Verification
 - `GET /api/health` → `{ dataDir, manifestExists, journeyCount }`
 - `GET /api/manifest` → returns journeys; `non-lux-lp-demo` is visible by default.
-- Mission Control shows the visible journeys; Admin login reveals Diff/Export.
+- Mission Control shows the visible journeys; Admin login reveals Diff/Export and a Conditions Report link per journey.
+- Conditions Report (lint): `GET /api/conditions-report/:journey` (JSON) or `?format=html` (table) — helpful to spot conditionality issues.
+
+## Reviewer Tips
+- Use the Explain visibility checkbox in the KYCP preview (or add `?explain=1` to the URL) to see why questions are shown/hidden.
 
 ## Notes (Serverless)
 - Diff/Export stream artifacts in the response; writes to disk may not persist on Vercel (read‑only FS). This is expected.
 - To show only a specific journey temporarily, use `MC_VISIBLE` instead of editing the manifest.
-

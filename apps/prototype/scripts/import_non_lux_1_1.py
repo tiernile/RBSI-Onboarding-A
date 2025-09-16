@@ -130,47 +130,120 @@ def build_table(rows):
 def normalize_bool(v: str, yes_values: list[str]):
     return (v or '').strip() in yes_values
 
-def parse_visibility(expr: str, op_map: dict[str,str]):
+def parse_visibility(expr: str, op_map: dict[str, str]):
+    """Parse a legacy visibility expression into KYCP visibility rules.
+
+    Supports AND/OR with tolerance:
+    - OR creates multiple rules (any rule can match) by returning multiple entries.
+    - AND within a rule becomes multiple conditions with allConditionsMustMatch=True.
+    - We avoid replacing AND/OR inside quoted values and only convert single '=' to '=='.
+    """
     if not expr or not expr.strip():
         return []
-    # Normalize operators across the string
-    e = expr.replace('\n', ' ')
-    for k, v in op_map.items():
-        e = e.replace(k, v)
-    # Normalize textual boolean connectors
-    e = re.sub(r'\bAND\b', '&&', e, flags=re.IGNORECASE)
-    e = re.sub(r'\bOR\b', '||', e, flags=re.IGNORECASE)
-    parts = [p.strip() for p in e.split('&&') if p.strip()]
-    conditions = []
-    for p in parts:
-        # Accept any characters in the value portion; split on first '==' or '!='
-        if '==' in p:
-            op = '=='
-        elif '!=' in p:
-            op = '!='
-        else:
-            continue
-        left, right = p.split(op, 1)
-        src = left.strip()
-        val = right.strip()
-        # Remove wrapping quotes if present
-        if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
-            val = val[1:-1]
-        if not src:
-            continue
-        conditions.append({
-            'sourceKey': src,
-            'operator': 'eq' if op == '==' else 'neq',
-            'value': val
-        })
-    if not conditions:
-        return []
-    return [{
-        'entity': 'entity',
-        'targetKeys': [],
-        'allConditionsMustMatch': True,
-        'conditions': conditions
-    }]
+
+    s = (expr or '').replace('\n', ' ')
+
+    # Convert operators carefully: <> -> !=, single = -> == (but not == already)
+    s = s.replace('<>', '!=')
+    s = re.sub(r'(?<![=!])=(?!=)', '==', s)
+
+    # Tokenize respecting quotes
+    def split_outside_quotes(text: str, seps: list[str]):
+        out = []
+        i = 0
+        buf = []
+        in_sq = False
+        in_dq = False
+        while i < len(text):
+            ch = text[i]
+            if ch == "'" and not in_dq:
+                in_sq = not in_sq
+                buf.append(ch)
+                i += 1
+                continue
+            if ch == '"' and not in_sq:
+                in_dq = not in_dq
+                buf.append(ch)
+                i += 1
+                continue
+            if not in_sq and not in_dq:
+                matched = False
+                for sep in seps:
+                    if text[i:].lower().startswith(sep.lower()):
+                        out.append(''.join(buf).strip())
+                        buf = []
+                        i += len(sep)
+                        matched = True
+                        break
+                if matched:
+                    continue
+            buf.append(ch)
+            i += 1
+        out.append(''.join(buf).strip())
+        return [p for p in out if p]
+
+    # Split on OR tokens first (outside quotes)
+    or_groups = split_outside_quotes(s, ['||', ' OR '])
+
+    rules = []
+    bare_values: list[str] = []
+    first_cond: dict | None = None
+    for og in or_groups:
+        # Split on AND tokens (outside quotes)
+        and_parts = split_outside_quotes(og, ['&&', ' AND '])
+        conditions = []
+        found_op = False
+        for p in and_parts:
+            # find operator (== or !=)
+            op = '==' if '==' in p else ('!=' if '!=' in p else None)
+            if not op:
+                continue
+            found_op = True
+            left, right = p.split(op, 1)
+            src = (left or '').strip()
+            val = (right or '').strip()
+            # trim quotes if present
+            if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                val = val[1:-1]
+            if not src:
+                continue
+            cond = {
+                'sourceKey': src,
+                'operator': 'eq' if op == '==' else 'neq',
+                'value': val
+            }
+            if first_cond is None:
+                first_cond = cond.copy()
+            conditions.append(cond)
+        if conditions:
+            rules.append({
+                'entity': 'entity',
+                'targetKeys': [],
+                'allConditionsMustMatch': True,
+                'conditions': conditions
+            })
+        elif (og or '').strip():
+            # Bare value segment (likely from "A == X OR Y OR Z")
+            # record after trimming quotes
+            val = og.strip()
+            if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                val = val[1:-1]
+            bare_values.append(val)
+    # If we have bare OR values and a single-condition base to replicate, expand into additional rules
+    if bare_values and first_cond is not None:
+        # Only safe if all existing rules are a single condition with the same source/op
+        src = first_cond['sourceKey']
+        op = first_cond['operator']
+        base_rules_ok = all(len(r.get('conditions') or []) == 1 and r['conditions'][0]['sourceKey'] == src and r['conditions'][0]['operator'] == op for r in rules)
+        if base_rules_ok:
+            for bv in bare_values:
+                rules.append({
+                    'entity': 'entity',
+                    'targetKeys': [],
+                    'allConditionsMustMatch': True,
+                    'conditions': [{ 'sourceKey': src, 'operator': op, 'value': bv }]
+                })
+    return rules
 
 def decide_type(row, mapping):
     dt_raw = (row.get(mapping['columns']['data_type']) or '').strip()
@@ -303,6 +376,14 @@ def to_yaml(data) -> str:
 
 def main():
     mapping = load_mapping()
+    value_aliases = mapping.get('value_aliases') or {}
+    # Build synonym->canonical map (lowercased)
+    alias_to_canon: dict[str,str] = {}
+    for canon, syns in value_aliases.items():
+        c = (canon or '').strip().lower()
+        alias_to_canon[c] = c
+        for s in (syns or []):
+            alias_to_canon[(s or '').strip().lower()] = c
     with ZipFile(INCOMING, 'r') as z:
         sst = read_shared_strings(z)
         idx = sheet_index_by_name(z, mapping['sheet'])
@@ -502,6 +583,46 @@ def main():
             'children': g['children'],
             **({'titleField': g['titleField']} if g.get('titleField') else {})
         })
+
+    # Canonicalize condition values to match controller options (by value/label) using alias map
+    field_by_key = {f['key']: f for f in included}
+    def canonize_value(controller_key: str, raw: str) -> str:
+        if not raw:
+            return raw
+        val_lc = raw.strip().lower()
+        # alias substitution
+        val_norm = alias_to_canon.get(val_lc, val_lc)
+        ctrl = field_by_key.get(controller_key)
+        if not ctrl:
+            return raw
+        opts = ctrl.get('options') or []
+        # compare to both value and label
+        for o in opts:
+            ov = str(o.get('value') or '').strip()
+            ol = str(o.get('label') or '').strip()
+            if val_norm == ov.strip().lower() or val_norm == ol.strip().lower():
+                return ov or ol or raw
+        # no match
+        return raw
+
+    for f in included:
+        vis = f.get('visibility') or []
+        changed = False
+        for rule in vis:
+            for c in (rule.get('conditions') or []):
+                # Only canonicalize for eq/neq against lookup/enum controllers
+                left_key = c.get('sourceKey')
+                ctrl = field_by_key.get(left_key)
+                if not ctrl:
+                    continue
+                if ctrl.get('type') in ['lookup', 'enum']:
+                    orig = str(c.get('value') or '')
+                    newv = canonize_value(left_key, orig)
+                    if newv != orig:
+                        c['value'] = newv
+                        changed = True
+        if changed:
+            f['visibility'] = vis
 
     # Assemble KYCP schema
     schema = {

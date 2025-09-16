@@ -7,7 +7,10 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "hash": "node scripts/hash.mjs",
-    "scenarios": "node scripts/scenarios.mjs non-lux-1-1"
+    "scenarios": "node scripts/scenarios.mjs non-lux-1-1",
+    "fields": "node scripts/analyze_fields.mjs non-lux-1-1",
+    "analyze:prepare": "node scripts/prepare_llm_batch.mjs non-lux-1-1",
+    "analyze:merge": "node scripts/merge_llm_responses.mjs non-lux-1-1 apps/prototype/data/generated/analysis/non-lux-1-1/llm_responses.jsonl"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

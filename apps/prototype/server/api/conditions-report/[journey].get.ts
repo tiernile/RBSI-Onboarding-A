@@ -75,8 +75,10 @@ export default defineEventHandler(async (event: H3Event) => {
 
   // Simple alias map for values
   const valueAliases: Record<string, string[]> = {
-    'uk': ['united kingdom'],
-    'united kingdom': ['uk'],
+    'uk': ['united kingdom', 'u.k.', 'great britain', 'gb', 'united kingdom (uk)'],
+    'united kingdom': ['uk', 'u.k.', 'great britain', 'gb', 'united kingdom (uk)'],
+    'united states': ['usa', 'u.s.', 'u.s.a.', 'us', 'united states of america', 'united states (usa)', 'united states of america (usa)'],
+    'usa': ['united states', 'u.s.', 'u.s.a.', 'us', 'united states of america', 'united states (usa)', 'united states of america (usa)'],
     'yes': ['y', 'true'],
     'no': ['n', 'false']
   }
@@ -106,6 +108,9 @@ export default defineEventHandler(async (event: H3Event) => {
         const op = c.operator
         const rawVal = (c.value ?? '').toString()
         const valLc = normalizeBooleanText(rawVal).toString().toLowerCase()
+        if (rawVal.includes('||') || rawVal.includes('&&')) {
+          issues.push({ type: 'parse_error', message: `Operator tokens found inside value '${rawVal}'` })
+        }
         if (!fieldMap.has(left)) {
           issues.push({ type: 'unresolved_key', message: `Unknown controller '${left}'` })
         } else {
@@ -179,4 +184,3 @@ export default defineEventHandler(async (event: H3Event) => {
 
   return report
 })
-

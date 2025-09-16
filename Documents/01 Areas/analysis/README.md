@@ -36,7 +36,14 @@ The analysis system helps ensure all journey content meets quality standards by:
 # 1. Ensure you have a schema to analyze
 ls apps/prototype/data/schemas/your-journey/
 
-# 2. Run the tone analyzer
+# 2a. Run the field inventory (KYCP schemas)
+node apps/prototype/scripts/analyze_fields.mjs non-lux-1-1
+
+# Outputs:
+# apps/prototype/data/generated/analysis/non-lux-1-1/fields.csv
+# apps/prototype/data/generated/analysis/non-lux-1-1/summary.json
+
+# 2b. Run the tone analyzer (optional)
 python3 scripts/analyze_tone.py \
   --schema apps/prototype/data/schemas/your-journey/schema.yaml \
   --output analysis/your-journey-tone.csv \
@@ -55,11 +62,19 @@ open analysis/your-journey-tone.csv
 
 ## Key Metrics
 
-### Current Analysis (non-lux-lp-demo-kycp)
+### Current Analysis (non-lux-1-1)
 - **Total Fields**: 788
 - **Issues Found**: 438 (55.6%)
 - **High Severity**: 51 (11.6%)
 - **Processing Time**: < 1 minute
+
+Field inventory (from summary.json):
+- fields: total count
+- withVisibility: fields with rules
+- required: fields marked required
+- complexParents/complexChildren: repeater containers and children
+- lookupNoOptions: lookups missing option lists
+Top controllers: top 20 controlling keys by frequency
 
 ### Issue Categories
 1. **Jargon** - Banking/legal terminology

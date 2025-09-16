@@ -11,7 +11,7 @@ RBSI-onboarding/
 ├── apps/prototype/          # Nuxt 3 application
 │   ├── components/kycp/     # KYCP-compliant components
 │   ├── pages/              # Application pages
-│   ├── server/             # API endpoints
+│   ├── server/             # API endpoints (includes Conditions Report)
 │   └── data/               # All data files
 │       ├── incoming/       # Source spreadsheets
 │       ├── mappings/       # Column mappings
@@ -19,7 +19,7 @@ RBSI-onboarding/
 │       └── generated/      # Reports and analysis
 ├── scripts/                # Processing tools
 │   ├── import_xlsx.py      # Standard importer
-│   ├── import_xlsx_kycp.py # KYCP-aligned importer
+│   ├── import_non_lux_1_1.py # KYCP-aligned importer for Non‑Lux v1.1
 │   └── analyze_tone.py     # Tone analysis tool
 └── Documents/01 Areas/     # Documentation
     ├── guide/              # User guides
@@ -68,30 +68,16 @@ If no mapping exists, create `apps/prototype/data/mappings/journey-key.json`:
 
 ### Phase 2: Import and Generation
 
-#### 2.1 Run Both Importers
+#### 2.1 Run Importer (KYCP)
 ```bash
-# Standard format (legacy)
-python3 scripts/import_xlsx.py \
-  --mapping apps/prototype/data/mappings/journey-key.json \
-  --input apps/prototype/data/incoming/YYYYMMDD_file.xlsx \
-  --sheet "Sheet Name" \
-  --lookups-sheet "Lookup Values" \
-  --journey-key journey-key
-
-# KYCP format (recommended)
-python3 scripts/import_xlsx_kycp.py \
-  --mapping apps/prototype/data/mappings/journey-key.json \
-  --input apps/prototype/data/incoming/YYYYMMDD_file.xlsx \
-  --sheet "Sheet Name" \
-  --lookups-sheet "Lookup Values" \
-  --journey-key journey-key-kycp
+cd apps/prototype
+python3 scripts/import_non_lux_1_1.py
 ```
 
 #### 2.2 Verify Output
 Check generated files:
-- Schema: `apps/prototype/data/schemas/journey-key-kycp/schema-kycp.yaml`
-- Summary: `apps/prototype/data/generated/importer-cli/journey-key-kycp/summary-kycp.json`
-- Decisions: `apps/prototype/data/generated/importer-cli/journey-key-kycp/decisions.json`
+- Schema: `apps/prototype/data/schemas/non-lux-1-1/schema-kycp.yaml`
+- Console output: include/exclude summary and unresolved lookups
 
 ### Phase 3: Tone Analysis
 
@@ -145,7 +131,7 @@ Navigate to http://localhost:3000:
 - Check journey appears on Mission Control
 - Click "Open" to test the form
 - Verify KYCP components render correctly
-- Test visibility conditions
+- Test visibility conditions; use Explain visibility (checkbox or `?explain=1`)
 - Check validation works
 
 ### Phase 5: Quality Assurance
@@ -167,7 +153,13 @@ Check questions follow guidelines:
 - ✅ No unexplained jargon
 - ✅ One idea per sentence
 
-#### 5.3 Accessibility
+#### 5.3 Conditions and Lints
+Use the Conditions Report to review conditionality:
+- HTML: `/api/conditions-report/non-lux-1-1?format=html`
+- JSON: `/api/conditions-report/non-lux-1-1`
+- Flags unresolved keys, option mismatches (with aliasing), parse errors (e.g., operator tokens inside values), and cycles.
+
+#### 5.4 Accessibility
 Ensure:
 - All fields have labels
 - Required fields marked with *
@@ -254,6 +246,7 @@ cd apps/prototype && pnpm build
 
 - Mission Control: http://localhost:3000
 - KYCP Journey: http://localhost:3000/preview-kycp/[journey-key]
+- Conditions Report: http://localhost:3000/api/conditions-report/[journey-key]?format=html
 - Component Showcase: http://localhost:3000/kycp-components
 - Admin Login: http://localhost:3000 (click Admin)
 

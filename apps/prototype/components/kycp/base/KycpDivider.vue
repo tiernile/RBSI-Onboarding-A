@@ -25,9 +25,9 @@ defineProps<Props>()
   position: relative;
   margin: 0;
   padding: 12px 0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  color: #4a5568;
+  color: var(--kycp-primary);
   border-bottom: 1px solid #d1d5db;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@ defineProps<Props>()
 
 .kycp-divider__dash {
   margin-right: 8px;
-  color: #9ca3af;
+  color: var(--kycp-primary);
 }
 
 .kycp-divider__line {

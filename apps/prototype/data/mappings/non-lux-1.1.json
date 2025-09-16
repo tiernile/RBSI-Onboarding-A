@@ -43,6 +43,12 @@
     "type": "LOOKUP TYPE",
     "value": "LOOKUP VALUE"
   },
+  "value_aliases": {
+    "united states": ["usa", "u.s.", "us", "united states of america", "united states (usa)", "united states of america (usa)", "u.s.a."],
+    "united kingdom": ["uk", "u.k.", "great britain", "gb", "united kingdom (uk)"],
+    "delaware": ["usa - delaware"],
+    "non-delaware": ["usa - non-delaware", "non delaware"]
+  },
   "fallback_lookups": {
     "Yes/No": ["Yes", "No"],
     "Bank Account Jurisdiction": [
