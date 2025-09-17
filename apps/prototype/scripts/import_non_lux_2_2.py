@@ -38,6 +38,8 @@ def info(msg: str):
 
 def slugify(s: str) -> str:
     s = (s or '').strip().lower()
+    # Replace & with 'and' to match frontend slugify behavior
+    s = s.replace('&', ' and ')
     out = []
     for ch in s:
         if ch.isalnum():
@@ -392,6 +394,7 @@ def create_copy_mapping(rows: dict, mapping: dict, copy_map: list):
             "paul_section_suggestion": field_data.get('paul_section_suggestion', ''),
             "paul_question_order": field_data.get('paul_question_order', ''),
             "action": field_data.get('action', ''),
+            "reworded": field_data.get('reworded', ''),
             "has_label_change": bool(nile_label and nile_label != original_label),
             "has_help_change": bool(nile_help and nile_help != original_help),
             "has_section_suggestion": bool(nile_section),
@@ -436,6 +439,15 @@ def process_field(field_data: dict, mapping: dict, lookups: dict) -> dict:
         if match:
             paul_order_number = float(match.group(1))
             paul_order_section = match.group(2).strip()
+    
+    # Apply ordering fixes for backwards dependencies
+    field_key = field_data.get('id', '')
+    if field_key == 'GENpepinvestors':
+        # Fix B9 internal ordering: GENpepinvestors should come before GENdetailPEPconnection
+        paul_order_number = 154.0  # Original was 155
+    elif field_key == 'GENdetailPEPconnection':
+        # Fix B9 internal ordering: GENdetailPEPconnection should come after GENpepinvestors
+        paul_order_number = 155.0  # Original was 154
     
     # Track Paul's structural changes if present
     has_section_change = bool(paul_section)
@@ -491,13 +503,23 @@ def process_field(field_data: dict, mapping: dict, lookups: dict) -> dict:
     if regex:
         field['validation']['regex'] = regex
     
-    # Section assignment using Paul's structural suggestions
-    if paul_section:
+    # Section assignment using restructured flow mappings
+    field_key = field_data.get('id', '')
+    field_section_mappings = mapping.get('field_section_mappings', {})
+    paul_sections = mapping.get('paul_sections', {})
+    
+    if field_key in field_section_mappings:
+        # Use explicit field mapping for restructured flow - expand to full section name
+        section_code = field_section_mappings[field_key]
+        section_title = paul_sections.get(section_code, section_code)
+        field['_section'] = f"{section_code} - {section_title}" if section_title != section_code else section_code
+    elif paul_section:
         # Use Paul's section suggestion directly - these are clean B-prefix sections
         field['_section'] = paul_section
     elif paul_order_section:
-        # Use section from Paul's order format as fallback
-        field['_section'] = paul_order_section
+        # Use section from Paul's order format as fallback - expand to full name if possible
+        section_title = paul_sections.get(paul_order_section, paul_order_section)
+        field['_section'] = f"{paul_order_section} - {section_title}" if section_title != paul_order_section else paul_order_section
     else:
         # Fallback to v1.1 label-based section mapping for unordered fields
         label_lower = field['label'].lower()
@@ -526,17 +548,32 @@ def process_field(field_data: dict, mapping: dict, lookups: dict) -> dict:
     return field
 
 def sort_fields_by_paul_order(fields: list) -> list:
-    """Sort fields by Paul's question order within sections"""
+    """Sort fields by Paul's question order within sections, prioritizing unconditional fields"""
     def get_sort_key(field):
         paul_order = field.get('_paul_order')
         section = field.get('_section', 'ZZZ')  # Default to end
+        has_visibility = bool(field.get('visibility'))  # True if field has conditional logic
         
-        # Fields with Paul order come first within their section
+        # Within each section, prioritize:
+        # 1. Unconditional fields with Paul order
+        # 2. Unconditional fields without Paul order  
+        # 3. Conditional fields with Paul order
+        # 4. Conditional fields without Paul order
+        
         if paul_order is not None:
-            return (section, 0, paul_order)
+            if not has_visibility:
+                # Unconditional fields with Paul order come first
+                return (section, 0, paul_order)
+            else:
+                # Conditional fields with Paul order come after unconditional
+                return (section, 2, paul_order)
         else:
-            # Fields without Paul order go to end of section
-            return (section, 1, field.get('key', ''))
+            if not has_visibility:
+                # Unconditional fields without Paul order 
+                return (section, 1, field.get('key', ''))
+            else:
+                # Conditional fields without Paul order go to end
+                return (section, 3, field.get('key', ''))
     
     return sorted(fields, key=get_sort_key)
 
@@ -667,7 +704,7 @@ def generate_schema(rows: dict, mapping: dict, lookups: dict) -> dict:
             sections[section_normalized] = []
         sections[section_normalized].append(field['key'])
     
-    # Add accordion configuration with Paul's section ordering
+    # Add accordion configuration with Paul's section ordering and nested structure
     if len(sections) > 1:
         schema['accordions'] = []
         
@@ -675,27 +712,122 @@ def generate_schema(rows: dict, mapping: dict, lookups: dict) -> dict:
         paul_sections = mapping.get('paul_sections', {})
         paul_order = list(paul_sections.keys())  # ['B1', 'B2', 'B3', ...]
         
+        # Group sections into hierarchical structure
+        def parse_section_hierarchy(sections_dict):
+            hierarchical = {}
+            processed_subsections = set()
+            
+            # First pass: handle subsections and create parent containers
+            for section_name, field_keys in sections_dict.items():
+                section_code = section_name.split(' - ')[0] if ' - ' in section_name else section_name
+                
+                if '.' in section_code:
+                    # This is a subsection (e.g., "B4.1", "B11.2")
+                    parent_code = section_code.split('.')[0]  # "B4", "B11"
+                    processed_subsections.add(section_name)
+                    
+                    # Create consistent parent name from restructured sections
+                    parent_title = paul_sections.get(parent_code, 'Unknown')
+                    
+                    parent_name = f"{parent_code} - {parent_title}"
+                    
+                    # Initialize parent if not exists
+                    if parent_name not in hierarchical:
+                        hierarchical[parent_name] = {
+                            'fields': [],
+                            'subsections': []
+                        }
+                    
+                    # Create clean subsection title
+                    if ' - ' in section_name:
+                        parts = section_name.split(' - ')
+                        if len(parts) >= 3:
+                            subsection_title = parts[2]
+                        else:
+                            subsection_title = parts[1] if len(parts) > 1 else section_name
+                    else:
+                        subsection_title = section_name
+                    
+                    hierarchical[parent_name]['subsections'].append({
+                        'key': slugify(section_name),
+                        'title': subsection_title,
+                        'fields': field_keys
+                    })
+            
+            # Second pass: handle top-level sections (but avoid duplicates with created parents)
+            for section_name, field_keys in sections_dict.items():
+                if section_name in processed_subsections:
+                    continue
+                    
+                section_code = section_name.split(' - ')[0] if ' - ' in section_name else section_name
+                
+                if '.' not in section_code:
+                    # Check if this matches a parent we already created
+                    parent_match = None
+                    for existing_parent in hierarchical.keys():
+                        existing_code = existing_parent.split(' - ')[0]
+                        if existing_code == section_code:
+                            parent_match = existing_parent
+                            break
+                    
+                    if parent_match:
+                        # Add fields to existing parent
+                        hierarchical[parent_match]['fields'].extend(field_keys)
+                    else:
+                        # Create new top-level section
+                        hierarchical[section_name] = {
+                            'fields': field_keys,
+                            'subsections': []
+                        }
+            
+            return hierarchical
+        
         # Sort sections by Paul's hierarchy
         def get_section_sort_key(section_name):
             # Extract the section code (e.g., "B1" from "B1 - Pre-App Qs")
             section_code = section_name.split(' - ')[0] if ' - ' in section_name else section_name
+            parent_code = section_code.split('.')[0] if '.' in section_code else section_code
             
             # Find position in Paul's canonical order
             try:
-                return paul_order.index(section_code)
+                return paul_order.index(parent_code)
             except ValueError:
                 # Section not in Paul's list - place at end
                 return 999
         
-        # Sort sections and create accordions
-        sorted_sections = sorted(sections.items(), key=lambda x: get_section_sort_key(x[0]))
+        # Parse hierarchical structure
+        hierarchical_sections = parse_section_hierarchy(sections)
         
-        for section_name, field_keys in sorted_sections:
-            schema['accordions'].append({
-                'key': slugify(section_name),
-                'title': section_name,
-                'fields': field_keys
-            })
+        # Sort and create accordions
+        sorted_sections = sorted(hierarchical_sections.items(), key=lambda x: get_section_sort_key(x[0]))
+        
+        # Get section title priority for restructured sections
+        section_title_priority = mapping.get('section_title_priority', {})
+        
+        for section_name, section_data in sorted_sections:
+            # Determine final section title, prioritizing restructured sections
+            final_section_name = section_name
+            section_code = section_name.split(' - ')[0] if ' - ' in section_name else section_name
+            
+            # Check if this is a restructured section that should get priority title
+            priority_field = section_title_priority.get(section_code)
+            if priority_field and priority_field in [f['key'] for f in fields if f.get('_section') == section_name]:
+                # Use the restructured section title from paul_sections
+                restructured_title = paul_sections.get(section_code)
+                if restructured_title:
+                    final_section_name = f"{section_code} - {restructured_title}"
+            
+            accordion_item = {
+                'key': slugify(final_section_name),
+                'title': final_section_name,
+                'fields': section_data['fields']
+            }
+            
+            # Add subsections if they exist
+            if section_data['subsections']:
+                accordion_item['subsections'] = section_data['subsections']
+            
+            schema['accordions'].append(accordion_item)
     
     return schema, copy_map
 

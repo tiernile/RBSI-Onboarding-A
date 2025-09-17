@@ -48,7 +48,158 @@
                 <p class="accordion-empty__hint">Complete the previous sections or adjust your answers to reveal what’s next.</p>
               </div>
 
-              <div v-for="field in fieldsForAccordion(section.key)" :key="field.key" class="field-container">
+              <!-- Special handling for sections with visual field grouping -->
+              <template v-if="hasFieldGrouping(section.key)">
+                <div v-for="group in getFieldGroupsForSection(section.key)" :key="group.title" class="field-group">
+                  <div class="field-group-header">
+                    <h4 class="field-group-title">{{ group.title }}</h4>
+                  </div>
+                  <div class="field-group-content">
+                    <div v-for="field in group.fields" :key="field.key" class="field-container" :class="getFieldHierarchyClass(field)">
+                      <!-- Same field rendering logic as below but with hierarchy classes -->
+                      <!-- Statement fields -->
+                      <KycpStatement 
+                        v-if="field.style === 'statement'"
+                        :text="displayLabel(field)"
+                      />
+                      
+                      <!-- Divider/Title fields -->
+                      <KycpDivider 
+                        v-else-if="field.style === 'divider'"
+                        :title="displayLabel(field)"
+                      />
+                      
+                      <!-- Regular form fields -->
+                      <KycpFieldWrapper 
+                        v-else
+                        :id="field.key"
+                        :label="displayLabel(field)"
+                        :required="field.validation?.required"
+                        :description="field.description"
+                        :error="errors[field.key]"
+                        :help="displayHelp(field)"
+                      >
+                        <!-- Field input components (same as below) -->
+                        <KycpInput
+                          v-if="field.type === 'string' || field.type === 'text'"
+                          :id="field.key"
+                          v-model="formData[field.key]"
+                          :placeholder="field.placeholder"
+                          :required="field.validation?.required"
+                          :maxlength="field.validation?.maxLength || 1024"
+                          :error="!!errors[field.key]"
+                        />
+                        
+                        <KycpTextarea
+                          v-else-if="field.type === 'freeText' || field.type === 'textarea'"
+                          :id="field.key"
+                          v-model="formData[field.key]"
+                          :placeholder="field.placeholder"
+                          :required="field.validation?.required"
+                          :maxlength="field.validation?.maxLength || 8192"
+                          :rows="4"
+                          :error="!!errors[field.key]"
+                        />
+                        
+                        <KycpInput
+                          v-else-if="field.type === 'integer'"
+                          :id="field.key"
+                          v-model.number="formData[field.key]"
+                          type="number"
+                          :placeholder="field.placeholder"
+                          :required="field.validation?.required"
+                          :min="field.validation?.min || 0"
+                          :max="field.validation?.max || 2147483647"
+                          :step="1"
+                          :error="!!errors[field.key]"
+                        />
+                        
+                        <KycpInput
+                          v-else-if="field.type === 'decimal'"
+                          :id="field.key"
+                          v-model.number="formData[field.key]"
+                          type="number"
+                          :placeholder="field.placeholder"
+                          :required="field.validation?.required"
+                          :step="0.01"
+                          :error="!!errors[field.key]"
+                        />
+                        
+                        <KycpInput
+                          v-else-if="field.type === 'date'"
+                          :id="field.key"
+                          v-model="formData[field.key]"
+                          type="date"
+                          :placeholder="field.placeholder || 'DD/MM/YYYY'"
+                          :required="field.validation?.required"
+                          :error="!!errors[field.key]"
+                        />
+                        
+                        <KycpSelect
+                          v-else-if="field.type === 'lookup' || field.type === 'enum'"
+                          :id="field.key"
+                          v-model="formData[field.key]"
+                          :options="field.options || []"
+                          :placeholder="field.placeholder || 'Please select...'"
+                          :required="field.validation?.required"
+                          :error="!!errors[field.key]"
+                        />
+                        
+                        <KycpInput
+                          v-else
+                          :id="field.key"
+                          v-model="formData[field.key]"
+                          :placeholder="field.placeholder"
+                          :required="field.validation?.required"
+                          :error="!!errors[field.key]"
+                        />
+                      </KycpFieldWrapper>
+
+                      <!-- Debug: explain visibility for field -->
+                      <div v-if="debugExplain" class="debug-explain">
+                        <div class="debug-field-info">
+                          <span class="debug-label">Field:</span> 
+                          <code class="debug-field-key">{{ field.key }}</code>
+                        </div>
+                        
+                        <template v-if="hasCopyChange(field)">
+                          <div class="debug-copy">
+                            <div class="debug-title">Copy changes</div>
+                            <p class="debug-row"><span class="debug-label">Original (AS-IS):</span> {{ copyOriginal(field)?.label }}</p>
+                            <p v-if="copyOriginal(field)?.help" class="debug-row muted">{{ copyOriginal(field)?.help }}</p>
+                            <p v-if="copyFuture(field)?.label" class="debug-row"><span class="debug-label">Proposed:</span> {{ copyFuture(field)?.label }}</p>
+                            <p v-if="copyFuture(field)?.help" class="debug-row muted">{{ copyFuture(field)?.help }}</p>
+                            <p class="debug-meta" v-if="copyFuture(field)?.source || copyFuture(field)?.rationale">
+                              <span class="debug-label">Source:</span> {{ copyFuture(field)?.source || 'Unspecified' }}
+                              <span v-if="copyFuture(field)?.rationale" class="muted">— {{ copyFuture(field)?.rationale }}</span>
+                            </p>
+                          </div>
+                        </template>
+                        <template v-else>
+                          <p class="muted">No copy changes recorded.</p>
+                        </template>
+
+                        <template v-if="(field.visibility && field.visibility.length)">
+                          <div class="debug-title">Visibility rules:</div>
+                          <ul>
+                            <li v-for="(cond, idx) in conditionsForField(field)" :key="idx">
+                              <span :class="{'pass': cond.pass, 'fail': !cond.pass}">•</span>
+                              {{ cond.sourceKey }} {{ cond.operator }} {{ cond.value }}
+                              <span class="muted">(current: {{ cond.current }})</span>
+                            </li>
+                          </ul>
+                        </template>
+                        <template v-else>
+                          <div class="muted">No visibility rules</div>
+                        </template>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+
+              <!-- Standard field rendering for all other sections -->
+              <div v-else v-for="field in fieldsForAccordion(section.key)" :key="field.key" class="field-container">
                 <!-- Statement fields -->
                 <KycpStatement 
                   v-if="field.style === 'statement'"
@@ -155,6 +306,11 @@
 
                 <!-- Debug: explain visibility for the field -->
                 <div v-if="debugExplain" class="debug-explain">
+                  <div class="debug-field-info">
+                    <span class="debug-label">Field:</span> 
+                    <code class="debug-field-key">{{ field.key }}</code>
+                  </div>
+                  
                   <div v-if="hasCopyChange(field)" class="debug-copy">
                     <div class="debug-title">Copy changes</div>
                     <p class="debug-row"><span class="debug-label">Original (AS-IS):</span> {{ copyOriginal(field)?.label }}</p>
@@ -262,6 +418,11 @@
 
                         <!-- Debug: explain visibility for group child field -->
                         <div v-if="debugExplain" class="debug-explain">
+                          <div class="debug-field-info">
+                            <span class="debug-label">Field:</span> 
+                            <code class="debug-field-key">{{ child.key }}</code>
+                          </div>
+                          
                           <div v-if="hasCopyChange(child)" class="debug-copy">
                             <div class="debug-title">Copy changes</div>
                             <p class="debug-row"><span class="debug-label">Original (AS-IS):</span> {{ copyOriginal(child)?.label }}</p>
@@ -416,6 +577,11 @@
 
             <!-- Debug: explain visibility for the field -->
             <div v-if="debugExplain" class="debug-explain">
+              <div class="debug-field-info">
+                <span class="debug-label">Field:</span> 
+                <code class="debug-field-key">{{ field.key }}</code>
+              </div>
+              
               <template v-if="(field.visibility && field.visibility.length)">
                 <div class="debug-title">Visibility rules:</div>
                 <ul>
@@ -497,6 +663,11 @@
 
                     <!-- Debug: explain visibility for group child field -->
                     <div v-if="debugExplain" class="debug-explain">
+                      <div class="debug-field-info">
+                        <span class="debug-label">Field:</span> 
+                        <code class="debug-field-key">{{ child.key }}</code>
+                      </div>
+                      
                       <div v-if="hasCopyChange(child)" class="debug-copy">
                         <div class="debug-title">Copy changes</div>
                         <p class="debug-row"><span class="debug-label">Original (AS-IS):</span> {{ copyOriginal(child)?.label }}</p>
@@ -696,6 +867,237 @@ function accordionKeyForField(field: any): string {
 
 function fieldsForAccordion(accordionKey: string) {
   return visibleFields.value.filter((field: any) => accordionKeyForField(field) === accordionKey)
+}
+
+// Generalized Field Grouping System
+const FIELD_GROUPING_CONFIG = {
+  'b2-pre-application-assessment': {
+    groups: [
+      { title: 'Pre-Application Setup', pattern: /^GENIndicativeAppetiteQuestions$/ },
+      { title: 'Entity Structure', pattern: /^GENIndicativeAppetite.*(3rdParty|Admin|Country)/ },
+      { title: 'Controlling Parties', pattern: /^GENIndicativeAppetite.*(Fund|OpeningInvestment)/ },
+      { title: 'Investment Profile', pattern: /^GENIndicativeAppetite.*(Investment|Risk|highrisk)/ },
+      { title: 'Product Requirements', pattern: /^GENIndicativeAppetite.*Product/ },
+      { title: 'PEPs & Compliance', pattern: /^GENIndicativeAppetite.*(PEP|SWF|Membership)/ }
+    ]
+  },
+  'b7-controlling-parties': {
+    groups: [
+      { title: 'Secretary Information', pattern: /^GENSecretary/ },
+      { title: 'Fund Manager Details', pattern: /^GEN(UK|Indicative)?.*Fund.*Mng/ },
+      { title: 'Investment Adviser Details', pattern: /^GEN(UK|Indicative)?.*Investment.*Adviser/ },
+      { title: 'Partnership Structure', pattern: /^GENlimitedpartnership/ }
+    ]
+  },
+  'b5-applicant-details': {
+    groups: [
+      { title: 'Entity Registration', pattern: /^GEN(UK|Indicative)?.*([Rr]eg|[Cc]ountry[Rr]egistration|[Ff]ormation|[Tt]rading)/ },
+      { title: 'Address Information', pattern: /^GEN(UK|Indicative)?.*([Aa]ddress|[Cc]ountry$)/ },
+      { title: 'Principal Operations', pattern: /^GEN(UK|Indicative)?.*[Pp]rinc/ },
+      { title: 'Business Details', pattern: /^GEN(UK|Indicative)?.*([Bb]usiness|[Oo]perat|[Aa]ctiv)/ }
+    ]
+  },
+  'b6-tax-classification': {
+    groups: [
+      { title: 'Tax Country & Jurisdiction', pattern: /^GEN.*([Tt]ax[Cc]ountry|[Tt]ax[Cc]omplex)/ },
+      { title: 'Tax Identification Numbers', pattern: /^GEN.*([Tt]in|[Gg]iin)/ },
+      { title: 'FATCA & CRS Classification', pattern: /^GEN.*(ffi|[Ff]ior|[Ff]atca|[Cc]rs)/ },
+      { title: 'Tax Compliance Status', pattern: /^GEN.*([Tt]ax.*[Aa]rrears|[Tt]ax.*[Aa]pplicable)/ }
+    ]
+  }
+}
+
+// Check if section has field grouping configured
+function hasFieldGrouping(sectionKey: string): boolean {
+  return Boolean(FIELD_GROUPING_CONFIG[sectionKey])
+}
+
+// Get field groups for any supported section
+function getFieldGroupsForSection(sectionKey: string) {
+  const config = FIELD_GROUPING_CONFIG[sectionKey]
+  if (!config) {
+    return []
+  }
+  
+  const sectionFields = fieldsForAccordion(sectionKey)
+  if (sectionFields.length === 0) {
+    return []
+  }
+  
+  // Initialize groups
+  const groups = config.groups.map(groupConfig => ({
+    title: groupConfig.title,
+    pattern: groupConfig.pattern,
+    fields: []
+  }))
+  
+  // Group fields by patterns
+  for (const field of sectionFields) {
+    let grouped = false
+    for (const group of groups) {
+      if (group.pattern.test(field.key)) {
+        group.fields.push(field)
+        grouped = true
+        break
+      }
+    }
+    
+    // If field doesn't match any pattern, create "Other" group
+    if (!grouped) {
+      let otherGroup = groups.find(g => g.title.includes('Other'))
+      if (!otherGroup) {
+        otherGroup = {
+          title: 'Other Fields',
+          pattern: /.*/,
+          fields: []
+        }
+        groups.push(otherGroup)
+      }
+      otherGroup.fields.push(field)
+    }
+  }
+  
+  // Sort fields within each group by dependency chains
+  for (const group of groups) {
+    group.fields = sortFieldsByDependencyChains(group.fields)
+  }
+  
+  // Only return groups that have fields
+  return groups.filter(group => group.fields.length > 0)
+}
+
+// Sort fields by dependency chains to keep related fields together
+function sortFieldsByDependencyChains(fields: any[]): any[] {
+  // Build dependency map
+  const dependencyMap = new Map<string, string[]>() // child -> [parents]
+  const reverseDependencyMap = new Map<string, string[]>() // parent -> [children]
+  
+  // Analyze visibility rules to build dependency relationships
+  for (const field of fields) {
+    const fieldKey = field.key
+    const dependencies: string[] = []
+    
+    if (field.visibility && field.visibility.length > 0) {
+      for (const rule of field.visibility) {
+        for (const condition of (rule.conditions || [])) {
+          const parentKey = condition.sourceKey
+          if (parentKey && fields.some(f => f.key === parentKey)) {
+            dependencies.push(parentKey)
+            
+            // Add to reverse map
+            if (!reverseDependencyMap.has(parentKey)) {
+              reverseDependencyMap.set(parentKey, [])
+            }
+            reverseDependencyMap.get(parentKey)!.push(fieldKey)
+          }
+        }
+      }
+    }
+    
+    if (dependencies.length > 0) {
+      dependencyMap.set(fieldKey, dependencies)
+    }
+  }
+  
+  // Group fields into dependency chains
+  const chains: any[][] = []
+  const processed = new Set<string>()
+  
+  // Find root fields (no dependencies within this group)
+  const rootFields = fields.filter(field => 
+    !dependencyMap.has(field.key) || 
+    dependencyMap.get(field.key)!.every(dep => !fields.some(f => f.key === dep))
+  )
+  
+  // Build chains starting from each root
+  for (const rootField of rootFields) {
+    if (processed.has(rootField.key)) continue
+    
+    const chain = buildDependencyChain(rootField, fields, reverseDependencyMap, processed)
+    if (chain.length > 0) {
+      chains.push(chain)
+    }
+  }
+  
+  // Add any remaining unprocessed fields as individual chains
+  for (const field of fields) {
+    if (!processed.has(field.key)) {
+      chains.push([field])
+    }
+  }
+  
+  // Sort chains by Paul order of first field in chain, then unconditional first
+  chains.sort((chainA, chainB) => {
+    const aFirst = chainA[0]
+    const bFirst = chainB[0]
+    
+    // Unconditional chains first
+    const aHasVisibility = Boolean(aFirst.visibility && aFirst.visibility.length > 0)
+    const bHasVisibility = Boolean(bFirst.visibility && bFirst.visibility.length > 0)
+    if (aHasVisibility !== bHasVisibility) {
+      return aHasVisibility ? 1 : -1
+    }
+    
+    // Then by Paul order
+    const aOrder = aFirst._paul_order || 999
+    const bOrder = bFirst._paul_order || 999
+    if (aOrder !== bOrder) {
+      return aOrder - bOrder
+    }
+    
+    // Finally by field key
+    return aFirst.key.localeCompare(bFirst.key)
+  })
+  
+  // Flatten chains back to single array
+  return chains.flat()
+}
+
+// Recursively build dependency chain from root field
+function buildDependencyChain(
+  rootField: any, 
+  allFields: any[], 
+  reverseDependencyMap: Map<string, string[]>, 
+  processed: Set<string>
+): any[] {
+  if (processed.has(rootField.key)) {
+    return []
+  }
+  
+  const chain = [rootField]
+  processed.add(rootField.key)
+  
+  // Add children recursively
+  const children = reverseDependencyMap.get(rootField.key) || []
+  for (const childKey of children) {
+    const childField = allFields.find(f => f.key === childKey)
+    if (childField && !processed.has(childKey)) {
+      const subChain = buildDependencyChain(childField, allFields, reverseDependencyMap, processed)
+      chain.push(...subChain)
+    }
+  }
+  
+  return chain
+}
+
+// Generalized Field Hierarchy CSS Classes
+function getFieldHierarchyClass(field: any) {
+  const key = field.key
+  
+  // Child fields (names, domicile, location, address, etc.)
+  if (key.includes('Name') || key.includes('Dom') || key.includes('Location') || 
+      key.includes('address') || key.includes('Address') || key.includes('Country')) {
+    return 'field-level-1'
+  }
+  
+  // Grandchild fields (Delaware questions, specific details)
+  if (key.includes('USA') || key.includes('Delaware') || 
+      key.includes('different') || key.includes('Detail')) {
+    return 'field-level-2'
+  }
+  
+  // Parent fields (default)
+  return 'field-level-0'
 }
 
 // Visibility evaluation
@@ -1113,6 +1515,24 @@ h1 {
 .debug-explain ul { margin: 0; padding-left: 16px; font-size: 12px; color: #475569; }
 .debug-explain li { margin-bottom: 4px; }
 
+/* Field Key Display Styling */
+.debug-field-info {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.debug-field-key {
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  background: var(--kycp-gray-100, #f3f4f6);
+  color: var(--kycp-gray-800, #1f2937);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
 .error-summary {
   margin-bottom: 24px;
   padding: 16px;
@@ -1177,5 +1597,91 @@ h1 {
     padding: 8px 10px;
     font-size: 12px;
   }
+}
+
+/* Generalized Field Grouping Styles */
+.field-group {
+  margin-bottom: 32px;
+}
+
+.field-group-header {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--kycp-primary-100, #e3f2fd);
+}
+
+.field-group-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--kycp-primary-700, #1976d2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-group-content {
+  padding-left: 8px;
+}
+
+/* Generalized Field Hierarchy Classes */
+.field-level-0 {
+  /* Parent fields - no extra indentation */
+  margin-bottom: 20px;
+}
+
+.field-level-1 {
+  /* Child fields - indented */
+  margin-left: 24px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.field-level-1::before {
+  /* Visual connector line for child fields */
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 8px;
+  width: 12px;
+  height: 1px;
+  background: var(--kycp-gray-300, #d1d5db);
+}
+
+.field-level-2 {
+  /* Grandchild fields - double indented */
+  margin-left: 48px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.field-level-2::before {
+  /* Visual connector line for grandchild fields */
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 8px;
+  width: 12px;
+  height: 1px;
+  background: var(--kycp-gray-300, #d1d5db);
+}
+
+/* Additional spacing between field groups */
+.field-group:not(:last-child) {
+  border-bottom: 1px solid var(--kycp-gray-100, #f3f4f6);
+  padding-bottom: 24px;
+}
+
+/* Improve readability of nested fields */
+.field-level-1 .kycp-field-wrapper__label,
+.field-level-2 .kycp-field-wrapper__label {
+  font-size: 14px;
+  color: var(--kycp-gray-700, #374151);
+}
+
+.field-level-0 .kycp-field-wrapper__label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--kycp-gray-900, #111827);
 }
 </style>
