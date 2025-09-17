@@ -79,6 +79,16 @@ active:
       order: 10
       visible: true
       status: beta
+  - key: wicked-problem-areas
+    name: Wicked Problem Areas Sprint 2
+    version: 0.1.0
+    variant: KYCP
+    owner: "@tiernan"
+    display:
+      group: Testing
+      order: 1
+      visible: true
+      status: alpha
   - key: zelda
     name: Zelda – Prototype Mapping
     version: 0.1.0

@@ -1,0 +1,118 @@
+{
+  "sheet": "CSV",
+  "header_row": 1,
+  "source_format": "csv",
+  "columns": {
+    "id": "Keyname",
+    "label": "Question",
+    "help": "Helper",
+    "section": "Current Section",
+    "field_type": "FIELD TYPE",
+    "lookup_values_inline": "Lookup Values",
+    "wicked_area": "Wicked problem area",
+    "q_number": "Q number"
+  },
+  "normalization": {
+    "data_type": {
+      "Lookup": "lookup",
+      "Free Text": "freeText",
+      "Number": "number",
+      "Integer": "number",
+      "Decimal": "number",
+      "String": "freeText",
+      "Complex": "complex",
+      "Date": "date"
+    },
+    "operators": {
+      "=": "==",
+      "<>": "!="
+    },
+    "yes_values": ["Y", "Yes", "YES", "a", "A"],
+    "decimal_hint_patterns": ["0.0", ".0", "decimal"]
+  },
+  "fallback_lookups": {
+    "Yes/No": ["Yes", "No"],
+    "COUNTRIES": [
+      "United Kingdom",
+      "United States",
+      "Jersey",
+      "Guernsey",
+      "Isle of Man",
+      "Gibraltar",
+      "France",
+      "Germany",
+      "Luxembourg",
+      "Ireland",
+      "Netherlands",
+      "Switzerland"
+    ],
+    "Currency": [
+      "GBP",
+      "USD",
+      "EUR",
+      "CHF",
+      "JPY"
+    ],
+    "Fund Size": [
+      "< 50m",
+      "50m - 250m",
+      "250m - 500m",
+      "500m - 750m",
+      "750m - 1bn",
+      "1bn - 2bn",
+      "2bn - 5bn",
+      "5bn - 10bn",
+      "10bn - 20bn",
+      "20bn +"
+    ],
+    "Investment Period": [
+      "1 - 3 years",
+      "3 - 5 years",
+      "5 years +"
+    ],
+    "Investment Size": [
+      "< 10m",
+      "10m - 25m",
+      "25m - 50m",
+      "50m - 100m",
+      "100m +"
+    ],
+    "Asset Count": [
+      "< 10",
+      "10 - 25",
+      "25 - 50",
+      "50 +"
+    ],
+    "Statement Frequency": [
+      "Yearly",
+      "Quarterly",
+      "Monthly"
+    ]
+  },
+  "value_aliases": {
+    "united states": ["usa", "u.s.", "us", "united states of america"],
+    "united kingdom": ["uk", "u.k.", "great britain", "gb"]
+  },
+  "defaults": {
+    "entity": "fund",
+    "section": "General",
+    "jurisdiction": "international"
+  },
+  "exclude": {
+    "keyname_empty": true,
+    "question_empty": true
+  },
+  "wicked_area_sections": {
+    "Turnover": "T - Turnover & Cash Management",
+    "Purpose of Business": "P - Purpose & Investment Activity",
+    "Source of Funds": "S - Source of Funds & Investor Base",
+    "Account Activity": "A - Account Activity & Requirements",
+    "Tax": "X - Tax Residency & Classification"
+  },
+  "_metadata": {
+    "description": "Wicked problem areas sprint 2 testing flow",
+    "source_file": "P2140 - RBSI Onboarding wicked-problem-area-questions-sprint-2-testing-flow.csv",
+    "created": "2025-09-17",
+    "purpose": "Test problem-area focused journey structure"
+  }
+}
