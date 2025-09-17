@@ -2,7 +2,9 @@
 
 ## Overview
 
-This guide consolidates all workflows for the RBSI onboarding prototype system. It covers the complete journey from receiving a client spreadsheet to deploying a working KYCP-compliant prototype with tone-of-voice analysis.
+This guide consolidates all workflows for the RBSI onboarding prototype system. It covers the complete journey from receiving a client spreadsheet to deploying a working KYCP-compliant prototype with advanced features including field grouping, complex fields, and debugging tools.
+
+**Critical Success Factor**: Column mapping is the most important step and requires explicit user decisions based on domain knowledge. This cannot be automated.
 
 ## System Architecture
 
@@ -44,8 +46,17 @@ Check the spreadsheet has:
 - Lookup values sheet
 - Required columns: KEYNAME, FIELD NAME, DATA TYPE, MANDATORY, VISIBILITY
 
-#### 1.3 Create/Update Mapping
-If no mapping exists, create `apps/prototype/data/mappings/journey-key.json`:
+#### 1.3 Create/Update Mapping (CRITICAL USER INPUT REQUIRED)
+**This is the most critical step and requires explicit user decisions**
+
+Column mapping cannot be automated and requires domain knowledge including:
+- Understanding field meanings and relationships
+- Deciding field types and validation rules
+- Defining section organization and flow
+- Setting up conditional logic and dependencies
+- Configuring lookup values and options
+
+Create `apps/prototype/data/mappings/journey-key.json`:
 ```json
 {
   "sheet": "Main Sheet Name",
@@ -59,25 +70,38 @@ If no mapping exists, create `apps/prototype/data/mappings/journey-key.json`:
     "data_type": "DATA TYPE",
     "mandatory": "MANDATORY",
     "visibility": "VISIBILITY CONDITION/GROUP NAME",
-    "action": "Action"
+    "action": "Action",
+    "complex": "COMPLEX",
+    "complex_identifier": "COMPLEX IDENTIFIER"
   },
   "lookups_sheet": "Lookup Values",
-  "lookups": {}
+  "lookups": {},
+  "value_aliases": {
+    "USA": "United States",
+    "UK": "United Kingdom"
+  }
 }
 ```
 
 ### Phase 2: Import and Generation
 
-#### 2.1 Run Importer (KYCP)
+#### 2.1 Run Importer
+For current journeys, use the appropriate import script:
 ```bash
 cd apps/prototype
+# For Non-Lux v1.1
 python3 scripts/import_non_lux_1_1.py
+
+# For general KYCP imports
+python3 scripts/import_xlsx_kycp.py --mapping [mapping] --input [xlsx] --sheet [sheet] --lookups-sheet [lookups] --journey-key [key]
 ```
 
 #### 2.2 Verify Output
 Check generated files:
-- Schema: `apps/prototype/data/schemas/non-lux-1-1/schema-kycp.yaml`
+- Schema: `apps/prototype/data/schemas/[journey-key]/schema-kycp.yaml`
 - Console output: include/exclude summary and unresolved lookups
+- Field organization and grouping applied
+- Complex fields identified for implementation
 
 ### Phase 3: Tone Analysis
 
@@ -102,9 +126,32 @@ Based on accepted changes:
 - Or manually edit schema YAML
 - Document significant changes
 
-### Phase 4: Configure Prototype
+### Phase 4: Field Organization & Advanced Features
 
-#### 4.1 Add to Manifest
+#### 4.1 Field Grouping Implementation
+The system supports field grouping to reduce cognitive load:
+- Related fields are visually organized into logical groups
+- Dependency chains (parent→child→grandchild) are preserved
+- Groups appear with clear visual separation and hierarchy
+- Results in up to 85% cognitive load reduction in complex sections
+
+#### 4.2 Complex Fields Implementation
+For repeatable field groups:
+- Parent fields marked as `type: complex` in schema
+- Child fields defined in `children[]` array
+- UI renders with add/remove functionality
+- Data stored as array items under parent key
+
+#### 4.3 Flow Optimization
+Apply backwards dependency elimination:
+- Ensure questions only depend on earlier answers
+- Move critical branching decisions early in flow
+- Place unconditional fields before conditional ones within sections
+- Use dependency chain analysis to optimize field ordering
+
+### Phase 5: Configure Prototype
+
+#### 5.1 Add to Manifest
 Edit `apps/prototype/data/schemas/manifest.yaml`:
 ```yaml
 active:
@@ -120,7 +167,7 @@ active:
       status: beta
 ```
 
-#### 4.2 Test Locally
+#### 5.2 Test Locally
 ```bash
 cd apps/prototype
 pnpm install  # if first time
@@ -131,10 +178,12 @@ Navigate to http://localhost:3000:
 - Check journey appears on Mission Control
 - Click "Open" to test the form
 - Verify KYCP components render correctly
-- Test visibility conditions; use Explain visibility (checkbox or `?explain=1`)
-- Check validation works
+- Test visibility conditions; use **Explain Visibility** toggle or append `?explain=1`
+- Verify field grouping displays correctly
+- Test complex field add/remove functionality
+- Check validation works and error messages are clear
 
-### Phase 5: Quality Assurance
+### Phase 6: Quality Assurance & Debugging
 
 #### 5.1 Component Compliance
 Verify all fields use correct KYCP components:
@@ -153,11 +202,19 @@ Check questions follow guidelines:
 - ✅ No unexplained jargon
 - ✅ One idea per sentence
 
-#### 5.3 Conditions and Lints
-Use the Conditions Report to review conditionality:
-- HTML: `/api/conditions-report/non-lux-1-1?format=html`
-- JSON: `/api/conditions-report/non-lux-1-1`
-- Flags unresolved keys, option mismatches (with aliasing), parse errors (e.g., operator tokens inside values), and cycles.
+#### 6.3 Conditions Report & Debugging
+**Essential admin tool for validating conditional logic**:
+- From Mission Control (Admin), click "Conditions Report" on journey card
+- HTML format: `/api/conditions-report/[journey-key]?format=html`
+- JSON format: `/api/conditions-report/[journey-key]`
+- Flags: unresolved keys, option mismatches, parse errors, dependency cycles
+- Use with **Explain Visibility** mode for comprehensive debugging
+
+#### 6.4 Field Organization Validation
+- Verify field grouping reduces cognitive load
+- Check dependency chains are preserved
+- Ensure complex fields render with proper add/remove functionality
+- Validate flow optimization eliminates backwards dependencies
 
 #### 5.4 Accessibility
 Ensure:
@@ -167,7 +224,7 @@ Ensure:
 - Tab order is logical
 - Screen reader compatible
 
-### Phase 6: Documentation
+### Phase 7: Documentation
 
 #### 6.1 Create Session Context
 Document the work in `Documents/01 Areas/session-context/session-context-XXX.md`:
@@ -197,7 +254,7 @@ Goal: Import and create prototype for [Journey Name]
 #### 6.2 Update Handover Docs
 If significant changes, update relevant handover documents
 
-### Phase 7: Deployment (Optional)
+### Phase 8: Deployment (Optional)
 
 #### 7.1 Build for Production
 ```bash
@@ -213,19 +270,45 @@ vercel --prod
 Set environment variables:
 - `NUXT_ADMIN_PASSWORD_HASH` - For admin features
 
+## Quality Improvement Rules
+
+### Flow Design Principles
+1. **Backwards Dependency Elimination**: Questions should only depend on earlier answers
+2. **Decision Points First**: Critical branching decisions come as early as possible
+3. **Natural Information Flow**: Follow logical business conversation order
+4. **Cognitive Load Management**: Simple decisions before complex ones
+
+### Field Organization Best Practices
+1. **Field Grouping**: Cluster related fields for visual organization
+2. **Dependency Preservation**: Maintain parent→child→grandchild relationships
+3. **Unconditional First**: Place unconditional fields before conditional ones within sections
+4. **Complex Field Implementation**: Use repeatable components for multi-entry fields
+
+### Mapping Quality Guidelines
+1. **User Input Required**: Never assume mapping can be automated
+2. **Domain Knowledge Critical**: Understanding field relationships is essential
+3. **Section Organization Impact**: Mapping decisions affect entire user experience
+4. **Validation Setup**: Proper mapping prevents downstream issues
+
 ## Quick Reference
 
 ### Common Commands
 
 ```bash
-# Import KYCP format
-python3 scripts/import_xlsx_kycp.py --mapping [mapping] --input [xlsx] --sheet [sheet] --lookups-sheet [lookups] --journey-key [key]
+# Import Non-Lux v1.1 (current)
+cd apps/prototype && python3 scripts/import_non_lux_1_1.py
 
-# Analyze tone
-python3 scripts/analyze_tone.py --schema [schema] --output [csv] --summary
+# Import general KYCP format
+python3 scripts/import_xlsx_kycp.py --mapping [mapping] --input [xlsx] --sheet [sheet] --lookups-sheet [lookups] --journey-key [key]
 
 # Start dev server
 cd apps/prototype && pnpm dev
+
+# Run scenario validation
+cd apps/prototype && pnpm scenarios
+
+# Field analysis
+cd apps/prototype && pnpm fields
 
 # Build for production
 cd apps/prototype && pnpm build
@@ -246,6 +329,7 @@ cd apps/prototype && pnpm build
 
 - Mission Control: http://localhost:3000
 - KYCP Journey: http://localhost:3000/preview-kycp/[journey-key]
+- KYCP Journey with Debug: http://localhost:3000/preview-kycp/[journey-key]?explain=1
 - Conditions Report: http://localhost:3000/api/conditions-report/[journey-key]?format=html
 - Component Showcase: http://localhost:3000/kycp-components
 - Admin Login: http://localhost:3000 (click Admin)
@@ -269,13 +353,19 @@ cd apps/prototype && pnpm build
 
 ## Best Practices
 
-1. **Always run both importers** - Compare outputs
-2. **Run tone analysis immediately** - Catch issues early
-3. **Keep CSV reports** - Audit trail for decisions
-4. **Test incrementally** - Import, test, fix, repeat
-5. **Document everything** - Session contexts are valuable
-6. **Review with stakeholders** - Get buy-in on tone changes
-7. **Version control schemas** - Track changes over time
+### Critical Success Factors
+1. **Column Mapping First** - Most critical step requiring explicit user decisions
+2. **Domain Knowledge Essential** - Cannot automate field relationships and meanings
+3. **Test with Explain Visibility** - Essential debugging tool for conditional logic
+4. **Use Conditions Report** - Validate all conditional dependencies before deployment
+
+### Quality & Process
+5. **Field Grouping Implementation** - Reduces cognitive load significantly
+6. **Flow Optimization** - Eliminate backwards dependencies for better UX
+7. **Complex Fields Setup** - Implement repeatable components where needed
+8. **Incremental Testing** - Import, test, fix, repeat
+9. **Document Decisions** - Session contexts provide valuable audit trail
+10. **Stakeholder Review** - Validate mapping decisions and flow changes
 
 ## Support Resources
 
@@ -286,4 +376,4 @@ cd apps/prototype && pnpm build
 
 ---
 
-*Last Updated: 2025-01-11*
+*Last Updated: 2025-09-17*

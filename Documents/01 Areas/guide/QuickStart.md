@@ -1,6 +1,6 @@
 # Quick Start (2 minutes)
 
-For anyone testing the prototype (no technical steps needed).
+For anyone testing the prototype (no technical steps needed). The system includes advanced features like field grouping and debugging tools.
 
 1) Open Mission Control
 - You’ll receive a link (e.g., https://…/). It opens the landing page.
@@ -30,4 +30,7 @@ For anyone testing the prototype (no technical steps needed).
 - Avoid entering real personal information; this is a prototype.
 - Screens may adapt (hide/show) based on your earlier answers.
 - Alpha means early; expect changes and rough edges.
-- To understand why fields appear or hide, use the Explain visibility checkbox in the KYCP preview, or add `?explain=1` to the URL.
+- **Debug visibility**: Use **Explain Visibility** toggle or add `?explain=1` to URL to see field logic
+- **Admin debugging**: Use **Conditions Report** for comprehensive conditional logic validation
+- Notice **field grouping** that reduces cognitive load in complex sections
+- Try **complex fields** with add/remove functionality where available

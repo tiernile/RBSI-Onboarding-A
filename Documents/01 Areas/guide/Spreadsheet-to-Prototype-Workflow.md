@@ -286,8 +286,25 @@ cd apps/prototype && pnpm build
 cd apps/prototype && pnpm hash "YourPassword"
 ```
 
+## Universal Quality Guidelines
+
+### Mapping Quality (Critical)
+1. **User Input Required**: Never assume mapping can be automated
+2. **Domain Knowledge Essential**: Understanding field relationships is critical
+3. **Flow Impact**: Mapping decisions affect entire user experience
+4. **Validation Setup**: Proper mapping prevents downstream issues
+
+### Implementation Best Practices
+1. **Field Grouping**: Implement for sections with >10 fields
+2. **Complex Fields**: Use for any repeatable data structures
+3. **Flow Optimization**: Always eliminate backwards dependencies
+4. **Debug Early**: Use Explain Visibility and Conditions Report throughout development
+
 ## Support
 
-- Check existing journeys for examples: `non-lux-lp-demo-kycp`
-- Review session contexts for patterns: `Documents/01 Areas/session-context/`
-- Component documentation: `/kycp-components` page in running app
+- **System Overview**: `Documents/01 Areas/guide/System-Overview.md`
+- **Complete Workflow**: `Documents/01 Areas/guide/Complete-Workflow-Guide.md`
+- **Example Journeys**: Check `non-lux-1-1` and `non-lux-lp-demo-kycp`
+- **Session Contexts**: `Documents/01 Areas/session-context/` for implementation patterns
+- **Component Documentation**: `/kycp-components` page in running app
+- **Admin Tools**: Conditions Report and Explain Visibility for debugging

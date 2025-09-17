@@ -6,32 +6,88 @@ This prototype turns client spreadsheets into clickable journeys using smart def
 - Renders journeys from a schema (a readable list of questions, rules, and options).
 - Applies visibility and validation rules so screens adapt as you answer.
 - Generates review artifacts (HTML diff and CSV export) with references back to the source spreadsheet.
+- Provides debugging tools including **Explain Visibility** mode and **Conditions Report** API.
+- Supports advanced features like field grouping, complex repeatable fields, and flow optimization.
 
 ## How It Works (End‑to‑End)
-1) Input: Drop the latest XLSX into `data/incoming/` and/or edit a schema in `data/schemas/<journey>/schema.yaml`.
-2) Mapping: `data/mappings/*.json` defines how spreadsheet columns map to schema fields and normalises types/operators.
-3) Schema: The canonical definition lives under `data/schemas/<journey>/schema.yaml` and includes `meta.source_row_ref` for traceability.
-4) App: The Nuxt app (`apps/prototype/`) reads the schema and renders components (text, select, radio, textarea) with grouping by `section`.
-5) Review: Mission Control lists journeys from `data/schemas/manifest.yaml`; admin can open Diff/Export to produce audit artifacts.
+1) **Master Spreadsheet**: Client provides XLSX with structured field definitions including KEYNAME, FIELD NAME, DATA TYPE, MANDATORY, VISIBILITY columns.
+2) **Column Mapping** (Critical User Input): `data/mappings/*.json` defines how spreadsheet columns map to schema fields - **this requires explicit user decisions and cannot be automated**.
+3) **Schema Generation**: Import scripts create `data/schemas/<journey>/schema.yaml` with `meta.source_row_ref` for traceability.
+4) **Field Organization**: System supports field grouping, complex repeatable components, and flow optimization to eliminate backwards dependencies.
+5) **Rendering**: Nuxt app renders KYCP-compliant components with conditional visibility and validation.
+6) **Quality Assurance**: Admin tools include Explain Visibility mode, Conditions Report API, and audit artifacts (HTML diff, CSV export).
+7) **Review**: Mission Control dashboard manages journey visibility and provides admin access to debugging tools.
 
-## Smart Defaults
+## System Capabilities
+
+### Column Mapping (User Input Required)
+- **Critical**: Mapping spreadsheet columns to schema fields requires explicit user decisions
+- Cannot be automated - requires domain knowledge of field meanings and relationships
+- Impacts all downstream functionality including visibility, validation, and user experience
+- Common decision points: field types, lookup values, conditional logic, section organization
+
+### Smart Defaults & Fallbacks
 - Sheet names, lookups, and operators follow the mapping JSON; missing lookups fall back to simple options (e.g., Yes/No) and are flagged for review.
-- Controls are inferred from type/lookup (e.g., enum → select/radio); unknown controls render as text with a visible warning.
-- Visibility rules accept simple expressions like `KEY == "Yes"` and `A && (B != "UK")`; unsupported patterns fail safe (field remains hidden).
+- Controls are inferred from type/lookup (e.g., enum → select); unknown controls render as text with visible warnings.
+- Visibility rules accept expressions like `KEY == "Yes"` and `A && (B != "UK")`; unsupported patterns fail safe (field remains hidden).
 
-## Day‑to‑Day Workflow
-- Place XLSX in `data/incoming/YYYYMMDD_<name>.xlsx`.
-- Update/add `data/mappings/<journey>.json` as needed.
-- Generate or edit `data/schemas/<journey>/schema.yaml` (ensure `meta.source_row_ref`).
-- Add journey entry to `data/schemas/manifest.yaml` (key, name, version, display).
-- Run from `apps/prototype/`: `pnpm dev`; open `/preview/<journey>`.
-- As admin, open Diff/Export from Mission Control for review packs.
+### Advanced Features
+- **Field Grouping**: Visual organization reduces cognitive load by clustering related fields
+- **Complex Fields**: Repeatable field groups with add/remove functionality
+- **Flow Optimization**: Backwards dependency elimination for better user experience
+- **Debug Tools**: Explain Visibility mode (`?explain=1`) and Conditions Report API
 
-## Auditability (What We Keep)
-- Source references: `meta.source_row_ref` (e.g., `ROW:123|KEY:GENFundSize`).
-- Diff HTML: `data/generated/diffs/<journey>/<timestamp>.html`.
-- CSV export: `data/generated/exports/<journey>/<timestamp>.csv`.
-- (Optional) Snapshots per version for before/after comparisons.
+## Workflow Overview
+
+### 1. Preparation
+- Place master spreadsheet in `data/incoming/YYYYMMDD_<name>.xlsx`
+- Verify spreadsheet has required columns: KEYNAME, FIELD NAME, DATA TYPE, MANDATORY, VISIBILITY
+- Review lookup values sheet for completeness
+
+### 2. Column Mapping (Critical)
+- Create/update `data/mappings/<journey>.json` - **requires explicit user input**
+- Map spreadsheet columns to schema fields based on domain knowledge
+- Define field types, lookup values, conditional logic
+- Make section organization decisions
+
+### 3. Schema Generation
+- Run import scripts to generate `data/schemas/<journey>/schema.yaml`
+- Review field organization and grouping
+- Implement complex fields if needed
+- Ensure `meta.source_row_ref` traceability
+
+### 4. Quality Assurance
+- Add journey to `data/schemas/manifest.yaml`
+- Test locally: `pnpm dev` → `/preview-kycp/<journey>`
+- Use **Explain Visibility** mode for debugging (`?explain=1`)
+- Run **Conditions Report** to validate conditional logic
+- Generate admin review artifacts (Diff/Export)
+
+### 5. Optimization
+- Apply field grouping for better UX
+- Eliminate backwards dependencies in flow
+- Implement complex fields for repeatable sections
+- Validate with stakeholders
+
+## Quality & Debugging Tools
+
+### Explain Visibility Mode
+- Toggle in KYCP preview or append `?explain=1` to URL
+- Shows which fields are visible/hidden and why
+- Displays field keys to eliminate confusion about duplicate questions
+- Essential for debugging conditional logic
+
+### Conditions Report API
+- Available to admin users from Mission Control
+- HTML format: `/api/conditions-report/<journey>?format=html`
+- JSON format: `/api/conditions-report/<journey>`
+- Flags unresolved keys, option mismatches, parse errors, and dependency cycles
+
+### Audit Artifacts
+- Source references: `meta.source_row_ref` (e.g., `ROW:123|KEY:GENFundSize`)
+- Diff HTML: `data/generated/diffs/<journey>/<timestamp>.html`
+- CSV export: `data/generated/exports/<journey>/<timestamp>.csv`
+- Field grouping analysis and dependency chain documentation
 
 ## Where Things Live
 - App: `apps/prototype/`

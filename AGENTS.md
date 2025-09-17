@@ -12,13 +12,33 @@
 
 From `apps/prototype/`:
 
-- `pnpm install`: install dependencies.
-- `pnpm dev`: run local dev server with HMR.
-- `pnpm build`: create production build.
-- `pnpm start`: start built server.
-- `pnpm hash "YourPassword"`: print bcrypt hash for admin login.
+- `pnpm install`: install dependencies
+- `pnpm dev`: run local dev server with HMR
+- `pnpm build`: create production build
+- `pnpm start`: start built server
+- `pnpm hash "YourPassword"`: print bcrypt hash for admin login
+- `pnpm scenarios`: run scenario validation for critical paths
+- `pnpm fields`: analyze field organization and grouping
 
-Env setup: copy `.env.example` to `.env.development`; set `NUXT_ADMIN_PASSWORD_HASH`. In Vercel, data is bundled under `apps/prototype/data/` and auto-detected; set `NUXT_DATA_DIR` only if hosting data elsewhere.
+### Import and Analysis Commands
+
+- `python3 scripts/import_non_lux_1_1.py`: Import current v1.1 journey (AS-IS)
+- `python3 scripts/import_non_lux_2_2.py`: Import v2.2 with Paul's structure
+- `python3 scripts/analyze_fields.mjs non-lux-1-1`: Field analysis
+
+### Debug URLs (Development)
+
+- Mission Control: `http://localhost:3000`
+- Journey with Debug: `http://localhost:3000/preview-kycp/[journey]?explain=1`
+- Conditions Report: `http://localhost:3000/api/conditions-report/[journey]?format=html`
+
+Env setup: copy `.env.example` to `.env.development`; set `NUXT_ADMIN_PASSWORD_HASH` (use `pnpm hash "password"` to generate). In Vercel, data is bundled under `apps/prototype/data/` and auto-detected; set `NUXT_DATA_DIR` only if hosting data elsewhere.
+
+**Current Journeys**:
+- `non-lux-1-1`: AS-IS implementation with current features
+- `non-lux-lp-2-2`: Paul's structural optimizations with field grouping
+
+**For Complete System Understanding**: See `/Documents/01 Areas/guide/System-Overview.md`
 
 ## Coding Style & Naming Conventions
 
@@ -30,10 +50,14 @@ Env setup: copy `.env.example` to `.env.development`; set `NUXT_ADMIN_PASSWORD_H
 
 ## Testing Guidelines
 
-- No formal test suite yet. Validate changes by:
-  - Running `pnpm dev` and testing flows: `/`, `/showcase`, `/preview/:journey`.
-  - Hitting APIs: `/api/manifest`, `/api/schema/:journey`, `/api/export/:journey`.
-- If adding tests, prefer Vitest + Nuxt Test Utils; name files `*.spec.ts` alongside code.
+- **Manual Testing with Debug Tools**: Validate changes by:
+  - Running `pnpm dev` and testing flows: `/`, `/preview-kycp/:journey`
+  - **Essential**: Use Explain Visibility (`?explain=1`) for conditional logic debugging
+  - **Critical**: Run Conditions Report for comprehensive validation
+  - Testing APIs: `/api/manifest`, `/api/schema/:journey`, `/api/conditions-report/:journey`
+- **Scenario Validation**: Run `pnpm scenarios` for critical path testing
+- **Field Analysis**: Run `pnpm fields` for field organization review
+- If adding tests, prefer Vitest + Nuxt Test Utils; name files `*.spec.ts` alongside code
 
 ## Commit & Pull Request Guidelines
 

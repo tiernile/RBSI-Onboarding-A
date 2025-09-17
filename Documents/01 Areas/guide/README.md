@@ -1,6 +1,19 @@
+# Prototyping System Guide
+
+**Start Here**: This directory contains canonical guides for using the RBSI onboarding prototyping system. The system turns client spreadsheets into clickable journeys with advanced features including field grouping, complex fields, and debugging tools.
+
+## Quick Navigation
+
+**For newcomers**: Start with [System Overview](System-Overview.md) for complete system understanding
+**For implementation**: Use [Complete Workflow Guide](Complete-Workflow-Guide.md) for end-to-end process
+**For daily operations**: See [Operations Guide](Operations.md) for admin features and debugging
+**For technical details**: Check [Spreadsheet to Prototype Workflow](Spreadsheet-to-Prototype-Workflow.md)
+
+---
+
 # Using The Prototype (Plain English Guide)
 
-This guide explains what the prototype is, how to use it, and what the screens and admin controls do. It’s written for non‑technical readers and for client teams.
+This section explains what the prototype is, how to use it, and what the screens and admin controls do. Written for non‑technical readers and client teams.
 
 ## What This Is
 
@@ -10,12 +23,19 @@ This guide explains what the prototype is, how to use it, and what the screens a
 
 ## What You Can Do
 
-- Open a journey from a landing page we call “Mission Control”.
-- Walk through the questions as a customer would (with guidance and validation).
-- See how questions appear or hide based on previous answers.
-- (If you’re an admin) choose which journeys are visible on the landing page.
-- Generate a simple report that shows the questions and where they came from.
-- As admin, open a Conditions Report that surfaces conditionality issues.
+**As a User**:
+- Open journeys from Mission Control landing page
+- Walk through questions with guidance and validation
+- Experience how questions appear/hide based on previous answers
+- See field grouping that reduces cognitive load
+- Use complex fields with add/remove functionality
+
+**As an Admin**:
+- Control journey visibility on Mission Control
+- **Debug with Explain Visibility**: See exactly which fields are visible/hidden and why
+- **Run Conditions Report**: Comprehensive validation of conditional logic
+- Generate audit reports (HTML diff, CSV export) with source traceability
+- Manage field organization and complex field implementation
 
 ## How To Use It
 
