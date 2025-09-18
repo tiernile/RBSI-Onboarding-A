@@ -47,9 +47,9 @@ const sanitizedDescription = computed(() => {
 .kycp-field__label {
   display: block;
   margin-bottom: 4px;
-  font-size: 14px;
+  font-size: var(--kycp-font-size-base);
   font-weight: 500;
-  color: #374151;
+  color: var(--kycp-label-color);
   line-height: 1.4;
 }
 
@@ -62,9 +62,9 @@ const sanitizedDescription = computed(() => {
 
 .kycp-field__description {
   margin: 6px 0 10px;
-  font-size: 12px;
+  font-size: var(--kycp-font-size-sm);
   line-height: 1.5;
-  color: #6b7280;
+  color: var(--kycp-label-color);
 }
 
 .kycp-field__description :deep(br) {
@@ -95,8 +95,8 @@ const sanitizedDescription = computed(() => {
 
 .kycp-field__help {
   margin-top: 6px;
-  font-size: 12px;
-  color: #9ca3af;
+  font-size: var(--kycp-font-size-sm);
+  color: var(--kycp-label-color);
   line-height: 1.4;
 }
 
