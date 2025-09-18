@@ -8,9 +8,7 @@ fields:
   style: statement
   label: 'Applying for an account with us
 
-
     Let''s make sure we''re the right fit for each other.
-
 
     We''ll ask a few quick questions to understand your business and see if we can
     support what you''re looking to do. This helps set expectations early and saves
@@ -18,9 +16,7 @@ fields:
   original:
     label: 'Applying for an account with us
 
-
       Let''s make sure we''re the right fit for each other.
-
 
       We''ll ask a few quick questions to understand your business and see if we can
       support what you''re looking to do. This helps set expectations early and saves
@@ -31,24 +27,49 @@ fields:
   _metadata:
     source_row_ref: ROW:3
     has_as_is_data: false
-- key: GENhappytoanswer
+- key: GENIndicativeAppetiteQuestions
   entity: entity
   style: field
   label: Are you happy to answer a few questions upfront?
   original:
-    label: Are you happy to answer a few questions upfront?
-    help: null
+    label: Do you wish to answer some Pre-Application Questions to provide a high
+      level indication of RBSI appetite to open the account?
+    help: ''
   validation: {}
   _section: Start a New Application
   _metadata:
     source_row_ref: ROW:4
-    has_as_is_data: false
+    has_as_is_data: true
   type: lookup
   options:
   - value: 'Yes'
     label: 'Yes'
   - value: 'No'
     label: 'No'
+- key: GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated
+  entity: entity
+  style: field
+  label: How are you applying?
+  original:
+    label: Which option best describes your application?
+    help: ''
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:5
+    has_as_is_data: true
+  type: lookup
+  help: You're a professional intermediary setting up an account for a client's business
+    or you're the business owner or authorised representative applying directly, or
+    you manage captive insurance arrangements and are applying for an account related
+    to those services
+  options:
+  - value: I'm applying on behalf of a client
+    label: I'm applying on behalf of a client
+  - value: I'm applying for my own business
+    label: I'm applying for my own business
+  - value: I'm a captive insurance manager applying for a client
+    label: I'm a captive insurance manager applying for a client
 - key: GENFundAdminContactName
   entity: entity
   style: field
@@ -59,7 +80,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:5
+    source_row_ref: ROW:6
     has_as_is_data: true
   type: string
 - key: GENFundAdminNum
@@ -72,7 +93,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:6
+    source_row_ref: ROW:7
     has_as_is_data: true
   type: string
 - key: GENFundAdminEmail
@@ -85,25 +106,10 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:7
-    has_as_is_data: true
-  type: string
-  help: We'll email you with any queries
-- key: GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated
-  entity: entity
-  style: field
-  label: How are you applying?
-  original:
-    label: Which option best describes your application?
-    help: ''
-  validation: {}
-  _section: Start a New Application
-  _metadata:
     source_row_ref: ROW:8
     has_as_is_data: true
   type: string
-  help: You're a professional intermediary setting up an account for a client's business
-    or you're the business owner or authorised representative applying directly
+  help: We'll email you with any queries
 - key: GENIndicativeAppetiteRiskadversePEP
   entity: entity
   style: field
@@ -116,9 +122,14 @@ fields:
   _metadata:
     source_row_ref: ROW:9
     has_as_is_data: false
-  type: string
+  type: lookup
   help: This includes current or former politicians, judges, military officers, or
     their close family members
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
 - key: GENIndicativeAppetiteRiskadverseESE
   entity: entity
   style: field
@@ -133,35 +144,32 @@ fields:
     has_as_is_data: false
   type: string
   help: Environmental concerns, social issues, ethical concerns, or reputational risks
-- key: DESC-intermediary
+- key: Description-intermediary
   entity: entity
   style: statement
-  label: 'You''ll need:
+  label: 'If you''re applying on behalf of a client, we need to know about you too.
 
-    - Your organisation''s registration and licence details
-
-    - Your own business details and credentials
-
-    Documentation proving your authority to act for your client
-
-    Details of your professional qualifications or authorisations'
+    We need to understand your business and relationship with your client to ensure
+    everything runs smoothly.'
   original:
-    label: 'You''ll need:
+    label: 'If you''re applying on behalf of a client, we need to know about you too.
 
-      - Your organisation''s registration and licence details
-
-      - Your own business details and credentials
-
-      Documentation proving your authority to act for your client
-
-      Details of your professional qualifications or authorisations'
+      We need to understand your business and relationship with your client to ensure
+      everything runs smoothly.'
     help: null
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:13
+    source_row_ref: ROW:12
     has_as_is_data: false
-  type: string
+  help: 'Before you start:
+
+
+    Your own business details and credentials
+
+    Documentation proving your authority to act for your client
+
+    Details of your professional qualifications or authorisations'
 - key: '[Regulated question]'
   entity: entity
   style: field
@@ -172,13 +180,31 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:14
+    source_row_ref: ROW:13
     has_as_is_data: false
   type: string
-- key: SPEintermediaryregulator
+- key: SPEisregulated
   entity: entity
   style: field
   label: Are you regulated?
+  original:
+    label: Are you regulated?
+    help: ''
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:14
+    has_as_is_data: true
+  type: lookup
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: SPEintermediaryregulator
+  entity: entity
+  style: field
+  label: Who regulates your organisation?
   original:
     label: Name of intermediary's regulator
     help: ''
@@ -188,38 +214,35 @@ fields:
     source_row_ref: ROW:15
     has_as_is_data: true
   type: lookup
+  help: For example, FCA or another regulatory body
   options:
-  - value: 'Yes'
-    label: 'Yes'
-  - value: 'No'
-    label: 'No'
-- key: SPEintermediaryregulatorName
+  - value: See master list via keyname
+    label: See master list via keyname
+- key: SPEintermediarylicenseJER
   entity: entity
   style: field
-  label: Who regulates your organisation?
+  label: What type of licence do you hold?
   original:
-    label: Who regulates your organisation?
-    help: null
+    label: Type of License the introduction is being made
+    help: ''
   validation: {}
   _section: Applying as an intermediary
   _metadata:
     source_row_ref: ROW:16
-    has_as_is_data: false
-  type: string
-  help: For example, FCA or another regulatory body
-- key: SPEintermediaryregulatorlicencenumber
-  entity: entity
-  style: field
-  label: What is your licence number?
-  original:
-    label: What is your licence number?
-    help: null
-  validation: {}
-  _section: Applying as an intermediary
-  _metadata:
-    source_row_ref: ROW:17
-    has_as_is_data: false
-  type: string
+    has_as_is_data: true
+  type: lookup
+  help: Select the licence type that covers this introduction
+  options:
+  - value: Regulated
+    label: Regulated
+  - value: Unregulated
+    label: Unregulated
+  - value: Listed
+    label: Listed
+  - value: Authorised
+    label: Authorised
+  - value: Registered
+    label: Registered
 - key: GENMetFaceToFace
   entity: entity
   style: field
@@ -231,7 +254,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:18
+    source_row_ref: ROW:17
     has_as_is_data: true
   type: lookup
   help: This must be in line with your local regulations
@@ -250,7 +273,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:19
+    source_row_ref: ROW:18
     has_as_is_data: true
   type: string
 - key: GENGroupIndividualPosition
@@ -263,7 +286,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:20
+    source_row_ref: ROW:19
     has_as_is_data: true
   type: string
 - key: GENGroupIndividualMeetingDate
@@ -276,7 +299,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:21
+    source_row_ref: ROW:20
     has_as_is_data: true
   type: date
 - key: GEN3rdPartyMetFaceToFace
@@ -290,7 +313,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:22
+    source_row_ref: ROW:21
     has_as_is_data: true
   type: lookup
   help: For example, a due diligence certifier
@@ -299,33 +322,7 @@ fields:
     label: 'Yes'
   - value: 'No'
     label: 'No'
-- key: GEN3rdpartycertifiername
-  entity: entity
-  style: field
-  label: Name of person or organisation
-  original:
-    label: Name of person or organisation
-    help: null
-  validation: {}
-  _section: Applying as an intermediary
-  _metadata:
-    source_row_ref: ROW:23
-    has_as_is_data: false
-  type: string
-- key: GEN3rdpartycertifierprobody
-  entity: entity
-  style: field
-  label: Professional body
-  original:
-    label: Professional body
-    help: null
-  validation: {}
-  _section: Applying as an intermediary
-  _metadata:
-    source_row_ref: ROW:24
-    has_as_is_data: false
-  type: string
-- key: Description-Account-Activit
+- key: Description-HowYouBank
   entity: entity
   style: statement
   label: Tell us how you plan to use your account. Understanding your expected account
@@ -337,9 +334,9 @@ fields:
       from day one.
     help: null
   validation: {}
-  _section: Account Activity
+  _section: How you bank with us
   _metadata:
-    source_row_ref: ROW:29
+    source_row_ref: ROW:23
     has_as_is_data: false
   help: 'Before you start:
 
@@ -359,9 +356,9 @@ fields:
     label: In which jurisdiction would you like to open this account?
     help: ''
   validation: {}
-  _section: Account Activity
+  _section: How you bank with us
   _metadata:
-    source_row_ref: ROW:30
+    source_row_ref: ROW:24
     has_as_is_data: true
   type: lookup
   help: We operate in several locations. Choose the one that best suits your business
@@ -400,15 +397,24 @@ fields:
 
       '
   validation: {}
-  _section: Account Activity
+  _section: How you bank with us
   _metadata:
-    source_row_ref: ROW:31
+    source_row_ref: ROW:25
     has_as_is_data: true
-  type: integer
+  type: lookup
   help: For most businesses choose the Cash Management Account - it handles multiple
     currencies (GBP, USD, EUR and others), fixed-term deposits, and all electronic
     payments. If you need cheques or direct debits choose the Business Current Account
     - this is a standard GBP account with cheque book facility.
+  options:
+  - value: Cash Management Account which handles multiple currencies, fixed-term deposits,
+      and all electronic payments
+    label: Cash Management Account which handles multiple currencies, fixed-term deposits,
+      and all electronic payments
+  - value: Business Current Account - this is a standard GBP account with cheque book
+      facility and direct debits
+    label: Business Current Account - this is a standard GBP account with cheque book
+      facility and direct debits
 - key: GENCashMngtAccPurpose
   entity: entity
   style: field
@@ -417,42 +423,31 @@ fields:
     label: What will you use this account for?
     help: null
   validation: {}
-  _section: Account Activity
+  _section: How you bank with us
   _metadata:
-    source_row_ref: ROW:32
+    source_row_ref: ROW:26
     has_as_is_data: false
-  type: integer
+  type: lookup
   help: This could include payments of professional fees, dividend receipts or payments,
     rental income, expenses, trading income, purchases of wholesale goods or cash
     elements of an investment portfolio
-- key: GENCashMngtAccTransCreditMonth
-  entity: entity
-  style: field
-  label: How many payments will you receive?
-  original:
-    label: How many payments will you receive?
-    help: null
-  validation: {}
-  _section: Account Activity
-  _metadata:
-    source_row_ref: ROW:33
-    has_as_is_data: false
-  type: lookup
-  help: 'Choose: per month, per quarter, or per year'
-- key: GENCashMngtAccTransDebitMonth
-  entity: entity
-  style: field
-  label: How many payments will you make?
-  original:
-    label: How many payments will you make?
-    help: null
-  validation: {}
-  _section: Account Activity
-  _metadata:
-    source_row_ref: ROW:34
-    has_as_is_data: false
-  type: lookup
-  help: 'Choose: per month, per quarter, or per year'
+  options:
+  - value: Payments of professional fees
+    label: Payments of professional fees
+  - value: Dividend receipts or payments
+    label: Dividend receipts or payments
+  - value: Rental income
+    label: Rental income
+  - value: Expenses
+    label: Expenses
+  - value: Trading income
+    label: Trading income
+  - value: Purchases of wholesale goods
+    label: Purchases of wholesale goods
+  - value: Cash elements of an investment portfolio
+    label: Cash elements of an investment portfolio
+  - value: Other
+    label: Other
 - key: GENAccCashActivity
   entity: entity
   style: field
@@ -462,9 +457,9 @@ fields:
       cash transactions (whether deposits or withdrawals) ?
     help: i.e.Physical cash  (notes/ coins)
   validation: {}
-  _section: Account Activity
+  _section: How you bank with us
   _metadata:
-    source_row_ref: ROW:35
+    source_row_ref: ROW:27
     has_as_is_data: true
   type: lookup
   options:
@@ -480,9 +475,9 @@ fields:
     label: How often do you want statements?
     help: null
   validation: {}
-  _section: Account Activity
+  _section: How you bank with us
   _metadata:
-    source_row_ref: ROW:36
+    source_row_ref: ROW:28
     has_as_is_data: false
   type: lookup
   help: Default is annual
@@ -504,182 +499,16 @@ fields:
 - key: GENCashMngtAccTransCreditMonth + GENCashMngtAccTransDebitMonth
   entity: entity
   style: field
-  label: How many transactions per year?
+  label: How many transactions do you make per year?
   original:
-    label: How many transactions per year?
+    label: How many transactions do you make per year?
     help: null
   validation: {}
-  _section: Account Activity
+  _section: How you bank with us
   _metadata:
-    source_row_ref: ROW:37
-    has_as_is_data: false
-  type: lookup
-- key: GENIndicativeAppetiteRBSIProductOptionsComplex
-  entity: entity
-  style: field
-  label: What other banking services do you use or need?
-  original:
-    label: RBSI is a relationship focussed bank and as such our appetite to open bank
-      accounts is higher where we provide other bank products. Please highlight below
-      what RBSI products you currently benefit from or would like to consider in the
-      future?
-    help: ''
-  validation: {}
-  _section: Account Activity
-  _metadata:
-    source_row_ref: ROW:38
-    has_as_is_data: true
-  type: lookup
-  help: We offer additional services that might help your business
-- key: Description-Source-of-funds
-  entity: entity
-  style: statement
-  label: We need to understand where your money comes from. We'll ask about the origin
-    of funds and how your business generates money.
-  original:
-    label: We need to understand where your money comes from. We'll ask about the
-      origin of funds and how your business generates money.
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:41
-    has_as_is_data: false
-  help: 'Before you start:'
-- key: GENSOFcomplex
-  entity: entity
-  style: field
-  label: Source of funds | Add another
-  original:
-    label: Source of Funds
-    help: Please provide details of the source of funds to be introduced into the
-      account(s).
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:42
-    has_as_is_data: true
-  type: string
-  help: 'Before you start:'
-- key: GENSOFcomplexBank
-  entity: entity
-  style: field
-  label: Bank
-  original:
-    label: Bank
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:43
+    source_row_ref: ROW:29
     has_as_is_data: false
   type: string
-- key: GENSOFcomplexCountry
-  entity: entity
-  style: field
-  label: Country
-  original:
-    label: Country
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:44
-    has_as_is_data: false
-  type: lookup
-  help: Bank statements and details of other accounts you hold
-  options:
-  - value: COUNTRIES
-    label: COUNTRIES
-- key: GENSOFcomplexCurrency
-  entity: entity
-  style: field
-  label: Currency
-  original:
-    label: Currency
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:45
-    has_as_is_data: false
-  type: lookup
-  help: Information about how your funds were generated
-  options:
-  - value: Currency
-    label: Currency
-- key: GENSOFcomplexAmountExpected
-  entity: entity
-  style: field
-  label: Amount Expected
-  original:
-    label: Amount Expected
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:46
-    has_as_is_data: false
-  type: string
-  help: Details of any large incoming transfers expected
-- key: GENSOFcomplexRemitterName
-  entity: entity
-  style: field
-  label: Remitter name
-  original:
-    label: Remitter name
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:47
-    has_as_is_data: false
-  type: string
-  help: Understanding of your cash transaction levels
-- key: GENPercTurnoverCash
-  entity: entity
-  style: field
-  label: '% of turnover in cash'
-  original:
-    label: '% of turnover in cash'
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:48
-    has_as_is_data: false
-  type: integer
-- key: GENfundsgenerated
-  entity: entity
-  style: field
-  label: Please provide details of how these funds were generated
-  original:
-    label: Please provide details of how these funds were generated
-    help: This is an area which frequently requires additional questions due to lack
-      of clarity. Please read the following example carefully and ensure your response
-      contains granular detail and depth on the source of funds. Please provide details
-      of the source of funds to be introduced into the account(s), to include how
-      the remitter has been able to generate the initial deposit, e.g. through employment,
-      inheritance, investor funding or similar. If applicable, please provide detail
-      of the remitter’s background and business activities. Please include as much
-      detail as possible as this will help to speed up the account opening process.
-      Example - The funds were generated from the investment activity that is confirmed
-      within the source of wealth information. Continuing activity will generate funds
-      from the sale of stocks and the payment of dividends.
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:49
-    has_as_is_data: true
-  type: string
-  help: Please provide details of the source of funds to be introduced into the account(s),
-    to include how the remitter has been able to generate the initial deposit, e.g.
-    through employment, inheritance, investor funding or similar. If applicable, please
-    provide detail of the remitter's background and business activities. Please include
-    as much detail as possible as this will help to speed up the account opening process.
-    Example - The funds were generated from the investment activity that is confirmed
-    within the source of wealth information. Continuing activity will generate funds
-    from the sale of stocks and the payment of dividends.
 - key: Description-PurposeOfBusiness
   entity: entity
   style: statement
@@ -690,10 +519,12 @@ fields:
       of your business activities, who you serve, and how you operate day-to-day.
     help: null
   validation: {}
-  _section: ''
+  _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:52
+    source_row_ref: ROW:31
     has_as_is_data: false
+  help: 'We''ll ask about: What your business does, your main clients/customers, annual
+    turnover, and how long you''ve been trading'
 - key: GENIndicativeAppetiteCountryRegistration
   entity: entity
   style: field
@@ -705,7 +536,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:53
+    source_row_ref: ROW:32
     has_as_is_data: true
   type: lookup
   help: This is your main business location for legal and tax purposes
@@ -722,16 +553,11 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:54
+    source_row_ref: ROW:33
     has_as_is_data: false
-  type: lookup
-  options:
-  - value: 'Yes'
-    label: 'Yes'
-  - value: 'No'
-    label: 'No'
-  - value: Don't know yet
-    label: Don't know yet
+  type: integer
+  help: We appreciate this can be hard to estimate. A ballpark figure is acceptable
+    for now.
 - key: GENIndicativeAppetiteRiskadverseMSB
   entity: entity
   style: field
@@ -742,10 +568,15 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:55
+    source_row_ref: ROW:34
     has_as_is_data: false
-  type: string
+  type: lookup
   help: Examples include currency exchange, money transfers, or payment services
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
 - key: GENIndicativeAppetiteRiskadverseCrypto
   entity: entity
   style: field
@@ -756,7 +587,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:56
+    source_row_ref: ROW:35
     has_as_is_data: false
   type: lookup
   help: Bitcoin, Ethereum, NFTs, or other digital assets
@@ -775,7 +606,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:57
+    source_row_ref: ROW:36
     has_as_is_data: false
   type: string
 - key: Description-Tax
@@ -788,9 +619,9 @@ fields:
       about where you pay tax and your current status with tax authorities.
     help: null
   validation: {}
-  _section: ''
+  _section: Tax
   _metadata:
-    source_row_ref: ROW:60
+    source_row_ref: ROW:38
     has_as_is_data: false
   help: 'Before you start:
 
@@ -810,9 +641,9 @@ fields:
     label: Are there any tax-related issues?
     help: null
   validation: {}
-  _section: Purpose of Business
+  _section: Tax
   _metadata:
-    source_row_ref: ROW:61
+    source_row_ref: ROW:39
     has_as_is_data: false
   type: lookup
   help: Outstanding debts, disputes with tax authorities, or complex tax arrangements
@@ -829,9 +660,9 @@ fields:
     label: If yes, please provide details
     help: null
   validation: {}
-  _section: Purpose of Business
+  _section: Tax
   _metadata:
-    source_row_ref: ROW:62
+    source_row_ref: ROW:40
     has_as_is_data: false
   type: string
 - key: GENtaxcomplex-country
@@ -844,7 +675,7 @@ fields:
   validation: {}
   _section: Tax
   _metadata:
-    source_row_ref: ROW:63
+    source_row_ref: ROW:41
     has_as_is_data: false
   type: lookup
   help: Add details for each country where you pay tax | ADD NEW
@@ -861,7 +692,7 @@ fields:
   validation: {}
   _section: Tax
   _metadata:
-    source_row_ref: ROW:64
+    source_row_ref: ROW:42
     has_as_is_data: false
   type: lookup
   options:
@@ -879,37 +710,45 @@ fields:
   validation: {}
   _section: Tax
   _metadata:
-    source_row_ref: ROW:65
+    source_row_ref: ROW:43
     has_as_is_data: false
   type: string
   help: Your official tax reference from this country
-- key: GENincorpUSA + GENffi
+- key: Description-fund
   entity: entity
-  style: field
-  label: US Tax Classification
+  style: statement
+  label: 'Help us understand your investment strategy and fund structure.
+
+    We need a clear picture of what your fund does, how it operates, and its key characteristics.
+    This information helps us set up the right banking services and meet regulatory
+    requirements.'
   original:
-    label: US Tax Classification
+    label: 'Help us understand your investment strategy and fund structure.
+
+      We need a clear picture of what your fund does, how it operates, and its key
+      characteristics. This information helps us set up the right banking services
+      and meet regulatory requirements.'
     help: null
   validation: {}
-  _section: Tax
+  _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:66
+    source_row_ref: ROW:45
     has_as_is_data: false
-  type: lookup
-  help: How your organisation is classified for US tax reporting
-- key: ''
-  entity: entity
-  style: field
-  label: About your fund
-  original:
-    label: About your fund
-    help: null
-  validation: {}
-  _section: ''
-  _metadata:
-    source_row_ref: ROW:68
-    has_as_is_data: false
-  type: string
+  help: 'Before you start:
+
+
+    Your fund''s investment strategy and focus areas
+
+    Details about your current and target fund size
+
+    Information about your typical investment approach (holding periods, investment
+    sizes, portfolio composition)
+
+    Your fund''s main operating currency
+
+    Fund structure details (open/closed-ended, incorporation details)
+
+    Industry classification and regulatory status'
 - key: GENFundInvestments
   entity: entity
   style: field
@@ -920,7 +759,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:69
+    source_row_ref: ROW:46
     has_as_is_data: false
   type: string
   help: Include asset types, geographic focus, sectors, and investment approach
@@ -934,10 +773,13 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:70
+    source_row_ref: ROW:47
     has_as_is_data: true
   type: lookup
   help: For accounts and reporting
+  options:
+  - value: Currency
+    label: Currency
 - key: GENFundClosed
   entity: entity
   style: field
@@ -948,10 +790,15 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:71
+    source_row_ref: ROW:48
     has_as_is_data: true
   type: lookup
   help: Closed-ended = fixed number of shares
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
 - key: GENFundSize
   entity: entity
   style: field
@@ -962,7 +809,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:72
+    source_row_ref: ROW:49
     has_as_is_data: true
   type: lookup
   options:
@@ -996,9 +843,9 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:73
+    source_row_ref: ROW:50
     has_as_is_data: true
-  type: lookup
+  type: string
 - key: GENFundInvestmentPeriod
   entity: entity
   style: field
@@ -1009,7 +856,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:74
+    source_row_ref: ROW:51
     has_as_is_data: true
   type: lookup
   help: For example, 3-7 years
@@ -1030,7 +877,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:75
+    source_row_ref: ROW:52
     has_as_is_data: true
   type: lookup
   help: Average amount per opportunity
@@ -1055,7 +902,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:76
+    source_row_ref: ROW:53
     has_as_is_data: true
   type: lookup
   help: Approximate number in your portfolio
@@ -1078,7 +925,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:77
+    source_row_ref: ROW:54
     has_as_is_data: true
   type: lookup
   help: This helps us understand regulatory requirements
@@ -1095,7 +942,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:78
+    source_row_ref: ROW:55
     has_as_is_data: true
   type: lookup
   help: This includes any US state, territory, or federal jurisdiction
@@ -1114,7 +961,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:79
+    source_row_ref: ROW:56
     has_as_is_data: true
   type: lookup
   help: 'Examples: Banks, investment funds, asset managers, insurance companies'
@@ -1123,130 +970,23 @@ fields:
     label: 'Yes'
   - value: 'No'
     label: 'No'
-- key: Description-Investors
-  entity: entity
-  style: statement
-  label: 'For investment funds and similar structures, tell us about your investor
-    base.
-
-    We need to understand who invests with you, where they''re based, and what types
-    of investors you typically work with. This helps us assess the account appropriately.'
-  original:
-    label: 'For investment funds and similar structures, tell us about your investor
-      base.
-
-      We need to understand who invests with you, where they''re based, and what types
-      of investors you typically work with. This helps us assess the account appropriately.'
-    help: null
-  validation: {}
-  _section: About your investors
-  _metadata:
-    source_row_ref: ROW:83
-    has_as_is_data: false
-  help: 'Before you start:
-
-
-    Details about your typical investor types
-
-    Information about where your investors are based
-
-    Understanding of investor ownership percentages
-
-    Details about your investment experience and risk tolerance'
-- key: GENInvestorCountryComplex
-  entity: entity
-  style: field
-  label: Please provide details of the typical investors the fund is targeted at
-  original:
-    label: Please provide details of the typical investors the fund is targeted at,
-      e.g. institutional, private client, retail etc and where the investors are likely
-      to be based. Please also include the percentage of each type of investor, e.g.
-      50% institutional, 50% private client.
-    help: ''
-  validation: {}
-  _section: About your investors
-  _metadata:
-    source_row_ref: ROW:84
-    has_as_is_data: true
-  type: lookup
-  help: e.g. institutional, private client, retail etc and where the investors are
-    likely to be based. Please also include the percentage of each type of investor,
-    e.g. 50% institutional, 50% private client
-- key: GENInvestorType
-  entity: entity
-  style: field
-  label: Type of investor
-  original:
-    label: Type of investor
-    help: ''
-  validation: {}
-  _section: About your investors
-  _metadata:
-    source_row_ref: ROW:85
-    has_as_is_data: true
-  type: string
-- key: GENInvestorTypeOther
-  entity: entity
-  style: field
-  label: Type of investor - Other
-  original:
-    label: Type of investor - Other
-    help: ''
-  validation: {}
-  _section: About your investors
-  _metadata:
-    source_row_ref: ROW:86
-    has_as_is_data: true
-  type: lookup
-- key: GENInvestorCountry
-  entity: entity
-  style: field
-  label: Where are they based
-  original:
-    label: Where are they based
-    help: ''
-  validation: {}
-  _section: About your investors
-  _metadata:
-    source_row_ref: ROW:87
-    has_as_is_data: true
-  type: integer
-- key: GENInvestorTypePerc
-  entity: entity
-  style: field
-  label: What percentage of your fund do they hold?
-  original:
-    label: '% investor type'
-    help: ''
-  validation: {}
-  _section: About your investors
-  _metadata:
-    source_row_ref: ROW:88
-    has_as_is_data: true
-  type: integer
 accordions:
 - key: start-a-new-application
   title: Start a New Application
-  description: You'll need:Your passport or driving licence, and proof of address
-    from the last 3 months
+  description: 'You''ll need: Your passport or driving licence, and proof of address
+    from the last 3 months'
 - key: applying-as-an-intermediary
   title: Applying as an intermediary
   description: null
-- key: account-activity
-  title: Account Activity
-  description: null
-- key: source-of-funds
-  title: Source of Funds
-  description: null
-- key: untitled
-  title: ''
-  description: null
-- key: about-your-investors
-  title: About your investors
+- key: how-you-bank-with-us
+  title: How you bank with us
   description: null
 - key: purpose-of-business
   title: Purpose of Business
+  description: null
 - key: tax
   title: Tax
+  description: null
 - key: purpose-of-fund
   title: Purpose of Fund
+  description: null

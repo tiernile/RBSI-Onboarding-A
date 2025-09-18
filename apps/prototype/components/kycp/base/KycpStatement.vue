@@ -2,7 +2,7 @@
   <div class="kycp-statement">
     <!-- Use v-html only for trusted content with links -->
     <div v-if="html" v-html="sanitizedHtml"></div>
-    <div v-else>{{ text }}</div>
+    <div v-else class="kycp-statement__text">{{ text }}</div>
   </div>
 </template>
 
@@ -33,6 +33,10 @@ const sanitizedHtml = computed(() => {
   font-size: 13px;
   line-height: 1.5;
   color: #6b7280;
+}
+
+.kycp-statement__text {
+  white-space: pre-line; /* Preserves line breaks and wraps text */
 }
 
 .kycp-statement :deep(a) {

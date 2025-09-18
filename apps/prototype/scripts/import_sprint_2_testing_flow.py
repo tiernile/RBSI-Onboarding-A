@@ -16,7 +16,7 @@ APP_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = APP_DIR / 'data'
 JOURNEY_KEY = 'sprint-2-testing-flow'
 AS_IS_JOURNEY_KEY = 'non-lux-1-1'
-INCOMING_CSV = DATA_DIR / 'incoming' / 'RBSI Onboarding Sprint 2 Testing Flow v3.csv'
+INCOMING_CSV = DATA_DIR / 'incoming' / 'RBSI Onboarding Sprint 2 Testing Flow v3.2.csv'
 AS_IS_SCHEMA_PATH = DATA_DIR / 'schemas' / AS_IS_JOURNEY_KEY / 'schema-kycp.yaml'
 OUT_DIR = DATA_DIR / 'schemas' / JOURNEY_KEY
 OUT_FILE = OUT_DIR / 'schema-kycp.yaml'
@@ -162,6 +162,19 @@ def create_schema_field(row: dict, as_is_data: dict[str, dict]) -> dict | None:
     if style == 'divider' and row['field_type_raw'].lower() in ['title']:
         return None
     
+    # Infer section for Description fields with empty sections based on keyname patterns
+    section_title = row['section_title']
+    if not section_title and keyname.startswith('Description-'):
+        keyname_suffix = keyname.replace('Description-', '')
+        if keyname_suffix == 'intermediary':
+            section_title = 'Applying as an intermediary'
+        elif keyname_suffix == 'PurposeOfBusiness':
+            section_title = 'Purpose of Business'
+        elif keyname_suffix == 'Tax':
+            section_title = 'Tax'
+        elif keyname_suffix == 'fund':
+            section_title = 'Purpose of Fund'
+    
     # Find original copy from as-is data
     original_copy = as_is_data.get(keyname)
     
@@ -175,7 +188,7 @@ def create_schema_field(row: dict, as_is_data: dict[str, dict]) -> dict | None:
             'help': original_copy['help'] if original_copy else None,
         },
         'validation': {},
-        '_section': row['section_title'],
+        '_section': section_title,
         '_metadata': {
             'source_row_ref': f"ROW:{row['source_row']}",
             'has_as_is_data': bool(original_copy),
@@ -222,13 +235,34 @@ def main():
         style, _ = normalize_field_type(row['field_type_raw'])
         if style == 'divider' and row['field_type_raw'].lower() in ['title']:
             section_title = row['section_title']
-            accordion_key = slugify(section_title)
-            if accordion_key not in accordion_map:
-                accordion_map[accordion_key] = {
-                    'key': accordion_key,
-                    'title': section_title,
-                    'description': row['help'] if row['help'] else None,  # Use helper text as description
-                }
+            
+            # Infer section for Title fields with empty sections based on keyname patterns
+            if not section_title and row['keyname'].startswith('Title-'):
+                keyname_suffix = row['keyname'].replace('Title-', '')
+                if keyname_suffix == 'intermediary':
+                    section_title = 'Applying as an intermediary'
+                elif keyname_suffix == 'PurposeOfBusiness':
+                    section_title = 'Purpose of Business'
+                elif keyname_suffix == 'tax':
+                    section_title = 'Tax'
+                elif keyname_suffix == 'fund':
+                    section_title = 'Purpose of Fund'
+                elif keyname_suffix == 'HowYouBank':
+                    section_title = 'How you bank with us'
+            
+            if section_title:  # Only create accordion if we have a valid section title
+                accordion_key = slugify(section_title)
+                if accordion_key not in accordion_map:
+                    # Clean up helper text by normalizing whitespace and line breaks
+                    description = None
+                    if row['help']:
+                        description = ' '.join(row['help'].strip().split())
+                    
+                    accordion_map[accordion_key] = {
+                        'key': accordion_key,
+                        'title': section_title,
+                        'description': description,  # Use cleaned helper text as description
+                    }
     
     # Second pass: ensure all field sections have accordions (even without explicit title rows)
     for field in fields:
