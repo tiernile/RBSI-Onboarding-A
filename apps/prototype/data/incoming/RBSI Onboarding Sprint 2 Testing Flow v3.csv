@@ -1,0 +1,117 @@
+Section,Q number,Keyname,Question,Helper,Current Section,FIELD TYPE,Lookup Values
+Start a New Application ,,TITLE-new-application,Start a new application,"You'll need:Your passport or driving licence, and proof of address from the last 3 months",,Title,
+Start a New Application ,,Description-new-application,"Applying for an account with us
+Let's make sure we're the right fit for each other.
+We'll ask a few quick questions to understand your business and see if we can support what you're looking to do. This helps set expectations early and saves time for everyone.","Before you start:
+
+Think about what your business does and who your main clients/customers are
+Have your annual turnover figure ready
+Know how long you've been trading",,Description,
+Start a New Application ,N1,GENIndicativeAppetiteQuestions,Are you happy to answer a few questions upfront?,,Business Appetite,Lookup,Yes | No
+Start a New Application ,N2,GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated,How are you applying?,"You're a professional intermediary setting up an account for a client's business or you're the business owner or authorised representative applying directly, or you manage captive insurance arrangements and are applying for an account related to those services",Start a New Application ,Lookup,I'm applying on behalf of a client | I'm applying for my own business | I'm a captive insurance manager applying for a client
+Start a New Application ,N3,GENFundAdminContactName,Your contact name,,Intermediary Details,Free Text,
+Start a New Application ,N4,GENFundAdminNum,Your phone number,,Intermediary Details,Free Text,
+Start a New Application ,N5,GENFundAdminEmail,Your email address,We'll email you with any queries,Intermediary Details,Free Text,
+Start a New Application ,N6,GENIndicativeAppetiteRiskadversePEP,Are you connected to any politicians or senior officials?,"This includes current or former politicians, judges, military officers, or their close family members",Business Appetite,Free Text,
+Start a New Application ,N7,GENIndicativeAppetiteRiskadverseESE,Are there any risks we should know about?,"Environmental concerns, social issues, ethical concerns, or reputational risks",Business Appetite,Free Text,
+,,,,,,,
+Intermediary details,,Title-intermediary,Applying as an intermediary,,,Title,
+,,Description-intermediary,"
+If you're applying on behalf of a client, we need to know about you too.
+We need to understand your business and relationship with your client to ensure everything runs smoothly.","Before you start:
+
+Your own business details and credentials
+Documentation proving your authority to act for your client
+Details of your professional qualifications or authorisations",,Description,
+Applying as an intermediary,I1,[Regulated question],What's the full name of your organisation?,,Intermediary Details,Free Text,
+Applying as an intermediary,I2,SPEintermediaryregulator,Are you regulated?,,Intermediary Details,Lookup,Yes | No
+Applying as an intermediary,I3,SPEintermediaryregulator,Who regulates your organisation?,"For example, FCA or another regulatory body",Intermediary Details,Free Text,
+Applying as an intermediary,I4,,What type of licence do you hold?,Select the licence type that covers this introduction,Intermediary Details,Lookup,Regulated | Unregulated | Listed | Authorised | Registered
+Applying as an intermediary,I5,GENMetFaceToFace,Have you or someone from your organisation met this customer face to face?,This must be in line with your local regulations,Intermediary Details,Lookup,Yes | No
+Applying as an intermediary,I6,GENGroupIndividualName,Their name,,Intermediary Details,Free Text,
+Applying as an intermediary,I7,GENGroupIndividualPosition,Their job title,,Intermediary Details,Free Text,
+Applying as an intermediary,I8,GENGroupIndividualMeetingDate,When did you meet?,,Intermediary Details,Date picker,
+Applying as an intermediary,I9,GEN3rdPartyMetFaceToFace,Has someone outside your organisation met this customer face to face?,"For example, a due diligence certifier",Intermediary Details,Lookup,Yes | No
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Account Activity,,Title-Account-Activit,Account Activity,,,Title,
+Account Activity,,Description-Account-Activit,Tell us how you plan to use your account. Understanding your expected account activity helps us set up the right services and ensure everything works smoothly from day one.,"Before you start:
+
+Expected transaction volumes and amounts
+Types of payments you'll be making and receiving
+Any international activity planned
+Cash handling requirements",,Description,
+Account Activity,A1,GENBankAccountJurisdiction,Where would you like to bank?,We operate in several locations. Choose the one that best suits your business needs,Start a New Application ,Lookup,Jersey | Guernsey | Isle of Man | Gibraltar | United Kingdom
+Account Activity,A2,GENAccountType,What type of account do you need?,"For most businesses choose the Cash Management Account - it handles multiple currencies (GBP, USD, EUR and others), fixed-term deposits, and all electronic payments. If you need cheques or direct debits choose the Business Current Account - this is a standard GBP account with cheque book facility.",Banking Requirements,Integer,
+Account Activity,A3,GENCashMngtAccPurpose,What will you use this account for?,"This could include payments of professional fees, dividend receipts or payments, rental income, expenses, trading income, purchases of wholesale goods or cash elements of an investment portfolio",Banking Requirements,Integer,
+Account Activity,A4,GENCashMngtAccTransCreditMonth,How many payments will you receive?,"Choose: per month, per quarter, or per year",Banking Requirements,Lookup,
+Account Activity,A5,GENCashMngtAccTransDebitMonth,How many payments will you make?,"Choose: per month, per quarter, or per year",Banking Requirements,Lookup,
+Account Activity,A6,GENAccCashActivity,Will you deposit or withdraw cash?,,Banking Requirements,Lookup,Yes | No
+Account Activity,A7,GENCashMngtAccStatFreq,How often do you want statements?,Default is annual,Banking Requirements,Lookup,Annual | Half Yearly | Quarterly | Bi-Monthly | Monthly | Fortnightly | Weekly
+Account Activity,A8,GENCashMngtAccTransCreditMonth + GENCashMngtAccTransDebitMonth,How many transactions per year?,,Banking Requirements,Lookup,
+Account Activity,A9,GENIndicativeAppetiteRBSIProductOptionsComplex,What other banking services do you use or need?,We offer additional services that might help your business,Business Appetite,Lookup,
+,,,,,,,
+Source of Funds,,Title-Source-of-funds,Source of Funds,,,Title,
+Source of Funds,,Description-Source-of-funds,"We need to understand where your money comes from. We'll ask about the origin of funds and how your business generates money.
+",Before you start:,,Description,
+Source of Funds,S1,GENSOFcomplex,"Source of funds | Add another
+",Before you start:,Source of funds,Complex,
+Source of Funds,S1.1,GENSOFcomplexBank,Bank,,Source of funds,Free Text,
+Source of Funds,S1.1,GENSOFcomplexCountry,Country,Bank statements and details of other accounts you hold,Source of funds,Lookup,COUNTRIES
+Source of Funds,S1.2,GENSOFcomplexCurrency,Currency,Information about how your funds were generated,Source of funds,Lookup,Currency
+Source of Funds,S1.3,GENSOFcomplexAmountExpected,Amount Expected,Details of any large incoming transfers expected,Source of funds,Free Text,
+Source of Funds,S1.4,GENSOFcomplexRemitterName,Remitter name,Understanding of your cash transaction levels,Source of funds,Free Text,
+Source of Funds,S1.5,GENPercTurnoverCash,% of turnover in cash,,Source of funds,Decimal,
+Source of Funds,S1.6,GENfundsgenerated,Please provide details of how these funds were generated,"Please provide details of the source of funds to be introduced into the account(s), to include how the remitter has been able to generate the initial deposit, e.g. through employment, inheritance, investor funding or similar. If applicable, please provide detail of the remitter's background and business activities. Please include as much detail as possible as this will help to speed up the account opening process. Example - The funds were generated from the investment activity that is confirmed within the source of wealth information. Continuing activity will generate funds from the sale of stocks and the payment of dividends.",Source of funds,Free Text,
+,,,,,,,
+,,Title-PurposeOfBusiness,Purpose of Business,,,Title,
+,,Description-PurposeOfBusiness,"Help us understand what your business actually does. We need a clear picture of your business activities, who you serve, and how you operate day-to-day.",,,Description,
+Purpose of Business,P1,GENIndicativeAppetiteCountryRegistration,What country is your business legally registered in?,This is your main business location for legal and tax purposes,Business Appetite,Lookup,COUNTRIES
+Purpose of Business,P2,GENCashMngtAccTurnover,What's your expected annual turnover?,,Banking Requirements,Lookup,Yes | No | Don't know yet
+Purpose of Business,P3,GENIndicativeAppetiteRiskadverseMSB,Does the business handle money for other people?,"Examples include currency exchange, money transfers, or payment services",Business Appetite,Free Text,
+Purpose of Business,P4,GENIndicativeAppetiteRiskadverseCrypto,Does the business invest in crypto assets?,"Bitcoin, Ethereum, NFTs, or other digital assets",Business Appetite,Lookup,Yes | No
+Purpose of Business,P5,GENIndicativeAppetiteRiskadverseCryptoDetails,"If yes, please provide details",,NEW,Free Text,
+,,,,,,,
+,,Title-tax,Tax,,,Title,
+,,Description-Tax,Tax compliance is crucial for business banking. We'll need information about where you pay tax and your current status with tax authorities.,"Before you start:
+
+Your tax residence status
+TIN (Tax Identification Numbers) for all countries where you pay tax
+Your latest tax return
+Details of any tax obligations or issues",,Description,
+Purpose of Business,X1,GENIndicativeAppetiteRiskadverseTax,Are there any tax-related issues?,"Outstanding debts, disputes with tax authorities, or complex tax arrangements",Business Appetite,Lookup,Yes | No
+Purpose of Business,X2,GENIndicativeAppetiteRiskadverseTaxDetails,"If yes, please provide details",,NEW,Free Text,
+Tax,X3,GENtaxcomplex-country,Which country do you pay tax in?,Add details for each country where you pay tax | ADD NEW,Key Principals - Tax Residency & Classification,Lookup,COUNTRIES
+Tax,X4,GENtaxcomplex-knowtin,Do you have a tax reference number?,,Tax Residency & Classification,Lookup,Yes | No
+Tax,X5,GENtaxcomplex-tin,What's your tax reference number?,Your official tax reference from this country,Tax Residency & Classification,String,
+Tax,X6,GENincorpUSA + GENffi,US Tax Classification,How your organisation is classified for US tax reporting,Tax Residency & Classification,Lookup,
+,,,,,,,
+,,,About your fund,,,,
+Purpose of Fund,P1,GENFundInvestments,What does your fund invest in?,"Include asset types, geographic focus, sectors, and investment approach",Business Activity & Investment,Free Text,
+Purpose of Fund,P2,GENFundCurrency,What's your fund's main currency?,For accounts and reporting,Business Activity & Investment,Lookup,
+Purpose of Fund,P3,GENFundClosed,Is this a closed-ended fund?,Closed-ended = fixed number of shares,Business Activity & Investment,Lookup,
+Purpose of Fund,P4,GENFundSize,What's your current fund size?,,Business Activity & Investment,Lookup,< 50m | 50m - 250m | 250m - 500m | 500m - 750m | 750m - 1bn | 1bn - 2bn | 2bn - 5bn | 5bn - 10bn | 10bn - 20bn | 20bn +
+Purpose of Fund,P5,GENFundTargetedSize,What's your target fund size?,,Business Activity & Investment,Lookup,
+Purpose of Fund,P6,GENFundInvestmentPeriod,How long do you hold investments?,"For example, 3-7 years",Business Activity & Investment,Lookup,1 - 3 years | 3 - 5 years | 5 years +
+Purpose of Fund,P7,GENFundInvestmentSize,What's your typical investment size?,Average amount per opportunity,Business Activity & Investment,Lookup,< 10m | 10m - 25m | 25m - 50m | 50m - 100m | 100m +
+Purpose of Fund,P8,GENFundAssetsNum,How many investments do you plan to hold?,Approximate number in your portfolio,Business Activity & Investment,Lookup,< 10 | 10 - 25 | 25 - 50 | 50 +
+Purpose of Fund,P9,GENindustrysector,What industry best describes your fund?,This helps us understand regulatory requirements,Business Activity & Investment,Lookup,Industry
+Purpose of Fund,P10,GENincorpUSA,Is your fund incorporated in the USA?,"This includes any US state, territory, or federal jurisdiction",Key Principals - Tax Residency & Classification,Lookup,Yes | No
+Purpose of Fund,P11,GENffi,Is your fund a financial institution?,"Examples: Banks, investment funds, asset managers, insurance companies",Key Principals - Tax Residency & Classification,Lookup,Yes | No
+,,,,,,,
+,,,,,,,
+About your investors,,Title-Investors,"About your investors
+",,,Title,
+About your investors,,Description-Investors,"For investment funds and similar structures, tell us about your investor base.
+We need to understand who invests with you, where they're based, and what types of investors you typically work with. This helps us assess the account appropriately.","Before you start:
+
+Details about your typical investor types
+Information about where your investors are based
+Understanding of investor ownership percentages
+Details about your investment experience and risk tolerance",,Description,
+About your investors,S1,GENInvestorCountryComplex,Please provide details of the typical investors the fund is targeted at,"e.g. institutional, private client, retail etc and where the investors are likely to be based. Please also include the percentage of each type of investor, e.g. 50% institutional, 50% private client",Fund details - investor base,Lookup,
+About your investors,S2,GENInvestorType,Type of investor,,Fund details - investor base,Free Text,
+About your investors,S3,GENInvestorTypeOther,Type of investor - Other,,Fund details - investor base,Lookup,
+About your investors,S4,GENInvestorCountry,Where are they based,,Fund details - investor base,decimal,
+About your investors,S5,GENInvestorTypePerc,What percentage of your fund do they hold?,,Fund details - investor base,decimal,

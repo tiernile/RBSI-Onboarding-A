@@ -89,6 +89,16 @@ active:
       order: 1
       visible: true
       status: alpha
+  - key: sprint-2-testing-flow
+    name: Sprint 2 Testing Flow
+    version: 0.1.0
+    variant: KYCP
+    owner: "@gemini"
+    display:
+      group: Testing
+      order: 2
+      visible: true
+      status: alpha
   - key: zelda
     name: Zelda – Prototype Mapping
     version: 0.1.0

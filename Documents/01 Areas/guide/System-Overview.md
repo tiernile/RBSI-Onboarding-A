@@ -51,7 +51,10 @@ This prototype turns client spreadsheets into clickable journeys using smart def
 - Make section organization decisions
 
 ### 3. Schema Generation
-- Run import scripts to generate `data/schemas/<journey>/schema.yaml`
+- Run import scripts to generate schema files
+- **Critical**: Use correct schema format and filename:
+  - `schema-kycp.yaml` for KYCP accordions format (`fields[]` + `accordions[]`)
+  - `schema.yaml` for basic items format (`items[]`)
 - Review field organization and grouping
 - Implement complex fields if needed
 - Ensure `meta.source_row_ref` traceability
@@ -70,6 +73,17 @@ This prototype turns client spreadsheets into clickable journeys using smart def
 - Validate with stakeholders
 
 ## Quality & Debugging Tools
+
+### Schema Format Debugging
+- **API Structure Check**: `curl http://localhost:3002/api/schema/<journey> | jq 'keys'`
+- **Expected Formats**:
+  - KYCP Accordions: `["accordions", "entity", "fields", "key", "name", "version"]`
+  - Basic Items: `["items", "key", "name", "version"]`
+- **Common Issues**:
+  - Wrong filename: `schema-kycp.yaml` vs `schema.yaml`
+  - Invalid field keys: Must be alphanumeric with underscores/hyphens
+  - Missing accordions: Frontend KYCP components require accordion structure
+- **Server Logs**: Check dev server output for "Invalid schema" validation errors
 
 ### Explain Visibility Mode
 - Toggle in KYCP preview or append `?explain=1` to URL

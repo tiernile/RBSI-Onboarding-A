@@ -8,6 +8,7 @@
 **For implementation**: Use [Complete Workflow Guide](Complete-Workflow-Guide.md) for end-to-end process
 **For daily operations**: See [Operations Guide](Operations.md) for admin features and debugging
 **For technical details**: Check [Spreadsheet to Prototype Workflow](Spreadsheet-to-Prototype-Workflow.md)
+**For KYCP issues**: See [KYCP Schema Troubleshooting](KYCP-Schema-Troubleshooting.md) for format problems
 
 ---
 

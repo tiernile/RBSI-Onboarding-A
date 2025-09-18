@@ -1,0 +1,957 @@
+key: sprint-2-testing-flow
+name: Sprint 2 Testing Flow
+version: 0.1.0
+entity: entity
+fields:
+- key: TITLE-new-application
+  entity: entity
+  style: field
+  label: Start a new application
+  type: string
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:2
+  help: "You'll need:\vYour passport or driving licence, and proof of address from\
+    \ the last 3 months"
+- key: Description-new-application
+  entity: entity
+  style: field
+  label: 'Applying for an account with us
+
+    Let''s make sure we''re the right fit for each other.
+
+    We''ll ask a few quick questions to understand your business and see if we can
+    support what you''re looking to do. This helps set expectations early and saves
+    time for everyone.'
+  type: string
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:3
+  help: 'Before you start:
+
+
+    Think about what your business does and who your main clients/customers are
+
+    Have your annual turnover figure ready
+
+    Know how long you''ve been trading'
+- key: GENIndicativeAppetiteQuestions
+  entity: entity
+  style: field
+  label: Are you happy to answer a few questions upfront?
+  type: lookup
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:4
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated
+  entity: entity
+  style: field
+  label: How are you applying?
+  type: lookup
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:5
+  help: You're a professional intermediary setting up an account for a client's business
+    or you're the business owner or authorised representative applying directly, or
+    you manage captive insurance arrangements and are applying for an account related
+    to those services
+  options:
+  - value: I'm applying on behalf of a client
+    label: I'm applying on behalf of a client
+  - value: I'm applying for my own business
+    label: I'm applying for my own business
+  - value: I'm a captive insurance manager applying for a client
+    label: I'm a captive insurance manager applying for a client
+- key: GENFundAdminContactName
+  entity: entity
+  style: field
+  label: Your contact name
+  type: string
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:6
+- key: GENFundAdminNum
+  entity: entity
+  style: field
+  label: Your phone number
+  type: string
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:7
+- key: GENFundAdminEmail
+  entity: entity
+  style: field
+  label: Your email address
+  type: string
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:8
+  help: We'll email you with any queries
+- key: GENIndicativeAppetiteRiskadversePEP
+  entity: entity
+  style: field
+  label: Are you connected to any politicians or senior officials?
+  type: string
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:9
+  help: This includes current or former politicians, judges, military officers, or
+    their close family members
+- key: GENIndicativeAppetiteRiskadverseESE
+  entity: entity
+  style: field
+  label: Are there any risks we should know about?
+  type: string
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:10
+  help: Environmental concerns, social issues, ethical concerns, or reputational risks
+- key: Title-intermediary
+  entity: entity
+  style: field
+  label: Applying as an intermediary
+  type: string
+  validation: {}
+  _section: Intermediary details
+  _metadata:
+    source_row_ref: ROW:12
+- key: Description-intermediary
+  entity: entity
+  style: field
+  label: 'If you''re applying on behalf of a client, we need to know about you too.
+
+    We need to understand your business and relationship with your client to ensure
+    everything runs smoothly.'
+  type: string
+  validation: {}
+  _section: ''
+  _metadata:
+    source_row_ref: ROW:13
+  help: 'Before you start:
+
+
+    Your own business details and credentials
+
+    Documentation proving your authority to act for your client
+
+    Details of your professional qualifications or authorisations'
+- key: '[Regulated question]'
+  entity: entity
+  style: field
+  label: What's the full name of your organisation?
+  type: string
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:14
+- key: SPEintermediaryregulator
+  entity: entity
+  style: field
+  label: Are you regulated?
+  type: lookup
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:15
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: SPEintermediaryregulator
+  entity: entity
+  style: field
+  label: Who regulates your organisation?
+  type: string
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:16
+  help: For example, FCA or another regulatory body
+- key: GENMetFaceToFace
+  entity: entity
+  style: field
+  label: Have you or someone from your organisation met this customer face to face?
+  type: lookup
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:18
+  help: This must be in line with your local regulations
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: GENGroupIndividualName
+  entity: entity
+  style: field
+  label: Their name
+  type: string
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:19
+- key: GENGroupIndividualPosition
+  entity: entity
+  style: field
+  label: Their job title
+  type: string
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:20
+- key: GENGroupIndividualMeetingDate
+  entity: entity
+  style: field
+  label: When did you meet?
+  type: string
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:21
+- key: GEN3rdPartyMetFaceToFace
+  entity: entity
+  style: field
+  label: Has someone outside your organisation met this customer face to face?
+  type: lookup
+  validation: {}
+  _section: Applying as an intermediary
+  _metadata:
+    source_row_ref: ROW:22
+  help: For example, a due diligence certifier
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: Title-Account-Activit
+  entity: entity
+  style: field
+  label: Account Activity
+  type: string
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:26
+- key: Description-Account-Activit
+  entity: entity
+  style: field
+  label: Tell us how you plan to use your account. Understanding your expected account
+    activity helps us set up the right services and ensure everything works smoothly
+    from day one.
+  type: string
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:27
+  help: 'Before you start:
+
+
+    Expected transaction volumes and amounts
+
+    Types of payments you''ll be making and receiving
+
+    Any international activity planned
+
+    Cash handling requirements'
+- key: GENBankAccountJurisdiction
+  entity: entity
+  style: field
+  label: Where would you like to bank?
+  type: lookup
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:28
+  help: We operate in several locations. Choose the one that best suits your business
+    needs
+  options:
+  - value: Jersey
+    label: Jersey
+  - value: Guernsey
+    label: Guernsey
+  - value: Isle of Man
+    label: Isle of Man
+  - value: Gibraltar
+    label: Gibraltar
+  - value: United Kingdom
+    label: United Kingdom
+- key: GENAccountType
+  entity: entity
+  style: field
+  label: What type of account do you need?
+  type: integer
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:29
+  help: For most businesses choose the Cash Management Account - it handles multiple
+    currencies (GBP, USD, EUR and others), fixed-term deposits, and all electronic
+    payments. If you need cheques or direct debits choose the Business Current Account
+    - this is a standard GBP account with cheque book facility.
+- key: GENCashMngtAccPurpose
+  entity: entity
+  style: field
+  label: What will you use this account for?
+  type: integer
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:30
+  help: This could include payments of professional fees, dividend receipts or payments,
+    rental income, expenses, trading income, purchases of wholesale goods or cash
+    elements of an investment portfolio
+- key: GENCashMngtAccTransCreditMonth
+  entity: entity
+  style: field
+  label: How many payments will you receive?
+  type: lookup
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:31
+  help: 'Choose: per month, per quarter, or per year'
+- key: GENCashMngtAccTransDebitMonth
+  entity: entity
+  style: field
+  label: How many payments will you make?
+  type: lookup
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:32
+  help: 'Choose: per month, per quarter, or per year'
+- key: GENAccCashActivity
+  entity: entity
+  style: field
+  label: Will you deposit or withdraw cash?
+  type: lookup
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:33
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: GENCashMngtAccStatFreq
+  entity: entity
+  style: field
+  label: How often do you want statements?
+  type: lookup
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:34
+  help: Default is annual
+  options:
+  - value: Annual
+    label: Annual
+  - value: Half Yearly
+    label: Half Yearly
+  - value: Quarterly
+    label: Quarterly
+  - value: Bi-Monthly
+    label: Bi-Monthly
+  - value: Monthly
+    label: Monthly
+  - value: Fortnightly
+    label: Fortnightly
+  - value: Weekly
+    label: Weekly
+- key: GENCashMngtAccTransCreditMonth + GENCashMngtAccTransDebitMonth
+  entity: entity
+  style: field
+  label: How many transactions per year?
+  type: lookup
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:35
+- key: GENIndicativeAppetiteRBSIProductOptionsComplex
+  entity: entity
+  style: field
+  label: What other banking services do you use or need?
+  type: lookup
+  validation: {}
+  _section: Account Activity
+  _metadata:
+    source_row_ref: ROW:36
+  help: We offer additional services that might help your business
+- key: Title-Source-of-funds
+  entity: entity
+  style: field
+  label: Source of Funds
+  type: string
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:38
+- key: Description-Source-of-funds
+  entity: entity
+  style: field
+  label: We need to understand where your money comes from. We'll ask about the origin
+    of funds and how your business generates money.
+  type: string
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:39
+  help: 'Before you start:'
+- key: GENSOFcomplex
+  entity: entity
+  style: field
+  label: Source of funds | Add another
+  type: string
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:40
+  help: 'Before you start:'
+- key: GENSOFcomplexBank
+  entity: entity
+  style: field
+  label: Bank
+  type: string
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:41
+- key: GENSOFcomplexCountry
+  entity: entity
+  style: field
+  label: Country
+  type: lookup
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:42
+  help: Bank statements and details of other accounts you hold
+  options:
+  - value: COUNTRIES
+    label: COUNTRIES
+- key: GENSOFcomplexCurrency
+  entity: entity
+  style: field
+  label: Currency
+  type: lookup
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:43
+  help: Information about how your funds were generated
+  options:
+  - value: Currency
+    label: Currency
+- key: GENSOFcomplexAmountExpected
+  entity: entity
+  style: field
+  label: Amount Expected
+  type: string
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:44
+  help: Details of any large incoming transfers expected
+- key: GENSOFcomplexRemitterName
+  entity: entity
+  style: field
+  label: Remitter name
+  type: string
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:45
+  help: Understanding of your cash transaction levels
+- key: GENPercTurnoverCash
+  entity: entity
+  style: field
+  label: '% of turnover in cash'
+  type: integer
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:46
+- key: GENfundsgenerated
+  entity: entity
+  style: field
+  label: Please provide details of how these funds were generated
+  type: string
+  validation: {}
+  _section: Source of Funds
+  _metadata:
+    source_row_ref: ROW:47
+  help: Please provide details of the source of funds to be introduced into the account(s),
+    to include how the remitter has been able to generate the initial deposit, e.g.
+    through employment, inheritance, investor funding or similar. If applicable, please
+    provide detail of the remitter's background and business activities. Please include
+    as much detail as possible as this will help to speed up the account opening process.
+    Example - The funds were generated from the investment activity that is confirmed
+    within the source of wealth information. Continuing activity will generate funds
+    from the sale of stocks and the payment of dividends.
+- key: Title-PurposeOfBusiness
+  entity: entity
+  style: field
+  label: Purpose of Business
+  type: string
+  validation: {}
+  _section: ''
+  _metadata:
+    source_row_ref: ROW:49
+- key: Description-PurposeOfBusiness
+  entity: entity
+  style: field
+  label: Help us understand what your business actually does. We need a clear picture
+    of your business activities, who you serve, and how you operate day-to-day.
+  type: string
+  validation: {}
+  _section: ''
+  _metadata:
+    source_row_ref: ROW:50
+- key: GENIndicativeAppetiteCountryRegistration
+  entity: entity
+  style: field
+  label: What country is your business legally registered in?
+  type: lookup
+  validation: {}
+  _section: Purpose of Business
+  _metadata:
+    source_row_ref: ROW:51
+  help: This is your main business location for legal and tax purposes
+  options:
+  - value: COUNTRIES
+    label: COUNTRIES
+- key: GENCashMngtAccTurnover
+  entity: entity
+  style: field
+  label: What's your expected annual turnover?
+  type: lookup
+  validation: {}
+  _section: Purpose of Business
+  _metadata:
+    source_row_ref: ROW:52
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+  - value: Don't know yet
+    label: Don't know yet
+- key: GENIndicativeAppetiteRiskadverseMSB
+  entity: entity
+  style: field
+  label: Does the business handle money for other people?
+  type: string
+  validation: {}
+  _section: Purpose of Business
+  _metadata:
+    source_row_ref: ROW:53
+  help: Examples include currency exchange, money transfers, or payment services
+- key: GENIndicativeAppetiteRiskadverseCrypto
+  entity: entity
+  style: field
+  label: Does the business invest in crypto assets?
+  type: lookup
+  validation: {}
+  _section: Purpose of Business
+  _metadata:
+    source_row_ref: ROW:54
+  help: Bitcoin, Ethereum, NFTs, or other digital assets
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: GENIndicativeAppetiteRiskadverseCryptoDetails
+  entity: entity
+  style: field
+  label: If yes, please provide details
+  type: string
+  validation: {}
+  _section: Purpose of Business
+  _metadata:
+    source_row_ref: ROW:55
+- key: Title-tax
+  entity: entity
+  style: field
+  label: Tax
+  type: string
+  validation: {}
+  _section: ''
+  _metadata:
+    source_row_ref: ROW:57
+- key: Description-Tax
+  entity: entity
+  style: field
+  label: Tax compliance is crucial for business banking. We'll need information about
+    where you pay tax and your current status with tax authorities.
+  type: string
+  validation: {}
+  _section: ''
+  _metadata:
+    source_row_ref: ROW:58
+  help: 'Before you start:
+
+
+    Your tax residence status
+
+    TIN (Tax Identification Numbers) for all countries where you pay tax
+
+    Your latest tax return
+
+    Details of any tax obligations or issues'
+- key: GENIndicativeAppetiteRiskadverseTax
+  entity: entity
+  style: field
+  label: Are there any tax-related issues?
+  type: lookup
+  validation: {}
+  _section: Purpose of Business
+  _metadata:
+    source_row_ref: ROW:59
+  help: Outstanding debts, disputes with tax authorities, or complex tax arrangements
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: GENIndicativeAppetiteRiskadverseTaxDetails
+  entity: entity
+  style: field
+  label: If yes, please provide details
+  type: string
+  validation: {}
+  _section: Purpose of Business
+  _metadata:
+    source_row_ref: ROW:60
+- key: GENtaxcomplex-country
+  entity: entity
+  style: field
+  label: Which country do you pay tax in?
+  type: lookup
+  validation: {}
+  _section: Tax
+  _metadata:
+    source_row_ref: ROW:61
+  help: Add details for each country where you pay tax | ADD NEW
+  options:
+  - value: COUNTRIES
+    label: COUNTRIES
+- key: GENtaxcomplex-knowtin
+  entity: entity
+  style: field
+  label: Do you have a tax reference number?
+  type: lookup
+  validation: {}
+  _section: Tax
+  _metadata:
+    source_row_ref: ROW:62
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: GENtaxcomplex-tin
+  entity: entity
+  style: field
+  label: What's your tax reference number?
+  type: string
+  validation: {}
+  _section: Tax
+  _metadata:
+    source_row_ref: ROW:63
+  help: Your official tax reference from this country
+- key: GENincorpUSA + GENffi
+  entity: entity
+  style: field
+  label: US Tax Classification
+  type: lookup
+  validation: {}
+  _section: Tax
+  _metadata:
+    source_row_ref: ROW:64
+  help: How your organisation is classified for US tax reporting
+- key: GENFundInvestments
+  entity: entity
+  style: field
+  label: What does your fund invest in?
+  type: string
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:67
+  help: Include asset types, geographic focus, sectors, and investment approach
+- key: GENFundCurrency
+  entity: entity
+  style: field
+  label: What's your fund's main currency?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:68
+  help: For accounts and reporting
+- key: GENFundClosed
+  entity: entity
+  style: field
+  label: Is this a closed-ended fund?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:69
+  help: Closed-ended = fixed number of shares
+- key: GENFundSize
+  entity: entity
+  style: field
+  label: What's your current fund size?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:70
+  options:
+  - value: < 50m
+    label: < 50m
+  - value: 50m - 250m
+    label: 50m - 250m
+  - value: 250m - 500m
+    label: 250m - 500m
+  - value: 500m - 750m
+    label: 500m - 750m
+  - value: 750m - 1bn
+    label: 750m - 1bn
+  - value: 1bn - 2bn
+    label: 1bn - 2bn
+  - value: 2bn - 5bn
+    label: 2bn - 5bn
+  - value: 5bn - 10bn
+    label: 5bn - 10bn
+  - value: 10bn - 20bn
+    label: 10bn - 20bn
+  - value: 20bn +
+    label: 20bn +
+- key: GENFundTargetedSize
+  entity: entity
+  style: field
+  label: What's your target fund size?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:71
+- key: GENFundInvestmentPeriod
+  entity: entity
+  style: field
+  label: How long do you hold investments?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:72
+  help: For example, 3-7 years
+  options:
+  - value: 1 - 3 years
+    label: 1 - 3 years
+  - value: 3 - 5 years
+    label: 3 - 5 years
+  - value: 5 years +
+    label: 5 years +
+- key: GENFundInvestmentSize
+  entity: entity
+  style: field
+  label: What's your typical investment size?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:73
+  help: Average amount per opportunity
+  options:
+  - value: < 10m
+    label: < 10m
+  - value: 10m - 25m
+    label: 10m - 25m
+  - value: 25m - 50m
+    label: 25m - 50m
+  - value: 50m - 100m
+    label: 50m - 100m
+  - value: 100m +
+    label: 100m +
+- key: GENFundAssetsNum
+  entity: entity
+  style: field
+  label: How many investments do you plan to hold?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:74
+  help: Approximate number in your portfolio
+  options:
+  - value: < 10
+    label: < 10
+  - value: 10 - 25
+    label: 10 - 25
+  - value: 25 - 50
+    label: 25 - 50
+  - value: 50 +
+    label: 50 +
+- key: GENindustrysector
+  entity: entity
+  style: field
+  label: What industry best describes your fund?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:75
+  help: This helps us understand regulatory requirements
+  options:
+  - value: Industry
+    label: Industry
+- key: GENincorpUSA
+  entity: entity
+  style: field
+  label: Is your fund incorporated in the USA?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:76
+  help: This includes any US state, territory, or federal jurisdiction
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: GENffi
+  entity: entity
+  style: field
+  label: Is your fund a financial institution?
+  type: lookup
+  validation: {}
+  _section: Purpose of Fund
+  _metadata:
+    source_row_ref: ROW:77
+  help: 'Examples: Banks, investment funds, asset managers, insurance companies'
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
+- key: Title-Investors
+  entity: entity
+  style: field
+  label: About your investors
+  type: string
+  validation: {}
+  _section: About your investors
+  _metadata:
+    source_row_ref: ROW:80
+- key: Description-Investors
+  entity: entity
+  style: field
+  label: 'For investment funds and similar structures, tell us about your investor
+    base.
+
+    We need to understand who invests with you, where they''re based, and what types
+    of investors you typically work with. This helps us assess the account appropriately.'
+  type: string
+  validation: {}
+  _section: About your investors
+  _metadata:
+    source_row_ref: ROW:81
+  help: 'Before you start:
+
+
+    Details about your typical investor types
+
+    Information about where your investors are based
+
+    Understanding of investor ownership percentages
+
+    Details about your investment experience and risk tolerance'
+- key: GENInvestorCountryComplex
+  entity: entity
+  style: field
+  label: Please provide details of the typical investors the fund is targeted at
+  type: lookup
+  validation: {}
+  _section: About your investors
+  _metadata:
+    source_row_ref: ROW:82
+  help: e.g. institutional, private client, retail etc and where the investors are
+    likely to be based. Please also include the percentage of each type of investor,
+    e.g. 50% institutional, 50% private client
+- key: GENInvestorType
+  entity: entity
+  style: field
+  label: Type of investor
+  type: string
+  validation: {}
+  _section: About your investors
+  _metadata:
+    source_row_ref: ROW:83
+- key: GENInvestorTypeOther
+  entity: entity
+  style: field
+  label: Type of investor - Other
+  type: lookup
+  validation: {}
+  _section: About your investors
+  _metadata:
+    source_row_ref: ROW:84
+- key: GENInvestorCountry
+  entity: entity
+  style: field
+  label: Where are they based
+  type: integer
+  validation: {}
+  _section: About your investors
+  _metadata:
+    source_row_ref: ROW:85
+- key: GENInvestorTypePerc
+  entity: entity
+  style: field
+  label: What percentage of your fund do they hold?
+  type: integer
+  validation: {}
+  _section: About your investors
+  _metadata:
+    source_row_ref: ROW:86
+accordions:
+- key: start-a-new-application
+  title: Start a New Application
+- key: intermediary-details
+  title: Intermediary details
+- key: applying-as-an-intermediary
+  title: Applying as an intermediary
+- key: account-activity
+  title: Account Activity
+- key: source-of-funds
+  title: Source of Funds
+- key: purpose-of-business
+  title: Purpose of Business
+- key: tax
+  title: Tax
+- key: purpose-of-fund
+  title: Purpose of Fund
+- key: about-your-investors
+  title: About your investors
