@@ -854,15 +854,7 @@ function accordionKeyForField(field: any): string {
   if (field.accordionKey) return field.accordionKey
   const rawSection = typeof field._section === 'string' ? field._section : ''
   const slug = rawSection ? slugify(rawSection) : 'legacy-content'
-  const normalizedSlug = (() => {
-    if (slug.startsWith('key-principals')) return 'key-principals'
-    if (slug.startsWith('business-appetite')) return 'business-appetite'
-    if (slug.startsWith('details-of-the-new-customer-account')) return 'new-customer-account'
-    if (slug.startsWith('tax-residency')) return 'tax-residency-and-classification'
-    if (slug.startsWith('business-activity')) return 'business-activity-and-investment'
-    return slug
-  })()
-  return accordionKeySet.value.has(normalizedSlug) ? normalizedSlug : 'legacy-content'
+  return accordionKeySet.value.has(slug) ? slug : 'legacy-content'
 }
 
 function fieldsForAccordion(accordionKey: string) {
@@ -1164,15 +1156,7 @@ function groupsForAccordion(accordionKey: string) {
   return (groups.value || [])
     .filter((g: any) => {
       const sectionSlug = slugify(groupSection(g))
-      const normalizedSlug = (() => {
-        if (sectionSlug.startsWith('key-principals')) return 'key-principals'
-        if (sectionSlug.startsWith('business-appetite')) return 'business-appetite'
-        if (sectionSlug.startsWith('details-of-the-new-customer-account')) return 'new-customer-account'
-        if (sectionSlug.startsWith('tax-residency')) return 'tax-residency-and-classification'
-        if (sectionSlug.startsWith('business-activity')) return 'business-activity-and-investment'
-        return sectionSlug
-      })()
-      return normalizedSlug === accordionKey || accordionKeyForField(fieldMap.value[g.key]) === accordionKey
+      return sectionSlug === accordionKey || accordionKeyForField(fieldMap.value[g.key]) === accordionKey
     })
     .filter((g: any) => {
       const parent = fieldMap.value[g.key]
