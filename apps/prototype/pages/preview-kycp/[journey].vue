@@ -1336,7 +1336,7 @@ function submitForm() {
 }
 
 .preview-header-content {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -1380,7 +1380,7 @@ h1 {
 }
 
 .preview-content {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px 48px;
 }
