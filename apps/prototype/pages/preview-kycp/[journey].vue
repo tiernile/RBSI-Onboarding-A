@@ -1564,7 +1564,6 @@ h1 {
 }
 
 .field-container {
-  margin-bottom: 24px;
 }
 
 .form-actions {
@@ -1627,13 +1626,11 @@ h1 {
 /* Generalized Field Hierarchy Classes */
 .field-level-0 {
   /* Parent fields - no extra indentation */
-  margin-bottom: 20px;
 }
 
 .field-level-1 {
   /* Child fields - indented */
   margin-left: 24px;
-  margin-bottom: 16px;
   position: relative;
 }
 
@@ -1651,7 +1648,6 @@ h1 {
 .field-level-2 {
   /* Grandchild fields - double indented */
   margin-left: 48px;
-  margin-bottom: 16px;
   position: relative;
 }
 
