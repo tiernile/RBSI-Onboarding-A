@@ -40,12 +40,17 @@
             #[`section-${index}`]="{ section }"
           >
             <div class="accordion-section">
+              <!-- Accordion Description -->
+              <div v-if="section.description" class="accordion-description">
+                {{ section.description }}
+              </div>
+
               <div
                 v-if="fieldsForAccordion(section.key).length === 0 && groupsForAccordion(section.key).length === 0"
                 class="accordion-empty"
               >
                 <p class="accordion-empty__title">No questions to show yet</p>
-                <p class="accordion-empty__hint">Complete the previous sections or adjust your answers to reveal what’s next.</p>
+                <p class="accordion-empty__hint">Complete the previous sections or adjust your answers to reveal what's next.</p>
               </div>
 
               <!-- Special handling for sections with visual field grouping -->
@@ -1470,6 +1475,17 @@ h1 {
   margin: 0;
   font-size: 13px;
   color: #64748b;
+}
+
+.accordion-description {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .tools {

@@ -1,7 +1,9 @@
 Section,Q number,Keyname,Question,Helper,Current Section,FIELD TYPE,Lookup Values
-Start a New Application ,,TITLE-new-application,Start a new application,"You'll need:Your passport or driving licence, and proof of address from the last 3 months",,Title,
+Start a New Application ,,TITLE-new-application,Start a new application,"You'll need:Your passport or driving licence, and proof of address from the last 3 months",,Title,
 Start a New Application ,,Description-new-application,"Applying for an account with us
+
 Let's make sure we're the right fit for each other.
+
 We'll ask a few quick questions to understand your business and see if we can support what you're looking to do. This helps set expectations early and saves time for everyone.","Before you start:
 
 Think about what your business does and who your main clients/customers are

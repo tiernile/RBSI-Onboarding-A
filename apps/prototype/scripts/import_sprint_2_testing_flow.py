@@ -121,10 +121,20 @@ def process_csv_file(csv_path: Path) -> list[dict]:
     info(f"Processed {len(rows)} valid rows from {csv_path.name}")
     return rows
 
-def create_schema_field(row: dict, as_is_data: dict[str, dict]) -> dict:
-    """Create a single field dictionary for the YAML schema."""
+def create_schema_field(row: dict, as_is_data: dict[str, dict]) -> dict | None:
+    """Create a single field dictionary for the YAML schema, or None if this should be accordion metadata."""
     style, field_type = normalize_field_type(row['field_type_raw'])
     keyname = row['keyname']
+    
+    # Override style for specific key patterns
+    if keyname.startswith('TITLE-'):
+        style = 'divider'
+    if keyname.startswith('DESC-'):
+        style = 'statement'
+
+    # Skip title fields that are meant to be accordion headers - they'll be handled in accordion generation
+    if style == 'divider' and row['field_type_raw'].lower() in ['title']:
+        return None
     
     # Find original copy from as-is data
     original_copy = as_is_data.get(keyname)
@@ -171,13 +181,30 @@ def main():
 
     as_is_data = load_as_is_data(AS_IS_SCHEMA_PATH)
     
-    fields = [create_schema_field(row, as_is_data) for row in csv_rows]
+    # Create fields, filtering out None returns (title rows)
+    all_field_results = [create_schema_field(row, as_is_data) for row in csv_rows]
+    fields = [f for f in all_field_results if f is not None]
 
     info(f"Generated {len(fields)} fields from CSV data.")
 
-    # --- Accordion Generation ---
+    # --- Accordion Generation with Description Text ---
     accordions = []
     accordion_map = {}
+    
+    # First pass: collect accordion structure and descriptions from title rows
+    for row in csv_rows:
+        style, _ = normalize_field_type(row['field_type_raw'])
+        if style == 'divider' and row['field_type_raw'].lower() in ['title']:
+            section_title = row['section_title']
+            accordion_key = slugify(section_title)
+            if accordion_key not in accordion_map:
+                accordion_map[accordion_key] = {
+                    'key': accordion_key,
+                    'title': section_title,
+                    'description': row['help'] if row['help'] else None,  # Use helper text as description
+                }
+    
+    # Second pass: ensure all field sections have accordions (even without explicit title rows)
     for field in fields:
         section_title = field.get('_section')
         if not section_title:

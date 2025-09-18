@@ -3,26 +3,14 @@ name: Sprint 2 Testing Flow
 version: 0.1.0
 entity: entity
 fields:
-- key: TITLE-new-application
-  entity: entity
-  style: divider
-  label: Start a new application
-  original:
-    label: Start a new application
-    help: null
-  validation: {}
-  _section: Start a New Application
-  _metadata:
-    source_row_ref: ROW:2
-    has_as_is_data: false
-  help: "You'll need:\vYour passport or driving licence, and proof of address from\
-    \ the last 3 months"
 - key: Description-new-application
   entity: entity
   style: statement
   label: 'Applying for an account with us
 
+
     Let''s make sure we''re the right fit for each other.
+
 
     We''ll ask a few quick questions to understand your business and see if we can
     support what you''re looking to do. This helps set expectations early and saves
@@ -30,7 +18,9 @@ fields:
   original:
     label: 'Applying for an account with us
 
+
       Let''s make sure we''re the right fit for each other.
+
 
       We''ll ask a few quick questions to understand your business and see if we can
       support what you''re looking to do. This helps set expectations early and saves
@@ -146,21 +136,9 @@ fields:
     has_as_is_data: false
   type: string
   help: Environmental concerns, social issues, ethical concerns, or reputational risks
-- key: Title-intermediary
-  entity: entity
-  style: divider
-  label: Applying as an intermediary
-  original:
-    label: Applying as an intermediary
-    help: null
-  validation: {}
-  _section: Applying as an intermediary
-  _metadata:
-    source_row_ref: ROW:12
-    has_as_is_data: false
 - key: DESC-intermediary
   entity: entity
-  style: field
+  style: statement
   label: 'You''ll need:
 
     - Your organisation''s registration and licence details
@@ -350,18 +328,6 @@ fields:
     source_row_ref: ROW:24
     has_as_is_data: false
   type: string
-- key: Title-Account-Activit
-  entity: entity
-  style: divider
-  label: Account Activity
-  original:
-    label: Account Activity
-    help: null
-  validation: {}
-  _section: Account Activity
-  _metadata:
-    source_row_ref: ROW:28
-    has_as_is_data: false
 - key: Description-Account-Activit
   entity: entity
   style: statement
@@ -568,18 +534,6 @@ fields:
     has_as_is_data: true
   type: lookup
   help: We offer additional services that might help your business
-- key: Title-Source-of-funds
-  entity: entity
-  style: divider
-  label: Source of Funds
-  original:
-    label: Source of Funds
-    help: null
-  validation: {}
-  _section: Source of Funds
-  _metadata:
-    source_row_ref: ROW:40
-    has_as_is_data: false
 - key: Description-Source-of-funds
   entity: entity
   style: statement
@@ -729,18 +683,6 @@ fields:
     Example - The funds were generated from the investment activity that is confirmed
     within the source of wealth information. Continuing activity will generate funds
     from the sale of stocks and the payment of dividends.
-- key: Title-PurposeOfBusiness
-  entity: entity
-  style: divider
-  label: Purpose of Business
-  original:
-    label: Purpose of Business
-    help: null
-  validation: {}
-  _section: ''
-  _metadata:
-    source_row_ref: ROW:51
-    has_as_is_data: false
 - key: Description-PurposeOfBusiness
   entity: entity
   style: statement
@@ -839,18 +781,6 @@ fields:
     source_row_ref: ROW:57
     has_as_is_data: false
   type: string
-- key: Title-tax
-  entity: entity
-  style: divider
-  label: Tax
-  original:
-    label: Tax
-    help: null
-  validation: {}
-  _section: ''
-  _metadata:
-    source_row_ref: ROW:59
-    has_as_is_data: false
 - key: Description-Tax
   entity: entity
   style: statement
@@ -1183,18 +1113,6 @@ fields:
     label: 'Yes'
   - value: 'No'
     label: 'No'
-- key: Title-Investors
-  entity: entity
-  style: divider
-  label: About your investors
-  original:
-    label: About your investors
-    help: null
-  validation: {}
-  _section: About your investors
-  _metadata:
-    source_row_ref: ROW:82
-    has_as_is_data: false
 - key: Description-Investors
   entity: entity
   style: statement
@@ -1299,17 +1217,26 @@ fields:
 accordions:
 - key: start-a-new-application
   title: Start a New Application
+  description: You'll need:Your passport or driving licence, and proof of address
+    from the last 3 months
 - key: applying-as-an-intermediary
   title: Applying as an intermediary
+  description: null
 - key: account-activity
   title: Account Activity
+  description: null
 - key: source-of-funds
   title: Source of Funds
+  description: null
+- key: untitled
+  title: ''
+  description: null
+- key: about-your-investors
+  title: About your investors
+  description: null
 - key: purpose-of-business
   title: Purpose of Business
 - key: tax
   title: Tax
 - key: purpose-of-fund
   title: Purpose of Fund
-- key: about-your-investors
-  title: About your investors
