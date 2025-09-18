@@ -171,22 +171,7 @@ def main():
 
     as_is_data = load_as_is_data(AS_IS_SCHEMA_PATH)
     
-    # Add a debug flag for our specific key
-    for row in csv_rows:
-        if row['keyname'] == 'GENhappytoanswer':
-            print(f"DEBUG: Found GENhappytoanswer in csv_rows: {row}")
-
     fields = [create_schema_field(row, as_is_data) for row in csv_rows]
-    
-    # Check if the field was created
-    found_in_fields = False
-    for field in fields:
-        if field['key'] == 'GENhappytoanswer':
-            found_in_fields = True
-            print(f"DEBUG: Found GENhappytoanswer in final fields list: {field}")
-            break
-    if not found_in_fields:
-        print("DEBUG: GENhappytoanswer was NOT found in the final fields list.")
 
     info(f"Generated {len(fields)} fields from CSV data.")
 

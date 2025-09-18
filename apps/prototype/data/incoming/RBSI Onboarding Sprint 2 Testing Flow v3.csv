@@ -7,10 +7,10 @@ We'll ask a few quick questions to understand your business and see if we can su
 Think about what your business does and who your main clients/customers are
     Have your annual turnover figure ready
     Know how long you've been trading",,Description,
+Start a New Application ,N6,GENhappytoanswer,Are you happy to answer a few questions upfront?,,Start a New Application,Lookup,Yes | No
 Start a New Application ,N3,GENFundAdminContactName,Your contact name,,Start a New Application,Free Text,
 Start a New Application ,N4,GENFundAdminNum,Your phone number,,Start a New Application,Free Text,
 Start a New Application ,N5,GENFundAdminEmail,Your email address,We'll email you with any queries,Start a New Application,Free Text,
-Start a New Application ,N6,GENhappytoanswer,Are you happy to answer a few questions upfront?,,Start a New Application,Lookup,Yes | No
 Start a New Application ,N7,GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated,How are you applying?,You're a professional intermediary setting up an account for a client's business or you're the business owner or authorised representative applying directly, or you manage captive insurance arrangements and are applying for an account related to those services,Start a New Application,Lookup,"You are a 3rd party administrator applying for an account on behalf of your customer. (Intermediary/Introducer)|You are applying for an account as a direct customer to the bank."
 Start a New Application ,N8,GENIndicativeAppetiteRiskadversePEP,Are you connected to any politicians or senior officials?,"This includes current or former politicians, judges, military officers, or their close family members",Business Appetite,Free Text,
 Start a New Application ,N9,GENIndicativeAppetiteRiskadverseESE,Are there any risks we should know about?,"Environmental concerns, social issues, ethical concerns, or reputational risks",Business Appetite,Free Text,

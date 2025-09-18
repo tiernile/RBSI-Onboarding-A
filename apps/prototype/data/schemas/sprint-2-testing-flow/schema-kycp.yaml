@@ -44,6 +44,24 @@ fields:
   help: "Before you start:\n\nThink about what your business does and who your main\
     \ clients/customers are\n    Have your annual turnover figure ready\n    Know\
     \ how long you've been trading"
+- key: GENhappytoanswer
+  entity: entity
+  style: field
+  label: Are you happy to answer a few questions upfront?
+  original:
+    label: Are you happy to answer a few questions upfront?
+    help: null
+  validation: {}
+  _section: Start a New Application
+  _metadata:
+    source_row_ref: ROW:4
+    has_as_is_data: false
+  type: lookup
+  options:
+  - value: 'Yes'
+    label: 'Yes'
+  - value: 'No'
+    label: 'No'
 - key: GENFundAdminContactName
   entity: entity
   style: field
@@ -54,7 +72,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:4
+    source_row_ref: ROW:5
     has_as_is_data: true
   type: string
 - key: GENFundAdminNum
@@ -67,7 +85,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:5
+    source_row_ref: ROW:6
     has_as_is_data: true
   type: string
 - key: GENFundAdminEmail
@@ -80,28 +98,10 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:6
+    source_row_ref: ROW:7
     has_as_is_data: true
   type: string
   help: We'll email you with any queries
-- key: GENhappytoanswer
-  entity: entity
-  style: field
-  label: Are you happy to answer a few questions upfront?
-  original:
-    label: Are you happy to answer a few questions upfront?
-    help: null
-  validation: {}
-  _section: Start a New Application
-  _metadata:
-    source_row_ref: ROW:7
-    has_as_is_data: false
-  type: lookup
-  options:
-  - value: 'Yes'
-    label: 'Yes'
-  - value: 'No'
-    label: 'No'
 - key: GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated
   entity: entity
   style: field
