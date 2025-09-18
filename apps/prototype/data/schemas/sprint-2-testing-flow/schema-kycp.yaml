@@ -31,9 +31,6 @@ fields:
   _metadata:
     source_row_ref: ROW:3
     has_as_is_data: false
-  help: "Before you start:\n\nThink about what your business does and who your main\
-    \ clients/customers are\n    Have your annual turnover figure ready\n    Know\
-    \ how long you've been trading"
 - key: GENhappytoanswer
   entity: entity
   style: field
@@ -281,7 +278,7 @@ fields:
   _metadata:
     source_row_ref: ROW:21
     has_as_is_data: true
-  type: string
+  type: date
 - key: GEN3rdPartyMetFaceToFace
   entity: entity
   style: field
@@ -900,6 +897,19 @@ fields:
     has_as_is_data: false
   type: lookup
   help: How your organisation is classified for US tax reporting
+- key: ''
+  entity: entity
+  style: field
+  label: About your fund
+  original:
+    label: About your fund
+    help: null
+  validation: {}
+  _section: ''
+  _metadata:
+    source_row_ref: ROW:68
+    has_as_is_data: false
+  type: string
 - key: GENFundInvestments
   entity: entity
   style: field

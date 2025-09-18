@@ -30,7 +30,7 @@
   --kycp-input-border-focus: #0179C8;
   --kycp-input-bg: var(--kycp-white);
   --kycp-input-disabled-bg: #F5F5F5;
-  --kycp-label-color: #666666;
+  --kycp-label-color: var(--kycp-gray-800);
   --kycp-placeholder-color: #999999;
   --kycp-section-bg: #FAFAFA;
   --kycp-section-border: #E0E0E0;
@@ -45,10 +45,10 @@
   
   /* Typography */
   --kycp-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --kycp-font-size-xs: 12px;
-  --kycp-font-size-sm: 13px;
-  --kycp-font-size-base: 14px;
-  --kycp-font-size-lg: 16px;
+  --kycp-font-size-xs: 13px;
+  --kycp-font-size-sm: 14px;
+  --kycp-font-size-base: 16px;
+  --kycp-font-size-lg: 18px;
   
   /* Border Radius */
   --kycp-radius-sm: 2px;

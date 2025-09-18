@@ -4,11 +4,7 @@ Start a New Application ,,Description-new-application,"Applying for an account w
 
 Let's make sure we're the right fit for each other.
 
-We'll ask a few quick questions to understand your business and see if we can support what you're looking to do. This helps set expectations early and saves time for everyone.","Before you start:
-
-Think about what your business does and who your main clients/customers are
-    Have your annual turnover figure ready
-    Know how long you've been trading",,Description,
+We'll ask a few quick questions to understand your business and see if we can support what you're looking to do. This helps set expectations early and saves time for everyone.","Before you start: Think about what your business does and who your main clients/customers are, Have your annual turnover figure ready, Know how long you've been trading",,Description,
 Start a New Application ,N6,GENhappytoanswer,Are you happy to answer a few questions upfront?,,Start a New Application,Lookup,Yes | No
 Start a New Application ,N3,GENFundAdminContactName,Your contact name,,Start a New Application,Free Text,
 Start a New Application ,N4,GENFundAdminNum,Your phone number,,Start a New Application,Free Text,

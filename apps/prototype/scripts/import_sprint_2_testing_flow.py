@@ -8,6 +8,7 @@ Parses the CSV and outputs:
 """
 from __future__ import annotations
 import json, re, sys, yaml, csv
+import io
 from pathlib import Path
 
 # --- Configuration ---
@@ -62,7 +63,7 @@ def normalize_field_type(field_type_str: str) -> tuple[str, str | None]:
         field_type = 'freeText'
     elif ft in ['number', 'integer', 'decimal']:
         field_type = 'integer'
-    elif ft in ['date']:
+    elif ft in ['date', 'datepicker', 'date picker']:
         field_type = 'date'
 
     return ('field', field_type)
@@ -91,33 +92,58 @@ def load_as_is_data(path: Path) -> dict[str, dict]:
     return as_is_map
 
 def process_csv_file(csv_path: Path) -> list[dict]:
-    """Read and process the input CSV file."""
+    """Read and process the input CSV file, handling potential formatting errors."""
     rows = []
     if not csv_path.exists():
         warn(f"CSV file not found at {csv_path}")
         return rows
 
     with open(csv_path, 'r', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f)
+        # Read raw content and fix known issues before parsing
+        content = f.read()
+        # This is a brittle fix for a specific known issue in the CSV on line 8.
+        # A better long-term solution would be to enforce CSV quality upstream.
+        content = content.replace(''',"Before you start:
+
+Think about what your business does and who your main clients/customers are
+    Have your annual turnover figure ready
+    Know how long you've been trading"''', ''',"Before you start: Think about what your business does and who your main clients/customers are, Have your annual turnover figure ready, Know how long you've been trading"''')
+        
+        reader = csv.DictReader(io.StringIO(content))
         for row_num, row in enumerate(reader, start=2):
             if not any(row.values()): # Skip completely blank rows
                 continue
-            
-            keyname = (row.get('Keyname') or '').strip()
-            question = (row.get('Question') or '').strip()
-            
-            if not keyname or not question:
+
+            # Clean up potential leading/trailing quotes and spaces from keys and values
+            cleaned_row = {}
+            for k, v in row.items():
+                key = k.strip() if isinstance(k, str) else k
+                value = v.strip() if isinstance(v, str) else v
+                cleaned_row[key] = value
+
+            keyname = (cleaned_row.get('Keyname') or '').strip()
+            question = (cleaned_row.get('Question') or '').strip()
+
+            if not keyname and not question: # Skip rows without key identifiers
                 continue
 
             rows.append({
                 'source_row': row_num,
                 'keyname': keyname,
                 'label': question,
-                'help': (row.get('Helper') or '').strip(),
-                'section_title': (row.get('Section') or '').strip(),
-                'field_type_raw': (row.get('FIELD TYPE') or '').strip(),
-                'lookup_values_raw': (row.get('Lookup Values') or '').strip(),
+                'help': (cleaned_row.get('Helper') or '').strip(),
+                'section_title': (cleaned_row.get('Section') or '').strip(),
+                'field_type_raw': (cleaned_row.get('FIELD TYPE') or '').strip(),
+                'lookup_values_raw': (cleaned_row.get('Lookup Values') or '').strip(),
             })
+            
+    # After processing, programmatically remove the helper text from the description field
+    for row_data in rows:
+        if row_data['keyname'] == 'Description-new-application':
+            row_data['help'] = ''
+            info("Cleaned up duplicated helper text from 'Description-new-application'.")
+            break
+
     info(f"Processed {len(rows)} valid rows from {csv_path.name}")
     return rows
 
