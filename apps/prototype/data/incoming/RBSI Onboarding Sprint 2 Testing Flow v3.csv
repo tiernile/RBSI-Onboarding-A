@@ -5,10 +5,8 @@ Let's make sure we're the right fit for each other.
 We'll ask a few quick questions to understand your business and see if we can support what you're looking to do. This helps set expectations early and saves time for everyone.","Before you start:
 
 Think about what your business does and who your main clients/customers are
-Have your annual turnover figure ready
-Know how long you've been trading",,Description,
-Start a New Application ,N1,GENIndicativeAppetiteQuestions,Are you happy to answer a few questions upfront?,,Business Appetite,Lookup,Yes | No
-Start a New Application ,N2,TITLE-pre-app-intro,Applying for an account with us Let’s make sure we’re the right fit for each other. We’ll ask a few quick questions to understand your business and see if we can support what you’re looking to do. This helps set expectations early and saves time for everyone.,Before you start: Think about what your business does and who your main clients/customers are Have your annual turnover figure ready Know how long you’ve been trading,Start a New Application,Description,
+    Have your annual turnover figure ready
+    Know how long you've been trading",,Description,
 Start a New Application ,N3,GENFundAdminContactName,Your contact name,,Start a New Application,Free Text,
 Start a New Application ,N4,GENFundAdminNum,Your phone number,,Start a New Application,Free Text,
 Start a New Application ,N5,GENFundAdminEmail,Your email address,We'll email you with any queries,Start a New Application,Free Text,

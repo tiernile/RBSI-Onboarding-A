@@ -41,53 +41,9 @@ fields:
   _metadata:
     source_row_ref: ROW:3
     has_as_is_data: false
-  help: 'Before you start:
-
-
-    Think about what your business does and who your main clients/customers are
-
-    Have your annual turnover figure ready
-
-    Know how long you''ve been trading'
-- key: GENIndicativeAppetiteQuestions
-  entity: entity
-  style: field
-  label: Are you happy to answer a few questions upfront?
-  original:
-    label: Do you wish to answer some Pre-Application Questions to provide a high
-      level indication of RBSI appetite to open the account?
-    help: ''
-  validation: {}
-  _section: Start a New Application
-  _metadata:
-    source_row_ref: ROW:4
-    has_as_is_data: true
-  type: lookup
-  options:
-  - value: 'Yes'
-    label: 'Yes'
-  - value: 'No'
-    label: 'No'
-- key: TITLE-pre-app-intro
-  entity: entity
-  style: statement
-  label: Applying for an account with us Let’s make sure we’re the right fit for each
-    other. We’ll ask a few quick questions to understand your business and see if
-    we can support what you’re looking to do. This helps set expectations early and
-    saves time for everyone.
-  original:
-    label: Applying for an account with us Let’s make sure we’re the right fit for
-      each other. We’ll ask a few quick questions to understand your business and
-      see if we can support what you’re looking to do. This helps set expectations
-      early and saves time for everyone.
-    help: null
-  validation: {}
-  _section: Start a New Application
-  _metadata:
-    source_row_ref: ROW:5
-    has_as_is_data: false
-  help: 'Before you start: Think about what your business does and who your main clients/customers
-    are Have your annual turnover figure ready Know how long you’ve been trading'
+  help: "Before you start:\n\nThink about what your business does and who your main\
+    \ clients/customers are\n    Have your annual turnover figure ready\n    Know\
+    \ how long you've been trading"
 - key: GENFundAdminContactName
   entity: entity
   style: field
@@ -98,7 +54,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:6
+    source_row_ref: ROW:4
     has_as_is_data: true
   type: string
 - key: GENFundAdminNum
@@ -111,7 +67,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:7
+    source_row_ref: ROW:5
     has_as_is_data: true
   type: string
 - key: GENFundAdminEmail
@@ -124,7 +80,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:8
+    source_row_ref: ROW:6
     has_as_is_data: true
   type: string
   help: We'll email you with any queries
@@ -138,7 +94,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:9
+    source_row_ref: ROW:7
     has_as_is_data: false
   type: lookup
   options:
@@ -156,7 +112,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:10
+    source_row_ref: ROW:8
     has_as_is_data: true
   type: string
   help: You're a professional intermediary setting up an account for a client's business
@@ -171,7 +127,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:11
+    source_row_ref: ROW:9
     has_as_is_data: false
   type: string
   help: This includes current or former politicians, judges, military officers, or
@@ -186,7 +142,7 @@ fields:
   validation: {}
   _section: Start a New Application
   _metadata:
-    source_row_ref: ROW:12
+    source_row_ref: ROW:10
     has_as_is_data: false
   type: string
   help: Environmental concerns, social issues, ethical concerns, or reputational risks
@@ -200,7 +156,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:14
+    source_row_ref: ROW:12
     has_as_is_data: false
 - key: DESC-intermediary
   entity: entity
@@ -228,7 +184,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:15
+    source_row_ref: ROW:13
     has_as_is_data: false
   type: string
 - key: '[Regulated question]'
@@ -241,7 +197,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:16
+    source_row_ref: ROW:14
     has_as_is_data: false
   type: string
 - key: SPEintermediaryregulator
@@ -254,7 +210,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:17
+    source_row_ref: ROW:15
     has_as_is_data: true
   type: lookup
   options:
@@ -272,7 +228,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:18
+    source_row_ref: ROW:16
     has_as_is_data: false
   type: string
   help: For example, FCA or another regulatory body
@@ -286,7 +242,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:19
+    source_row_ref: ROW:17
     has_as_is_data: false
   type: string
 - key: GENMetFaceToFace
@@ -300,7 +256,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:20
+    source_row_ref: ROW:18
     has_as_is_data: true
   type: lookup
   help: This must be in line with your local regulations
@@ -319,7 +275,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:21
+    source_row_ref: ROW:19
     has_as_is_data: true
   type: string
 - key: GENGroupIndividualPosition
@@ -332,7 +288,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:22
+    source_row_ref: ROW:20
     has_as_is_data: true
   type: string
 - key: GENGroupIndividualMeetingDate
@@ -345,7 +301,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:23
+    source_row_ref: ROW:21
     has_as_is_data: true
   type: string
 - key: GEN3rdPartyMetFaceToFace
@@ -359,7 +315,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:24
+    source_row_ref: ROW:22
     has_as_is_data: true
   type: lookup
   help: For example, a due diligence certifier
@@ -378,7 +334,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:25
+    source_row_ref: ROW:23
     has_as_is_data: false
   type: string
 - key: GEN3rdpartycertifierprobody
@@ -391,7 +347,7 @@ fields:
   validation: {}
   _section: Applying as an intermediary
   _metadata:
-    source_row_ref: ROW:26
+    source_row_ref: ROW:24
     has_as_is_data: false
   type: string
 - key: Title-Account-Activit
@@ -404,7 +360,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:30
+    source_row_ref: ROW:28
     has_as_is_data: false
 - key: Description-Account-Activit
   entity: entity
@@ -420,7 +376,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:31
+    source_row_ref: ROW:29
     has_as_is_data: false
   help: 'Before you start:
 
@@ -442,7 +398,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:32
+    source_row_ref: ROW:30
     has_as_is_data: true
   type: lookup
   help: We operate in several locations. Choose the one that best suits your business
@@ -483,7 +439,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:33
+    source_row_ref: ROW:31
     has_as_is_data: true
   type: integer
   help: For most businesses choose the Cash Management Account - it handles multiple
@@ -500,7 +456,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:34
+    source_row_ref: ROW:32
     has_as_is_data: false
   type: integer
   help: This could include payments of professional fees, dividend receipts or payments,
@@ -516,7 +472,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:35
+    source_row_ref: ROW:33
     has_as_is_data: false
   type: lookup
   help: 'Choose: per month, per quarter, or per year'
@@ -530,7 +486,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:36
+    source_row_ref: ROW:34
     has_as_is_data: false
   type: lookup
   help: 'Choose: per month, per quarter, or per year'
@@ -545,7 +501,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:37
+    source_row_ref: ROW:35
     has_as_is_data: true
   type: lookup
   options:
@@ -563,7 +519,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:38
+    source_row_ref: ROW:36
     has_as_is_data: false
   type: lookup
   help: Default is annual
@@ -592,7 +548,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:39
+    source_row_ref: ROW:37
     has_as_is_data: false
   type: lookup
 - key: GENIndicativeAppetiteRBSIProductOptionsComplex
@@ -608,7 +564,7 @@ fields:
   validation: {}
   _section: Account Activity
   _metadata:
-    source_row_ref: ROW:40
+    source_row_ref: ROW:38
     has_as_is_data: true
   type: lookup
   help: We offer additional services that might help your business
@@ -622,7 +578,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:42
+    source_row_ref: ROW:40
     has_as_is_data: false
 - key: Description-Source-of-funds
   entity: entity
@@ -636,7 +592,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:43
+    source_row_ref: ROW:41
     has_as_is_data: false
   help: 'Before you start:'
 - key: GENSOFcomplex
@@ -650,7 +606,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:44
+    source_row_ref: ROW:42
     has_as_is_data: true
   type: string
   help: 'Before you start:'
@@ -664,7 +620,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:45
+    source_row_ref: ROW:43
     has_as_is_data: false
   type: string
 - key: GENSOFcomplexCountry
@@ -677,7 +633,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:46
+    source_row_ref: ROW:44
     has_as_is_data: false
   type: lookup
   help: Bank statements and details of other accounts you hold
@@ -694,7 +650,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:47
+    source_row_ref: ROW:45
     has_as_is_data: false
   type: lookup
   help: Information about how your funds were generated
@@ -711,7 +667,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:48
+    source_row_ref: ROW:46
     has_as_is_data: false
   type: string
   help: Details of any large incoming transfers expected
@@ -725,7 +681,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:49
+    source_row_ref: ROW:47
     has_as_is_data: false
   type: string
   help: Understanding of your cash transaction levels
@@ -739,7 +695,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:50
+    source_row_ref: ROW:48
     has_as_is_data: false
   type: integer
 - key: GENfundsgenerated
@@ -762,7 +718,7 @@ fields:
   validation: {}
   _section: Source of Funds
   _metadata:
-    source_row_ref: ROW:51
+    source_row_ref: ROW:49
     has_as_is_data: true
   type: string
   help: Please provide details of the source of funds to be introduced into the account(s),
@@ -783,7 +739,7 @@ fields:
   validation: {}
   _section: ''
   _metadata:
-    source_row_ref: ROW:53
+    source_row_ref: ROW:51
     has_as_is_data: false
 - key: Description-PurposeOfBusiness
   entity: entity
@@ -797,7 +753,7 @@ fields:
   validation: {}
   _section: ''
   _metadata:
-    source_row_ref: ROW:54
+    source_row_ref: ROW:52
     has_as_is_data: false
 - key: GENIndicativeAppetiteCountryRegistration
   entity: entity
@@ -810,7 +766,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:55
+    source_row_ref: ROW:53
     has_as_is_data: true
   type: lookup
   help: This is your main business location for legal and tax purposes
@@ -827,7 +783,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:56
+    source_row_ref: ROW:54
     has_as_is_data: false
   type: lookup
   options:
@@ -847,7 +803,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:57
+    source_row_ref: ROW:55
     has_as_is_data: false
   type: string
   help: Examples include currency exchange, money transfers, or payment services
@@ -861,7 +817,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:58
+    source_row_ref: ROW:56
     has_as_is_data: false
   type: lookup
   help: Bitcoin, Ethereum, NFTs, or other digital assets
@@ -880,7 +836,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:59
+    source_row_ref: ROW:57
     has_as_is_data: false
   type: string
 - key: Title-tax
@@ -893,7 +849,7 @@ fields:
   validation: {}
   _section: ''
   _metadata:
-    source_row_ref: ROW:61
+    source_row_ref: ROW:59
     has_as_is_data: false
 - key: Description-Tax
   entity: entity
@@ -907,7 +863,7 @@ fields:
   validation: {}
   _section: ''
   _metadata:
-    source_row_ref: ROW:62
+    source_row_ref: ROW:60
     has_as_is_data: false
   help: 'Before you start:
 
@@ -929,7 +885,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:63
+    source_row_ref: ROW:61
     has_as_is_data: false
   type: lookup
   help: Outstanding debts, disputes with tax authorities, or complex tax arrangements
@@ -948,7 +904,7 @@ fields:
   validation: {}
   _section: Purpose of Business
   _metadata:
-    source_row_ref: ROW:64
+    source_row_ref: ROW:62
     has_as_is_data: false
   type: string
 - key: GENtaxcomplex-country
@@ -961,7 +917,7 @@ fields:
   validation: {}
   _section: Tax
   _metadata:
-    source_row_ref: ROW:65
+    source_row_ref: ROW:63
     has_as_is_data: false
   type: lookup
   help: Add details for each country where you pay tax | ADD NEW
@@ -978,7 +934,7 @@ fields:
   validation: {}
   _section: Tax
   _metadata:
-    source_row_ref: ROW:66
+    source_row_ref: ROW:64
     has_as_is_data: false
   type: lookup
   options:
@@ -996,7 +952,7 @@ fields:
   validation: {}
   _section: Tax
   _metadata:
-    source_row_ref: ROW:67
+    source_row_ref: ROW:65
     has_as_is_data: false
   type: string
   help: Your official tax reference from this country
@@ -1010,7 +966,7 @@ fields:
   validation: {}
   _section: Tax
   _metadata:
-    source_row_ref: ROW:68
+    source_row_ref: ROW:66
     has_as_is_data: false
   type: lookup
   help: How your organisation is classified for US tax reporting
@@ -1024,7 +980,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:71
+    source_row_ref: ROW:69
     has_as_is_data: false
   type: string
   help: Include asset types, geographic focus, sectors, and investment approach
@@ -1038,7 +994,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:72
+    source_row_ref: ROW:70
     has_as_is_data: true
   type: lookup
   help: For accounts and reporting
@@ -1052,7 +1008,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:73
+    source_row_ref: ROW:71
     has_as_is_data: true
   type: lookup
   help: Closed-ended = fixed number of shares
@@ -1066,7 +1022,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:74
+    source_row_ref: ROW:72
     has_as_is_data: true
   type: lookup
   options:
@@ -1100,7 +1056,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:75
+    source_row_ref: ROW:73
     has_as_is_data: true
   type: lookup
 - key: GENFundInvestmentPeriod
@@ -1113,7 +1069,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:76
+    source_row_ref: ROW:74
     has_as_is_data: true
   type: lookup
   help: For example, 3-7 years
@@ -1134,7 +1090,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:77
+    source_row_ref: ROW:75
     has_as_is_data: true
   type: lookup
   help: Average amount per opportunity
@@ -1159,7 +1115,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:78
+    source_row_ref: ROW:76
     has_as_is_data: true
   type: lookup
   help: Approximate number in your portfolio
@@ -1182,7 +1138,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:79
+    source_row_ref: ROW:77
     has_as_is_data: true
   type: lookup
   help: This helps us understand regulatory requirements
@@ -1199,7 +1155,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:80
+    source_row_ref: ROW:78
     has_as_is_data: true
   type: lookup
   help: This includes any US state, territory, or federal jurisdiction
@@ -1218,7 +1174,7 @@ fields:
   validation: {}
   _section: Purpose of Fund
   _metadata:
-    source_row_ref: ROW:81
+    source_row_ref: ROW:79
     has_as_is_data: true
   type: lookup
   help: 'Examples: Banks, investment funds, asset managers, insurance companies'
@@ -1237,7 +1193,7 @@ fields:
   validation: {}
   _section: About your investors
   _metadata:
-    source_row_ref: ROW:84
+    source_row_ref: ROW:82
     has_as_is_data: false
 - key: Description-Investors
   entity: entity
@@ -1257,7 +1213,7 @@ fields:
   validation: {}
   _section: About your investors
   _metadata:
-    source_row_ref: ROW:85
+    source_row_ref: ROW:83
     has_as_is_data: false
   help: 'Before you start:
 
@@ -1282,7 +1238,7 @@ fields:
   validation: {}
   _section: About your investors
   _metadata:
-    source_row_ref: ROW:86
+    source_row_ref: ROW:84
     has_as_is_data: true
   type: lookup
   help: e.g. institutional, private client, retail etc and where the investors are
@@ -1298,7 +1254,7 @@ fields:
   validation: {}
   _section: About your investors
   _metadata:
-    source_row_ref: ROW:87
+    source_row_ref: ROW:85
     has_as_is_data: true
   type: string
 - key: GENInvestorTypeOther
@@ -1311,7 +1267,7 @@ fields:
   validation: {}
   _section: About your investors
   _metadata:
-    source_row_ref: ROW:88
+    source_row_ref: ROW:86
     has_as_is_data: true
   type: lookup
 - key: GENInvestorCountry
@@ -1324,7 +1280,7 @@ fields:
   validation: {}
   _section: About your investors
   _metadata:
-    source_row_ref: ROW:89
+    source_row_ref: ROW:87
     has_as_is_data: true
   type: integer
 - key: GENInvestorTypePerc
@@ -1337,7 +1293,7 @@ fields:
   validation: {}
   _section: About your investors
   _metadata:
-    source_row_ref: ROW:90
+    source_row_ref: ROW:88
     has_as_is_data: true
   type: integer
 accordions:
