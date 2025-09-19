@@ -59,10 +59,6 @@ fields:
     source_row_ref: ROW:5
     has_as_is_data: true
   type: lookup
-  help: You're a professional intermediary setting up an account for a client's business
-    or you're the business owner or authorised representative applying directly, or
-    you manage captive insurance arrangements and are applying for an account related
-    to those services
   options:
   - value: I'm applying on behalf of a client
     label: I'm applying on behalf of a client
@@ -216,8 +212,18 @@ fields:
   type: lookup
   help: For example, FCA or another regulatory body
   options:
-  - value: See master list via keyname
-    label: See master list via keyname
+  - value: CSSF
+    label: CSSF
+  - value: FCA
+    label: FCA
+  - value: GFSC (Gibraltar)
+    label: GFSC (Gibraltar)
+  - value: GFSC (Guernsey)
+    label: GFSC (Guernsey)
+  - value: IOM FSA
+    label: IOM FSA
+  - value: JFSC
+    label: JFSC
 - key: SPEintermediarylicenseJER
   entity: entity
   style: field
@@ -541,8 +547,74 @@ fields:
   type: lookup
   help: This is your main business location for legal and tax purposes
   options:
-  - value: COUNTRIES
-    label: COUNTRIES
+  - value: United Kingdom
+    label: United Kingdom
+  - value: United States
+    label: United States
+  - value: Germany
+    label: Germany
+  - value: France
+    label: France
+  - value: Netherlands
+    label: Netherlands
+  - value: Switzerland
+    label: Switzerland
+  - value: Luxembourg
+    label: Luxembourg
+  - value: Ireland
+    label: Ireland
+  - value: Belgium
+    label: Belgium
+  - value: Austria
+    label: Austria
+  - value: Denmark
+    label: Denmark
+  - value: Sweden
+    label: Sweden
+  - value: Norway
+    label: Norway
+  - value: Finland
+    label: Finland
+  - value: Italy
+    label: Italy
+  - value: Spain
+    label: Spain
+  - value: Portugal
+    label: Portugal
+  - value: Canada
+    label: Canada
+  - value: Australia
+    label: Australia
+  - value: New Zealand
+    label: New Zealand
+  - value: Singapore
+    label: Singapore
+  - value: Hong Kong
+    label: Hong Kong
+  - value: Japan
+    label: Japan
+  - value: South Korea
+    label: South Korea
+  - value: Cayman Islands
+    label: Cayman Islands
+  - value: British Virgin Islands
+    label: British Virgin Islands
+  - value: Bermuda
+    label: Bermuda
+  - value: Jersey
+    label: Jersey
+  - value: Guernsey
+    label: Guernsey
+  - value: Isle of Man
+    label: Isle of Man
+  - value: Gibraltar
+    label: Gibraltar
+  - value: Malta
+    label: Malta
+  - value: Cyprus
+    label: Cyprus
+  - value: Other
+    label: Other
 - key: GENCashMngtAccTurnover
   entity: entity
   style: field
@@ -680,8 +752,74 @@ fields:
   type: lookup
   help: Add details for each country where you pay tax | ADD NEW
   options:
-  - value: COUNTRIES
-    label: COUNTRIES
+  - value: United Kingdom
+    label: United Kingdom
+  - value: United States
+    label: United States
+  - value: Germany
+    label: Germany
+  - value: France
+    label: France
+  - value: Netherlands
+    label: Netherlands
+  - value: Switzerland
+    label: Switzerland
+  - value: Luxembourg
+    label: Luxembourg
+  - value: Ireland
+    label: Ireland
+  - value: Belgium
+    label: Belgium
+  - value: Austria
+    label: Austria
+  - value: Denmark
+    label: Denmark
+  - value: Sweden
+    label: Sweden
+  - value: Norway
+    label: Norway
+  - value: Finland
+    label: Finland
+  - value: Italy
+    label: Italy
+  - value: Spain
+    label: Spain
+  - value: Portugal
+    label: Portugal
+  - value: Canada
+    label: Canada
+  - value: Australia
+    label: Australia
+  - value: New Zealand
+    label: New Zealand
+  - value: Singapore
+    label: Singapore
+  - value: Hong Kong
+    label: Hong Kong
+  - value: Japan
+    label: Japan
+  - value: South Korea
+    label: South Korea
+  - value: Cayman Islands
+    label: Cayman Islands
+  - value: British Virgin Islands
+    label: British Virgin Islands
+  - value: Bermuda
+    label: Bermuda
+  - value: Jersey
+    label: Jersey
+  - value: Guernsey
+    label: Guernsey
+  - value: Isle of Man
+    label: Isle of Man
+  - value: Gibraltar
+    label: Gibraltar
+  - value: Malta
+    label: Malta
+  - value: Cyprus
+    label: Cyprus
+  - value: Other
+    label: Other
 - key: GENtaxcomplex-knowtin
   entity: entity
   style: field
@@ -778,8 +916,118 @@ fields:
   type: lookup
   help: For accounts and reporting
   options:
-  - value: Currency
-    label: Currency
+  - value: Andorra
+    label: Andorra
+  - value: Australian Dollar
+    label: Australian Dollar
+  - value: Austrian Schilling
+    label: Austrian Schilling
+  - value: Bahraini Dinar
+    label: Bahraini Dinar
+  - value: Belgian Franc
+    label: Belgian Franc
+  - value: Bulgarian Lev
+    label: Bulgarian Lev
+  - value: Canadian Dollar
+    label: Canadian Dollar
+  - value: Croatian Kuna
+    label: Croatian Kuna
+  - value: Cypriot Pounds
+    label: Cypriot Pounds
+  - value: Czech Koruna
+    label: Czech Koruna
+  - value: Danish Krone
+    label: Danish Krone
+  - value: Deutsche Mark
+    label: Deutsche Mark
+  - value: Estonian Kroon
+    label: Estonian Kroon
+  - value: EURO
+    label: EURO
+  - value: European Currency Unit
+    label: European Currency Unit
+  - value: Finnish Markka
+    label: Finnish Markka
+  - value: French Franc
+    label: French Franc
+  - value: Greek Drachma
+    label: Greek Drachma
+  - value: Hong Kong Dollar
+    label: Hong Kong Dollar
+  - value: Hungarian Forint
+    label: Hungarian Forint
+  - value: Indian Rupee
+    label: Indian Rupee
+  - value: Indonesian Rupiah
+    label: Indonesian Rupiah
+  - value: Irish Punt
+    label: Irish Punt
+  - value: Israeli New Shekel
+    label: Israeli New Shekel
+  - value: Italian Lira
+    label: Italian Lira
+  - value: Japanese Yen
+    label: Japanese Yen
+  - value: Kenyan Shilling
+    label: Kenyan Shilling
+  - value: Kuwaiti Dinar
+    label: Kuwaiti Dinar
+  - value: Latvian Lats
+    label: Latvian Lats
+  - value: Lithuanian Litas
+    label: Lithuanian Litas
+  - value: Luxemburg Franc
+    label: Luxemburg Franc
+  - value: Malaysian Dollar
+    label: Malaysian Dollar
+  - value: Maltese Lira
+    label: Maltese Lira
+  - value: Mauritian Rupee
+    label: Mauritian Rupee
+  - value: Mexican Peso
+    label: Mexican Peso
+  - value: Moroccan Dirham
+    label: Moroccan Dirham
+  - value: Netherlands Antilles Guilder
+    label: Netherlands Antilles Guilder
+  - value: Netherlands Guilder
+    label: Netherlands Guilder
+  - value: New Zealand Dollar
+    label: New Zealand Dollar
+  - value: Norwegian Krone
+    label: Norwegian Krone
+  - value: Omani Rial
+    label: Omani Rial
+  - value: Polish Zloty
+    label: Polish Zloty
+  - value: Portuguese Escudo
+    label: Portuguese Escudo
+  - value: Pound Sterling
+    label: Pound Sterling
+  - value: Qatari Rial
+    label: Qatari Rial
+  - value: Saudi Arabian Riyal
+    label: Saudi Arabian Riyal
+  - value: Singapore Dollar
+    label: Singapore Dollar
+  - value: Slovak Koruna
+    label: Slovak Koruna
+  - value: South African Rand
+    label: South African Rand
+  - value: Spanish Peseta
+    label: Spanish Peseta
+  - value: Swedish Krona
+    label: Swedish Krona
+  - value: Swiss Franc
+    label: Swiss Franc
+  - value: Thai Baht
+    label: Thai Baht
+  - value: Turkish Lira
+    label: Turkish Lira
+  - value: U.S. Dollar
+    label: U.S. Dollar
+  - value: UAE Dirhams
+    label: UAE Dirhams
 - key: GENFundClosed
   entity: entity
   style: field
@@ -930,8 +1178,48 @@ fields:
   type: lookup
   help: This helps us understand regulatory requirements
   options:
-  - value: Industry
-    label: Industry
+  - value: Private Equity
+    label: Private Equity
+  - value: Venture Capital
+    label: Venture Capital
+  - value: Hedge Fund
+    label: Hedge Fund
+  - value: Real Estate Investment
+    label: Real Estate Investment
+  - value: Infrastructure Investment
+    label: Infrastructure Investment
+  - value: Debt/Credit Investment
+    label: Debt/Credit Investment
+  - value: Multi-Asset Investment
+    label: Multi-Asset Investment
+  - value: Technology Investment
+    label: Technology Investment
+  - value: Healthcare Investment
+    label: Healthcare Investment
+  - value: Energy Investment
+    label: Energy Investment
+  - value: Financial Services Investment
+    label: Financial Services Investment
+  - value: Consumer Goods Investment
+    label: Consumer Goods Investment
+  - value: Industrial Investment
+    label: Industrial Investment
+  - value: Commodities Investment
+    label: Commodities Investment
+  - value: Emerging Markets Investment
+    label: Emerging Markets Investment
+  - value: Fixed Income Investment
+    label: Fixed Income Investment
+  - value: Equity Investment
+    label: Equity Investment
+  - value: Alternative Investment
+    label: Alternative Investment
+  - value: Fund of Funds
+    label: Fund of Funds
+  - value: Family Office Investment
+    label: Family Office Investment
+  - value: Other
+    label: Other
 - key: GENincorpUSA
   entity: entity
   style: field
@@ -972,7 +1260,7 @@ fields:
     label: 'No'
 accordions:
 - key: start-a-new-application
-  title: Start a New Application
+  title: Applying for an account with us
   description: 'You''ll need: Your passport or driving licence, and proof of address
     from the last 3 months'
 - key: applying-as-an-intermediary

@@ -1,19 +1,19 @@
 Section,Q number,Keyname,Question,Helper,Current Section,FIELD TYPE,Lookup Values
-Start a New Application ,,TITLE-new-application,Start a new application,"You'll need:Your passport or driving licence, and proof of address from the last 3 months",,Title,
-Start a New Application ,,Description-new-application,"Applying for an account with us
+Applying for an account with us ,,TITLE-new-application,Start a new application,"You'll need:Your passport or driving licence, and proof of address from the last 3 months",,Title,
+Applying for an account with us ,,Description-new-application,"Applying for an account with us
 Let's make sure we're the right fit for each other.
 We'll ask a few quick questions to understand your business and see if we can support what you're looking to do. This helps set expectations early and saves time for everyone.","Before you start:
 
 Think about what your business does and who your main clients/customers are
 Have your annual turnover figure ready
 Know how long you've been trading",,Description,
-Start a New Application ,N1,GENIndicativeAppetiteQuestions,Are you happy to answer a few questions upfront?,,Business Appetite,Lookup,Yes | No
-Start a New Application ,N2,GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated,How are you applying?,"You're a professional intermediary setting up an account for a client's business or you're the business owner or authorised representative applying directly, or you manage captive insurance arrangements and are applying for an account related to those services",Start a New Application ,Lookup,I'm applying on behalf of a client | I'm applying for my own business | I'm a captive insurance manager applying for a client
-Start a New Application ,N3,GENFundAdminContactName,Your contact name,,Intermediary Details,Free Text,
-Start a New Application ,N4,GENFundAdminNum,Your phone number,,Intermediary Details,Free Text,
-Start a New Application ,N5,GENFundAdminEmail,Your email address,We'll email you with any queries,Intermediary Details,Free Text,
-Start a New Application ,N6,GENIndicativeAppetiteRiskadversePEP,Are you connected to any politicians or senior officials?,"This includes current or former politicians, judges, military officers, or their close family members",Business Appetite,Lookup,Yes | No
-Start a New Application ,N7,GENIndicativeAppetiteRiskadverseESE,Are there any risks we should know about?,"Environmental concerns, social issues, ethical concerns, or reputational risks",Business Appetite,Free Text,
+Applying for an account with us ,N1,GENIndicativeAppetiteQuestions,Are you happy to answer a few questions upfront?,,Business Appetite,Lookup,Yes | No
+Applying for an account with us ,N2,GENIndicativeAppetiteCustomerApplicationTypeFundsandFundsRelated,How are you applying?,,Applying for an account with us ,Lookup,I'm applying on behalf of a client | I'm applying for my own business | I'm a captive insurance manager applying for a client
+Applying for an account with us ,N3,GENFundAdminContactName,Your contact name,,Intermediary Details,Free Text,
+Applying for an account with us ,N4,GENFundAdminNum,Your phone number,,Intermediary Details,Free Text,
+Applying for an account with us ,N5,GENFundAdminEmail,Your email address,We'll email you with any queries,Intermediary Details,Free Text,
+Applying for an account with us ,N6,GENIndicativeAppetiteRiskadversePEP,Are you connected to any politicians or senior officials?,"This includes current or former politicians, judges, military officers, or their close family members",Business Appetite,Lookup,Yes | No
+Applying for an account with us ,N7,GENIndicativeAppetiteRiskadverseESE,Are there any risks we should know about?,"Environmental concerns, social issues, ethical concerns, or reputational risks",Business Appetite,Free Text,
 Applying as an intermediary,,Title-intermediary,Applying as an intermediary,,,Title,
 ,,Description-intermediary,"
 If you're applying on behalf of a client, we need to know about you too.
@@ -24,7 +24,7 @@ Documentation proving your authority to act for your client
 Details of your professional qualifications or authorisations",,Description,
 Applying as an intermediary,I1,[Regulated question],What's the full name of your organisation?,,Intermediary Details,Free Text,
 Applying as an intermediary,I2,SPEisregulated,Are you regulated?,,Intermediary Details,Lookup,Yes | No
-Applying as an intermediary,I3,SPEintermediaryregulator,Who regulates your organisation?,"For example, FCA or another regulatory body",Intermediary Details,Lookup,See master list via keyname
+Applying as an intermediary,I3,SPEintermediaryregulator,Who regulates your organisation?,"For example, FCA or another regulatory body",Intermediary Details,Lookup,CSSF | FCA | GFSC (Gibraltar) | GFSC (Guernsey) | IOM FSA | JFSC
 Applying as an intermediary,I4,SPEintermediarylicenseJER,What type of licence do you hold?,Select the licence type that covers this introduction,Intermediary Details,Lookup,Regulated | Unregulated | Listed | Authorised | Registered
 Applying as an intermediary,I5,GENMetFaceToFace,Have you or someone from your organisation met this customer face to face?,This must be in line with your local regulations,Intermediary Details,Lookup,Yes | No
 Applying as an intermediary,I6,GENGroupIndividualName,Their name,,Intermediary Details,Free Text,
@@ -38,7 +38,7 @@ Expected transaction volumes and amounts
 Types of payments you'll be making and receiving
 Any international activity planned
 Cash handling requirements",,Description,
-How you bank with us,A1,GENBankAccountJurisdiction,Where would you like to bank?,We operate in several locations. Choose the one that best suits your business needs,Start a New Application ,Lookup,Jersey | Guernsey | Isle of Man | Gibraltar | United Kingdom
+How you bank with us,A1,GENBankAccountJurisdiction,Where would you like to bank?,We operate in several locations. Choose the one that best suits your business needs,Applying for an account with us ,Lookup,Jersey | Guernsey | Isle of Man | Gibraltar | United Kingdom
 How you bank with us,A2,GENAccountType,What type of account do you need?,"For most businesses choose the Cash Management Account - it handles multiple currencies (GBP, USD, EUR and others), fixed-term deposits, and all electronic payments. If you need cheques or direct debits choose the Business Current Account - this is a standard GBP account with cheque book facility.",Banking Requirements,Lookup,"Cash Management Account which handles multiple currencies, fixed-term deposits, and all electronic payments | Business Current Account - this is a standard GBP account with cheque book facility and direct debits"
 How you bank with us,A3,GENCashMngtAccPurpose,What will you use this account for?,"This could include payments of professional fees, dividend receipts or payments, rental income, expenses, trading income, purchases of wholesale goods or cash elements of an investment portfolio",Banking Requirements,Lookup,Payments of professional fees | Dividend receipts or payments | Rental income | Expenses | Trading income | Purchases of wholesale goods | Cash elements of an investment portfolio | Other
 How you bank with us,A6,GENAccCashActivity,Will you deposit or withdraw cash?,,Banking Requirements,Lookup,Yes | No
@@ -46,7 +46,7 @@ How you bank with us,A7,GENCashMngtAccStatFreq,How often do you want statements?
 How you bank with us,A8,GENCashMngtAccTransCreditMonth + GENCashMngtAccTransDebitMonth,How many transactions do you make per year?,,Banking Requirements,Free text,
 ,,Title-PurposeOfBusiness,Purpose of Business,,,Title,
 ,,Description-PurposeOfBusiness,"Help us understand what your business actually does. We need a clear picture of your business activities, who you serve, and how you operate day-to-day.","We'll ask about: What your business does, your main clients/customers, annual turnover, and how long you've been trading",,Description,
-Purpose of Business,P1,GENIndicativeAppetiteCountryRegistration,What country is your business legally registered in?,This is your main business location for legal and tax purposes,Business Appetite,Lookup,COUNTRIES
+Purpose of Business,P1,GENIndicativeAppetiteCountryRegistration,What country is your business legally registered in?,This is your main business location for legal and tax purposes,Business Appetite,Lookup,United Kingdom | United States | Germany | France | Netherlands | Switzerland | Luxembourg | Ireland | Belgium | Austria | Denmark | Sweden | Norway | Finland | Italy | Spain | Portugal | Canada | Australia | New Zealand | Singapore | Hong Kong | Japan | South Korea | Cayman Islands | British Virgin Islands | Bermuda | Jersey | Guernsey | Isle of Man | Gibraltar | Malta | Cyprus | Other
 Purpose of Business,P2,GENCashMngtAccTurnover,What's your expected annual turnover?,We appreciate this can be hard to estimate. A ballpark figure is acceptable for now.,Banking Requirements,Integer,
 Purpose of Business,P3,GENIndicativeAppetiteRiskadverseMSB,Does the business handle money for other people?,"Examples include currency exchange, money transfers, or payment services",Business Appetite,Lookup,Yes | No
 Purpose of Business,P4,GENIndicativeAppetiteRiskadverseCrypto,Does the business invest in crypto assets?,"Bitcoin, Ethereum, NFTs, or other digital assets",Business Appetite,Lookup,Yes | No
@@ -60,7 +60,7 @@ Your latest tax return
 Details of any tax obligations or issues",,Description,
 Tax,X1,GENIndicativeAppetiteRiskadverseTax,Are there any tax-related issues?,"Outstanding debts, disputes with tax authorities, or complex tax arrangements",Business Appetite,Lookup,Yes | No
 Tax,X2,GENIndicativeAppetiteRiskadverseTaxDetails,"If yes, please provide details",,NEW,Free Text,
-Tax,X3,GENtaxcomplex-country,Which country do you pay tax in?,Add details for each country where you pay tax | ADD NEW,Key Principals - Tax Residency & Classification,Lookup,COUNTRIES
+Tax,X3,GENtaxcomplex-country,Which country do you pay tax in?,Add details for each country where you pay tax | ADD NEW,Key Principals - Tax Residency & Classification,Lookup,United Kingdom | United States | Germany | France | Netherlands | Switzerland | Luxembourg | Ireland | Belgium | Austria | Denmark | Sweden | Norway | Finland | Italy | Spain | Portugal | Canada | Australia | New Zealand | Singapore | Hong Kong | Japan | South Korea | Cayman Islands | British Virgin Islands | Bermuda | Jersey | Guernsey | Isle of Man | Gibraltar | Malta | Cyprus | Other
 Tax,X4,GENtaxcomplex-knowtin,Do you have a tax reference number?,,Tax Residency & Classification,Lookup,Yes | No
 Tax,X5,GENtaxcomplex-tin,What's your tax reference number?,Your official tax reference from this country,Tax Residency & Classification,String,
 ,,Title-fund,About your fund,,,Title,
@@ -74,13 +74,13 @@ Your fund's main operating currency
 Fund structure details (open/closed-ended, incorporation details)
 Industry classification and regulatory status",,Description,
 Purpose of Fund,P1,GENFundInvestments,What does your fund invest in?,"Include asset types, geographic focus, sectors, and investment approach",Business Activity & Investment,Free Text,
-Purpose of Fund,P2,GENFundCurrency,What's your fund's main currency?,For accounts and reporting,Business Activity & Investment,Lookup,Currency
+Purpose of Fund,P2,GENFundCurrency,What's your fund's main currency?,For accounts and reporting,Business Activity & Investment,Lookup,Andorra | Australian Dollar | Austrian Schilling | Bahraini Dinar | Belgian Franc | Bulgarian Lev | Canadian Dollar | Croatian Kuna | Cypriot Pounds | Czech Koruna | Danish Krone | Deutsche Mark | Estonian Kroon | EURO | European Currency Unit | Finnish Markka | French Franc | Greek Drachma | Hong Kong Dollar | Hungarian Forint | Indian Rupee | Indonesian Rupiah | Irish Punt | Israeli New Shekel | Italian Lira | Japanese Yen | Kenyan Shilling | Kuwaiti Dinar | Latvian Lats | Lithuanian Litas | Luxemburg Franc | Malaysian Dollar | Maltese Lira | Mauritian Rupee | Mexican Peso | Moroccan Dirham | Netherlands Antilles Guilder | Netherlands Guilder | New Zealand Dollar | Norwegian Krone | Omani Rial | Polish Zloty | Portuguese Escudo | Pound Sterling | Qatari Rial | Saudi Arabian Riyal | Singapore Dollar | Slovak Koruna | South African Rand | Spanish Peseta | Swedish Krona | Swiss Franc | Thai Baht | Turkish Lira | U.S. Dollar | UAE Dirhams
 Purpose of Fund,P3,GENFundClosed,Is this a closed-ended fund?,Closed-ended = fixed number of shares,Business Activity & Investment,Lookup,Yes | No
 Purpose of Fund,P4,GENFundSize,What's your current fund size?,,Business Activity & Investment,Lookup,< 50m | 50m - 250m | 250m - 500m | 500m - 750m | 750m - 1bn | 1bn - 2bn | 2bn - 5bn | 5bn - 10bn | 10bn - 20bn | 20bn +
 Purpose of Fund,P5,GENFundTargetedSize,What's your target fund size?,,Business Activity & Investment,Free Text,
 Purpose of Fund,P6,GENFundInvestmentPeriod,How long do you hold investments?,"For example, 3-7 years",Business Activity & Investment,Lookup,1 - 3 years | 3 - 5 years | 5 years +
 Purpose of Fund,P7,GENFundInvestmentSize,What's your typical investment size?,Average amount per opportunity,Business Activity & Investment,Lookup,< 10m | 10m - 25m | 25m - 50m | 50m - 100m | 100m +
 Purpose of Fund,P8,GENFundAssetsNum,How many investments do you plan to hold?,Approximate number in your portfolio,Business Activity & Investment,Lookup,< 10 | 10 - 25 | 25 - 50 | 50 +
-Purpose of Fund,P9,GENindustrysector,What industry best describes your fund?,This helps us understand regulatory requirements,Business Activity & Investment,Lookup,Industry
+Purpose of Fund,P9,GENindustrysector,What industry best describes your fund?,This helps us understand regulatory requirements,Business Activity & Investment,Lookup,Private Equity | Venture Capital | Hedge Fund | Real Estate Investment | Infrastructure Investment | Debt/Credit Investment | Multi-Asset Investment | Technology Investment | Healthcare Investment | Energy Investment | Financial Services Investment | Consumer Goods Investment | Industrial Investment | Commodities Investment | Emerging Markets Investment | Fixed Income Investment | Equity Investment | Alternative Investment | Fund of Funds | Family Office Investment | Other
 Purpose of Fund,P10,GENincorpUSA,Is your fund incorporated in the USA?,"This includes any US state, territory, or federal jurisdiction",Key Principals - Tax Residency & Classification,Lookup,Yes | No
 Purpose of Fund,P11,GENffi,Is your fund a financial institution?,"Examples: Banks, investment funds, asset managers, insurance companies",Key Principals - Tax Residency & Classification,Lookup,Yes | No

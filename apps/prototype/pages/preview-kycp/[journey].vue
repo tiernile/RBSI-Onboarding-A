@@ -839,9 +839,23 @@ const accordionSections = computed(() => {
       expanded: item.expanded || false
     }
   })
+  
+  // Only add legacy-content accordion if there are actually fields that would be assigned to it
   const hasLegacy = mapped.some(section => section.key === 'legacy-content')
   if (!hasLegacy) {
-    mapped.push({ key: 'legacy-content', id: 'legacy-content', title: 'Additional Questions', order: 999 })
+    // Check if any fields would be assigned to legacy-content
+    const mappedKeys = new Set(mapped.map(section => section.key))
+    const hasOrphanedFields = visibleFields.value.some((field: any) => {
+      if (!field) return true
+      if (field.accordionKey) return !mappedKeys.has(field.accordionKey)
+      const rawSection = typeof field._section === 'string' ? field._section : ''
+      const slug = rawSection ? slugify(rawSection) : 'legacy-content'
+      return slug === 'legacy-content' || !mappedKeys.has(slug)
+    })
+    
+    if (hasOrphanedFields) {
+      mapped.push({ key: 'legacy-content', id: 'legacy-content', title: 'Additional Questions', order: 999 })
+    }
   }
   return mapped.sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
 })
